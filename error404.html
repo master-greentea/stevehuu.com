@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>? | stevehuu</title>
+    <link rel="icon" href="images/icons/favicon.ico" />
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script>
+      $(function () {
+        $("._header").load("master_htmls/header.html", function () {
+          $("#morse").html("-.-. .- - .... .. . ?");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="_header"></div>
+
+    <div class="container" style="text-align: center">
+      <main class="col-md-auto">
+        <h2>page not found, cat found instead</h2>
+        <p>error code: 404</p>
+        <div class="col d-flex justify-content-center">
+          <a href="/"><img src="/images/404cat.jpg" style="height: 85%" /></a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

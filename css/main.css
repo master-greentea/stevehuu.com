@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "K2D Light Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: local("K2D Light Regular"), url("../fonts/K2D-Light.woff") format("woff");
+}
+
+body {
+  background-color: #0e0e10;
+  color: #f8f2e2;
+}
+
+header {
+  background-color: #0e0e10;
+  height: 80px;
+  border-bottom: 1px solid #f8f2e2;
+}
+
+.before-main {
+  margin-top: 80px;
+}
+
+/* scroll bar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #f8f2e2;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f2c94d;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+/* scroll bar */
+
+.container-fluid, .container {
+  padding: 10px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/* header navbar */
+.navbar-toggler,
+.navbar-toggler:focus {
+  padding: 5;
+  padding-left: 0;
+  border: 0;
+  transition: none;
+  box-shadow: none;
+}
+.navbar-toggler:hover {
+  --bs-navbar-toggler-icon-bg: url("../../images/icons/i_hambergur.svg");
+}
+.navbar.bg-dark {
+  background-color: #0d0d0f00 !important;
+}
+.navbar {
+  --bs-navbar-toggler-icon-bg: url("../../images/icons/i_hambergur_w.svg");
+}
+/* header navbar */
+
+/* offcanvas */
+.offcanvas {
+  background-color: #0f0f11;
+  margin-top: 80px;
+}
+.offcanvas-body {
+  padding: 0;
+}
+.navbar-nav {
+  padding-top: 25px;
+  padding-left: 50px;
+}
+.nav-link {
+  font-family: "K2D Light Regular";
+  font-weight: normal;
+  font-size: 40px;
+  color: #f8f2e2;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: #f2c94d;
+}
+.current-page {
+  color: #81f4c2;
+}
+/* offcanvas */
+
+.list-group.list-group-horizontal li {
+  margin: 8px;
+  list-style: none;
+}
