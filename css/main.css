@@ -16,21 +16,30 @@ header {
   border-bottom: 1px solid #f8f2e2;
 }
 
+footer {
+  background-color: #0e0e10;
+}
+
 .before-main {
   margin-top: 80px;
 }
 
+h1 {
+  font-family: "K2D Light Regular";
+}
+
 /* scroll bar */
 ::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
+  width: 12px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: #0e0e10;
 }
 ::-webkit-scrollbar-thumb {
   background: #f8f2e2;
-  border-radius: 2px;
+  border-radius: 9px;
+  border-right: 2px solid #0e0e10;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #f2c94d;
@@ -44,6 +53,7 @@ header {
   padding: 10px;
   padding-left: 50px;
   padding-right: 50px;
+  margin: 0px;
 }
 
 /* header navbar */
@@ -79,7 +89,7 @@ header {
   padding-left: 50px;
 }
 .nav-link {
-  font-family: "K2D Light Regular";
+  font-family: 'Courier New', Courier, monospace;
   font-weight: normal;
   font-size: 40px;
   color: #f8f2e2;
@@ -96,4 +106,8 @@ header {
 .list-group.list-group-horizontal li {
   margin: 8px;
   list-style: none;
+}
+
+#morse {
+  font-family: 'Courier New', Courier, monospace;
 }
