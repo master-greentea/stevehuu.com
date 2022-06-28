@@ -28,6 +28,10 @@ h1 {
   font-family: "K2D Light Regular";
 }
 
+img {
+  margin-bottom: 10px;
+}
+
 /* scroll bar */
 ::-webkit-scrollbar {
   width: 12px;
@@ -80,6 +84,7 @@ h1 {
 .offcanvas {
   background-color: #0f0f11;
   margin-top: 80px;
+  --bs-offcanvas-width: 350px;
 }
 .offcanvas-body {
   padding: 0;
@@ -99,15 +104,11 @@ h1 {
   color: #f2c94d;
 }
 .current-page {
-  color: #81f4c2;
+  color: #f23e3e;
 }
 /* offcanvas */
 
 .list-group.list-group-horizontal li {
   margin: 8px;
   list-style: none;
-}
-
-#morse {
-  font-family: 'Courier New', Courier, monospace;
 }
