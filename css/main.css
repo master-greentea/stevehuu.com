@@ -17,7 +17,7 @@ header {
 }
 
 footer {
-  background-color: #0e0e10;
+  background-color: transparent;
 }
 
 .before-main {
@@ -26,9 +26,11 @@ footer {
 
 h1 {
   font-family: "K2D Light Regular";
+  font-size: 50px;
 }
 
 img {
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 
@@ -57,7 +59,7 @@ img {
   padding: 10px;
   padding-left: 50px;
   padding-right: 50px;
-  margin: 0px;
+  margin: auto;
 }
 
 /* header navbar */

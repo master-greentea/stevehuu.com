@@ -18,6 +18,13 @@
         $("._header").load("master_htmls/header.html", function () {
           $("#morse").html("-.-. .- - .... .. . ?");
         });
+
+        $("#cat").mouseover(function () {
+          $("#cat").attr("src", "images/404cat.gif");
+        });
+        $("#cat").mouseout(function () {
+          $("#cat").attr("src", "images/404cat.jpg");
+        });
       });
     </script>
   </head>
@@ -25,14 +32,14 @@
   <body>
     <div class="_header"></div>
 
-    <div class="container" style="text-align: center">
-      <main class="col-md-auto">
-        <h2>page not found, cat found instead</h2>
-        <p>error code: 404</p>
-        <div class="col d-flex justify-content-center">
-          <a href="/"><img src="/images/404cat.jpg" style="height: 85%" /></a>
-        </div>
-      </main>
+    <div class="container-fluid">
+      <h2>page not found, cat found instead</h2>
+      <p>error code: 404</p>
+      <img
+        id="cat"
+        src="/images/404cat.jpg"
+        style="height: 460px;"
+      />
     </div>
   </body>
 </html>
