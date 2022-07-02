@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>stevehuu.com | about</title>
+    <link rel="icon" href="images/icons/favicon.ico" />
+
+    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script>
+      $(function () {
+        $("._header").load("master_htmls/header.html", function () {
+          $("#morse").html("some stuff about me");
+          $("#nav-link-about").attr("class", "nav-link current-page");
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <div class="_header"></div>
+
+    <div class="_footer"></div>
+  </body>
+</html>

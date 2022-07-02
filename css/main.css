@@ -27,6 +27,12 @@ footer {
 h1 {
   font-family: "K2D Light Regular";
   font-size: 50px;
+  color: #f2c94d;
+  text-shadow: none;
+  transition: text-shadow 0.5s ease-out;
+}
+h1:hover {
+  text-shadow: 5px 2px 10px #f23e3e;
 }
 
 img {
@@ -53,9 +59,10 @@ img {
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
-/* scroll bar */
+/* END scroll bar */
 
-.container-fluid, .container {
+.container-fluid,
+.container {
   padding: 10px;
   padding-left: 50px;
   padding-right: 50px;
@@ -80,7 +87,16 @@ img {
 .navbar {
   --bs-navbar-toggler-icon-bg: url("../../images/icons/i_hambergur_w.svg");
 }
-/* header navbar */
+/* socials */
+.social-tw {content: url("../../images/icons/twitter.svg");}
+.social-ins {content: url("../../images/icons/instagram.svg");}
+.social-lin {content: url("../../images/icons/linkedin.svg");}
+.social-itch {content: url("../../images/icons/itch_w.svg");}
+.social-tw:hover {content: url("../../images/icons/tw_y.svg");}
+.social-ins:hover {content: url("../../images/icons/ins_y.svg");}
+.social-lin:hover {content: url("../../images/icons/lin_y.svg");}
+.social-itch:hover {content: url("../../images/icons/itch_y.svg");}
+/* END header navbar */
 
 /* offcanvas */
 .offcanvas {
@@ -96,21 +112,66 @@ img {
   padding-left: 50px;
 }
 .nav-link {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "K2D Light Regular";
   font-weight: normal;
   font-size: 40px;
   color: #f8f2e2;
+  transition: color 0s;
 }
 .nav-link:hover,
 .nav-link:focus {
+  transition: color 0s;
   color: #f2c94d;
 }
 .current-page {
   color: #f23e3e;
 }
-/* offcanvas */
+/* END offcanvas */
 
 .list-group.list-group-horizontal li {
   margin: 8px;
   list-style: none;
 }
+
+/* ad */
+#ad {
+  background-color: #0a335c;
+  border: double mediumspringgreen 5px;
+  overflow-y: scroll;
+  font-family: georgia;
+  padding: 15px;
+  max-height: 45vh;
+  min-height: fit-content;
+  margin: 20px;
+  margin-top: 50px;
+}
+#ad a#outfoxlink {
+  color: #d12a54;
+  font-size: larger;
+  border: dotted 2px rgb(0, 255, 0);
+  border-radius: 5px;
+  padding: 5px;
+  position: relative;
+  top: -20px;
+}
+#ad a#outfoxlink:hover {
+  background-color: #333745;
+  border-color: #333745;
+  color: #fbaf40;
+  text-shadow: 2px 1px 2px #f23e3e;
+}
+#outfoxtext {
+  color: #e9f1f7;
+  width: 90%;
+  transition: text-shadow 0.5s ease-out;
+  text-shadow: none;
+}
+#outfoxtext:hover {
+  transition: text-shadow 3.5s ease-out;
+  text-shadow: 6px 3px aqua;
+}
+#outfoxtext:hover > #outfoxtext-highlight {
+  transition: color 1s ease-out;
+  color: #f23e3e;
+}
+/* END ad */

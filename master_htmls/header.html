@@ -14,7 +14,7 @@
         ><img
           src="images/cat_logo.png"
           class="d-block img-fluid"
-          style="height: 50px; margin: 0;"
+          style="height: 50px; margin: 0"
       /></a>
     </div>
     <div class="col d-flex justify-content-center" id="morse">
@@ -26,27 +26,29 @@
       <ul class="list-group list-group-horizontal">
         <li>
           <a href="https://twitter.com/stevtigerh" target="_blank"
-            ><img class="social" src="images/icons/twitter.svg"
-          /></a>
+            ><div style="width: 20px">
+              <img class="social-tw" src="images/icons/twitter.svg" /></div
+          ></a>
         </li>
         <li>
           <a href="https://www.instagram.com/stevey.huu/" target="_blank"
-            ><img class="social" src="images/icons/instagram.svg"
-          /></a>
+            ><div style="width: 20px">
+              <img class="social-ins" src="images/icons/instagram.svg" /></div
+          ></a>
         </li>
         <li>
           <a
             href="https://www.linkedin.com/in/steve-hu-271699234/"
             target="_blank"
-            ><img class="social" src="images/icons/linkedin.svg"
-          /></a>
+            ><div style="width: 20px">
+              <img class="social-lin" src="images/icons/linkedin.svg" /></div
+          ></a>
         </li>
         <li>
           <a href="https://masterhuhu.itch.io/" target="_blank"
-            ><img
-              class="social"
-              src="images/icons/itchio-logo-textless-white.svg"
-          /></a>
+            ><div style="width: 20px">
+              <img class="social-itch" src="images/icons/itch_w.svg" /></div
+          ></a>
         </li>
       </ul>
     </div>
@@ -98,39 +100,44 @@
             >
           </li>
         </ul>
-        <div
-          id="ad"
-          style="
-            border: double mediumspringgreen 5px;
-            padding: 15px;
-            overflow-y: scroll;
-            height: 45vh;
-            font-family: georgia;
-            background-color: darkblue;
-            margin: 20px;
-          "
-        >
-          <h4 id="someElement" style="color: magenta; width: 90%">
+        <div id="ad">
+          <h4
+            id="flash"
+            style="
+              background-color: #8dc63f;
+              color: magenta;
+              width: 100%;
+              margin: 0;
+              text-align: center;
+              text-shadow: 2px 2px 15px #e9f1f7;
+            "
+          >
             You might also want to check out:
           </h4>
-          <h3 style="color: greenyellow; width: 90%">Ritual Night</h3>
-          <img src="images/index/ad.gif" style="width: 90%" />
-          <a
-            id="outfoxlink"
-            href="https://www.outfoxgames.net/"
-            style="color: orange"
-            target="_blank"
+          <img
+            src="images/index/ad2.gif"
+            style="
+              width: 90%;
+              position: relative;
+              top: -30px;
+              margin: 0px;
+              margin-bottom: 15px;
+            "
+          />
+          <a id="outfoxlink" href="https://www.outfoxgames.net/" target="_blank"
             >FIND OUT MORE</a
           >
-          <p style="color: aqua; width: 90%">
+          <p id="outfoxtext">
             You are invited to an exclusive monsters-only party to complete a
-            ritual to summon Cthulhu. Cooperate with each other to gather the
-            needed ingredients and cast your magic spells to deduce the icky
-            humans that have snuck in to crash the party and sabotage the
-            ritual. Disguising as NPCs and casting magic spells, the humans
-            cause chaos and sow doubt. Each day, the game evolves with both
-            sides gaining abilities and tools to deduce or deceive each other as
-            Cthulhu watches!
+            ritual to summon <inline id="outfoxtext-highlight">Cthulhu</inline>.
+            Cooperate with each other to gather the needed ingredients and cast
+            your magic spells to deduce the icky humans that have snuck in to
+            crash the party and sabotage the ritual. Disguising as
+            <inline id="outfoxtext-highlight">NPC</inline>s and casting magic
+            spells, the humans cause chaos and sow doubt. Each day, the game
+            evolves with both sides gaining abilities and tools to deduce or
+            deceive each other as
+            <inline id="outfoxtext-highlight">Cthulhu</inline> watches!
           </p>
         </div>
       </div>
