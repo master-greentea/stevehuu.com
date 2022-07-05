@@ -1,0 +1,16 @@
+{
+"companyName": "stevehuu",
+"productName": "Titanpoint",
+"productVersion": "1",
+"dataUrl": "u_titanpoint.data.unityweb",
+"wasmCodeUrl": "u_titanpoint.wasm.code.unityweb",
+"wasmFrameworkUrl": "u_titanpoint.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#0E0E10",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.9f1"
+}
