@@ -20,7 +20,7 @@
     <script>
       $(function () {
         $("._header").load("/master_htmls/header.html", function () {
-          $("#morse").html("?");
+          $("#morse").html("<img src='/images/games/titanpoint/moon.png' style='height:40px'/>");
           $("#nav-link-games").attr("class", "nav-link current-page");
         });
       });
@@ -40,26 +40,18 @@
         </div>
 
         <main class="col-6 col-xxl-10 flex-fill">
-          <h1 id="foghorn-h1">Titanpoint</h1>
+          <h1 id="titanpoint-h1" class="game-h1">Titanpoint</h1>
           <div class="row">
             <div class="col-12 col-md-8">
-              <iframe
-                mozallowfullscreen="true"
-                allow="autoplay; fullscreen"
-                src="https://stevehuu.com/webgl/u_titanpoint/index.html"
-                style="border: 0px #000000 none"
-                name="Titanpoint"
-                scrolling="yes"
-                msallowfullscreen="true"
-                allowfullscreen="true"
-                webkitallowfullscreen="true"
-                allowtransparency="true"
-                frameborder="0"
-                marginheight="0px"
-                marginwidth="0px"
-                height="870px"
-                width="100%"
-              ></iframe>
+              <div class="ratio ratio-4x3">
+                <iframe
+                  id="titanpoint"
+                  src="https://stevehuu.com/webgl/u_titanpoint/index.html"
+                  name="Titanpoint"
+                  scrolling="no"
+                  allow="autoplay"
+                ></iframe>
+              </div>
             </div>
 
             <div class="col-12 col-md-4">
@@ -69,10 +61,12 @@
               <h5>with: NYU GameCenter</h5>
               <h5>role: everything</h5>
               <p>
-                Land of the broken, building of dreams
+                Prelude to the madness. Sound on for best effect.
+                <br />
+                Wake up.
                 <br />
                 <br />
-                Wake.
+                Press <strong>R</strong> if stuck.
               </p>
             </div>
           </div>

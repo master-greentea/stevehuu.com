@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Unity WebGL Player | Titanpoint</title>
     <script src="Build/UnityLoader.js"></script>
     <script>
       UnityLoader.instantiate("unityContainer", "Build/u_titanpoint.json");
     </script>
+    <style>
+      ::-webkit-scrollbar {
+        width: 10px;
+        height: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #f8f2e2;
+        border-radius: 5px;
+        border-right: 3px solid #0e0e10;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #f2c94d;
+      }
+      ::-webkit-scrollbar-corner {
+        background-color: transparent;
+      }
+    </style>
   </head>
   <body>
-    <div id="unityContainer" style="width: 1152px; height: 864px; margin: auto"></div>
+    <div
+      id="unityContainer"
+      style="aspect-ratio: 4/3; max-width: 1152px; margin: auto"
+    ></div>
   </body>
 </html>
