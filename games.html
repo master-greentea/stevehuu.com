@@ -17,7 +17,7 @@
     <script>
       $(function () {
         $("._header").load("master_htmls/header.html", function () {
-          $("#morse").html("--.  .-  --  .  ...");
+          $("#morse").html("--.  .-  --  .");
           $("#nav-link-games").attr("class", "nav-link current-page");
         });
       });
@@ -30,13 +30,13 @@
     <div class="container-fluid">
       <div class="row">
         <!-- left space -->
-        <div class="d-none d-xxl-block col-2"></div>
+        <div class="d-none d-xxl-block col-1"></div>
 
-        <main class="col-10 col-xxl-8 flex-fill">
+        <main class="col-10 col-xxl-10 flex-fill">
           <h1>Games</h1>
           <div
             id="games-main"
-            class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-3 g-lg-4"
+            class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-3 g-lg-4"
           >
             <div class="col">
               <div class="p-2">
@@ -44,40 +44,53 @@
               </div>
             </div>
             <div class="col">
-              <div class="p-2 game-tab">
-                <img src="images/games/ritual_night_splash.png" />
-                <h2>Ritual Night</h2>
-              </div>
+              <a href="games/ritual-night.html">
+                <div class="p-2 game-tab">
+                  <img src="images/games/ritual_night_splash.png" />
+                  <h2>Ritual Night</h2>
+                </div></a
+              >
             </div>
             <div class="col">
-              <div class="p-2 game-tab">
-                <img src="images/games/foghorn_splash.png" />
-                <h2>Foghorn</h2>
-              </div>
+              <a href="games/foghorn.html">
+                <div class="p-2 game-tab">
+                  <img src="images/games/foghorn_splash.png" />
+                  <h2>Foghorn</h2>
+                </div></a
+              >
             </div>
             <div class="col">
-              <div class="p-2 game-tab">
-                <img src="images/games/live_splash.png" />
-                <h2>Live from the Cube</h2>
-              </div>
+              <a href="games/live-from-the-cube.html">
+                <div class="p-2 game-tab">
+                  <img src="images/games/live_splash.png" />
+                  <h2>Live from the Cube</h2>
+                </div></a
+              >
+            </div>
+
+            <div class="col">
+              <a href="games/pyramids.html">
+                <div class="p-2 game-tab">
+                  <img src="images/games/pyramid_splash.png" />
+                  <h2>PYRAMIDS</h2>
+                </div></a
+              >
             </div>
             <div class="col">
-              <div class="p-2 game-tab">
-                <img src="images/games/pyramid_splash.png" />
-                <h2>PYRAMIDS</h2>
-              </div>
+              <a href="games/anamnesis.html">
+                <div class="p-2 game-tab">
+                  <img src="images/games/anamnesis_splash.png" />
+                  <h2>ANAMNESIS</h2>
+                </div></a
+              >
             </div>
             <div class="col">
-              <div class="p-2 game-tab">
-                <img src="images/games/anamnesis_splash.png" />
-                <h2>Anamnesis</h2>
-              </div>
-            </div>
-            <div class="col">
-              <div class="p-2 game-tab">
-                <img src="images/games/project_starlight_splash.png" />
-                <h2>Project Starlight</h2>
-              </div>
+              <a href="games/project-starlight.html">
+                <div class="p-2 game-tab">
+                  <img src="images/games/project_starlight_splash.png" />
+                  <h2>Project Starlight</h2>
+                </div></a
+              >
             </div>
             <div class="col">
               <a href="https://masterhuhu.itch.io/" target="_blank">
@@ -91,7 +104,7 @@
         </main>
 
         <!-- right space -->
-        <div class="d-none d-xxl-block col-2"></div>
+        <div class="d-none d-xxl-block col-1"></div>
       </div>
     </div>
 

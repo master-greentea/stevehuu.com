@@ -1,5 +1,5 @@
 $(function () {
-  $("._footer").load("master_htmls/footer.html");
+  $("._footer").load("/master_htmls/footer.html");
 
   setInterval(() => {
     $("#flash").fadeIn(200);
