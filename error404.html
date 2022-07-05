@@ -3,27 +3,27 @@
   <head>
     <meta charset="utf-8" />
     <title>? | stevehuu</title>
-    <link rel="icon" href="images/icons/favicon.ico" />
+    <link rel="icon" href="/images/icons/favicon.ico" />
 
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/main.css" />
 
-    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="js/popper.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/popper.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
 
     <script>
       $(function () {
-        $("._header").load("master_htmls/header.html", function () {
+        $("._header").load("/master_htmls/header.html", function () {
           $("#morse").html("?");
         });
 
         $("#cat").mouseover(function () {
-          $("#cat").attr("src", "images/404cat.gif");
+          $("#cat").attr("src", "/images/404cat.gif");
         });
         $("#cat").mouseout(function () {
-          $("#cat").attr("src", "images/404cat.jpg");
+          $("#cat").attr("src", "/images/404cat.jpg");
         });
       });
     </script>
@@ -33,9 +33,7 @@
     <div class="_header"></div>
 
     <div class="container-fluid">
-      <h2 style="font-family: Georgia, 'Times New Roman', Times, serif">
-        Page not found, cat found
-      </h2>
+      <h2>Page not found, cat found</h2>
       <img id="cat" src="/images/404cat.jpg" style="height: 460px" />
       <p style="font-family: Courier New">error code: 404</p>
     </div>
