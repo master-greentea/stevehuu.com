@@ -21,7 +21,7 @@
       $(function () {
         $("._header").load("/master_htmls/header.html", function () {
           $("#morse").html(
-            "<img src='/images/games/foghorn/icon.png' style='height: 40px'/>"
+            ""
           );
           $("#nav-link-games").attr("class", "nav-link current-page");
         });
@@ -45,61 +45,18 @@
           <h1 id="anamnesis-h1" class="game-h1">ANAMNESIS</h1>
           <div class="row">
             <div class="col-12 col-md-8">
-              <!-- begin carousel -->
-              <div
-                id="carouselExampleFade"
-                class="carousel slide carousel-slide"
-                style="width: 100%"
-              >
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img
-                      src="#"
-                      class="d-block w-100 img-fluid"
-                      style="object-fit: cover"
-                    />
-                  </div>
-                  <div class="carousel-item">
-                    <img
-                      src="#"
-                      class="d-block w-100 img-fluid"
-                      style="object-fit: cover"
-                    />
-                  </div>
-                  <div class="carousel-item">
-                    <img
-                      src="#"
-                      class="d-block w-100 img-fluid"
-                      style="object-fit: cover"
-                    />
-                  </div>
-                </div>
-                <button
-                  class="carousel-control-prev"
-                  type="button"
-                  data-bs-target="#carouselExampleFade"
-                  data-bs-slide="prev"
-                >
-                  <span
-                    class="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
-                <button
-                  class="carousel-control-next"
-                  type="button"
-                  data-bs-target="#carouselExampleFade"
-                  data-bs-slide="next"
-                >
-                  <span
-                    class="carousel-control-next-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
-                <!-- end carousel -->
-              </div>
+              <video width="100%" controls autoplay muted style="margin-top: 10px;">
+                <source src="/videos/anamnesis.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <img
+                src="/images/games/anamnesis/ana_screenshot1.png"
+                class="d-block w-100 img-fluid"
+              />
+              <img
+                src="/images/games/anamnesis/ana_screenshot2.png"
+                class="d-block w-100 img-fluid"
+              />
             </div>
 
             <div class="col-12 col-md-4">
@@ -119,6 +76,7 @@
                 victims.<br /><br />This project is developed over 4 weeks as a
                 proof of concept at NYU Game Center.
               </p>
+
             </div>
           </div>
         </main>
