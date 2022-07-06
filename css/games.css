@@ -19,8 +19,12 @@ a:hover {color: #f8f2e2; text-decoration: none;}
   padding-top: 10px;
 }
 
+.pyramids-html {
+  cursor: url("/images/games/pyramids/cursor.png"), auto;
+}
+
 /* game sepcific h1 */
-.game-h1 {color: #f8f2e2}
+.game-h1 {color: #f8f2e2;}
 #ritual-h1:hover {text-shadow: 5px 2px 10px #48bf84;}
 #live-cube-h1:hover {text-shadow: 5px 2px 10px #a845ff;}
 #pyramids-h1:hover {text-shadow: 5px 2px 10px #f9fb87}
