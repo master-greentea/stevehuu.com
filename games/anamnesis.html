@@ -20,9 +20,7 @@
     <script>
       $(function () {
         $("._header").load("/master_htmls/header.html", function () {
-          $("#morse").html(
-            ""
-          );
+          $("#morse").html("");
           $("#nav-link-games").attr("class", "nav-link current-page");
         });
       });
@@ -45,17 +43,33 @@
           <h1 id="anamnesis-h1" class="game-h1">ANAMNESIS</h1>
           <div class="row">
             <div class="col-12 col-md-8">
-              <video width="100%" controls autoplay muted style="margin-top: 10px;">
+              <video
+                width="100%"
+                controls
+                autoplay
+                muted
+                style="margin-top: 10px"
+              >
                 <source src="/videos/anamnesis.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
+              <div class="row">
+                <div class="col-6">
+                  <img
+                    src="/images/games/anamnesis/ana_screenshot1.png"
+                    style="width: 100%"
+                  />
+                </div>
+                <div class="col-6">
+                  <img
+                    src="/images/games/anamnesis/ana_screenshot2.png"
+                    style="width: 100%"
+                  />
+                </div>
+              </div>
               <img
-                src="/images/games/anamnesis/ana_screenshot1.png"
-                class="d-block w-100 img-fluid"
-              />
-              <img
-                src="/images/games/anamnesis/ana_screenshot2.png"
-                class="d-block w-100 img-fluid"
+                src="/images/games/anamnesis/ana_screenshot3.png"
+                style="width: 100%"
               />
             </div>
 
@@ -64,10 +78,10 @@
               <h4>2021 Fall</h4>
               <h4>UE4</h4>
               <h5>
-                with: NYU GameCenter
+                with: NYU Game Center
                 <inline style="font-size: smaller">(team of 4)</inline>
               </h5>
-              <h5>role: programmer | audio | narrative</h5>
+              <h5>role: audio lead | design | programming | narrative</h5>
               <p>
                 ANAMNESIS is a first-person action-adventure game created based
                 on John Eblahan's prototype Brutalist. The player plays as a
@@ -76,7 +90,6 @@
                 victims.<br /><br />This project is developed over 4 weeks as a
                 proof of concept at NYU Game Center.
               </p>
-
             </div>
           </div>
         </main>

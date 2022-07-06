@@ -20,7 +20,9 @@
     <script>
       $(function () {
         $("._header").load("/master_htmls/header.html", function () {
-          $("#morse").html("<img src='/images/games/starlight/light.png' style='height: 40px' />");
+          $("#morse").html(
+            "<img src='/images/games/starlight/light.png' style='height: 40px' />"
+          );
           $("#nav-link-games").attr("class", "nav-link current-page");
         });
       });
@@ -43,7 +45,13 @@
           <h1 id="starlight-h1" class="game-h1">Project Starlight</h1>
           <div class="row">
             <div class="col-12 col-md-8">
-              <video width="100%" controls autoplay muted style="margin-top: 10px;">
+              <video
+                width="100%"
+                controls
+                autoplay
+                muted
+                style="margin-top: 10px"
+              >
                 <source src="/videos/starlight.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -61,8 +69,8 @@
                 star generation system and multiple custom shader effects.
                 <br />
                 <br />
-                This project is created as a present dedicated to an important
-                friend.
+                This project is created as a present dedicated to someone
+                speical.
               </p>
             </div>
           </div>
