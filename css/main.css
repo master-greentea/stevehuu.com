@@ -2,7 +2,7 @@
   font-family: "K2D Light Regular";
   font-style: normal;
   font-weight: normal;
-  src: local("K2D Light Regular"), url("../fonts/K2D-Light.woff") format("woff");
+  src: local("K2D Light Regular"), url("/fonts/K2D-Light.woff") format("woff");
 }
 
 html {overflow-y: scroll;}
@@ -39,6 +39,14 @@ h1:hover {
 
 h2 {
   font-family: "K2D Light Regular";
+}
+p {
+  transition: text-shadow 0.5s ease-out;
+  text-shadow: none;
+}
+p:hover {
+  transition: text-shadow 3.5s ease-out;
+  text-shadow: 4px 2px #f23e3e;
 }
 
 img {
@@ -85,23 +93,23 @@ img {
   box-shadow: none;
 }
 .navbar-toggler:hover {
-  --bs-navbar-toggler-icon-bg: url("../../images/icons/i_hambergur.svg");
+  --bs-navbar-toggler-icon-bg: url("/images/icons/i_hambergur.svg");
 }
 .navbar.bg-dark {
   background-color: #0d0d0f00 !important;
 }
 .navbar {
-  --bs-navbar-toggler-icon-bg: url("../../images/icons/i_hambergur_w.svg");
+  --bs-navbar-toggler-icon-bg: url("/images/icons/i_hambergur_w.svg");
 }
 /* socials */
-#tw {content: url("../../images/icons/twitter.svg");}
-#ins {content: url("../../images/icons/instagram.svg");}
-#lin {content: url("../../images/icons/linkedin.svg");}
-#itch {content: url("../../images/icons/itch_w.svg");}
-#tw:hover {content: url("../../images/icons/tw_y.svg");}
-#ins:hover {content: url("../../images/icons/ins_y.svg");}
-#lin:hover {content: url("../../images/icons/lin_y.svg");}
-#itch:hover {content: url("../../images/icons/itch_y.svg");}
+#tw {content: url("/images/icons/twitter.svg");}
+#ins {content: url("/images/icons/instagram.svg");}
+#lin {content: url("/images/icons/linkedin.svg");}
+#itch {content: url("/images/icons/itch_w.svg");}
+#tw:hover {content: url("/images/icons/tw_y.svg");}
+#ins:hover {content: url("/images/icons/ins_y.svg");}
+#lin:hover {content: url("/images/icons/lin_y.svg");}
+#itch:hover {content: url("/images/icons/itch_y.svg");}
 
 button {
   background-color: transparent;
@@ -145,7 +153,7 @@ button {
 
 /* ad */
 #ad {
-  background-color: #0a335c;
+  background-color: #0c4653;
   border: double mediumspringgreen 5px;
   overflow-y: scroll;
   font-family: georgia;
@@ -165,20 +173,14 @@ button {
   top: -20px;
 }
 #ad a#outfoxlink:hover {
-  background-color: #333745;
-  border-color: #333745;
+  background-color: #333e45;
+  border-color: #333e45;
   color: #fbaf40;
   text-shadow: 2px 1px 2px #f23e3e;
 }
 #outfoxtext {
   color: #e9f1f7;
   width: 90%;
-  transition: text-shadow 0.5s ease-out;
-  text-shadow: none;
-}
-#outfoxtext:hover {
-  transition: text-shadow 3.5s ease-out;
-  text-shadow: 6px 3px aqua;
 }
 #outfoxtext:hover > #outfoxtext-highlight {
   transition: color 1s ease-out;
@@ -187,7 +189,7 @@ button {
 /* END ad */
 
 .back-button:hover {
-  content: url("../images/icons/chevron-left-y.svg");
+  content: url("/images/icons/chevron-left-y.svg");
 }
 .back-button {
   height: 50px;

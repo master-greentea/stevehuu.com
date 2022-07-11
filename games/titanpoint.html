@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>stevehuu.com | titanpoint</title>
     <link rel="icon" href="/images/icons/favicon.ico" />
 
@@ -43,7 +44,8 @@
           <h1 id="titanpoint-h1" class="game-h1">Titanpoint</h1>
           <div class="row">
             <div class="col-12 col-md-8">
-              <div class="ratio ratio-4x3">
+              <!-- desktop only -->
+              <div class="ratio ratio-4x3 d-none d-md-block">
                 <iframe
                   id="titanpoint"
                   src="https://stevehuu.com/webgl/u_titanpoint/index.html"
@@ -52,10 +54,13 @@
                   allow="autoplay"
                 ></iframe>
               </div>
+              <!-- mobile only -->
+              <div class="d-md-none">
+                <img src="/images/games/titanpoint_splash.png" class="w-100" />
+              </div>
             </div>
 
             <div class="col-12 col-md-4">
-              <h2 style="color: #f23e3e"></h2>
               <h4>2021 Fall</h4>
               <h4>Unity</h4>
               <h5>with: NYU GameCenter</h5>
@@ -63,10 +68,14 @@
               <p>
                 Prelude to the madness. Sound on for best effect.
                 <br />
+                Fun experimental project made in 1 week.
+                <br />
                 Wake up.
                 <br />
                 <br />
-                on PC, click <strong>YELLOW KNOB</strong> to unmute.
+                <strong>You must be on a desktop or laptop device to play in browser.</strong>
+                <br />
+                Press <inline style="color: #f2c94d">yellow knob</inline> to unmute.
               </p>
             </div>
           </div>
