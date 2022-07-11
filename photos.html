@@ -2,12 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>stevehuu.com | photos</title>
     <link rel="icon" href="images/icons/favicon.ico" />
 
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/photos.css" />
 
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="js/popper.min.js"></script>
@@ -17,7 +18,7 @@
     <script>
       $(function () {
         $("._header").load("master_htmls/header.html", function () {
-          $("#morse").html("photos go here");
+          $("#morse").html("");
           $("#nav-link-photos").attr("class", "nav-link current-page");
         });
       });
@@ -26,7 +27,68 @@
 
   <body>
     <div class="_header"></div>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- left space -->
+        <div class="d-none d-xxl-block col-1"></div>
 
+        <main class="col-10 col-xxl-10 flex-fill">
+          <div class="row gx-2">
+            <div class="col-3">
+              <img src="/images/photos/santamonica.jpg" class="w-100" />
+            </div>
+            <div class="col-3">
+              <img src="/images/photos/manhattan.jpg" class="w-100" />
+            </div>
+
+            <div class="col-3">
+              <img src="/images/photos/amarillo.jpg" class="w-100" />
+            </div>
+            <div class="col-3">
+              <img src="/images/photos/miami.jpg" class="w-100" />
+            </div>
+          </div>
+          <div class="row gx-2">
+            <div class="col-6">
+              <img src="/images/photos/cathedral.jpg" class="w-100" />
+            </div>
+            <div class="col-6">
+              <img src="/images/photos/lighthouse.jpg" class="w-100" />
+            </div>
+          </div>
+          <div class="row gx-2" style="height: min-content">
+            <div class="col-6">
+              <img src="/images/photos/cubah2.jpg" class="w-100" />
+            </div>
+            <div class="col-6">
+              <img src="/images/photos/bird.jpg" class="w-100" />
+            </div>
+          </div>
+          <img src="/images/photos/monument.jpg" class="w-100" />
+          <img src="/images/photos/natron.jpg" class="w-100" />
+          <img src="/images/photos/dumbo.jpg" class="w-100" />
+
+          <button id="back-to-top">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="30px"
+              height="30px"
+              fill="#f8f2e2"
+              class="bi bi-chevron-up"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708l6-6z"
+              />
+            </svg>
+          </button>
+        </main>
+
+        <!-- right space -->
+        <div class="d-none d-xxl-block col-1"></div>
+      </div>
+    </div>
     <div class="_footer"></div>
   </body>
 </html>

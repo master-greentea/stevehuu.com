@@ -5,7 +5,9 @@
   src: local("K2D Light Regular"), url("/fonts/K2D-Light.woff") format("woff");
 }
 
-html {overflow-y: scroll;}
+html {
+  overflow-y: scroll;
+}
 
 body {
   background-color: #0e0e10;
@@ -78,9 +80,16 @@ img {
 .container-fluid,
 .container {
   padding: 10px;
-  padding-left: 2.5%;
-  padding-right: 2.5%;
+  padding-left: 50px;
+  padding-right: 50px;
   margin: auto;
+}
+@media screen and (max-width: 768px) {
+  .container-fluid,
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 
 /* header navbar */
@@ -102,14 +111,30 @@ img {
   --bs-navbar-toggler-icon-bg: url("/images/icons/i_hambergur_w.svg");
 }
 /* socials */
-#tw {content: url("/images/icons/twitter.svg");}
-#ins {content: url("/images/icons/instagram.svg");}
-#lin {content: url("/images/icons/linkedin.svg");}
-#itch {content: url("/images/icons/itch_w.svg");}
-#tw:hover {content: url("/images/icons/tw_y.svg");}
-#ins:hover {content: url("/images/icons/ins_y.svg");}
-#lin:hover {content: url("/images/icons/lin_y.svg");}
-#itch:hover {content: url("/images/icons/itch_y.svg");}
+#tw {
+  content: url("/images/icons/twitter.svg");
+}
+#ins {
+  content: url("/images/icons/instagram.svg");
+}
+#lin {
+  content: url("/images/icons/linkedin.svg");
+}
+#itch {
+  content: url("/images/icons/itch_w.svg");
+}
+#tw:hover {
+  content: url("/images/icons/tw_y.svg");
+}
+#ins:hover {
+  content: url("/images/icons/ins_y.svg");
+}
+#lin:hover {
+  content: url("/images/icons/lin_y.svg");
+}
+#itch:hover {
+  content: url("/images/icons/itch_y.svg");
+}
 
 button {
   background-color: transparent;
@@ -187,10 +212,3 @@ button {
   color: #f23e3e;
 }
 /* END ad */
-
-.back-button:hover {
-  content: url("/images/icons/chevron-left-y.svg");
-}
-.back-button {
-  height: 50px;
-}
