@@ -78,8 +78,8 @@ img {
 .container-fluid,
 .container {
   padding: 10px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
   margin: auto;
 }
 
