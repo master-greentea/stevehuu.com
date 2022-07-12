@@ -34,4 +34,12 @@ $(function () {
     document.body.scrollTop = 0; // For Safari
     document.documentElement.scrollTop = 0;
   });
+
+  // photo bobbing
+  $(".photo").mouseover(function () {
+    $(this).animate({padding: "+=4"}, 350);
+  });
+  $(".photo").mouseout(function () {
+    $(this).animate({padding: "-=4"}, 250);
+  });
 });
