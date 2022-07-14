@@ -15,23 +15,45 @@ button {
   cursor: default !important;
 }
 
-.task-bar {
+#header-pullout {
+  width: 40px;
+  height: 30px;
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%, -10%);
+  border-radius: 0px 0px 8px 8px;
+  display: none;
+  cursor: pointer !important;
+}
+#header-pullout:hover path {
+  fill: #f2c94d;
+}
+
+#task-bar {
   background-color: #f2c94d;
   position: absolute;
-  height: 3vh;
+  z-index: 9999;
+  top: 100%;
+  height: 40px;
+  width: 100%;
 }
 
 #stuff-machine-loader {
+  cursor: default;
   position: absolute;
   color: #f8f2e2;
   top: 120px;
   left: 65px;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
   font-weight: bolder;
 }
 #stuff-machine-loader p {
   font-size: 25px;
   line-height: 85%;
+}
+#stuff-machine-loader ul {
+  list-style-type: square;
 }
 #mobile-message p {
   position: relative;
@@ -42,11 +64,15 @@ button {
 }
 #acsii-art {
   text-shadow: 0px 0px 8px #f2c94d;
-  transition: text-shadow .5s ease-out;
+  transition: text-shadow 0.5s ease-out;
 }
 
 #stuff-space {
-  height: calc(100vh - 80px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 40px); /* minus task bar */
 }
 
 .window {
@@ -55,13 +81,12 @@ button {
   top: 600px;
   left: 430px;
 
-
   cursor: default;
-  background-color: #1f1f20;
+  background-color: #242429;
   border: 1px solid #f8f2e2;
   width: max-content;
   height: 30px; /* keep consitent */
-  transition: box-shadow 0.8s ease-out;
+  transition: box-shadow 0.25s ease-out;
 }
 .window-controls {
   height: 100%;
@@ -109,10 +134,11 @@ button {
   width: 80px;
   height: 80px;
 }
-.apps:hover div img, .apps:focus div img {
+.apps:hover div img,
+.apps:focus div img {
   background-color: #f2c94d7f;
   border: 1px dotted #f8f2e2;
-  transition: background-color .5s ease-out;
+  transition: background-color 0.35s ease-out;
 }
 .apps div img {
   padding: 0;
@@ -133,13 +159,13 @@ button {
 }
 
 #app1 {
-  top: 100px;
+  top: 60px;
 }
 #venera-window .window-content {
   padding: 15px;
 }
 #app2 {
-  top: 200px;
+  top: 160px;
 }
 #photo-window .window-content {
   padding: 5px;

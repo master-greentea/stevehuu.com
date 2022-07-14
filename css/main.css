@@ -15,8 +15,11 @@ body {
 }
 
 header {
-  background-color: #0e0e10;
+  position: fixed;
+  top: 0;
+  width: 100%;
   height: 80px;
+  background-color: #0e0e10;
   border-bottom: 1px solid #f8f2e2;
 }
 
@@ -100,6 +103,7 @@ img {
   border: 0;
   transition: none;
   box-shadow: none;
+  cursor: pointer !important;
 }
 .navbar-toggler:hover {
   --bs-navbar-toggler-icon-bg: url("/images/icons/i_hambergur.svg");

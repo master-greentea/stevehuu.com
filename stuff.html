@@ -20,14 +20,7 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/stuff.js"></script>
 
-    <script>
-      $(function () {
-        $("._header").load("master_htmls/header.html", function () {
-          $("#morse").html("stuff here");
-          $("#nav-link-stuff").attr("class", "nav-link current-page");
-        });
-      });
-    </script>
+    <script type="text/javascript" src="js/sm_hcontrol.js"></script>
   </head>
 
   <body onload="booting()">
@@ -35,67 +28,130 @@
 
     <div id="sm-load"></div>
 
-    <div id="stuff-space" style="display: none">
-      <!-- desktop space -->
-      <button id="app1" class="apps d-flex flex-column">
-        <div>
-          <img class="w-100" src="/images/stuff/i_v.gif" style="width: 100px" />
-        </div>
-        <div><p>venera.script</p></div>
-      </button>
-      <button id="app2" class="apps d-flex flex-column">
-        <div>
-          <img class="w-100" src="/images/stuff/i_p.gif" style="width: 100px" />
-        </div>
-        <div><p>photos.html</p></div>
-      </button>
+    <div id="sm-desktop" style="display: none">
+      <div id="stuff-space">
+        <button id="header-pullout">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            fill="#f8f2e2"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M1 3.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5zM8 6a.5.5 0 0 1 .5.5v5.793l2.146-2.147a.5.5 0 0 1 .708.708l-3 3a.5.5 0 0 1-.708 0l-3-3a.5.5 0 0 1 .708-.708L7.5 12.293V6.5A.5.5 0 0 1 8 6z"
+            />
+          </svg>
+        </button>
 
-      <!-- begin windows -->
-      <!-- venera window -->
-      <div id="venera-window" class="window" class="ui-widget-content">
-        <div class="window-controls d-flex justify-content-end">
-          <button
-            class="window-toggle-button d-flex align-items-center justify-content-center"
-          >
+        <!-- task bar -->
+        <div id="task-bar"></div>
+
+        <!-- desktop space -->
+        <button id="app1" class="apps d-flex flex-column">
+          <div>
             <img
-              style="padding: 0; margin: 0"
-              src="/stuff_machine/square.svg"
+              class="w-100"
+              src="/images/stuff/i_v.gif"
+              style="width: 100px"
             />
-          </button>
-          <button
-            class="window-close-button d-flex align-items-center justify-content-center"
-          >
-            <img style="padding: 0; margin: 0" src="/stuff_machine/x.svg" />
-          </button>
+          </div>
+          <div><p>venera.script</p></div>
+        </button>
+        <button id="app2" class="apps d-flex flex-column">
+          <div>
+            <img
+              class="w-100"
+              src="/images/stuff/i_p.gif"
+              style="width: 100px"
+            />
+          </div>
+          <div><p>photos.html</p></div>
+        </button>
+
+        <!-- windows -->
+        <!-- venera window -->
+        <div id="venera-window" class="window" class="ui-widget-content">
+          <div class="window-controls d-flex justify-content-end">
+            <button
+              class="window-toggle-button d-flex align-items-center justify-content-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="#f8f2e2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                />
+              </svg>
+            </button>
+            <button
+              class="window-close-button d-flex align-items-center justify-content-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#f8f2e2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="window-content">
+            <p>nothing here yet.</p>
+          </div>
         </div>
-        <div class="window-content">
-          <p>nothing here yet.</p>
+        <!-- photo window -->
+        <div id="photo-window" class="window" class="ui-widget-content">
+          <div class="window-controls d-flex justify-content-end">
+            <button
+              class="window-toggle-button d-flex align-items-center justify-content-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="12"
+                height="12"
+                fill="#f8f2e2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+                />
+              </svg>
+            </button>
+            <button
+              class="window-close-button d-flex align-items-center justify-content-center"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="#f8f2e2"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+                />
+              </svg>
+            </button>
+          </div>
+          <div class="window-content container-fluid">
+            <iframe
+              src=""
+              style="width: 100%; height: 100%; background-color: #0e0e10"
+            ></iframe>
+          </div>
         </div>
       </div>
-      <!-- photo window -->
-      <div id="photo-window" class="window" class="ui-widget-content">
-        <div class="window-controls d-flex justify-content-end">
-          <button
-            class="window-toggle-button d-flex align-items-center justify-content-center"
-          >
-            <img
-              style="padding: 0; margin: 0"
-              src="/stuff_machine/square.svg"
-            />
-          </button>
-          <button
-            class="window-close-button d-flex align-items-center justify-content-center"
-          >
-            <img style="padding: 0; margin: 0" src="/stuff_machine/x.svg" />
-          </button>
-        </div>
-        <div class="window-content container-fluid">
-          <iframe
-            src=""
-            style="width: 100%; height: 100%; background-color: #0e0e10"
-          ></iframe>
-        </div>
-      </div>
+      <div id="task-bar"></div>
     </div>
 
     <script type="text/javascript" src="js/sm_loader.js"></script>

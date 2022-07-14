@@ -4,8 +4,6 @@
 $(function () {
   // initialize
   $("#sm-load").load("/stuff_machine/sm_loader.html");
-
-
   let fullscreened = false;
 
   setInterval(() => {
@@ -21,7 +19,7 @@ $(function () {
 
       $(".window-content").resizable({
         disabled: false,
-        maxHeight: $(window).height() - 109, // vh - 109
+        maxHeight: $(window).height() - 68, // vh - (task bar + 29)
         maxWidth: $(window).width(),
         minHeight: 390,
         minWidth: 790,
@@ -58,20 +56,20 @@ $(function () {
       .closest(".window")
       .css({
         position: "absolute",
-        top: $(window).scrollTop() + 79,
+        top: $(window).scrollTop(), // + 79 (if header)
         left: 0,
         width: "100%",
       });
     $(thing).closest(".window").find(".window-content").css({
       width: "calc(100% + 2px)",
-      height: "calc(100vh - 110px)",
+      height: "calc(100vh - 68px)", // - (task bar + 29)
     });
     // set icon to subtract
     $(thing)
       .closest(".window")
       .find(".window-toggle-button")
       .html(
-        "<img style='padding: 0; margin: 0' src='/stuff_machine/subtract.svg'/>"
+        "<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='#f8f2e2' viewBox='0 0 16 16'><path d='M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z' /></svg>"
       );
     // button disable
     $(".window-toggle-button")
@@ -96,7 +94,7 @@ $(function () {
       .closest(".window")
       .find(".window-toggle-button")
       .html(
-        "<img style='padding: 0; margin: 0' src='/stuff_machine/square.svg'/>"
+        "<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='#f8f2e2' viewBox='0 0 16 16'><path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/></svg>"
       );
     // button enable
     $(".window-toggle-button")

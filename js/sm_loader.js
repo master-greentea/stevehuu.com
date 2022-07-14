@@ -33,7 +33,7 @@ function generalListAnim() {
 
 // 1150
 function checklistAnim() {
-  var onMobile = window.matchMedia("(max-width: 767px)").matches;
+  var onMobile = window.matchMedia("(max-width: 763px)").matches;
 
   setTimeout(function () {
     $("#checklist").css("display", "block");
@@ -66,10 +66,10 @@ function checklistAnim() {
 
     setTimeout(function () {
       $("#acsii-art").css("display", "block");
-      $("#acsii-art").animate({fontSize: ".75em"})
+      $("#acsii-art").animate({ fontSize: ".75em" });
     }, 3500);
 
-    setTimeout(showStuff, 5500);
+    setTimeout(showStuff, 4000);
   }
 
   // if on mobile
@@ -81,6 +81,13 @@ function checklistAnim() {
 }
 
 function booting() {
+  if (window.matchMedia("(max-width: 763px)").matches) {
+    $("#stuff-machine-loader").css({
+      position: "inheritent",
+      left: "1%",
+    });
+  }
+
   generalListAnim();
 
   var checkingAnim = setInterval(() => {
@@ -92,6 +99,9 @@ function booting() {
 }
 
 function showStuff() {
-  $("#stuff-machine-loader").css("display", "none");
-  $("#stuff-space").css("display", "block");
+  $("#stuff-machine-loader").animate({ top: "40px" }, 750);
+  setTimeout(function () {
+    $("#stuff-machine-loader").css("display", "none");
+    $("#sm-desktop").fadeIn(1000);
+  }, 1500);
 }
