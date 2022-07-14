@@ -3,37 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>stevehuu.com | photos</title>
-    <link rel="icon" href="images/icons/favicon.ico" />
 
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/photos.css" />
 
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="js/popper.min.js"></script>
     <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
-
-    <script>
-      $(function () {
-        $("._header").load("master_htmls/header.html", function () {
-          $("#morse").html("");
-          $("#nav-link-photos").attr("class", "nav-link current-page");
-        });
-      });
-    </script>
   </head>
 
-  <body>
-    <div class="_header"></div>
-
-    <div class="container-fluid">
+  <body onload="loading()">
+    <div id="photo-loader"></div>
+    <div class="container-fluid all-content" style="display:none;">
       <div class="row">
-        <!-- left space -->
-        <div class="d-none d-xxl-block col-1"></div>
-
-        <main class="col-10 col-xxl-10 flex-fill">
+        <main class="col-12 flex-fill">
           <div class="row gx-2">
             <div class="col-6 col-md-3 photo">
               <img src="/images/photos/santamonica.jpg" class="w-100" />
@@ -91,11 +75,9 @@
             </svg>
           </button>
         </main>
-
-        <!-- right space -->
-        <div class="d-none d-xxl-block col-1"></div>
       </div>
     </div>
-    <div class="_footer"></div>
+    <div style="padding: 10px"></div>
+    <script type="text/javascript" src="js/photo_loader.js"></script>
   </body>
 </html>

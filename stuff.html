@@ -2,31 +2,225 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>stevehuu.com | stuff</title>
     <link rel="icon" href="images/icons/favicon.ico" />
 
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
+    />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/stuff.css" />
 
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/stuff.js"></script>
 
     <script>
       $(function () {
         $("._header").load("master_htmls/header.html", function () {
-          $("#morse").html("things here");
+          $("#morse").html("stuff here");
           $("#nav-link-stuff").attr("class", "nav-link current-page");
         });
       });
     </script>
   </head>
 
-  <body>
+  <body onload="booting()">
     <div class="_header"></div>
 
-    <div class="_footer"></div>
+    <div id="stuff-machine-loader">
+      <div class="row">
+        <div class="col-3">
+          <img
+            id="stuff-machine-logo"
+            src="/images/stuff/stuffmachine_small.gif"
+            class="w-100"
+          />
+        </div>
+        <div class="col-9 d-flex align-items-center">
+          <p>
+            <span style="color: #f2c94d">V</span>0.01<br /><span
+              style="color: #f23e3e"
+              >D</span
+            >20220713
+          </p>
+        </div>
+      </div>
+      <p>[ILTFPMIMSDT|SADGE]</p>
+      <ul id="general-list" style="display: none;">
+        <li>
+          <div class="row">
+            <div class="col-6">LOGGED IN AS</div>
+            <div class="col-6">: <span id="logged-in"></span></div>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <div class="col-6">CURRENT TIME</div>
+            <div class="col-6">: <span id="current-time"></span></div>
+          </div>
+        </li>
+      </ul>
+      CHECKING<span id="checking"> ...</span>
+      <ol id="checklist" style="display: none;">
+        <li id="on-mobile-li" style="display: none;">
+          <div class="row">
+            <div class="col-3">ON MOBILE?</div>
+            <div class="col-9 text-nowrap">
+              ............................. <span id="on-mobile"></span>
+            </div>
+          </div>
+        </li>
+        <li id="meter-li" style="display: none;">
+          <div class="row">
+            <div class="col-3">STARS COUNTED</div>
+            <div class="col-9 text-nowrap">
+              ............................. <span id="meter"></span>
+            </div>
+          </div>
+        </li>
+        <li class="rest-li" style="display: none;">
+          <div class="row">
+            <div class="col-3">PET CAT</div>
+            <div class="col-9 text-nowrap">
+              .............................
+              <span style="color: #31E863">SUCCESS</span>
+            </div>
+          </div>
+        </li>
+        <li class="rest-li" style="display: none;">
+          <div class="row">
+            <div class="col-3">GET STUFF</div>
+            <div class="col-9 text-nowrap">
+              .............................
+              <span style="color: #31E863">SUCCESS</span>
+            </div>
+          </div>
+        </li>
+      </ol>
+      <div class="d-none d-xxl-block">
+        <pre id="prop">
+                                                                                                                                               
+        </pre>
+        <pre id="acsii-art" style="display: none; font-size: 0.1em;">
+
+ :::::::: ::::::::::: :::    ::: :::::::::: ::::::::::      ::::    ::::      :::      ::::::::  :::    ::: ::::::::::: ::::    ::: :::::::::: 
+:+:    :+:    :+:     :+:    :+: :+:        :+:             +:+:+: :+:+:+   :+: :+:   :+:    :+: :+:    :+:     :+:     :+:+:   :+: :+:        
++:+           +:+     +:+    +:+ +:+        +:+             +:+ +:+:+ +:+  +:+   +:+  +:+        +:+    +:+     +:+     :+:+:+  +:+ +:+        
++#++:++#++    +#+     +#+    +:+ :#::+::#   :#::+::#        +#+  +:+  +#+ +#++:++#++: +#+        +#++:++#++     +#+     +#+ +:+ +#+ +#++:++#   
+       +#+    +#+     +#+    +#+ +#+        +#+             +#+       +#+ +#+     +#+ +#+        +#+    +#+     +#+     +#+  +#+#+# +#+        
+#+#    #+#    #+#     #+#    #+# #+#        #+#             #+#       #+# #+#     #+# #+#    #+# #+#    #+#     #+#     #+#   #+#+# #+#        
+ ########     ###      ########  ###        ###             ###       ### ###     ###  ########  ###    ### ########### ###    #### ########## 
+      </pre
+        >
+      </div>
+    </div>
+
+    <div id="stuff-space" style="display: none">
+      <!-- desktop space -->
+      <button id="app1" class="apps d-flex flex-column">
+        <div>
+          <img class="w-100" src="/images/stuff/i_v.gif" style="width: 100px" />
+        </div>
+        <div><p>venera.script</p></div>
+      </button>
+      <button id="app2" class="apps d-flex flex-column">
+        <div>
+          <img class="w-100" src="/images/stuff/i_p.gif" style="width: 100px" />
+        </div>
+        <div><p>photos.html</p></div>
+      </button>
+
+      <!-- begin windows -->
+      <div id="venera-window" class="window" class="ui-widget-content">
+        <div class="window-controls d-flex justify-content-end">
+          <button
+            class="window-toggle-button d-flex align-items-center justify-content-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              fill="#f8f2e2"
+              class="bi bi-square"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+              />
+            </svg>
+          </button>
+          <button
+            class="window-close-button d-flex align-items-center justify-content-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="#f8f2e2"
+              class="bi bi-x-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="window-content">
+          <p>nothing here yet.</p>
+        </div>
+      </div>
+
+      <div id="photo-window" class="window" class="ui-widget-content">
+        <div class="window-controls d-flex justify-content-end">
+          <button
+            class="window-toggle-button d-flex align-items-center justify-content-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="12"
+              height="12"
+              fill="#f8f2e2"
+              class="bi bi-square"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+              />
+            </svg>
+          </button>
+          <button
+            class="window-close-button d-flex align-items-center justify-content-center"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="#f8f2e2"
+              class="bi bi-x-lg"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="window-content container-fluid">
+          <iframe
+            src=""
+            style="width: 100%; height: 100%; background-color: #0e0e10"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="js/stuffmachine_loader.js"></script>
   </body>
 </html>

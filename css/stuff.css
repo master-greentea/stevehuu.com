@@ -1,0 +1,134 @@
+html {
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+::-moz-selection {
+  background-color: transparent;
+}
+::selection {
+  background-color: transparent;
+}
+.front {
+  z-index: 100 !important;
+}
+button {
+  cursor: default !important;
+}
+
+.task-bar {
+  background-color: #f2c94d;
+  position: absolute;
+  height: 3vh;
+}
+
+#stuff-machine-loader {
+  position: absolute;
+  top: 120px;
+  left: 65px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+}
+#stuff-machine-loader p {
+  font-size: 25px;
+  line-height: 85%;
+}
+
+#stuff-space {
+  height: calc(100vh - 80px);
+}
+
+.window {
+  display: none;
+  position: absolute;
+  top: 600px;
+  left: 430px;
+
+
+  cursor: default;
+  background-color: #1f1f20;
+  border: 1px solid #f8f2e2;
+  width: max-content;
+  height: 30px; /* keep consitent */
+  transition: box-shadow 0.8s ease-out;
+}
+.window-controls {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.window-toggle-button,
+.window-close-button {
+  border: none;
+  text-align: center;
+  height: 100%;
+  width: 30px; /* keep consitent */
+  margin: 0;
+  padding: 6px;
+}
+.window-toggle-button:hover,
+.window-close-button:hover {
+  background-color: #0e0e10d2;
+}
+.window-toggle-button:hover path,
+.window-close-button:hover path {
+  fill: #f2c94d;
+}
+.window-content {
+  top: 0px;
+  left: 0px;
+  background-color: #0e0e10;
+  border: 1px solid #f8f2e2;
+  margin: -1px;
+  color: #0e0e10;
+  text-align: center;
+  width: 790px;
+  height: 390px;
+  cursor: default;
+}
+
+.apps {
+  position: absolute;
+  left: 50px;
+  border: none;
+  color: #f8f2e2;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+  height: 80px;
+}
+.apps:hover div img, .apps:focus div img {
+  background-color: #f2c94d7f;
+  border: 1px dotted #f8f2e2;
+  transition: background-color .5s ease-out;
+}
+.apps div img {
+  padding: 0;
+  margin: 0;
+}
+.apps div {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.apps div p {
+  position: relative;
+  top: 50%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+#app1 {
+  top: 100px;
+}
+#venera-window .window-content {
+  padding: 15px;
+}
+#app2 {
+  top: 200px;
+}
+#photo-window .window-content {
+  padding: 5px;
+}
