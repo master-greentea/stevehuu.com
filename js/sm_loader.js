@@ -7,8 +7,6 @@ function generalListAnim() {
       now.getMinutes() +
       ":" +
       now.getSeconds() +
-      ":" +
-      now.getMilliseconds() +
       " TZ-OFFSET:" +
       now.getTimezoneOffset();
     $("#current-time").html(formatted);
@@ -21,10 +19,13 @@ function generalListAnim() {
   }, 600);
   setTimeout(function () {
     $("#logged-in").html("tigerh");
-  }, 650);
+  }, 830);
+  setTimeout(function () {
+    $("#logged-in").html("tigerh.");
+  }, 1150);
   setTimeout(function () {
     $("#logged-in").html("matcha-menace");
-  }, 750);
+  }, 1310);
   setTimeout(function () {
     $("#logged-in").html("masterhuhu");
   }, 1900);
@@ -48,12 +49,12 @@ function checklistAnim() {
     }
   }, 1600);
 
-  setTimeout(function () {
-    $("#meter-li").css("display", "block");
-  }, 1700);
-
   // if not on mobile
   if (!onMobile) {
+    setTimeout(function () {
+      $("#meter-li").css("display", "block");
+    }, 1700);
+
     var initialStar = 42 * 4;
     setInterval(() => {
       $("#meter").html((initialStar *= 13));
@@ -72,7 +73,11 @@ function checklistAnim() {
   }
 
   // if on mobile
-  else {}
+  else {
+    setTimeout(function () {
+      $("#mobile-message").css("display", "block");
+    }, 2000);
+  }
 }
 
 function booting() {

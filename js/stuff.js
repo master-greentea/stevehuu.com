@@ -2,6 +2,10 @@
 // by stevehuu 2022
 
 $(function () {
+  // initialize
+  $("#sm-load").load("/stuff_machine/sm_loader.html");
+
+
   let fullscreened = false;
 
   setInterval(() => {
@@ -67,7 +71,7 @@ $(function () {
       .closest(".window")
       .find(".window-toggle-button")
       .html(
-        "<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='#f8f2e2' class='bi bi-subtract' viewBox='0 0 16 16'> <path d='M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z' /> </svg>"
+        "<img style='padding: 0; margin: 0' src='/stuff_machine/subtract.svg'/>"
       );
     // button disable
     $(".window-toggle-button")
@@ -92,7 +96,7 @@ $(function () {
       .closest(".window")
       .find(".window-toggle-button")
       .html(
-        "<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='#f8f2e2' class='bi bi-square' viewBox='0 0 16 16'> <path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z' /> </svg>"
+        "<img style='padding: 0; margin: 0' src='/stuff_machine/square.svg'/>"
       );
     // button enable
     $(".window-toggle-button")
@@ -184,6 +188,6 @@ $(function () {
 
   $("#app2").dblclick(function () {
     appOpen("#photo-window", $(window).width() * 0.5, $(window).height() * 0.5);
-    $("#photo-window").find("iframe").attr("src", "photos.html");
+    $("#photo-window").find("iframe").attr("src", "/stuff_machine/photos.html");
   });
 });
