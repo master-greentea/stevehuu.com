@@ -33,7 +33,7 @@ function generalListAnim() {
 
 // 1150
 function checklistAnim() {
-  var onMobile = window.matchMedia("(max-width: 763px)").matches;
+  var onMobile = window.matchMedia("(max-width: 1319px)").matches;
 
   setTimeout(function () {
     $("#checklist").css("display", "block");
@@ -81,7 +81,7 @@ function checklistAnim() {
 }
 
 function booting() {
-  if (window.matchMedia("(max-width: 763px)").matches) {
+  if (window.matchMedia("(max-width: 1319px)").matches) {
     $("#stuff-machine-loader").css({
       position: "inheritent",
       left: "1%",
