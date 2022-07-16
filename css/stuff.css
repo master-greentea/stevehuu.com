@@ -1,6 +1,10 @@
 html {
   overflow-y: hidden;
   overflow-x: hidden;
+  cursor: url("/images/stuff/sm_cursor.png"), default !important;
+}
+body {
+  cursor: url("/images/stuff/sm_cursor.png"), default !important;
 }
 ::-moz-selection {
   background-color: transparent;
@@ -8,12 +12,23 @@ html {
 ::selection {
   background-color: transparent;
 }
+input::-moz-selection, textarea::-moz-selection {
+  background-color: #f2c94d5b;
+}
+input::selection, textarea::selection {
+  background-color: #f2c94d5b;
+}
 .front {
   z-index: 100 !important;
 }
 button {
-  cursor: default !important;
+  cursor: url("/images/stuff/sm_cursor.png"), default !important;
+  border: none;
 }
+#sm-desktop p {
+  font-family: "Courier New", Courier, monospace;
+}
+
 
 #header-pullout {
   width: 40px;
@@ -30,17 +45,98 @@ button {
   fill: #f2c94d;
 }
 
+
 #task-bar {
-  background-color: #f2c94d;
+  background-color: #242429;
   position: absolute;
-  z-index: 9999;
-  top: 100%;
+  top: calc(100% - 40px);
   height: 40px;
   width: 100%;
+  z-index: 999;
+}
+#task-bar div {
+  height: 100%;
+}
+#task-bar-time {
+  position: absolute;
+  left: calc(100vw - 78px);
+}
+#tb-time {
+  padding: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+#start-menu-button {
+  padding: 0px;
+  padding-left: 13px;
+  padding-right: 13px;
+  height: 100%;
+}
+#start-menu-button:hover img {
+  background-color: #f2c94d7f;
+  border: 0px;
+  border-radius: 3px;
+  transition: background-color 0.5s ease-out;
 }
 
+
+#start-menu {
+  position: absolute;
+  top: 100vh;
+  left: 20px;
+  border: 0px;
+  border-radius: 6px;
+  background-color: #21201f;
+  width: 260px;
+  height: 278px;
+  z-index: 998;
+}
+#start-menu .row {
+  margin: 0;
+  height: 100%;
+}
+#start-menu-banner {
+  height: 100%;
+  width: 35px;
+  padding: 0;
+  background-color: #f23e3e;
+  border-right: 0px;
+  border-radius: 6px 0px 0px 6px;
+}
+#start-menu-column {
+  margin: 0;
+  width: 100%;
+}
+#start-menu-column img {
+  padding-left: 15px;
+  margin: 0;
+  height: 75px;
+}
+#sm-logo {
+  box-shadow: none !important;
+}
+#start-menu-column p {
+  padding-bottom: 8px;
+  padding-top: 8px;
+  padding-left: 15px;
+  margin: 0;
+}
+#start-menu-column div {
+  height: max-content;
+  margin: 0;
+  padding: 0;
+  transition: box-shadow 0.25s ease-out;
+}
+#start-menu-column div:hover {
+  box-shadow: 5px 5px 45px #f2c94d inset;
+}
+.start-menu-divider {
+  border-top: 1px solid #f8f2e2;
+}
+
+
 #stuff-machine-loader {
-  cursor: default;
   position: absolute;
   color: #f8f2e2;
   top: 120px;
@@ -56,43 +152,73 @@ button {
   list-style-type: square;
 }
 #mobile-message p {
-  position: relative;
+  position: absolute;
   font-size: 18px;
   line-height: 105%;
   font-weight: lighter;
-  left: -20px;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 #acsii-art {
-  text-shadow: 0px 0px 8px #f2c94d;
+  text-shadow: 0px 0px 10px #f2c94d;
   transition: text-shadow 0.5s ease-out;
 }
 
-#stuff-space {
+
+#sm-desktop {
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
-  height: calc(100vh - 40px); /* minus task bar */
+  height: 100vh;
 }
+#stuff-space {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 40px); /* minus task bar */
+}
+#sm-restart {
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#sm-restart img {
+  width: 100px;
+  cursor: pointer;
+}
+
 
 .window {
   display: none;
   position: absolute;
-  top: 600px;
-  left: 430px;
-
-  cursor: default;
-  background-color: #242429;
-  border: 1px solid #f8f2e2;
   width: max-content;
-  height: 30px; /* keep consitent */
-  transition: box-shadow 0.25s ease-out;
 }
 .window-controls {
-  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
   width: 100%;
   margin: 0;
   padding: 0;
+  background-color: #242429;
+  border: 1px solid #f8f2e2;
+  border-radius: 6px 6px 0px 0px;
+  height: 30px; /* keep consitent */
+  transition: box-shadow 0.25s ease-out;
+}
+.window-header-text {
+  margin: 0;
+  padding: 0;
+  padding-left: 15px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-shadow: none !important;
 }
 .window-toggle-button,
 .window-close-button {
@@ -103,6 +229,9 @@ button {
   margin: 0;
   padding: 6px;
 }
+.window-close-button {
+  border-radius: 0px 6px 0px 0px;
+}
 .window-toggle-button:hover,
 .window-close-button:hover {
   background-color: #0e0e10d2;
@@ -112,17 +241,24 @@ button {
   fill: #f2c94d;
 }
 .window-content {
-  top: 0px;
+  position: relative;
+  width: 100%;
+  top: -1px;
   left: 0px;
   background-color: #0e0e10;
   border: 1px solid #f8f2e2;
-  margin: -1px;
+  border-radius: 0px 0px 6px 6px;
+  margin: 0px;
   color: #0e0e10;
   text-align: center;
-  width: 790px;
-  height: 390px;
-  cursor: default;
 }
+.window-content-text {
+  width: 100%;
+  height: 100%;
+  text-align: start;
+  padding: 15px;
+}
+
 
 .apps {
   position: absolute;
@@ -149,14 +285,62 @@ button {
   padding: 0;
   padding-left: 10px;
   padding-right: 10px;
-}
-.apps div p {
   position: relative;
-  top: 50%;
-  left: 35%;
-  transform: translate(-50%, -50%);
+  left: 50%;
+  transform: translate(-50%);
+}
+.apps p {
+  text-align: center;
   margin: 0;
 }
+
+
+.white-p{
+  color: #f8f2e2;
+}
+.stealth-p{
+  color: #0e0e10;
+}
+.content-text-title {
+  font-size: larger;
+  font-weight: 600;
+}
+
+
+#bug-form {
+  font-family: 'Courier New', Courier, monospace;
+  color: #f8f2e2;
+}
+#bug-form > textarea, input[type=text] {
+  background-color: #242429;
+  border: 0px;
+  border-radius: 4px;
+  transition: box-shadow .25s ease-out;
+  color: #f8f2e2;
+  padding: 8px;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+#bug-form > textarea:focus, input[type=text]:focus {
+  box-shadow: 0px 0px 8px #f2c94d;
+  border: none;
+  outline: none;
+}
+#bug-form > textarea {
+  resize: none;
+}
+#bug-description {
+  width: 100%;
+  height: 170px;
+}
+#bug-submit-btn {
+  background-color: #f2c94d;
+  border-radius: 4px;
+}
+#bug-submit-btn:hover {
+  background-color: #f23e3e;
+}
+
 
 #app1 {
   top: 60px;

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>stevehuu.com | games</title>
     <link rel="icon" href="images/icons/favicon.ico" />
 
@@ -12,7 +12,6 @@
 
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
 
     <script>
       $(function () {
@@ -20,6 +19,7 @@
           $("#morse").html("");
           $("#nav-link-games").attr("class", "nav-link current-page");
         });
+        $("._footer").load("/master_htmls/footer.html");
       });
     </script>
   </head>
@@ -38,11 +38,18 @@
             id="games-main"
             class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-3 g-lg-4"
           >
-            <div class="col">
+            <div id="first-game-box" class="col">
               <div class="p-2">
-                <h1><inline class="blink" style="color: #f8f2e2">|</inline></h1>
+                <script>
+                  setInterval(() => {
+                    $("#blink").fadeIn(500);
+                    $("#blink").fadeOut(500);
+                  }, 500);
+                </script>
+                <h1><inline id="blink" style="color: #f8f2e2">|</inline></h1>
               </div>
             </div>
+            
             <div class="col">
               <a href="games/ritual-night.html">
                 <div class="p-2 game-tab">

@@ -116,6 +116,9 @@ img {
   --bs-navbar-toggler-icon-bg: url("/images/icons/i_hambergur_w.svg");
 }
 /* socials */
+#git {
+  content: url("/images/icons/github_w.svg");
+}
 #tw {
   content: url("/images/icons/twitter.svg");
 }
@@ -127,6 +130,9 @@ img {
 }
 #itch {
   content: url("/images/icons/itch_w.svg");
+}
+#git:hover {
+  content: url("/images/icons/github_y.svg");
 }
 #tw:hover {
   content: url("/images/icons/tw_y.svg");

@@ -2,10 +2,25 @@
 // by stevehuu 2022
 
 $(function () {
+  // ✨VERSION NUMBER
+  $(".sm-version-no").html("0.5.37");
+
+  $("#sm-loading-date").html(
+    new Date(Date.now()).getFullYear() +
+      "" +
+      new Date(Date.now()).getMonth() +
+      new Date(Date.now()).getDate()
+  );
+
   // initialize
-  $("#sm-load").load("/stuff_machine/sm_loader.html");
   let fullscreened = false;
 
+  var minResizeW = $(window).width() / 4;
+  var minResizeH = $(window).height() / 3;
+
+  var onStartMenu = false;
+
+  // update
   setInterval(() => {
     // full screen check
     if (!fullscreened) {
@@ -13,16 +28,16 @@ $(function () {
         disabled: false,
         containment: "#stuff-space",
         scroll: false,
-        cancel: ".window-content",
         stack: ".window",
+        handle: ".window-controls",
       });
 
       $(".window-content").resizable({
         disabled: false,
         maxHeight: $(window).height() - 68, // vh - (task bar + 29)
-        maxWidth: $(window).width(),
-        minHeight: 390,
-        minWidth: 790,
+        maxWidth: $(window).width() - 100,
+        minHeight: $(window).height() / 3,
+        minWidth: $(window).width() / 4,
       });
     } else {
       $(".window").draggable("disable");
@@ -35,7 +50,21 @@ $(function () {
     } else {
       $(".window").removeClass("w-active");
     }
-  }, 100);
+
+    // check start menu hover
+    if ($("#start-menu:hover").length != 0) {
+      onStartMenu = true;
+    } else {
+      onStartMenu = false;
+    }
+  }, 1);
+
+  $(".ui-resizable-handle").mouseup(function () {
+    $("html").css(
+      "cursor",
+      "url('/images/stuff/sm_cursor.png'), default !important"
+    );
+  });
 
   // ================================================
   // tempTop & Left
@@ -43,6 +72,8 @@ $(function () {
   var saveTempL;
   var saveTempW;
   var saveTempH;
+  // full screen animation
+  var fullScreenAnimSpeed = 450;
   // full screening
   function fullscreen(thing) {
     saveTempT = $(thing).closest(".window").css("top");
@@ -52,18 +83,36 @@ $(function () {
       .closest(".window")
       .find(".window-content")
       .css("height");
+
+    $(thing).closest(".window").css({
+      position: "absolute",
+    });
     $(thing)
       .closest(".window")
-      .css({
-        position: "absolute",
-        top: $(window).scrollTop(), // + 79 (if header)
-        left: 0,
-        width: "100%",
-      });
-    $(thing).closest(".window").find(".window-content").css({
-      width: "calc(100% + 2px)",
-      height: "calc(100vh - 68px)", // - (task bar + 29)
-    });
+      .animate(
+        {
+          top: $(window).scrollTop(), // + 79 (if header)
+          left: "0",
+          width: "100%",
+        },
+        fullScreenAnimSpeed,
+        "easeOutQuad"
+      );
+
+    $(thing)
+      .closest(".window")
+      .find(".window-content")
+      .animate(
+        {
+          top: -1,
+          left: 0,
+          width: "100%",
+          height: $(window).height() - 69,
+        },
+        fullScreenAnimSpeed,
+        "easeOutQuad"
+      );
+
     // set icon to subtract
     $(thing)
       .closest(".window")
@@ -81,14 +130,31 @@ $(function () {
   function unFullscreen(thing) {
     $(thing).closest(".window").css({
       position: "absolute",
-      top: saveTempT,
-      left: saveTempL,
-      width: "max-content",
     });
-    $(thing).closest(".window").find(".window-content").css({
-      width: saveTempW,
-      height: saveTempH,
-    });
+    $(thing).closest(".window").animate(
+      {
+        top: saveTempT,
+        left: saveTempL,
+        width: saveTempW,
+      },
+      fullScreenAnimSpeed,
+      "easeOutQuad"
+    );
+    setTimeout(function () {
+      $(thing).closest(".window").css("width", "max-content");
+    }, fullScreenAnimSpeed + 1);
+
+    $(thing).closest(".window").find(".window-content").animate(
+      {
+        top: -1,
+        left: 0,
+        width: saveTempW,
+        height: saveTempH,
+      },
+      fullScreenAnimSpeed,
+      "easeOutQuad"
+    );
+
     // set icon to square
     $(thing)
       .closest(".window")
@@ -110,7 +176,6 @@ $(function () {
       unFullscreen(thing);
     }
   }
-  // ================================================
 
   // using toggle button
   $(".window-toggle-button").click(function () {
@@ -120,12 +185,15 @@ $(function () {
   // using double click controls panel
   $(".window-controls").dblclick(function () {
     toggleFullscreen(this);
-  }); // double click header
+  });
+  // ================================================
 
   // window close button
   $(".window-close-button").click(function () {
-    unFullscreen(this);
     $(this).closest(".window").hide();
+    if (fullscreened) {
+      unFullscreen(this);
+    }
     $(this).closest(".window").find("iframe").attr("src", "");
   });
 
@@ -133,14 +201,19 @@ $(function () {
   function selectWindow(windowToSelect) {
     $(windowToSelect).addClass("front");
     $(".window").not(windowToSelect).removeClass("front");
-    $(windowToSelect).css("box-shadow", "0px 5px 30px #f2c94d inset");
-    $(".window").not(windowToSelect).css("box-shadow", "none");
+    $(windowToSelect)
+      .find(".window-controls")
+      .css("box-shadow", "0px 5px 30px #f2c94d inset");
+    $(".window")
+      .not(windowToSelect)
+      .find(".window-controls")
+      .css("box-shadow", "none");
   }
   function deselectWindow() {
     $(".window").removeClass("front");
-    $(".window").css("box-shadow", "none");
+    $(".window").find(".window-controls").css("box-shadow", "none");
   }
-
+  // do selection if clicked on .window
   $("body").mousedown(function (event) {
     if ($(event.target).closest(".window").hasClass("window")) {
       selectWindow($(event.target).closest(".window"));
@@ -149,43 +222,138 @@ $(function () {
     }
   });
 
-  // app stuff below
-  // @@@@@@@@===============================================@@@@@@@@
+  // >>task bar
+  // >>>>start menu
+  var startMenuOpened = false;
+  function startMenuOpen() {
+    var newHeight = $(window).height() - 340;
+    $("#start-menu").animate({ top: newHeight }, 350, "easeOutQuad");
+    startMenuOpened = true;
+  }
+  function startMenuClose() {
+    $("#start-menu").animate({ top: "100vh" }, 350), "easeOutQuad";
+    startMenuOpened = false;
+  }
+  // click button to open / close
+  $("#start-menu-button").click(function () {
+    if (startMenuOpened) {
+      startMenuClose();
+    } else {
+      startMenuOpen();
+    }
+  });
+  // click anywhere to open / close
+  $("body").click(function (e) {
+    if (e.target.id == "#start-menu-button") {
+      return;
+    } else if ($(e.target).closest("#start-menu-button").length) {
+      return;
+    } else if (!onStartMenu) {
+      startMenuClose();
+    }
+  });
+  // >>>>
+  // >>>>start menu buttons
+  $("#shut-down").click(function () {
+    $("#start-menu").css("z-index", "-1");
+    $("#header-pullout").fadeOut(300);
+    $("#sm-desktop").animate(
+      {
+        height: "102%",
+        width: "98%",
+        top: "-=1%",
+        left: "+=1%",
+      },
+      150
+    );
+    $("#sm-desktop").animate(
+      {
+        height: "0%",
+        top: "+=46%",
+      },
+      1300
+    );
+    $("#sm-desktop").hide(150);
+    setTimeout(function () {
+      $("#sm-restart").fadeIn(1500);
+    }, 2000);
+  });
+  $("#sm-restart img").mouseover(function () {
+    var randomAngle = Math.floor(Math.random() * 355) + 5;
+    $(this).rotate({
+      animateTo:randomAngle,
+      })
+  })
+  $("#sm-restart img").click(function () {
+    location.reload();
+  })
+  $("#reboot").click(function () {
+    location.reload();
+  });
+  // >>>>
+  // >>>>time
+  setInterval(() => {
+    $("#tb-time").html(
+      new Date(Date.now()).getHours() +
+        ":" +
+        new Date(Date.now()).getMinutes() +
+        ":" +
+        new Date(Date.now()).getSeconds()
+    );
+  }, 1000);
 
-  // open app
-  function appOpen(id, appwidth, appheight) {
-    $(id).show();
+  // >>app stuff
+  // >>>>app open
+  function appOpen(id, appwidth, appheight, windowName) {
+    $(id).fadeIn(100);
     var randomLeft = Math.random() * $(window).width();
     var randomTop = Math.random() * $(window).height();
     if (
-      randomLeft >= $(window).width() / 2.5 ||
-      randomTop >= $(window).height() / 2.5
+      randomLeft > $(window).width() / 2 ||
+      randomTop > $(window).height() / 2
     ) {
-      randomLeft /= 2;
-      randomTop /= 2;
+      randomLeft /= 3;
+      randomTop /= 3;
     }
-    if (randomTop <= $(window).height() + 80) {
-      randomTop += 80;
-    }
-    console.log(randomLeft, randomTop);
     $(id).css({
       left: randomLeft,
       top: randomTop,
     });
     $(id).find(".window-content").css({
       width: appwidth,
-      height: appheight
-    })
+      height: appheight,
+    });
     selectWindow(id);
+    $(id).find(".window-header-text").html(windowName);
   }
 
-  // apps
+  // apps individual
+  $("#app-about").click(function () {
+    appOpen("#about-window", minResizeW, minResizeH, "About Stuff Machine");
+    startMenuClose();
+  });
+
+  $("#app-legal").click(function () {
+    appOpen("#legal-window", minResizeW, minResizeH, "Terms & Conditions");
+    startMenuClose();
+  });
+
+  $("#app-bug").click(function () {
+    appOpen("#bug-window", minResizeW, minResizeH, "Bug Report");
+    startMenuClose();
+  });
+
   $("#app1").dblclick(function () {
-    appOpen("#venera-window", 800, 500);
+    appOpen("#venera-window", minResizeW, minResizeH, "venera.script");
   });
 
   $("#app2").dblclick(function () {
-    appOpen("#photo-window", $(window).width() * 0.5, $(window).height() * 0.5);
+    appOpen(
+      "#photo-window",
+      $(window).width() / 2,
+      $(window).height() / 2,
+      "photos.html"
+    );
     $("#photo-window").find("iframe").attr("src", "/stuff_machine/photos.html");
   });
 });

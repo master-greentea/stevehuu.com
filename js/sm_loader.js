@@ -2,13 +2,7 @@ function generalListAnim() {
   setInterval(() => {
     var now = new Date(Date.now());
     var formatted =
-      now.getHours() +
-      ":" +
-      now.getMinutes() +
-      ":" +
-      now.getSeconds() +
-      " TZ-OFFSET:" +
-      now.getTimezoneOffset();
+      now.toISOString();
     $("#current-time").html(formatted);
   }, 1);
   setTimeout(function () {
@@ -69,7 +63,7 @@ function checklistAnim() {
       $("#acsii-art").animate({ fontSize: ".75em" });
     }, 3500);
 
-    setTimeout(showStuff, 4000);
+    setTimeout(showStuff, 3500);
   }
 
   // if on mobile
@@ -83,8 +77,8 @@ function checklistAnim() {
 function booting() {
   if (window.matchMedia("(max-width: 1319px)").matches) {
     $("#stuff-machine-loader").css({
-      position: "inheritent",
-      left: "1%",
+      position: "absolute",
+      left: "5%",
     });
   }
 

@@ -1,6 +1,7 @@
 $(function () {
   var onHeader = false;
   var displayHeader = false;
+  // check if hovering above header
   setInterval(() => {
     if ($("header:hover").length != 0) {
       onHeader = true;
@@ -9,37 +10,40 @@ $(function () {
     }
   }, 11);
 
+  var onMobile = window.matchMedia("(max-width: 1319px)").matches;
+
+  // displaying header
   function dHeader(time) {
-    $("#header-pullout").fadeOut(300);
+    $("#header-pullout").fadeOut(100);
     setTimeout(function () {
       $("header").animate({ top: "0" }, time);
       $("nav").fadeIn(time);
-    }, 300);
+    }, 100);
   }
   function undHeader(time) {
     $("header").animate({ top: "-79px" }, time);
     $("nav").fadeOut(time);
     setTimeout(function () {
-        $("#header-pullout").fadeIn(300);
-      }, time);
+      $("#header-pullout").fadeIn(300);
+    }, time);
   }
 
-  var currentMouseYPos = -1;
-  $(document).mousemove(function (event) {
-    currentMouseYPos = event.pageY;
-  });
-
+  // load header
   $("._header").load("master_htmls/header.html", function () {
-    $("#morse").html("<img style='height: 40px;' src='/images/stuff/stuffmachine_logo_icon.png' />");
-    $("header").css("z-index", "9999")
+    // initial
+    $("#morse").html(
+      "<img style='height: 40px;' src='/images/stuff/stuffmachine_logo_icon.png' />"
+    );
+    $("header").css("z-index", "9999");
     $("#nav-link-stuff").attr("class", "nav-link current-page");
 
-    setTimeout(function () {
-      undHeader(750);
-    }, 4000);
 
-    var timer = 0;
+    if (!onMobile) {
+      setTimeout(function () {
+        undHeader(750);
+      }, 3500);
 
+      var timer = 0;
     setTimeout(function () {
       setInterval(() => {
         if (!onHeader && displayHeader) {
@@ -58,5 +62,6 @@ $(function () {
         displayHeader = true;
       });
     }, 4500);
+    }
   });
 });
