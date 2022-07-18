@@ -45,6 +45,8 @@ function checklistAnim() {
 
   // if not on mobile
   if (!onMobile) {
+    $("#acsii-prop").css("display", "block");
+
     setTimeout(function () {
       $("#meter-li").css("display", "block");
     }, 1700);
@@ -68,6 +70,8 @@ function checklistAnim() {
 
   // if on mobile
   else {
+    $("#acsii-prop").css("display", "none");
+
     setTimeout(function () {
       $("#mobile-message").css("display", "block");
     }, 2000);

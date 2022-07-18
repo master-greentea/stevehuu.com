@@ -3,12 +3,13 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  $(".sm-version-no").html("0.5.37");
+  $(".sm-version-no").html("0.6.2");
 
   $("#sm-loading-date").html(
     new Date(Date.now()).getFullYear() +
       "" +
-      new Date(Date.now()).getMonth() +
+      (new Date(Date.now()).getMonth() + 1) +
+      "" +
       new Date(Date.now()).getDate()
   );
 
@@ -44,27 +45,13 @@ $(function () {
       $(".window-content").resizable("disable");
     }
 
-    // active windows
-    if ($(".window").is(":visible")) {
-      $(".window").addClass("w-active");
-    } else {
-      $(".window").removeClass("w-active");
-    }
-
     // check start menu hover
     if ($("#start-menu:hover").length != 0) {
       onStartMenu = true;
     } else {
       onStartMenu = false;
     }
-  }, 1);
-
-  $(".ui-resizable-handle").mouseup(function () {
-    $("html").css(
-      "cursor",
-      "url('/images/stuff/sm_cursor.png'), default !important"
-    );
-  });
+  }, 10);
 
   // ================================================
   // tempTop & Left
@@ -255,8 +242,9 @@ $(function () {
   // >>>>
   // >>>>start menu buttons
   $("#shut-down").click(function () {
-    $("#start-menu").css("z-index", "-1");
-    $("#header-pullout").fadeOut(300);
+    $("#start-menu").css("z-index", "-1"); // menu make unclickable
+    $("#header-pullout").fadeOut(300); // hide pull out button
+    $(".apps").animate({ opacity: "0" }, 100); // hide apps
     $("#sm-desktop").animate(
       {
         height: "102%",
@@ -265,28 +253,30 @@ $(function () {
         left: "+=1%",
       },
       150
-    );
+    ); // animate full desktop - shrink
     $("#sm-desktop").animate(
       {
         height: "0%",
-        top: "+=46%",
+        top: "+=51%",
       },
-      1300
-    );
-    $("#sm-desktop").hide(150);
+      900
+    ); // animate full desktop - collapse
+    $("#task-bar").animate({ backgroundColor: "#f23e3e" }, 600); // change task bar color
+    $("#stuff-space").animate({ backgroundColor: "#f23e3e" }, 600); // change stuff space color
+    $("#sm-desktop").hide(150); // hide full desktop
     setTimeout(function () {
       $("#sm-restart").fadeIn(1500);
-    }, 2000);
+    }, 1100); // display restart button
   });
   $("#sm-restart img").mouseover(function () {
     var randomAngle = Math.floor(Math.random() * 355) + 5;
     $(this).rotate({
-      animateTo:randomAngle,
-      })
-  })
+      animateTo: randomAngle,
+    });
+  });
   $("#sm-restart img").click(function () {
     location.reload();
-  })
+  });
   $("#reboot").click(function () {
     location.reload();
   });
@@ -303,7 +293,8 @@ $(function () {
   }, 1000);
 
   // >>app stuff
-  // >>>>app open
+  // >>>>
+  //app open
   function appOpen(id, appwidth, appheight, windowName) {
     $(id).fadeIn(100);
     var randomLeft = Math.random() * $(window).width();
@@ -326,6 +317,92 @@ $(function () {
     selectWindow(id);
     $(id).find(".window-header-text").html(windowName);
   }
+  // >>>>
+  // folder open
+  var backSvg =
+    "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#f8f2e2' viewBox='0 0 16 16'><path d='M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z'/></svg>";
+  // depth 2
+  function folderOpenL2(
+    thisId,
+    parentId,
+    lastLvlId,
+    nextLvlId,
+    parentName,
+    lastLvlName,
+    nextLvlName
+  ) {
+    $(thisId).closest(".folder-lvl-1").hide();
+    $(thisId).closest(".folder-lvl-2").hide();
+    $(nextLvlId).show();
+
+    // path
+    if (lastLvlId == parentId) {
+      $(nextLvlId)
+        .closest(".window")
+        .find(".folder-path")
+        .html(
+          "<inline class='folder-back-button'>" +
+            backSvg +
+            lastLvlName +
+            "</inline>/" +
+            nextLvlName
+        );
+    } else {
+      $(nextLvlId)
+        .closest(".window")
+        .find(".folder-path")
+        .html(
+          "<inline class='folder-back-button'>" +
+            backSvg +
+            parentName +
+            "</inline>/" +
+            "<inline class='folder-back-button-lvl2'>" +
+            lastLvlName +
+            "</inline>/" +
+            nextLvlName
+        );
+
+      $(".folder-back-button-lvl2").click(function () {
+        folderBack(false, parentId, nextLvlId, lastLvlId, nextLvlName);
+      });
+    }
+
+    $(".folder-back-button").click(function () {
+      folderBack(true, parentId, nextLvlId, parentId);
+    });
+  }
+  function folderBack(
+    isBackToParent,
+    parentId,
+    currentId,
+    backToId,
+    currentName
+  ) {
+    $(currentId).hide();
+
+    if (isBackToParent) {
+      $(currentId).closest(".window").find(".folder-path").html("");
+      $(parentId).show();
+    } else {
+      // get current path
+      var current = $(currentId).closest(".window").find(".folder-path").html();
+      // chang path
+      $(currentId)
+        .closest(".window")
+        .find(".folder-path")
+        .html(current.replace("/" + currentName, ""));
+      // reset first back button
+      $(".folder-back-button").click(function () {
+        folderBack(true, parentId, backToId, parentId);
+      });
+      $(backToId).show();
+    }
+  }
+  // >>>>
+  // file open
+  function fileOpen(address) {
+    window.open(address, "_blank")
+  }
 
   // apps individual
   $("#app-about").click(function () {
@@ -343,11 +420,11 @@ $(function () {
     startMenuClose();
   });
 
-  $("#app1").dblclick(function () {
+  $("#app1-venera").dblclick(function () {
     appOpen("#venera-window", minResizeW, minResizeH, "venera.script");
   });
 
-  $("#app2").dblclick(function () {
+  $("#app2-photo").dblclick(function () {
     appOpen(
       "#photo-window",
       $(window).width() / 2,
@@ -355,5 +432,114 @@ $(function () {
       "photos.html"
     );
     $("#photo-window").find("iframe").attr("src", "/stuff_machine/photos.html");
+  });
+  $("#app3-audio").dblclick(function () {
+    appOpen("#audio-folder", minResizeW, minResizeH, "audio");
+  });
+  $("#app4-visual").dblclick(function () {
+    appOpen("#visual-folder", minResizeW, minResizeH, "visual");
+  });
+  $("#app5-titanpoint").dblclick(function () {
+    appOpen(
+      "#titanpoint-window",
+      minResizeW,
+      minResizeH,
+      "titanpoint(webgl).exe"
+    );
+    $("#titanpoint-window").find(".window-controls").off("dblclick"); // disable double click fullscreen
+    $("#titanpoint-window")
+      .find("iframe")
+      .attr("src", "https://stevehuu.com/webgl/u_titanpoint/index.html");
+  });
+
+  // audio level 1
+  $("#audio-songs").dblclick(function () {
+    folderOpenL2(
+      this,
+      "#audio-parent",
+      "#audio-parent",
+      "#audio-songs-content",
+      "audio",
+      "audio",
+      "songs"
+    );
+  });
+  $("#audio-games").dblclick(function () {
+    folderOpenL2(
+      this,
+      "#audio-parent",
+      "#audio-parent",
+      "#audio-games-content",
+      "audio",
+      "audio",
+      "from-games"
+    );
+  });
+  $("#audio-other").dblclick(function () {
+    folderOpenL2(
+      this,
+      "#audio-parent",
+      "#audio-parent",
+      "#audio-other-content",
+      "audio",
+      "audio",
+      "other"
+    );
+  });
+  // audio level 2 - games
+  $("#games-ritual").dblclick(function () {
+    folderOpenL2(
+      this,
+      "#audio-parent",
+      "#audio-games-content",
+      "#games-ritual-content",
+      "audio",
+      "from-games",
+      "ritual-night"
+    );
+  });
+  $("#games-live").dblclick(function () {
+    folderOpenL2(
+      this,
+      "#audio-parent",
+      "#audio-games-content",
+      "#games-live-content",
+      "audio",
+      "from-games",
+      "live-cube"
+    );
+  });
+  $("#games-anamnesis").dblclick(function () {
+    folderOpenL2(
+      this,
+      "#audio-parent",
+      "#audio-games-content",
+      "#games-anamnesis-content",
+      "audio",
+      "from-games",
+      "anamnesis"
+    );
+  });
+  $("#games-space").dblclick(function () {
+    folderOpenL2(
+      this,
+      "#audio-parent",
+      "#audio-games-content",
+      "#games-space-content",
+      "audio",
+      "from-games",
+      "space-game"
+    );
+  });
+  $("#games-sanctum").dblclick(function () {
+    folderOpenL2(
+      this,
+      "#audio-parent",
+      "#audio-games-content",
+      "#games-sanctum-content",
+      "audio",
+      "from-games",
+      "sanctum"
+    );
   });
 });

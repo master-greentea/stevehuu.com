@@ -27,6 +27,17 @@ button {
 }
 #sm-desktop p {
   font-family: "Courier New", Courier, monospace;
+  margin: 0;
+}
+.white-p{
+  color: #f8f2e2;
+}
+.stealth-p{
+  color: #0e0e10;
+}
+.content-text-title {
+  font-size: larger;
+  font-weight: 600;
 }
 
 
@@ -59,7 +70,7 @@ button {
 }
 #task-bar-time {
   position: absolute;
-  left: calc(100vw - 78px);
+  left: calc(100vw - 95px);
 }
 #tb-time {
   padding: 0;
@@ -120,7 +131,6 @@ button {
   padding-bottom: 8px;
   padding-top: 8px;
   padding-left: 15px;
-  margin: 0;
 }
 #start-menu-column div {
   height: max-content;
@@ -173,6 +183,7 @@ button {
   height: 100vh;
 }
 #stuff-space {
+  background-color: #131318;
   position: absolute;
   top: 0;
   left: 0;
@@ -187,7 +198,7 @@ button {
   transform: translate(-50%, -50%);
 }
 #sm-restart img {
-  width: 100px;
+  width: 70px;
   cursor: pointer;
 }
 
@@ -240,7 +251,9 @@ button {
 .window-close-button:hover path {
   fill: #f2c94d;
 }
-.window-content {
+
+
+.window-content, .window-content-fixed {
   position: relative;
   width: 100%;
   top: -1px;
@@ -252,58 +265,18 @@ button {
   color: #0e0e10;
   text-align: center;
 }
-.window-content-text {
+.overflow-auto {
   width: 100%;
   height: 100%;
+}
+.window-content-text {
   text-align: start;
   padding: 15px;
 }
-
-
-.apps {
-  position: absolute;
-  left: 50px;
-  border: none;
-  color: #f8f2e2;
-  margin: 0;
-  padding: 0;
-  width: 80px;
-  height: 80px;
-}
-.apps:hover div img,
-.apps:focus div img {
-  background-color: #f2c94d7f;
-  border: 1px dotted #f8f2e2;
-  transition: background-color 0.35s ease-out;
-}
-.apps div img {
-  padding: 0;
-  margin: 0;
-}
-.apps div {
-  margin: 0;
-  padding: 0;
-  padding-left: 10px;
-  padding-right: 10px;
-  position: relative;
-  left: 50%;
-  transform: translate(-50%);
-}
-.apps p {
-  text-align: center;
-  margin: 0;
-}
-
-
-.white-p{
-  color: #f8f2e2;
-}
-.stealth-p{
-  color: #0e0e10;
-}
-.content-text-title {
-  font-size: larger;
-  font-weight: 600;
+.window-content-folder {
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 
@@ -342,15 +315,127 @@ button {
 }
 
 
-#app1 {
+.apps {
+  position: absolute;
+  left: 50px;
+  border: none;
+  color: #f8f2e2;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+  height: 80px;
+}
+.apps:hover img,
+.apps:focus img,
+.folder-item button:hover img,
+.folder-item button:focus img {
+  background-color: #f2c94d7f;
+  border: 1px dotted #f8f2e2;
+  transition: background-color 0.35s ease-out;
+}
+.apps img {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+.apps p {
+  line-height: 1rem;
+  padding-top: 5px;
+}
+.apps div {
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+
+.folder-grid {
+  margin: 0;
+  padding: 0;
+}
+.folder-item {
+  padding: 10px;
+  padding-bottom: 0;
+  margin: 0;
+  width: 100px; /* img width is 90 - padding */
+  height: 100px;
+  padding-right: 20px;
+  padding-left: 20px;
+  height: max-content;
+}
+.folder-item img {
+  padding: 0;
+  margin-top: 13px;
+  width: 100%;  /* img width is folder-item - padding */
+}
+.folder-item button {
+  padding: 0;
+  width: 100%;
+}
+.folder-item div {
+  color: #f8f2e2;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  line-height: 1;
+}
+/* folder levels */
+.folder-path {
+  color: #f8f2e2;
+  background-color: #0e0e10;
+  position: absolute;
+  left: 0;
+  top: 0px;
+  padding-top: 5px;
+  padding-left: 15px;
+  z-index: 99;
+  line-height: 1em; /* a */
+  max-height: 2.5em; /* a x number of line to show (ex : 2 line)  */
+  text-align: start;
+}
+.folder-back-button:hover,
+.folder-back-button-lvl2:hover {
+  color: #f2c94d;
+  fill: #f2c94d;
+}
+.folder-lvl-2, .folder-lvl-3 {
+  display: none;
+}
+
+
+#app1-venera {
   top: 60px;
 }
 #venera-window .window-content {
   padding: 15px;
 }
-#app2 {
+#app2-photo {
   top: 160px;
 }
 #photo-window .window-content {
   padding: 5px;
+}
+#app3-audio {
+  top: 260px;
+}
+#audio-folder .window-content,
+#visual-folder .window-content {
+  padding: 0;
+}
+#app4-visual {
+  top: 360px;
+}
+#app5-titanpoint {
+  left: 200px;
+  top: 110px;
+}
+#titanpoint-window .window-content-fixed {
+  padding: 0;
+  margin: 0;
+  width: 860px;
+  height: 646px; /* 960 + 2 for border */
 }
