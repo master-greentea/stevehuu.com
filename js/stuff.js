@@ -3,7 +3,7 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  $(".sm-version-no").html("0.6.2");
+  $(".sm-version-no").html("0.7.0");
 
   $("#sm-loading-date").html(
     new Date(Date.now()).getFullYear() +
@@ -21,8 +21,8 @@ $(function () {
 
   var onStartMenu = false;
 
-  // update
-  setInterval(() => {
+  // !!!!!!![[[[[[[[[UPDATE]]]]]]]]!!!!!!!
+  var update = setInterval(() => {
     // full screen check
     if (!fullscreened) {
       $(".window").draggable({
@@ -53,13 +53,51 @@ $(function () {
     }
   }, 10);
 
-  // ================================================
-  // tempTop & Left
+  // [[[[[[[[[LOAD WINDOW CONTROLS]]]]]]]]
+  // with fullscreen
+  $(".fs").load("/stuff_machine/window_controls_fs.html", function () {
+    // using toggle button
+    $(this)
+      .find(".window-toggle-button")
+      .click(function () {
+        toggleFullscreen(this);
+      });
+
+    // using double click controls panel
+    $(this).dblclick(function () {
+      toggleFullscreen(this);
+    });
+
+    $(this)
+      .find(".window-close-button")
+      .click(function () {
+        $(this).closest(".window").hide();
+        if (fullscreened) {
+          unFullscreen(this);
+        }
+      });
+  });
+  // no fullscreen
+  $(".no-fs").load("/stuff_machine/window_controls_nofs.html", function () {
+    $(this).off("dblclick"); // disable double click fullscreen
+    $(this)
+      .find(".window-close-button")
+      .click(function () {
+        $(this).closest(".window").hide();
+        if (fullscreened) {
+          unFullscreen(this);
+        }
+        $(this).closest(".window").find("iframe").attr("src", "");
+        $(this).closest(".window").find("audio").attr("src", "");
+        $(this).closest(".window").find("video").attr("src", "");
+      });
+  });
+  // ==========================================FULLSCREENING=========================
+  // save position before fullscreening
   var saveTempT;
   var saveTempL;
   var saveTempW;
   var saveTempH;
-  // full screen animation
   var fullScreenAnimSpeed = 450;
   // full screening
   function fullscreen(thing) {
@@ -107,7 +145,7 @@ $(function () {
       .html(
         "<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='#f8f2e2' viewBox='0 0 16 16'><path d='M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z' /></svg>"
       );
-    // button disable
+    // other window's buttons disable
     $(".window-toggle-button")
       .not($(thing).closest(".window").find(".window-toggle-button"))
       .attr("disabled", true);
@@ -127,13 +165,9 @@ $(function () {
       fullScreenAnimSpeed,
       "easeOutQuad"
     );
-    setTimeout(function () {
-      $(thing).closest(".window").css("width", "max-content");
-    }, fullScreenAnimSpeed + 1);
-
     $(thing).closest(".window").find(".window-content").animate(
       {
-        top: -1,
+        top: 0,
         left: 0,
         width: saveTempW,
         height: saveTempH,
@@ -141,6 +175,19 @@ $(function () {
       fullScreenAnimSpeed,
       "easeOutQuad"
     );
+
+    setTimeout(function () {
+      $(thing)
+        .closest(".window")
+        .attr(
+          "style",
+          $(thing)
+            .closest(".window")
+            .attr("style")
+            .replace("width: " + saveTempW, "width: max-content !important")
+        );
+      console.log("width: " + saveTempW);
+    }, fullScreenAnimSpeed + 1);
 
     // set icon to square
     $(thing)
@@ -163,26 +210,7 @@ $(function () {
       unFullscreen(thing);
     }
   }
-
-  // using toggle button
-  $(".window-toggle-button").click(function () {
-    toggleFullscreen(this);
-  });
-
-  // using double click controls panel
-  $(".window-controls").dblclick(function () {
-    toggleFullscreen(this);
-  });
-  // ================================================
-
-  // window close button
-  $(".window-close-button").click(function () {
-    $(this).closest(".window").hide();
-    if (fullscreened) {
-      unFullscreen(this);
-    }
-    $(this).closest(".window").find("iframe").attr("src", "");
-  });
+  // ==========================================FULLSCREENING=========================
 
   // select window
   function selectWindow(windowToSelect) {
@@ -200,17 +228,27 @@ $(function () {
     $(".window").removeClass("front");
     $(".window").find(".window-controls").css("box-shadow", "none");
   }
-  // do selection if clicked on .window
+
   $("body").mousedown(function (event) {
+    // WINDOW SELECTION
     if ($(event.target).closest(".window").hasClass("window")) {
       selectWindow($(event.target).closest(".window"));
     } else {
       deselectWindow();
     }
+
+    // START MENU TOGGLE
+    if (event.target.id == "#start-menu-button") {
+      return;
+    } else if ($(event.target).closest("#start-menu-button").length) {
+      return;
+    } else if (!onStartMenu) {
+      startMenuClose();
+    }
   });
 
-  // >>task bar
-  // >>>>start menu
+  // [[[[[[[[[TASK BAR]]]]]]]]
+  // ==========================================START MENU=========================
   var startMenuOpened = false;
   function startMenuOpen() {
     var newHeight = $(window).height() - 340;
@@ -221,6 +259,7 @@ $(function () {
     $("#start-menu").animate({ top: "100vh" }, 350), "easeOutQuad";
     startMenuOpened = false;
   }
+
   // click button to open / close
   $("#start-menu-button").click(function () {
     if (startMenuOpened) {
@@ -229,17 +268,7 @@ $(function () {
       startMenuOpen();
     }
   });
-  // click anywhere to open / close
-  $("body").click(function (e) {
-    if (e.target.id == "#start-menu-button") {
-      return;
-    } else if ($(e.target).closest("#start-menu-button").length) {
-      return;
-    } else if (!onStartMenu) {
-      startMenuClose();
-    }
-  });
-  // >>>>
+
   // >>>>start menu buttons
   $("#shut-down").click(function () {
     $("#start-menu").css("z-index", "-1"); // menu make unclickable
@@ -280,9 +309,10 @@ $(function () {
   $("#reboot").click(function () {
     location.reload();
   });
-  // >>>>
-  // >>>>time
-  setInterval(() => {
+  // ==========================================START MENU=========================
+
+  // >>>> task bar time
+  var taskBarTime = setInterval(() => {
     $("#tb-time").html(
       new Date(Date.now()).getHours() +
         ":" +
@@ -292,11 +322,19 @@ $(function () {
     );
   }, 1000);
 
-  // >>app stuff
+  // [[[[[[[[[APPS]]]]]]]]
   // >>>>
   //app open
-  function appOpen(id, appwidth, appheight, windowName) {
-    $(id).fadeIn(100);
+  function appOpen(
+    type,
+    windowId,
+    windowWidth,
+    windowHeight,
+    windowName,
+    windowContent
+  ) {
+    $(windowId).fadeIn(100);
+
     var randomLeft = Math.random() * $(window).width();
     var randomTop = Math.random() * $(window).height();
     if (
@@ -306,16 +344,52 @@ $(function () {
       randomLeft /= 3;
       randomTop /= 3;
     }
-    $(id).css({
+    $(windowId).css({
       left: randomLeft,
       top: randomTop,
     });
-    $(id).find(".window-content").css({
-      width: appwidth,
-      height: appheight,
+    $(windowId).find(".window-content").css({
+      width: windowWidth,
+      height: windowHeight,
     });
-    selectWindow(id);
-    $(id).find(".window-header-text").html(windowName);
+
+    selectWindow(windowId);
+
+    $(windowId).find(".window-header-text").html(windowName);
+
+    setTimeout(function () {
+      $(windowId).attr(
+        "style",
+        $(windowId)
+          .closest(".window")
+          .attr("style")
+          .replace("width: " + windowWidth, "width: max-content !important")
+      );
+    }, 100 + 1);
+
+    // window type: TEXT
+    if (type == ".window-content-text") {
+      $(windowId)
+        .find(".window-content-text")
+        .load(windowContent, function () {
+          $(".sm-version-no").html("0.6.2");
+        });
+    }
+    // window type: FOLDER
+    if (type == ".window-content-folder") {
+      $(windowId)
+        .find(".window-content-folder")
+        .load(windowContent, function () {
+          if (windowId == "#audio-folder") {
+            audioFolderActivate();
+          }
+          if (windowId == "#visual-folder") {
+            audioFolderActivate();
+          }
+
+          $(this).append("<script>function selectWindow(windowToSelect) { $(windowToSelect).addClass('front'); $('.window').not(windowToSelect).removeClass('front'); $(windowToSelect) .find('.window-controls') .css('box-shadow', '0px 5px 30px #f2c94d inset'); $('.window') .not(windowToSelect) .find('.window-controls') .css('box-shadow', 'none'); } function mediaOpen(type, clipToPlay) { $('#audio-viewer').hide(); $('#video-viewer').hide(); $('#audio-clip').attr('src', ''); $('#video-clip').attr('src', ''); $('#media-viewer').fadeIn(100); var randomLeft = Math.random() * $(window).width(); var randomTop = Math.random() * $(window).height(); if ( randomLeft > $(window).width() / 2 || randomTop > $(window).height() / 2 ) { randomLeft /= 3; randomTop /= 3; } $('#media-viewer').css({ left: randomLeft, top: randomTop, }); var lastPart = clipToPlay.split('/').pop(); $('#media-viewer').find('.window-header-text').html(lastPart); selectWindow('#media-viewer'); if (type == 'audio') { $('#audio-viewer').show(); $('#audio-clip').attr('src', clipToPlay); } if (type == 'video') { $('#video-viewer').show(); $('#video-clip').attr('src', clipToPlay); } } </script>")
+        });
+    }
   }
   // >>>>
   // folder open
@@ -398,148 +472,181 @@ $(function () {
       $(backToId).show();
     }
   }
-  // >>>>
-  // file open
-  function fileOpen(address) {
-    window.open(address, "_blank")
-  }
 
   // apps individual
   $("#app-about").click(function () {
-    appOpen("#about-window", minResizeW, minResizeH, "About Stuff Machine");
+    appOpen(
+      ".window-content-text",
+      "#about-window",
+      minResizeW,
+      minResizeH,
+      "About Stuff Machine",
+      "/stuff_machine/start_menu_windows/about_window.html"
+    );
     startMenuClose();
   });
-
   $("#app-legal").click(function () {
-    appOpen("#legal-window", minResizeW, minResizeH, "Terms & Conditions");
+    appOpen(
+      ".window-content-text",
+      "#legal-window",
+      minResizeW,
+      minResizeH,
+      "Terms & Conditions",
+      "/stuff_machine/start_menu_windows/legal_window.html"
+    );
     startMenuClose();
   });
-
   $("#app-bug").click(function () {
-    appOpen("#bug-window", minResizeW, minResizeH, "Bug Report");
+    appOpen(
+      ".window-content-text",
+      "#bug-window",
+      minResizeW,
+      minResizeH,
+      "Bug Report",
+      "/stuff_machine/start_menu_windows/bug_window.html"
+    );
     startMenuClose();
   });
 
   $("#app1-venera").dblclick(function () {
-    appOpen("#venera-window", minResizeW, minResizeH, "venera.script");
+    appOpen("", "#venera-window", minResizeW, minResizeH, "venera.script", "");
   });
-
   $("#app2-photo").dblclick(function () {
     appOpen(
+      "",
       "#photo-window",
       $(window).width() / 2,
       $(window).height() / 2,
-      "photos.html"
+      "photos.html",
+      ""
     );
     $("#photo-window").find("iframe").attr("src", "/stuff_machine/photos.html");
   });
   $("#app3-audio").dblclick(function () {
-    appOpen("#audio-folder", minResizeW, minResizeH, "audio");
+    appOpen(
+      ".window-content-folder",
+      "#audio-folder",
+      minResizeW,
+      minResizeH,
+      "audio",
+      "/stuff_machine/folder_windows/audio_window.html"
+    );
   });
   $("#app4-visual").dblclick(function () {
-    appOpen("#visual-folder", minResizeW, minResizeH, "visual");
+    appOpen(
+      ".window-content-folder",
+      "#visual-folder",
+      minResizeW,
+      minResizeH,
+      "visual",
+      "/stuff_machine/folder_windows/visual_window.html"
+    );
   });
   $("#app5-titanpoint").dblclick(function () {
     appOpen(
+      "",
       "#titanpoint-window",
       minResizeW,
       minResizeH,
-      "titanpoint(webgl).exe"
+      "titanpoint(webgl).exe",
+      ""
     );
-    $("#titanpoint-window").find(".window-controls").off("dblclick"); // disable double click fullscreen
     $("#titanpoint-window")
       .find("iframe")
       .attr("src", "https://stevehuu.com/webgl/u_titanpoint/index.html");
   });
 
-  // audio level 1
-  $("#audio-songs").dblclick(function () {
-    folderOpenL2(
-      this,
-      "#audio-parent",
-      "#audio-parent",
-      "#audio-songs-content",
-      "audio",
-      "audio",
-      "songs"
-    );
-  });
-  $("#audio-games").dblclick(function () {
-    folderOpenL2(
-      this,
-      "#audio-parent",
-      "#audio-parent",
-      "#audio-games-content",
-      "audio",
-      "audio",
-      "from-games"
-    );
-  });
-  $("#audio-other").dblclick(function () {
-    folderOpenL2(
-      this,
-      "#audio-parent",
-      "#audio-parent",
-      "#audio-other-content",
-      "audio",
-      "audio",
-      "other"
-    );
-  });
-  // audio level 2 - games
-  $("#games-ritual").dblclick(function () {
-    folderOpenL2(
-      this,
-      "#audio-parent",
-      "#audio-games-content",
-      "#games-ritual-content",
-      "audio",
-      "from-games",
-      "ritual-night"
-    );
-  });
-  $("#games-live").dblclick(function () {
-    folderOpenL2(
-      this,
-      "#audio-parent",
-      "#audio-games-content",
-      "#games-live-content",
-      "audio",
-      "from-games",
-      "live-cube"
-    );
-  });
-  $("#games-anamnesis").dblclick(function () {
-    folderOpenL2(
-      this,
-      "#audio-parent",
-      "#audio-games-content",
-      "#games-anamnesis-content",
-      "audio",
-      "from-games",
-      "anamnesis"
-    );
-  });
-  $("#games-space").dblclick(function () {
-    folderOpenL2(
-      this,
-      "#audio-parent",
-      "#audio-games-content",
-      "#games-space-content",
-      "audio",
-      "from-games",
-      "space-game"
-    );
-  });
-  $("#games-sanctum").dblclick(function () {
-    folderOpenL2(
-      this,
-      "#audio-parent",
-      "#audio-games-content",
-      "#games-sanctum-content",
-      "audio",
-      "from-games",
-      "sanctum"
-    );
-  });
+  var audioFolderActivate = function () {
+    // level 1
+    $("#audio-songs").dblclick(function () {
+      folderOpenL2(
+        this,
+        "#audio-parent",
+        "#audio-parent",
+        "#audio-songs-content",
+        "audio",
+        "audio",
+        "songs"
+      );
+      // TESTopener();
+    });
+    $("#audio-games").dblclick(function () {
+      folderOpenL2(
+        this,
+        "#audio-parent",
+        "#audio-parent",
+        "#audio-games-content",
+        "audio",
+        "audio",
+        "from-games"
+      );
+    });
+    $("#audio-other").dblclick(function () {
+      folderOpenL2(
+        this,
+        "#audio-parent",
+        "#audio-parent",
+        "#audio-other-content",
+        "audio",
+        "audio",
+        "other"
+      );
+    });
+    // level 2 - games
+    $("#games-ritual").dblclick(function () {
+      folderOpenL2(
+        this,
+        "#audio-parent",
+        "#audio-games-content",
+        "#games-ritual-content",
+        "audio",
+        "from-games",
+        "ritual-night"
+      );
+    });
+    $("#games-live").dblclick(function () {
+      folderOpenL2(
+        this,
+        "#audio-parent",
+        "#audio-games-content",
+        "#games-live-content",
+        "audio",
+        "from-games",
+        "live-cube"
+      );
+    });
+    $("#games-anamnesis").dblclick(function () {
+      folderOpenL2(
+        this,
+        "#audio-parent",
+        "#audio-games-content",
+        "#games-anamnesis-content",
+        "audio",
+        "from-games",
+        "anamnesis"
+      );
+    });
+    $("#games-space").dblclick(function () {
+      folderOpenL2(
+        this,
+        "#audio-parent",
+        "#audio-games-content",
+        "#games-space-content",
+        "audio",
+        "from-games",
+        "space-game"
+      );
+    });
+    $("#games-sanctum").dblclick(function () {
+      folderOpenL2(
+        this,
+        "#audio-parent",
+        "#audio-games-content",
+        "#games-sanctum-content",
+        "audio",
+        "from-games",
+        "sanctum"
+      );
+    });
+  };
 });

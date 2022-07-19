@@ -205,194 +205,34 @@
 
         <!-- !!!windows!!! -->
         <!-- about window -->
-        <div id="about-window" class="window" class="ui-widget-content">
-          <div class="window-controls d-flex justify-content-end">
-            <p class="window-header-text"></p>
-            <button
-              class="window-close-button d-flex align-items-center justify-content-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#f8f2e2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
-                />
-              </svg>
-            </button>
-          </div>
+        <div id="about-window" class="window ui-widget-content">
+          <div class="window-controls no-fs d-flex justify-content-end"></div>
           <div class="window-content">
-            <div class="overflow-auto window-content-text">
-              <p class="white-p">
-                <span class="content-text-title">✨STUFF MACHINE✨</span>
-                <br /><br />
-                Built by Steve Huu.<br />With Bootstrap, jQuery, [...].
-                <br /><br />
-                <span class="content-text-title">VERSION:</span><br />
-                <span class="sm-version-no"></span>
-              </p>
-            </div>
+            <div class="window-content-text overflow-auto"></div>
           </div>
         </div>
         <!-- legal window -->
-        <div id="legal-window" class="window" class="ui-widget-content">
-          <div class="window-controls d-flex justify-content-end">
-            <p class="window-header-text"></p>
-            <button
-              class="window-close-button d-flex align-items-center justify-content-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#f8f2e2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
-                />
-              </svg>
-            </button>
-          </div>
+        <div id="legal-window" class="window ui-widget-content">
+          <div class="window-controls no-fs d-flex justify-content-end"></div>
           <div class="window-content">
-            <div class="overflow-auto window-content-text">
-              <p class="white-p">
-                <span class="content-text-title">
-                  &copy;2022 Website by: Steve Huu.<br />ALL RIGHTS
-                  RESERVED.</span
-                >
-                <br /><br />
-                Many works provide ways to control the behavior of that version.
-                You may otherwise modify your copy of the retrieved font
-                information. <br /><br />Gnomovision version 69, Copyright (C)
-                YEAR and others. All Rights Reserved. C. <br /><br />In
-                addition, You cannot Externally Deploy Your Modifications of
-                Original Code the copyright owner or by copyrighted interfaces,
-                the original licensor to copy, distribute or transfer.
-              </p>
-            </div>
+            <div class="window-content-text overflow-auto"></div>
           </div>
         </div>
         <!-- bug report window -->
-        <div id="bug-window" class="window" class="ui-widget-content">
-          <div class="window-controls d-flex justify-content-end">
-            <p class="window-header-text"></p>
-            <button
-              class="window-close-button d-flex align-items-center justify-content-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#f8f2e2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
-                />
-              </svg>
-            </button>
-          </div>
+        <div id="bug-window" class="window ui-widget-content">
+          <div class="window-controls no-fs d-flex justify-content-end"></div>
           <div class="window-content">
-            <div class="overflow-auto window-content-text">
-              <p class="white-p">
-                <span class="content-text-title"> 🐞BUG REPORT</span>
-                <br />
-                found a bug? help me squash.
-              </p>
-              <form id="bug-form" name="bug-report-form">
-                <label for="bug-name">name:</label>
-                <br />
-                <input type="text" id="bug-name" name="bug-name" /><br /><br />
-                <label for="bug-description">bug description:</label>
-                <br />
-                <textarea
-                  type="textarea"
-                  id="bug-description"
-                  name="bug-description"
-                ></textarea>
-                <!-- <input id="bug-submit-btn" type="submit" value="report" /> -->
-              </form>
-            </div>
+            <div class="window-content-text overflow-auto"></div>
           </div>
         </div>
         <!-- venera window -->
-        <div id="venera-window" class="window" class="ui-widget-content">
-          <div class="window-controls d-flex justify-content-end">
-            <p class="window-header-text"></p>
-            <button
-              class="window-toggle-button d-flex align-items-center justify-content-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
-                fill="#f8f2e2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
-                />
-              </svg>
-            </button>
-            <button
-              class="window-close-button d-flex align-items-center justify-content-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#f8f2e2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
-                />
-              </svg>
-            </button>
-          </div>
-          <div class="window-content">
-            <p>nothing here yet.</p>
-          </div>
+        <div id="venera-window" class="window ui-widget-content">
+          <div class="window-controls fs d-flex justify-content-end"></div>
+          <div class="window-content"></div>
         </div>
         <!-- photo window -->
-        <div id="photo-window" class="window" class="ui-widget-content">
-          <div class="window-controls d-flex justify-content-end">
-            <p class="window-header-text"></p>
-            <button
-              class="window-toggle-button d-flex align-items-center justify-content-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
-                fill="#f8f2e2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
-                />
-              </svg>
-            </button>
-            <button
-              class="window-close-button d-flex align-items-center justify-content-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#f8f2e2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
-                />
-              </svg>
-            </button>
-          </div>
+        <div id="photo-window" class="window ui-widget-content">
+          <div class="window-controls fs d-flex justify-content-end"></div>
           <div class="window-content container-fluid">
             <iframe
               src=""
@@ -401,402 +241,58 @@
           </div>
         </div>
         <!-- titanpoint window -->
-        <div id="titanpoint-window" class="window" class="ui-widget-content">
-          <div class="window-controls d-flex justify-content-end">
-            <p class="window-header-text"></p>
-            <button
-              class="window-close-button d-flex align-items-center justify-content-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#f8f2e2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
-                />
-              </svg>
-            </button>
-          </div>
-          <div class="window-content-fixed">
-            <div class="ratio ratio-4x3">
-              <iframe
-                id="titanpoint"
-                src="https://stevehuu.com/webgl/u_titanpoint/index.html"
-                name="Titanpoint"
-                scrolling="no"
-                allow="autoplay"
-              ></iframe>
-            </div>
+        <div id="titanpoint-window" class="window ui-widget-content">
+          <div class="window-controls no-fs d-flex justify-content-end"></div>
+          <div class="window-content-fixed ratio ratio-4x3">
+            <iframe
+              src="https://stevehuu.com/webgl/u_titanpoint/index.html"
+              scrolling="no"
+              allow="autoplay"
+            ></iframe>
           </div>
         </div>
         <!-- audio folder -->
-        <div id="audio-folder" class="window" class="ui-widget-content">
-          <div class="window-controls d-flex justify-content-end">
-            <p class="window-header-text"></p>
-            <button
-              class="window-toggle-button d-flex align-items-center justify-content-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
-                fill="#f8f2e2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
-                />
-              </svg>
-            </button>
-            <button
-              class="window-close-button d-flex align-items-center justify-content-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#f8f2e2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
-                />
-              </svg>
-            </button>
-          </div>
+        <div id="audio-folder" class="window ui-widget-content">
+          <div class="window-controls no-fs d-flex justify-content-end"></div>
           <div class="window-content container-fluid">
-            <div class="overflow-auto window-content-folder">
-              <p class="folder-path"></p>
-              <!-- folder parent -audio -->
-              <div id="audio-parent" class="folder-lvl-1">
-                <div class="folder-grid d-flex flex-wrap justify-content-start">
-                  <div class="folder-item">
-                    <button id="audio-songs" class="d-flex flex-column">
-                      <div>
-                        <img src="/images/stuff/i_f.png" />
-                      </div>
-                      <div><p>songs</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button id="audio-games" class="d-flex flex-column">
-                      <div>
-                        <img src="/images/stuff/i_f.png" />
-                      </div>
-                      <div><p>from games</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button id="audio-other" class="d-flex flex-column">
-                      <div>
-                        <img src="/images/stuff/i_f.png" />
-                      </div>
-                      <div><p>other</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button class="d-flex flex-column">
-                      <div>
-                        <img src="/images/stuff/i_r.png" />
-                      </div>
-                      <div><p>random</p></div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- folder level 1 -songs -->
-              <div id="audio-songs-content" class="folder-lvl-2">
-                <div class="folder-grid d-flex flex-wrap justify-content-start">
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/songs/nc-symphony.mp4', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_video.png" />
-                      </div>
-                      <div><p>nc-symphony .mp4</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/songs/nc-symphony.wav', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>nc-symphony .wav</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/songs/eight_clip.wav', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>eight (clip) .wav</p></div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- folder level 1 -games -->
-              <div id="audio-games-content" class="folder-lvl-2">
-                <div class="folder-grid d-flex flex-wrap justify-content-start">
-                  <div class="folder-item">
-                    <button id="games-ritual" class="d-flex flex-column">
-                      <div>
-                        <img src="/images/stuff/i_f.png" />
-                      </div>
-                      <div><p>🧉ritual night</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button id="games-live" class="d-flex flex-column">
-                      <div>
-                        <img src="/images/stuff/i_f.png" />
-                      </div>
-                      <div><p>💻live cube</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button id="games-anamnesis" class="d-flex flex-column">
-                      <div>
-                        <img src="/images/stuff/i_f.png" />
-                      </div>
-                      <div><p>⬜ anamnesis</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button id="games-space" class="d-flex flex-column">
-                      <div>
-                        <img src="/images/stuff/i_f.png" />
-                      </div>
-                      <div><p>🪐space game</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button id="games-sanctum" class="d-flex flex-column">
-                      <div>
-                        <img src="/images/stuff/i_f.png" />
-                      </div>
-                      <div><p>🌆sanctum</p></div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- folder level 1 -other -->
-              <div id="audio-other-content" class="folder-lvl-2">
-                <div class="folder-grid d-flex flex-wrap justify-content-start">
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/other/catto_jam_2021.wav', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>catto jam (2021).wav</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/other/ret.wav', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>ret.wav</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/other/gra.wav', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>gra.wav</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/other/ut1.wav', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>ut1.wav</p></div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- folder level 2 -ritual -->
-              <div id="games-ritual-content" class="folder-lvl-3">
-                <div class="folder-grid d-flex flex-wrap justify-content-start">
-                  <p>folder is empty</p>
-                </div>
-              </div>
-              <!-- folder level 2 -live cube -->
-              <div id="games-live-content" class="folder-lvl-3">
-                <div class="folder-grid d-flex flex-wrap justify-content-start">
-                  <p>folder is empty</p>
-                </div>
-              </div>
-              <!-- folder level 2 -anamnesis -->
-              <div id="games-anamnesis-content" class="folder-lvl-3">
-                <div class="folder-grid d-flex flex-wrap justify-content-start">
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/from_games/anamnesis/theme.wav', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>theme.wav</p></div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- folder level 2 -space game -->
-              <div id="games-space-content" class="folder-lvl-3">
-                <div class="folder-grid d-flex flex-wrap justify-content-start">
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/from_games/space_game/the shop loop.wav', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>the shop loop.wav</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/from_games/space_game/space.mp3', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>space.mp3</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/from_games/space_game/space_drums.wav', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>space _drums.wav</p></div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <!-- folder level 2 -sanctum game -->
-              <div id="games-sanctum-content" class="folder-lvl-3">
-                <div class="folder-grid d-flex flex-wrap justify-content-start">
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/from_games/sanctum/hourglass.mp3', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>hourglass .mp3</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/from_games/sanctum/deja_vu.mp3', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>deja_vu .mp3</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/from_games/sanctum/tower.mp3', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>tower .mp3</p></div>
-                    </button>
-                  </div>
-                  <div class="folder-item">
-                    <button
-                      ondblclick="window.open('/stuff_machine/audio/from_games/sanctum/encounter.mp3', '_blank')"
-                      class="d-flex flex-column"
-                    >
-                      <div>
-                        <img src="/images/stuff/i_sound.png" />
-                      </div>
-                      <div><p>encounter .mp3</p></div>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <div class="window-content-folder overflow-auto"></div>
           </div>
         </div>
         <!-- visual folder -->
-        <div id="visual-folder" class="window" class="ui-widget-content">
-          <div class="window-controls d-flex justify-content-end">
-            <p class="window-header-text"></p>
-            <button
-              class="window-toggle-button d-flex align-items-center justify-content-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="12"
-                height="12"
-                fill="#f8f2e2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
-                />
-              </svg>
-            </button>
-            <button
-              class="window-close-button d-flex align-items-center justify-content-center"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="#f8f2e2"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"
-                />
-              </svg>
-            </button>
-          </div>
+        <div id="visual-folder" class="window ui-widget-content">
+          <div class="window-controls no-fs d-flex justify-content-end"></div>
           <div class="window-content container-fluid">
-            <div class="overflow-auto window-content-folder">
-              <p class="folder-path"></p>
-              <!-- folder parent -visual -->
-              
+            <div class="window-content-folder overflow-auto"></div>
+          </div>
+        </div>
+
+        <!-- viewers -->
+        <div id="media-viewer" class="window ui-widget-content">
+          <div class="window-controls no-fs d-flex justify-content-end"></div>
+          <div class="window-content-fixed">
+            <div id="audio-viewer">
+              <audio
+                controls
+                autoplay
+                id="audio-clip"
+                controlsList="nodownload"
+              ></audio>
+              <!-- <div> 
+              <button onclick="document.getElementById('audio-viewer-clip').play()">Play</button> 
+              <button onclick="document.getElementById('audio-viewer-clip').pause()">Pause</button> 
+              <button onclick="document.getElementById('audio-viewer-clip').volume += 0.1">Vol +</button> 
+              <button onclick="document.getElementById('audio-viewer-clip').volume -= 0.1">Vol -</button> 
+            </div> -->
+            </div>
+            <div id="video-viewer">
+              <video
+                controls
+                autoplay
+                id="video-clip"
+                controlsList="nodownload"
+              ></video>
+            </div>
+            <div id="image-viewer">
             </div>
           </div>
         </div>

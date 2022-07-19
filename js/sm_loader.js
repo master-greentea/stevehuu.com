@@ -1,8 +1,7 @@
 function generalListAnim() {
   setInterval(() => {
     var now = new Date(Date.now());
-    var formatted =
-      now.toISOString();
+    var formatted = now.toISOString();
     $("#current-time").html(formatted);
   }, 1);
   setTimeout(function () {
@@ -100,6 +99,7 @@ function showStuff() {
   $("#stuff-machine-loader").animate({ top: "40px" }, 750);
   setTimeout(function () {
     $("#stuff-machine-loader").css("display", "none");
+    $("#sm-load").empty();
     $("#sm-desktop").fadeIn(1000);
   }, 1500);
 }

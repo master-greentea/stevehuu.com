@@ -207,6 +207,8 @@ button {
   display: none;
   position: absolute;
   width: max-content;
+  border-radius: 6px;
+  border: 0px;
 }
 .window-controls {
   position: relative;
@@ -217,19 +219,25 @@ button {
   padding: 0;
   background-color: #242429;
   border: 1px solid #f8f2e2;
+  border-bottom: 0px;
   border-radius: 6px 6px 0px 0px;
   height: 30px; /* keep consitent */
   transition: box-shadow 0.25s ease-out;
 }
 .window-header-text {
+  color: #f8f2e2;
   margin: 0;
   padding: 0;
   padding-left: 15px;
   position: absolute;
   left: 0;
   top: 50%;
-  transform: translate(0, -50%);
+  transform: translate(0, calc(-50% + 2px));
   text-shadow: none !important;
+  height: 100%;
+  width: calc(100% - 60px);
+  overflow: clip;
+  white-space: nowrap;
 }
 .window-toggle-button,
 .window-close-button {
@@ -256,7 +264,7 @@ button {
 .window-content, .window-content-fixed {
   position: relative;
   width: 100%;
-  top: -1px;
+  top: 0px;
   left: 0px;
   background-color: #0e0e10;
   border: 1px solid #f8f2e2;
@@ -322,8 +330,8 @@ button {
   color: #f8f2e2;
   margin: 0;
   padding: 0;
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
 }
 .apps:hover img,
 .apps:focus img,
@@ -361,8 +369,8 @@ button {
   padding: 10px;
   padding-bottom: 0;
   margin: 0;
-  width: 100px; /* img width is 90 - padding */
-  height: 100px;
+  width: 90px; /* img width is 90 - padding */
+  height: 90px;
   padding-right: 20px;
   padding-left: 20px;
   height: max-content;
@@ -407,35 +415,54 @@ button {
 }
 
 
+#audio-viewer, #video-viewer, #image-viewer {
+  display: none;
+}
+#video-viewer {
+  width: 700px;
+  height: auto;
+}
+video {
+  width: 100%;
+}
+audio {
+  padding: 0;
+  margin: 6px;
+  margin-bottom: 0;
+}
+
+
+
+
 #app1-venera {
-  top: 60px;
+  top: 40px;
 }
 #venera-window .window-content {
   padding: 15px;
 }
 #app2-photo {
-  top: 160px;
+  top: 140px;
 }
 #photo-window .window-content {
   padding: 5px;
 }
 #app3-audio {
-  top: 260px;
+  top: 240px;
 }
 #audio-folder .window-content,
 #visual-folder .window-content {
   padding: 0;
 }
 #app4-visual {
-  top: 360px;
+  top: 340px;
 }
 #app5-titanpoint {
   left: 200px;
-  top: 110px;
+  top: 90px;
 }
 #titanpoint-window .window-content-fixed {
   padding: 0;
   margin: 0;
   width: 860px;
-  height: 646px; /* 960 + 2 for border */
+  height: 646px; /* 644 + 2 for border */
 }
