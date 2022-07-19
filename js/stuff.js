@@ -3,7 +3,8 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  $(".sm-version-no").html("0.7.0");
+  var vNo = "0.7.0"
+  $(".sm-version-no").html(vNo);
 
   $("#sm-loading-date").html(
     new Date(Date.now()).getFullYear() +
@@ -304,10 +305,10 @@ $(function () {
     });
   });
   $("#sm-restart img").click(function () {
-    location.reload();
+    window.location.reload(true)
   });
   $("#reboot").click(function () {
-    location.reload();
+    window.location.reload(true)
   });
   // ==========================================START MENU=========================
 
@@ -372,7 +373,7 @@ $(function () {
       $(windowId)
         .find(".window-content-text")
         .load(windowContent, function () {
-          $(".sm-version-no").html("0.6.2");
+          $(".sm-version-no").html(vNo);
         });
     }
     // window type: FOLDER
