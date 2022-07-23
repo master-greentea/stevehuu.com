@@ -375,10 +375,15 @@ button {
   padding-left: 20px;
   height: max-content;
 }
+.folder-item p {
+  font-size: 15px;
+}
 .folder-item img {
   padding: 0;
   margin-top: 13px;
-  width: 100%;  /* img width is folder-item - padding */
+  width: 50px;  /* img width is folder-item - padding */
+  height: 50px;
+  object-fit: cover;
 }
 .folder-item button {
   padding: 0;
@@ -421,6 +426,11 @@ button {
 #video-viewer {
   width: 700px;
   height: auto;
+}
+#image-clip {
+  height: 66vh;
+  margin: 2px;
+  padding: 0;
 }
 video {
   width: 100%;

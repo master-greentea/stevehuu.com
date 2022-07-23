@@ -3,7 +3,7 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  var vNo = "0.7.0"
+  var vNo = "0.7.5";
   $(".sm-version-no").html(vNo);
 
   $("#sm-loading-date").html(
@@ -305,10 +305,10 @@ $(function () {
     });
   });
   $("#sm-restart img").click(function () {
-    window.location.reload(true)
+    window.location.reload(true);
   });
   $("#reboot").click(function () {
-    window.location.reload(true)
+    window.location.reload(true);
   });
   // ==========================================START MENU=========================
 
@@ -385,10 +385,12 @@ $(function () {
             audioFolderActivate();
           }
           if (windowId == "#visual-folder") {
-            audioFolderActivate();
+            visualFolderActivate();
           }
 
-          $(this).append("<script>function selectWindow(windowToSelect) { $(windowToSelect).addClass('front'); $('.window').not(windowToSelect).removeClass('front'); $(windowToSelect) .find('.window-controls') .css('box-shadow', '0px 5px 30px #f2c94d inset'); $('.window') .not(windowToSelect) .find('.window-controls') .css('box-shadow', 'none'); } function mediaOpen(type, clipToPlay) { $('#audio-viewer').hide(); $('#video-viewer').hide(); $('#audio-clip').attr('src', ''); $('#video-clip').attr('src', ''); $('#media-viewer').fadeIn(100); var randomLeft = Math.random() * $(window).width(); var randomTop = Math.random() * $(window).height(); if ( randomLeft > $(window).width() / 2 || randomTop > $(window).height() / 2 ) { randomLeft /= 3; randomTop /= 3; } $('#media-viewer').css({ left: randomLeft, top: randomTop, }); var lastPart = clipToPlay.split('/').pop(); $('#media-viewer').find('.window-header-text').html(lastPart); selectWindow('#media-viewer'); if (type == 'audio') { $('#audio-viewer').show(); $('#audio-clip').attr('src', clipToPlay); } if (type == 'video') { $('#video-viewer').show(); $('#video-clip').attr('src', clipToPlay); } } </script>")
+          $(this).append(
+            "<script> function selectWindow(windowToSelect) { $(windowToSelect).addClass('front'); $('.window').not(windowToSelect).removeClass('front'); $(windowToSelect) .find('.window-controls') .css('box-shadow', '0px 5px 30px #f2c94d inset'); $('.window') .not(windowToSelect) .find('.window-controls') .css('box-shadow', 'none'); } function mediaOpen(type, clipToPlay) { $('#audio-viewer').hide(); $('#video-viewer').hide(); $('#image-viewer').hide(); $('#audio-clip').attr('src', ''); $('#video-clip').attr('src', ''); $('#media-viewer').fadeIn(100); var randomLeft = Math.random() * $(window).width(); var randomTop = Math.random() * $(window).height(); if ( randomLeft > $(window).width() / 2 || randomTop > $(window).height() / 2 ) { randomLeft /= 3; randomTop /= 3; } $('#media-viewer').css({ left: randomLeft, top: randomTop }); var lastPart = clipToPlay.split('/').pop(); $('#media-viewer').find('.window-header-text').html(lastPart); selectWindow('#media-viewer'); if (type == 'audio') { $('#audio-viewer').show(); $('#audio-clip').attr('src', clipToPlay); } if (type == 'video') { $('#video-viewer').show(); $('#video-clip').attr('src', clipToPlay); } if (type == 'image') { $('#image-viewer').show(); $('#image-clip').attr('src', clipToPlay); } } </script>"
+          );
         });
     }
   }
@@ -647,6 +649,31 @@ $(function () {
         "audio",
         "from-games",
         "sanctum"
+      );
+    });
+  };
+  var visualFolderActivate = function () {
+    // level 1
+    $("#visual-gifs").dblclick(function () {
+      folderOpenL2(
+        this,
+        "#visual-parent",
+        "#visual-parent",
+        "#visual-gifs-content",
+        "visual",
+        "visual",
+        "gifs"
+      );
+    });
+    $("#visual-notgifs").dblclick(function () {
+      folderOpenL2(
+        this,
+        "#visual-parent",
+        "#visual-parent",
+        "#visual-notgifs-content",
+        "visual",
+        "visual",
+        "not-gifs"
       );
     });
   };
