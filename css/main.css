@@ -54,6 +54,15 @@ p:hover {
   transition: text-shadow 3.5s ease-out;
   text-shadow: 4px 2px #f23e3e;
 }
+a {
+  color: #f2c94d;
+  transition: text-shadow 0.25s ease-out;
+  text-decoration: underline;
+}
+a:hover {
+  text-shadow: 1px 1px 16px #f2c94d;
+  color: #f2c94d;
+}
 
 img {
   margin-top: 10px;
@@ -177,6 +186,7 @@ button {
 .nav-link:focus {
   transition: color 0s;
   color: #f2c94d;
+  text-shadow: none;
 }
 .current-page {
   color: #f23e3e;

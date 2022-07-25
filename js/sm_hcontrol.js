@@ -41,7 +41,7 @@ $(function () {
     if (!onMobile) {
       setTimeout(function () {
         undHeader(750);
-      }, 3500);
+      }, 1000);
 
       var pullOutTimer = 0;
       setTimeout(function () {

@@ -9,13 +9,12 @@
       type="text/javascript"
       src="/js/bootstrap/bootstrap.min.js"
     ></script>
-  </head>
 
-  <body onload="loading()">
     <style>
       * {
-        cursor: url("/images/stuff/sm_cursor.png"), default
+        cursor: url("/images/stuff/sm_cursor.png"), default;
       }
+
       img {
         margin-top: 8px;
         margin-bottom: 0;
@@ -43,8 +42,45 @@
       #back-to-top:hover path {
         fill: #f2c94d;
       }
-    </style>
 
+      #photo-viewer {
+        display: none;
+        position: fixed;
+        background-color: #0e0e10e0;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+      }
+
+      #photos-carousel {
+        position: relative;
+        width: 85%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      #photo-large {
+        object-fit: scale-down;
+      }
+    </style>
+    <script>
+      $(function () {
+        $(".photo").click(function (e) {
+          $photoSrc = $(e.target).find("img").attr("src");
+          $("#photo-large").attr("src", $photoSrc);
+          $("#photo-viewer").fadeIn(150);
+
+          $("#photo-viewer").click(function () {
+            $("#photo-viewer").fadeOut(150);
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body onload="loading()">
     <div id="photo-loader"></div>
 
     <div class="container-fluid all-content" style="display: none">
@@ -52,43 +88,43 @@
         <main class="col-12 flex-fill">
           <div class="row gx-2">
             <div class="col-6 col-md-3 photo">
-              <img src="/images/photos/santamonica.jpg" class="w-100" />
+              <img class="w-100" src="/images/photos/santamonica.jpg" />
             </div>
             <div class="col-6 col-md-3 photo">
-              <img src="/images/photos/manhattan.jpg" class="w-100" />
+              <img class="w-100" src="/images/photos/manhattan.jpg" />
             </div>
 
             <div class="col-6 col-md-3 photo">
-              <img src="/images/photos/amarillo.jpg" class="w-100" />
+              <img class="w-100" src="/images/photos/amarillo.jpg" />
             </div>
             <div class="col-6 col-md-3 photo">
-              <img src="/images/photos/miami.jpg" class="w-100" />
+              <img class="w-100" src="/images/photos/miami.jpg" />
             </div>
           </div>
           <div class="row gx-2">
             <div class="col-12 col-md-6 photo">
-              <img src="/images/photos/cathedral.jpg" class="w-100" />
+              <img class="w-100" src="/images/photos/cathedral.jpg" />
             </div>
             <div class="col-12 col-md-6 photo">
-              <img src="/images/photos/lighthouse.jpg" class="w-100" />
+              <img class="w-100" src="/images/photos/lighthouse.jpg" />
             </div>
           </div>
           <div class="row gx-2" style="height: min-content">
             <div class="col-12 col-md-6 photo">
-              <img src="/images/photos/cubah2.jpg" class="w-100" />
+              <img class="w-100" src="/images/photos/cubah2.jpg" />
             </div>
             <div class="col-12 col-md-6 photo">
-              <img src="/images/photos/bird.jpg" class="w-100" />
+              <img class="w-100" src="/images/photos/bird.jpg" />
             </div>
           </div>
           <div class="photo">
-            <img src="/images/photos/monument.jpg" class="w-100" />
+            <img class="w-100" src="/images/photos/monument.jpg" />
           </div>
           <div class="photo">
-            <img src="/images/photos/natron.jpg" class="w-100" />
+            <img class="w-100" src="/images/photos/natron.jpg" />
           </div>
           <div class="photo">
-            <img src="/images/photos/dumbo.jpg" class="w-100" />
+            <img class="w-100" src="/images/photos/dumbo.jpg" />
           </div>
 
           <button id="back-to-top">
@@ -107,6 +143,12 @@
             </svg>
           </button>
         </main>
+      </div>
+    </div>
+
+    <div id="photo-viewer">
+      <div id="photos-carousel">
+        <img id="photo-large" src="" class="w-100" />
       </div>
     </div>
 

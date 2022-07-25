@@ -1,7 +1,7 @@
 #about-content {
-  font-family: "Courier New", Courier, monospace;
+  height: 50vh;
 }
 
 #about-content img {
-  height: 30vh;
+  height: 50%;
 }

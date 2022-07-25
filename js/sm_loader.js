@@ -56,15 +56,18 @@ function checklistAnim() {
     }, 50);
 
     setTimeout(function () {
-      $(".rest-li").css("display", "block");
-    }, 2500);
+      $("#cat-li").css("display", "block");
+    }, 2400);
+    setTimeout(function () {
+      $("#get-li").css("display", "block");
+    }, 2600);
 
     setTimeout(function () {
       $("#acsii-art").css("display", "block");
       $("#acsii-art").animate({ fontSize: ".75em" });
-    }, 3500);
+    }, 2800);
 
-    setTimeout(showStuff, 3500);
+    setTimeout(showStuff, 3000);
   }
 
   // if on mobile

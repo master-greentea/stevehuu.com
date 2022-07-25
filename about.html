@@ -16,7 +16,7 @@
     <script>
       $(function () {
         $("._header").load("master_htmls/header.html", function () {
-          $("#morse").html("some stuff about me");
+          $("#morse").html("");
           $("#nav-link-about").attr("class", "nav-link current-page");
         });
         $("._footer").load("/master_htmls/footer.html");
@@ -36,16 +36,41 @@
           <h2>somehow human, not by choice</h2>
           <div id="about-content">
             <img src="/images/about/youngling_animated_notext.gif" />
-            <div id="about-opening">
+            <div id="about-text">
+              <p>magenta is a very nice lightsaber color.</p>
               <p>
-                i'm steve, i make games and stuff, and i like making games and
-                stuff.<br />
-                after i make stuff i put them here on the internet.<br />
-                thank you for looking at these stuff.
-              </p>
-              <p>
-                currently at: nyc. <br />
-                currently making: ritual night.
+                At: NYC <br />
+                Making:
+                <a target="_blank" href="https://www.outfoxgames.net"
+                  >Ritual Night<span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="18"
+                      height="18"
+                      fill="#f8f2e2"
+                      class="bi bi-box-arrow-up-right"
+                      viewBox="0 0 16 16"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 
+                    4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5
+                    0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 
+                    0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 
+                    9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                      />
+                    </svg> </span
+                ></a>
+                <br />
+                <a target="_blank" href="https://www.stevehuu.com/resume.pdf"
+                  >Resume</a
+                >
+                <br />
+                <a href="mailto:steve.huu21@gmail.com">Contact</a>
               </p>
             </div>
           </div>
@@ -55,7 +80,5 @@
         <div class="d-none d-xxl-block col-1"></div>
       </div>
     </div>
-
-    <div class="_footer"></div>
   </body>
 </html>
