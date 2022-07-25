@@ -58,6 +58,7 @@ a {
   color: #f2c94d;
   transition: text-shadow 0.25s ease-out;
   text-decoration: underline;
+  text-shadow: none;
 }
 a:hover {
   text-shadow: 1px 1px 16px #f2c94d;
