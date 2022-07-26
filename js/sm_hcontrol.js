@@ -41,27 +41,25 @@ $(function () {
     if (!onMobile) {
       setTimeout(function () {
         undHeader(750);
-      }, 1000);
+      }, 500);
 
       var pullOutTimer = 0;
-      setTimeout(function () {
-        setInterval(() => {
-          if (!onHeader && displayHeader) {
-            pullOutTimer++;
-            if (pullOutTimer > 150) {
-              undHeader(500);
-              displayHeader = false;
-            }
-          } else {
-            pullOutTimer = 0;
+      setInterval(() => {
+        if (!onHeader && displayHeader) {
+          pullOutTimer++;
+          if (pullOutTimer > 150) {
+            undHeader(500);
+            displayHeader = false;
           }
-        }, 10);
+        } else {
+          pullOutTimer = 0;
+        }
+      }, 10);
 
-        $("#header-pullout").click(function () {
-          dHeader(500);
-          displayHeader = true;
-        });
-      }, 4500);
+      $("#header-pullout").click(function () {
+        dHeader(500);
+        displayHeader = true;
+      });
     }
   });
 });
