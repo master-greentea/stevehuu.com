@@ -629,7 +629,7 @@ $(function () {
       "#titanpoint-window",
       minResizeW,
       minResizeH,
-      "titanpoint(webgl).exe",
+      "titanpoint.exe",
       ""
     );
     $("#titanpoint-window")
