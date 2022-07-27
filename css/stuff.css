@@ -70,21 +70,48 @@ button {
 #task-bar div {
   height: 100%;
 }
-#task-bar-time {
+#task-bar-right {
   position: absolute;
-  left: calc(100vw - 95px);
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.task-bar-icons {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+.task-bar-icons div {
+  height: max-content !important;
+  position: relative;
+  top: 50%;
+  transform: translate(0, -60%);
+}
+.task-bar-icons a {
+  padding: 0;
+}
+.task-bar-icons.clickable:hover {
+  background-color: #f2c94d7f;
+  border: 0px;
+  border-radius: 3px;
+  transition: background-color 0.5s ease-out;
+}
+#task-bar-time {
+  width: 110px;
 }
 #tb-time {
   padding: 0;
-  position: absolute;
+  padding-left: 10px;
+  position: relative;
   top: 50%;
   transform: translate(0, -50%);
 }
 #start-menu-button {
+  position: relative;
   padding: 0px;
   padding-left: 13px;
   padding-right: 13px;
   height: 100%;
+  z-index: 99;
 }
 #start-menu-button:hover img {
   background-color: #f2c94d7f;
