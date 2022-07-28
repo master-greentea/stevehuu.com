@@ -80,6 +80,9 @@ button {
   padding-left: 6px;
   padding-right: 6px;
 }
+.task-bar-icons.clickable {
+  margin-right: 15px;
+}
 .task-bar-icons div {
   height: max-content !important;
   position: relative;
@@ -100,7 +103,7 @@ button {
 }
 #tb-time {
   padding: 0;
-  padding-left: 10px;
+  padding-left: 6px;
   position: relative;
   top: 50%;
   transform: translate(0, -50%);
@@ -197,6 +200,7 @@ button {
   font-weight: lighter;
   left: 50%;
   transform: translate(-50%, 0);
+  width: 85%;
 }
 #acsii-art {
   text-shadow: 0px 0px 10px #f2c94d;
@@ -483,20 +487,20 @@ audio {
   padding: 15px;
 }
 #app2-photo {
-  top: 140px;
+  top: 340px;
 }
 #photo-window .window-content {
   padding: 5px;
 }
 #app3-audio {
-  top: 240px;
+  top: 140px;
 }
 #audio-folder .window-content,
 #visual-folder .window-content {
   padding: 0;
 }
 #app4-visual {
-  top: 340px;
+  top: 240px;
 }
 #app5-titanpoint {
   top: 440px;

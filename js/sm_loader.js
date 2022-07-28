@@ -6,22 +6,22 @@ function generalListAnim() {
   }, 1);
   setTimeout(function () {
     $("#general-list").css("display", "block");
-  }, 500);
+  }, 300);
   setTimeout(function () {
     $("#logged-in").html("maste_");
-  }, 600);
+  }, 400);
   setTimeout(function () {
     $("#logged-in").html("tigerh");
-  }, 830);
+  }, 630);
   setTimeout(function () {
     $("#logged-in").html("tigerh.");
-  }, 1150);
+  }, 1050);
   setTimeout(function () {
     $("#logged-in").html("matcha-menace");
-  }, 1310);
+  }, 1110);
   setTimeout(function () {
     $("#logged-in").html("masterhuhu");
-  }, 1900);
+  }, 1600);
 }
 
 // 1150
@@ -30,17 +30,17 @@ function checklistAnim() {
 
   setTimeout(function () {
     $("#checklist").css("display", "block");
-  }, 1150);
+  }, 950);
   setTimeout(function () {
     $("#on-mobile-li").css("display", "block");
-  }, 1350);
+  }, 1250);
   setTimeout(function () {
     if (onMobile) {
       $("#on-mobile").html("<span style='color: #f23e3e'>Y.</span>");
     } else {
       $("#on-mobile").html("<span style='color: #31E863'>N.</span>");
     }
-  }, 1600);
+  }, 1400);
 
   // if not on mobile
   if (!onMobile) {
@@ -57,17 +57,17 @@ function checklistAnim() {
 
     setTimeout(function () {
       $("#cat-li").css("display", "block");
-    }, 2400);
+    }, 2100);
     setTimeout(function () {
       $("#get-li").css("display", "block");
-    }, 2600);
+    }, 2300);
 
     setTimeout(function () {
       $("#acsii-art").css("display", "block");
       $("#acsii-art").animate({ fontSize: ".75em" });
-    }, 2800);
+    }, 2300);
 
-    setTimeout(showStuff, 3000);
+    setTimeout(showStuff, 2500);
   }
 
   // if on mobile
@@ -104,5 +104,5 @@ function showStuff() {
     $("#stuff-machine-loader").css("display", "none");
     $("#sm-load").empty();
     $("#sm-desktop").fadeIn(1000);
-  }, 1500);
+  }, 900);
 }
