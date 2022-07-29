@@ -81,7 +81,7 @@ button {
   padding-right: 6px;
 }
 .task-bar-icons.clickable {
-  margin-right: 15px;
+  margin-right: 10px;
 }
 .task-bar-icons div {
   height: max-content !important;
@@ -464,6 +464,9 @@ input[type="text"]:focus {
 #video-viewer {
   width: 700px;
   height: auto;
+}
+video::-webkit-media-controls-fullscreen-button {
+  display: none !important;
 }
 #image-clip {
   height: 66vh;
