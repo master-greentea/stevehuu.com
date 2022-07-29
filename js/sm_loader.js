@@ -30,17 +30,17 @@ function checklistAnim() {
 
   setTimeout(function () {
     $("#checklist").css("display", "block");
-  }, 950);
+  }, 650);
   setTimeout(function () {
     $("#on-mobile-li").css("display", "block");
-  }, 1250);
+  }, 950);
   setTimeout(function () {
     if (onMobile) {
       $("#on-mobile").html("<span style='color: #f23e3e'>Y.</span>");
     } else {
       $("#on-mobile").html("<span style='color: #31E863'>N.</span>");
     }
-  }, 1400);
+  }, 1100);
 
   // if not on mobile
   if (!onMobile) {
@@ -48,7 +48,7 @@ function checklistAnim() {
 
     setTimeout(function () {
       $("#meter-li").css("display", "block");
-    }, 1700);
+    }, 1400);
 
     var initialStar = 42 * 4;
     setInterval(() => {
@@ -57,17 +57,17 @@ function checklistAnim() {
 
     setTimeout(function () {
       $("#cat-li").css("display", "block");
-    }, 2100);
+    }, 1800);
     setTimeout(function () {
       $("#get-li").css("display", "block");
-    }, 2300);
+    }, 2000);
 
     setTimeout(function () {
       $("#acsii-art").css("display", "block");
       $("#acsii-art").animate({ fontSize: ".75em" });
-    }, 2300);
+    }, 2000);
 
-    setTimeout(showStuff, 2500);
+    setTimeout(showStuff, 2000);
   }
 
   // if on mobile
@@ -104,5 +104,5 @@ function showStuff() {
     $("#stuff-machine-loader").css("display", "none");
     $("#sm-load").empty();
     $("#sm-desktop").fadeIn(1000);
-  }, 900);
+  }, 1100);
 }
