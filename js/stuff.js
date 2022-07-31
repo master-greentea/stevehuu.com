@@ -3,7 +3,7 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  var vNo = "0.8.8";
+  var vNo = "0.8.10";
   $(".sm-version-no").html(vNo);
 
   $("#sm-loading-date").html(
@@ -28,7 +28,7 @@ $(function () {
     if (!fullscreened) {
       $(".window").draggable({
         disabled: false,
-        containment: "#stuff-space",
+        containment: "#window-boundries",
         scroll: false,
         stack: ".window",
         handle: ".window-controls",
@@ -125,29 +125,21 @@ $(function () {
     });
     $(thing)
       .closest(".window")
-      .animate(
-        {
-          top: $(window).scrollTop(), // + 79 (if header)
-          left: "0",
-          width: "100%",
-        },
-        fullScreenAnimSpeed,
-        "easeOutQuad"
-      );
+      .css({
+        top: $(window).scrollTop(), // + 79 (if header)
+        left: "0",
+        width: "100%",
+      });
 
     $(thing)
       .closest(".window")
       .find(".window-content")
-      .animate(
-        {
-          top: -1,
-          left: 0,
-          width: "100%",
-          height: $(window).height() - 69,
-        },
-        fullScreenAnimSpeed,
-        "easeOutQuad"
-      );
+      .css({
+        top: -1,
+        left: 0,
+        width: "100%",
+        height: $(window).height() - 69,
+      });
 
     // set icon to subtract
     $(thing)
@@ -167,25 +159,17 @@ $(function () {
     $(thing).closest(".window").css({
       position: "absolute",
     });
-    $(thing).closest(".window").animate(
-      {
-        top: saveTempT,
-        left: saveTempL,
-        width: saveTempW,
-      },
-      fullScreenAnimSpeed,
-      "easeOutQuad"
-    );
-    $(thing).closest(".window").find(".window-content").animate(
-      {
-        top: 0,
-        left: 0,
-        width: saveTempW,
-        height: saveTempH,
-      },
-      fullScreenAnimSpeed,
-      "easeOutQuad"
-    );
+    $(thing).closest(".window").css({
+      top: saveTempT,
+      left: saveTempL,
+      width: saveTempW,
+    });
+    $(thing).closest(".window").find(".window-content").css({
+      top: 0,
+      left: 0,
+      width: saveTempW,
+      height: saveTempH,
+    });
 
     setTimeout(function () {
       $(thing)

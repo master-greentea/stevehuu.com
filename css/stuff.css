@@ -223,6 +223,15 @@ button {
   width: 100%;
   height: calc(100% - 40px); /* minus task bar */
 }
+#window-boundries {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -15vw;
+  width: 130vw;
+  height: 115vh; /* minus task bar */
+  z-index: -1;
+}
 #sm-restart {
   width: max-content;
   position: absolute;
