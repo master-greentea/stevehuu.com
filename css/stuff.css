@@ -249,7 +249,7 @@ button {
   display: none;
   position: absolute;
   width: max-content;
-  border-radius: 6px;
+  border-radius: 10px;
   border: 0px;
 }
 .window-controls {
@@ -260,7 +260,7 @@ button {
   margin: 0;
   padding: 0;
   background-color: #242429;
-  border: 1px solid #f8f2e2;
+  /* border: 1px solid #f8f2e2; */
   border-bottom: 0px;
   border-radius: 6px 6px 0px 0px;
   height: 30px; /* keep consitent */
@@ -291,7 +291,7 @@ button {
   padding: 6px;
 }
 .window-close-button {
-  border-radius: 0px 6px 0px 0px;
+  border-radius: 0px 4px 0px 0px;
 }
 .window-toggle-button:hover,
 .window-close-button:hover {
@@ -309,7 +309,7 @@ button {
   top: 0px;
   left: 0px;
   background-color: #0e0e10;
-  border: 1px solid #f8f2e2;
+  /* border: 1px solid #f8f2e2; */
   border-radius: 0px 0px 6px 6px;
   margin: 0px;
   color: #0e0e10;
@@ -329,53 +329,21 @@ button {
   padding-right: 15px;
 }
 
-/* bug */
-#bug-form {
-  font-family: "Courier New", Courier, monospace;
-  color: #f8f2e2;
-}
-#bug-form > textarea,
-input[type="text"] {
-  background-color: #242429;
-  border: 0px;
-  border-radius: 4px;
-  transition: box-shadow 0.25s ease-out;
-  color: #f8f2e2;
-  padding: 8px;
-  padding-left: 15px;
-  margin-top: 5px;
-}
-#bug-form > textarea:focus,
-input[type="text"]:focus {
-  box-shadow: 0px 0px 8px #f2c94d;
-  border: none;
-  outline: none;
-}
-#bug-form > textarea {
-  resize: none;
-}
-#bug-description {
-  width: 100%;
-  height: 170px;
-}
-#bug-submit-btn {
-  background-color: #f2c94d;
-  border-radius: 4px;
-}
-#bug-submit-btn:hover {
-  background-color: #f23e3e;
-}
-
 /* apps */
+#apps-column {
+  padding-left: 60px;
+  padding-top: 40px;
+  height: 100%;
+  width: fit-content;
+}
 .apps {
-  position: absolute;
-  left: 60px;
   border: none;
   color: #f8f2e2;
   margin: 0;
   padding: 0;
   width: 70px;
   height: 70px;
+  margin: 15px;
 }
 .apps:hover img,
 .apps:focus img,
@@ -492,34 +460,56 @@ audio {
 }
 
 /* individual apps */
-#app1-venera {
-  top: 40px;
-}
 #venera-window .window-content {
   padding: 15px;
-}
-#app2-photo {
-  top: 340px;
 }
 #photo-window .window-content {
   padding: 5px;
 }
-#app3-audio {
-  top: 140px;
-}
 #audio-folder .window-content,
 #visual-folder .window-content {
   padding: 0;
-}
-#app4-visual {
-  top: 240px;
-}
-#app5-titanpoint {
-  top: 440px;
 }
 #titanpoint-window .window-content-fixed {
   padding: 0;
   margin: 0;
   width: 860px;
   height: 646px; /* 644 + 2 for border */
+}
+
+/* bug */
+#bug-form {
+  font-family: "Courier New", Courier, monospace;
+  color: #f8f2e2;
+}
+#bug-form > textarea,
+input[type="text"] {
+  background-color: #242429;
+  border: 0px;
+  border-radius: 4px;
+  transition: box-shadow 0.25s ease-out;
+  color: #f8f2e2;
+  padding: 8px;
+  padding-left: 15px;
+  margin-top: 5px;
+}
+#bug-form > textarea:focus,
+input[type="text"]:focus {
+  box-shadow: 0px 0px 8px #f2c94d;
+  border: none;
+  outline: none;
+}
+#bug-form > textarea {
+  resize: none;
+}
+#bug-description {
+  width: 100%;
+  height: 170px;
+}
+#bug-submit-btn {
+  background-color: #f2c94d;
+  border-radius: 4px;
+}
+#bug-submit-btn:hover {
+  background-color: #f23e3e;
 }

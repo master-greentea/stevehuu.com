@@ -3,7 +3,7 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  var vNo = "0.8.10";
+  var vNo = "0.8.12";
   $(".sm-version-no").html(vNo);
 
   $("#sm-loading-date").html(
@@ -386,8 +386,8 @@ $(function () {
     windowId,
     windowWidth,
     windowHeight,
-    windowName,
-    windowContent
+    windowContent,
+    clickedApp
   ) {
     $(windowId).fadeIn(100);
 
@@ -411,7 +411,7 @@ $(function () {
 
     selectWindow(windowId);
 
-    $(windowId).find(".window-header-text").html(windowName);
+    $(windowId).find(".window-header-text").html(clickedApp.find("p").text());
 
     setTimeout(function () {
       $(windowId).attr(
@@ -538,8 +538,8 @@ $(function () {
       "#about-window",
       minResizeW,
       minResizeH,
-      "About Stuff Machine",
-      "/stuff_machine/start_menu_windows/about_window.html"
+      "/stuff_machine/start_menu_windows/about_window.html",
+      $(this)
     );
     startMenuClose();
   });
@@ -549,8 +549,8 @@ $(function () {
       "#legal-window",
       minResizeW,
       minResizeH,
-      "Terms & Conditions",
-      "/stuff_machine/start_menu_windows/legal_window.html"
+      "/stuff_machine/start_menu_windows/legal_window.html",
+      $(this)
     );
     startMenuClose();
   });
@@ -560,62 +560,55 @@ $(function () {
       "#bug-window",
       minResizeW,
       minResizeH,
-      "Bug Report",
-      "/stuff_machine/start_menu_windows/bug_window.html"
+      "/stuff_machine/start_menu_windows/bug_window.html",
+      $(this)
     );
     startMenuClose();
   });
 
-  $("#app1-venera").dblclick(function () {
+  $("#app-venera").dblclick(function () {
     appOpen(
       ".window-content-text",
       "#venera-window",
       minResizeW,
       minResizeH,
-      "venera.script",
-      "/stuff_machine/venera/venera.html"
+      "/stuff_machine/venera/venera.html",
+      $(this)
     );
   });
-  $("#app2-photo").dblclick(function () {
+  $("#app-photo").dblclick(function () {
     appOpen(
       "",
       "#photo-window",
       $(window).width() / 2,
       $(window).height() / 2,
-      "photos.html",
-      ""
+      "",
+      $(this)
     );
     $("#photo-window").find("iframe").attr("src", "/stuff_machine/photos.html");
   });
-  $("#app3-audio").dblclick(function () {
+  $("#app-audio").dblclick(function () {
     appOpen(
       ".window-content-folder",
       "#audio-folder",
       minResizeW,
       minResizeH,
-      "audio",
-      "/stuff_machine/folder_windows/audio_window.html"
+      "/stuff_machine/folder_windows/audio_window.html",
+      $(this)
     );
   });
-  $("#app4-visual").dblclick(function () {
+  $("#app-visual").dblclick(function () {
     appOpen(
       ".window-content-folder",
       "#visual-folder",
       minResizeW,
       minResizeH,
-      "visual",
-      "/stuff_machine/folder_windows/visual_window.html"
+      "/stuff_machine/folder_windows/visual_window.html",
+      $(this)
     );
   });
-  $("#app5-titanpoint").dblclick(function () {
-    appOpen(
-      "",
-      "#titanpoint-window",
-      minResizeW,
-      minResizeH,
-      "titanpoint.exe",
-      ""
-    );
+  $("#app-titanpoint").dblclick(function () {
+    appOpen("", "#titanpoint-window", minResizeW, minResizeH, "", $(this));
     $("#titanpoint-window")
       .find("iframe")
       .attr("src", "https://stevehuu.com/webgl/u_titanpoint/index.html");

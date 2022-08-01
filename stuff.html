@@ -6,7 +6,12 @@
     <title>stevehuu.com | stuff</title>
     <link rel="icon" href="images/icons/favicon.ico" />
 
-    <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    />
     <link
       rel="stylesheet"
       href="//code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css"
@@ -17,7 +22,11 @@
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script type="text/javascript" src="js/jQueryRotate.js"></script>
-    <script type="text/javascript" src="js/bootstrap/bootstrap.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+      crossorigin="anonymous"
+    ></script>
     <script type="text/javascript" src="js/stuff.js"></script>
   </head>
 
@@ -162,36 +171,38 @@
 
       <div id="stuff-space">
         <!-- desktop space -->
-        <button id="app1-venera" class="apps d-flex flex-column">
-          <div>
-            <img src="/images/stuff/i_v.png" />
-          </div>
-          <div><p>venera.script</p></div>
-        </button>
-        <button id="app2-photo" class="apps d-flex flex-column">
-          <div>
-            <img src="/images/stuff/i_h.png" />
-          </div>
-          <div><p>photos.html</p></div>
-        </button>
-        <button id="app3-audio" class="apps d-flex flex-column">
-          <div>
-            <img src="/images/stuff/i_f.png" />
-          </div>
-          <div><p>audio</p></div>
-        </button>
-        <button id="app4-visual" class="apps d-flex flex-column">
-          <div>
-            <img src="/images/stuff/i_f.png" />
-          </div>
-          <div><p>visual</p></div>
-        </button>
-        <button id="app5-titanpoint" class="apps d-flex flex-column">
-          <div>
-            <img src="/images/stuff/i_titan.png" />
-          </div>
-          <div><p>titanpoint.exe</p></div>
-        </button>
+        <div id="apps-column" class="d-flex flex-column flex-wrap">
+          <button id="app-venera" class="apps d-flex flex-column">
+            <div>
+              <img src="/images/stuff/i_v.png" />
+            </div>
+            <div><p>venera.script</p></div>
+          </button>
+          <button id="app-audio" class="apps d-flex flex-column">
+            <div>
+              <img src="/images/stuff/i_f.png" />
+            </div>
+            <div><p>audio</p></div>
+          </button>
+          <button id="app-visual" class="apps d-flex flex-column">
+            <div>
+              <img src="/images/stuff/i_f.png" />
+            </div>
+            <div><p>visual</p></div>
+          </button>
+          <button id="app-photo" class="apps d-flex flex-column">
+            <div>
+              <img src="/images/stuff/i_h.png" />
+            </div>
+            <div><p>photos.html</p></div>
+          </button>
+          <button id="app-titanpoint" class="apps d-flex flex-column">
+            <div>
+              <img src="/images/stuff/i_titan.png" />
+            </div>
+            <div><p>?.exe</p></div>
+          </button>
+        </div>
 
         <!-- !!!windows!!! -->
         <!-- about window -->
