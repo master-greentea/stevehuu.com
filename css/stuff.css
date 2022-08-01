@@ -229,7 +229,7 @@ button {
   top: 0;
   left: -15vw;
   width: 130vw;
-  height: 135vh; /* minus task bar */
+  height: 125vh; /* minus task bar */
   z-index: -1;
 }
 #sm-restart {
