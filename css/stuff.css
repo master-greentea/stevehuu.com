@@ -20,7 +20,7 @@ input::selection,
 textarea::selection {
   background-color: #f2c94d5b;
 }
-.front {
+.active-window {
   z-index: 100 !important;
 }
 button {

@@ -117,14 +117,11 @@ img {
   box-shadow: none;
   cursor: pointer !important;
 }
-.navbar-toggler:hover {
-  --bs-navbar-toggler-icon-bg: url("https://www.stevehuu.com/images/icons/i_hambergur.svg");
+.navbar-toggler:hover path {
+  fill: #f2c94d;
 }
 .navbar.bg-dark {
   background-color: #0d0d0f00 !important;
-}
-.navbar {
-  --bs-navbar-toggler-icon-bg: url("https://www.stevehuu.com/images/icons/i_hambergur_w.svg");
 }
 /* socials */
 #git {
