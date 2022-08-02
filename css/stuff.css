@@ -343,7 +343,7 @@ button {
   padding: 0;
   width: 70px;
   height: 70px;
-  margin: 15px;
+  margin-bottom: 20px;
 }
 .apps:hover img,
 .apps:focus img,
@@ -462,6 +462,7 @@ audio {
 /* individual apps */
 #venera-window .window-content {
   padding: 15px;
+  padding-right: 0px;
 }
 #photo-window .window-content {
   padding: 5px;
