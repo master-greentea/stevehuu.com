@@ -462,7 +462,7 @@ $(function () {
     setTimeout(function () {
       $(newIDSelector).find(".viewer-loader").css("display", "none");
       $(newIDSelector).find(".viewer-content").css("display", "block");
-    }, 300);
+    }, 1000);
 
     $(newIDSelector)
       .find(".window-close-button")
