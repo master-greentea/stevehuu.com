@@ -118,11 +118,11 @@ img {
 }
 .navbar-toggler path {
   fill: #f8f2e2;
-  transition: fill 0.3s;
+  transition: fill 0.15s;
 }
 .navbar-toggler:hover path {
   fill: #f2c94d;
-  transition: fill 0.3s;
+  transition: fill 0.15s;
 }
 .navbar.bg-dark {
   background-color: #0d0d0f00 !important;
@@ -182,11 +182,11 @@ button {
   font-weight: normal;
   font-size: 40px;
   color: #f8f2e2;
-  transition: color 0.3s;
+  transition: color 0.15s;
 }
 .nav-link:hover,
 .nav-link:focus {
-  transition: color 0.3s;
+  transition: color 0.15s;
   color: #f2c94d;
   text-shadow: none;
 }
