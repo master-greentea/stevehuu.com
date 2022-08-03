@@ -132,6 +132,7 @@ button {
   --bs-tooltip-bg: #242429ef; /* 242429ef */
   --bs-tooltip-border-radius: 4px;
   --bs-tooltip-arrow-height: 10px;
+  font-family: "Courier New", Courier, monospace;
 }
 .tooltip-arrow {
   display: none !important;
