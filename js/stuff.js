@@ -3,7 +3,7 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  var vNo = "0.8.22";
+  var vNo = "0.8.23";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(
     new Date(Date.now()).getFullYear() +
