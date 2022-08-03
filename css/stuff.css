@@ -433,6 +433,10 @@ button {
 }
 
 /* viewers */
+.viewer-loader {
+  width: 30vw;
+  height: 40vh;
+}
 .video-viewer {
   width: 45vw;
   height: auto;

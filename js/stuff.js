@@ -3,7 +3,7 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  var vNo = "0.8.21";
+  var vNo = "0.8.22";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(
     new Date(Date.now()).getFullYear() +
@@ -444,17 +444,26 @@ $(function () {
   }
   // >>>>
   // media open
-  function mediaOpen(type, clipToPlay, volumeDefault) {
+  function mediaOpen(type, clipToPlay) {
     var part = clipToPlay.split("/").pop();
     var newID = part.substring(0, part.indexOf("."));
     var newIDSelector = "#" + newID;
     $("#media-viewer-holder").append(
       "<div class='window media-viewer' id='" +
         newID +
-        "'> <div class='window-controls no-fs d-flex justify-content-end'> <p class='window-header-text'>" +
+        "'>" +
+        "<div class='window-controls no-fs d-flex justify-content-end'> <p class='window-header-text'>" +
         "</p> <button class='window-close-button d-flex align-items-center justify-content-center' > <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#f8f2e2' viewBox='0 0 16 16' > <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z' /> </svg> </button> </div>" +
-        "<div class='window-content-fixed viewer-content'></div> </div>"
+        "<div class='window-content-fixed'> <div class='viewer-loader'><div class='loader'><div class='loader-sub'></div></div></div> <div class='viewer-content'></div> </div></div>"
     );
+
+    $(newIDSelector).find(".viewer-loader").css("display", "block");
+    $(newIDSelector).find(".viewer-content").css("display", "none");
+    setTimeout(function () {
+      $(newIDSelector).find(".viewer-loader").css("display", "none");
+      $(newIDSelector).find(".viewer-content").css("display", "block");
+    }, 300);
+
     $(newIDSelector)
       .find(".window-close-button")
       .click(function () {
