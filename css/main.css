@@ -237,7 +237,6 @@ button {
   position: absolute;
   left: 50%;
   top: 50%;
-  z-index: 999;
   width: 36px;
   height: 36px;
   margin: -18px 100px 100px -18px;

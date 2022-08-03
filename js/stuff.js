@@ -100,7 +100,7 @@ $(function () {
       .find(".window-close-button")
       .click(function () {
         if (fullscreened) {
-          unFullscreen(this);
+          toggleFullscreen(this);
         }
         $(this).closest(".window").hide();
       });
@@ -123,123 +123,97 @@ $(function () {
   var saveTempW;
   var saveTempH;
   var fullScreenAnimSpeed = 450;
-  // full screening
-  function fullscreen(thing) {
-    saveTempT = $(thing).closest(".window").css("top");
-    saveTempL = $(thing).closest(".window").css("left");
-    saveTempW = $(thing).closest(".window").css("width");
-    saveTempH = $(thing)
-      .closest(".window")
-      .find(".window-content")
-      .css("height");
-
-    $(thing).closest(".window").css({
-      position: "absolute",
-    });
-    $(thing)
-      .closest(".window")
-      .css({
-        top: $(window).scrollTop(), // + 79 (if header)
-        left: "0",
-        width: "100%",
-      });
-
-    $(thing)
-      .closest(".window")
-      .find(".window-content")
-      .css({
-        top: -1,
-        left: 0,
-        width: "100%",
-        height: $(window).height() - 69,
-      });
-
-    // set icon to subtract
-    $(thing)
-      .closest(".window")
-      .find(".window-toggle-button")
-      .html(
-        "<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='#f8f2e2' viewBox='0 0 16 16'><path d='M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z' /></svg>"
-      );
-    // other window's buttons disable
-    $(".window-toggle-button")
-      .not($(thing).closest(".window").find(".window-toggle-button"))
-      .attr("disabled", true);
-    fullscreened = true;
-  }
-  // un- full screening
-  function unFullscreen(thing) {
-    $(thing).closest(".window").css({
-      position: "absolute",
-    });
-    $(thing).closest(".window").css({
-      top: saveTempT,
-      left: saveTempL,
-      width: saveTempW,
-    });
-    $(thing).closest(".window").find(".window-content").css({
-      top: 0,
-      left: 0,
-      width: saveTempW,
-      height: saveTempH,
-    });
-
-    setTimeout(function () {
-      $(thing)
-        .closest(".window")
-        .attr(
-          "style",
-          $(thing)
-            .closest(".window")
-            .attr("style")
-            .replace(
-              "width: " + $(thing).closest(".window").width() + "px",
-              "width: max-content"
-            )
-        );
-    }, fullScreenAnimSpeed + 5);
-
-    // set icon to square
-    $(thing)
-      .closest(".window")
-      .find(".window-toggle-button")
-      .html(
-        "<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='#f8f2e2' viewBox='0 0 16 16'><path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/></svg>"
-      );
-    // button enable
-    $(".window-toggle-button")
-      .not($(thing).closest(".window").find(".window-toggle-button"))
-      .attr("disabled", false);
-    fullscreened = false;
-  }
   // toggle fullscreen
   function toggleFullscreen(thing) {
     if (!fullscreened) {
-      fullscreen(thing);
+      saveTempT = $(thing).closest(".window").css("top");
+      saveTempL = $(thing).closest(".window").css("left");
+      saveTempW = $(thing).closest(".window").css("width");
+      saveTempH = $(thing)
+        .closest(".window")
+        .find(".window-content")
+        .css("height");
+
+      $(thing).closest(".window").css({
+        position: "absolute",
+      });
+      $(thing)
+        .closest(".window")
+        .css({
+          top: $(window).scrollTop(), // + 79 (if header)
+          left: "0",
+          width: "100%",
+        });
+
+      $(thing)
+        .closest(".window")
+        .find(".window-content")
+        .css({
+          top: -1,
+          left: 0,
+          width: "100%",
+          height: $(window).height() - 69,
+        });
+
+      // set icon to subtract
+      $(thing)
+        .closest(".window")
+        .find(".window-toggle-button")
+        .html(
+          "<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='#f8f2e2' viewBox='0 0 16 16'><path d='M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z' /></svg>"
+        );
+      // other window's buttons disable
+      $(".window-toggle-button")
+        .not($(thing).closest(".window").find(".window-toggle-button"))
+        .attr("disabled", true);
+      fullscreened = true;
     } else {
-      unFullscreen(thing);
+      $(thing).closest(".window").css({
+        position: "absolute",
+      });
+      $(thing).closest(".window").css({
+        top: saveTempT,
+        left: saveTempL,
+        width: saveTempW,
+      });
+      $(thing).closest(".window").find(".window-content").css({
+        top: 0,
+        left: 0,
+        width: saveTempW,
+        height: saveTempH,
+      });
+
+      setTimeout(function () {
+        $(thing)
+          .closest(".window")
+          .attr(
+            "style",
+            $(thing)
+              .closest(".window")
+              .attr("style")
+              .replace(
+                "width: " + $(thing).closest(".window").width() + "px",
+                "width: max-content"
+              )
+          );
+      }, fullScreenAnimSpeed + 5);
+
+      // set icon to square
+      $(thing)
+        .closest(".window")
+        .find(".window-toggle-button")
+        .html(
+          "<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='#f8f2e2' viewBox='0 0 16 16'><path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/></svg>"
+        );
+      // button enable
+      $(".window-toggle-button")
+        .not($(thing).closest(".window").find(".window-toggle-button"))
+        .attr("disabled", false);
+      fullscreened = false;
     }
   }
   // ==========================================FULLSCREENING=========================
 
-  // select window
-  function selectWindow(windowToSelect) {
-    $(windowToSelect).addClass("active-window");
-    $(".window").not(windowToSelect).removeClass("active-window");
-    $(windowToSelect)
-      .find(".window-controls")
-      .css("box-shadow", "0px 5px 30px #f2c94d inset");
-    $(".window")
-      .not(windowToSelect)
-      .find(".window-controls")
-      .css("box-shadow", "none");
-  }
-  function deselectWindow() {
-    $(".window").removeClass("active-window");
-    $(".window").find(".window-controls").css("box-shadow", "none");
-  }
-
-  // [[[[[[[[[TASK BAR]]]]]]]]
   // ==========================================START MENU=========================
   var startMenuOpened = false;
   function startMenuOpen() {
@@ -301,8 +275,9 @@ $(function () {
   $("#reboot").click(function () {
     window.location.reload(true);
   });
-  // ==========================================START MENU=========================
+  // ==========================================START MENU END=====================
 
+  // ==========================================TASK BAR=========================
   // >>>> task bar time
   var taskBarTime = setInterval(() => {
     $("#tb-time").html(
@@ -340,7 +315,13 @@ $(function () {
     }
   }, 1000);
 
-  // [[[[[[[[[[[[[[[[[TASK BAR ICONS]]]]]]]]]]]]]]]]]
+  // >>>> task bar icons
+  const tooltipTriggerList = document.querySelectorAll(
+    '[data-bs-toggle="tooltip"]'
+  );
+  const tooltipList = [...tooltipTriggerList].map(
+    (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+  );
   $("#desktop-fullscreen-button").click(function () {
     if (
       (document.fullScreenElement && document.fullScreenElement !== null) ||
@@ -365,11 +346,44 @@ $(function () {
       }
     }
   });
-
-  var randomBattery = Math.round(Math.random() * 5) + 5;
-  $("#battery-value").attr("d", "M2 6h" + randomBattery + "v4H2V6z");
+  $("#close-all-window-button").click(function () {
+    $(".window").hide();
+  });
+  // ==========================================TASK BAR END=====================
 
   // [[[[[[[[[APPS]]]]]]]]
+  // random window location
+  function randomWindowLocation(w) {
+    var randomLeft = Math.random() * $(window).width();
+    var randomTop = Math.random() * $(window).height();
+    if (
+      randomLeft > $(window).width() / 2 ||
+      randomTop > $(window).height() / 2
+    ) {
+      randomLeft /= 3;
+      randomTop /= 3;
+    }
+    $(w).css({
+      left: randomLeft,
+      top: randomTop,
+    });
+  }
+  // select window
+  function selectWindow(windowToSelect) {
+    $(windowToSelect).addClass("active-window");
+    $(".window").not(windowToSelect).removeClass("active-window");
+    $(windowToSelect)
+      .find(".window-controls")
+      .css("box-shadow", "0px 5px 30px #f2c94d inset");
+    $(".window")
+      .not(windowToSelect)
+      .find(".window-controls")
+      .css("box-shadow", "none");
+  }
+  function deselectWindow() {
+    $(".window").removeClass("active-window");
+    $(".window").find(".window-controls").css("box-shadow", "none");
+  }
   // >>>>
   //app open
   function appOpen(
@@ -382,19 +396,8 @@ $(function () {
   ) {
     $(windowId).fadeIn(100);
 
-    var randomLeft = Math.random() * $(window).width();
-    var randomTop = Math.random() * $(window).height();
-    if (
-      randomLeft > $(window).width() / 2 ||
-      randomTop > $(window).height() / 2
-    ) {
-      randomLeft /= 3;
-      randomTop /= 3;
-    }
-    $(windowId).css({
-      left: randomLeft,
-      top: randomTop,
-    });
+    randomWindowLocation(windowId);
+
     $(windowId).find(".window-content").css({
       width: windowWidth,
       height: windowHeight,
@@ -438,7 +441,13 @@ $(function () {
 
           $(windowId)
             .find(".window-content-folder")
-            .append("<script>" + selectWindow + mediaOpen + "</script>");
+            .append(
+              "<script>" +
+                selectWindow +
+                mediaOpen +
+                randomWindowLocation +
+                "</script>"
+            );
         });
     }
   }
@@ -448,63 +457,67 @@ $(function () {
     var part = clipToPlay.split("/").pop();
     var newID = part.substring(0, part.indexOf("."));
     var newIDSelector = "#" + newID;
-    $("#media-viewer-holder").append(
-      "<div class='window media-viewer' id='" +
-        newID +
-        "'>" +
-        "<div class='window-controls no-fs d-flex justify-content-end'> <p class='window-header-text'>" +
-        "</p> <button class='window-close-button d-flex align-items-center justify-content-center' > <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#f8f2e2' viewBox='0 0 16 16' > <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z' /> </svg> </button> </div>" +
-        "<div class='window-content-fixed'> <div class='viewer-loader'><div class='loader'><div class='loader-sub'></div></div></div> <div class='viewer-content'></div> </div></div>"
-    );
 
-    $(newIDSelector).find(".viewer-loader").css("display", "block");
-    $(newIDSelector).find(".viewer-content").css("display", "none");
-    setTimeout(function () {
-      $(newIDSelector).find(".viewer-loader").css("display", "none");
-      $(newIDSelector).find(".viewer-content").css("display", "block");
-    }, 1000);
+    if ($(newIDSelector).length) {
+      $(newIDSelector).fadeIn(100);
+      selectWindow(newIDSelector);
+    } else {
+      $("#media-viewer-holder").append(
+        "<div class='window media-viewer' id='" +
+          newID +
+          "'>" +
+          "<div class='window-controls no-fs d-flex justify-content-end'> <p class='window-header-text'>" +
+          "</p> <button class='window-close-button d-flex align-items-center justify-content-center' > <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#f8f2e2' viewBox='0 0 16 16' > <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z' /> </svg> </button> </div>" +
+          "<div class='window-content-fixed'> <div class='viewer-loader'><div class='loader'><div class='loader-sub'></div></div></div> <div class='viewer-content'></div> </div></div>"
+      );
 
-    $(newIDSelector)
-      .find(".window-close-button")
-      .click(function () {
-        $(this).closest(".media-viewer").remove();
-      });
-    $(newIDSelector).fadeIn(100);
-    var randomLeft = Math.random() * $(window).width();
-    var randomTop = Math.random() * $(window).height();
-    if (
-      randomLeft > $(window).width() / 2 ||
-      randomTop > $(window).height() / 2
-    ) {
-      randomLeft /= 3;
-      randomTop /= 3;
-    }
-    $(newIDSelector).css({ left: randomLeft, top: randomTop });
-    $(newIDSelector)
-      .find(".window-header-text")
-      .html(clipToPlay.split("/").pop());
-    selectWindow(newIDSelector);
+      $(newIDSelector)
+        .find(".window-close-button")
+        .click(function () {
+          $(newIDSelector).find("audio").trigger("pause");
+          $(newIDSelector).find("audio").prop("currentTime", 0);
+          $(newIDSelector).find("video").trigger("pause");
+          $(newIDSelector).find("video").prop("currentTime", 0);
+          $(this).closest(".media-viewer").hide();
+        });
 
-    if (type == "audio") {
+      randomWindowLocation(newIDSelector);
+
       $(newIDSelector)
-        .find(".viewer-content")
-        .load("/stuff_machine/viewers/audio_viewer.html", function () {
-          $(this).find("audio").attr("src", clipToPlay);
-        });
-    }
-    if (type == "video") {
-      $(newIDSelector)
-        .find(".viewer-content")
-        .load("/stuff_machine/viewers/video_viewer.html", function () {
-          $(this).find("video").attr("src", clipToPlay);
-        });
-    }
-    if (type == "image") {
-      $(newIDSelector)
-        .find(".viewer-content")
-        .load("/stuff_machine/viewers/image_viewer.html", function () {
-          $(this).find(".image-clip").attr("src", clipToPlay);
-        });
+        .find(".window-header-text")
+        .html(clipToPlay.split("/").pop());
+
+      $(newIDSelector).find(".viewer-loader").css("display", "block");
+      $(newIDSelector).find(".viewer-content").css("display", "none");
+      setTimeout(function () {
+        $(newIDSelector).find(".viewer-loader").css("display", "none");
+        $(newIDSelector).find(".viewer-content").css("display", "block");
+      }, 1000);
+
+      if (type == "audio") {
+        $(newIDSelector)
+          .find(".viewer-content")
+          .load("/stuff_machine/viewers/audio_viewer.html", function () {
+            $(this).find("audio").attr("src", clipToPlay);
+          });
+      }
+      if (type == "video") {
+        $(newIDSelector)
+          .find(".viewer-content")
+          .load("/stuff_machine/viewers/video_viewer.html", function () {
+            $(this).find("video").attr("src", clipToPlay);
+          });
+      }
+      if (type == "image") {
+        $(newIDSelector)
+          .find(".viewer-content")
+          .load("/stuff_machine/viewers/image_viewer.html", function () {
+            $(this).find(".image-clip").attr("src", clipToPlay);
+          });
+      }
+
+      $(newIDSelector).fadeIn(100);
+      selectWindow(newIDSelector);
     }
   }
   // >>>>

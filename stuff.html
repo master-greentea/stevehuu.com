@@ -27,6 +27,7 @@
       integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script type="text/javascript" src="js/stuff.js"></script>
   </head>
 
@@ -273,8 +274,8 @@
       <!-- task bar -->
       <div id="task-bar">
         <!-- start menu button -->
-        <div>
-          <button title="Start" id="start-menu-button">
+        <div id="start-menu-div">
+          <button id="start-menu-button">
             <img
               src="/images/stuff/stuffmachine_logo_icon_pic.png"
               style="height: 100%; margin: 0"
@@ -285,8 +286,43 @@
         <div id="task-bar-right" class="d-flex justify-content-end">
           <!-- clickable fullscreen button -->
           <div class="task-bar-icons clickable">
+            <div id="close-all-window-button">
+              <a
+                title="Close all windows"
+                data-bs-toggle="tooltip"
+                data-bs-custom-class="sm-tooltip"
+                data-bs-placement="top"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  fill="currentColor"
+                  class="bi bi-window-x"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M2.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1ZM4 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm2-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Z"
+                  />
+                  <path
+                    d="M0 4a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v4a.5.5 0 0 1-1 0V7H1v5a1 1 0 0 0 1 1h5.5a.5.5 0 0 1 0 1H2a2 2 0 0 1-2-2V4Zm1 2h13V4a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v2Z"
+                  />
+                  <path
+                    fill="#f23e3e"
+                    d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-4.854-1.354a.5.5 0 0 0 0 .708l.647.646-.647.646a.5.5 0 0 0 .708.708l.646-.647.646.647a.5.5 0 0 0 .708-.708l-.647-.646.647-.646a.5.5 0 0 0-.708-.708l-.646.647-.646-.647a.5.5 0 0 0-.708 0Z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="task-bar-icons clickable task-bar-icons-border">
             <div id="desktop-fullscreen-button">
-              <a title="Fullscreen">
+              <a
+                title="Desktop mode"
+                data-bs-toggle="tooltip"
+                data-bs-custom-class="sm-tooltip"
+                data-bs-placement="top"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -303,22 +339,6 @@
             </div>
           </div>
           <!-- cosmetic icons -->
-          <div class="task-bar-icons">
-            <div>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="19"
-                height="18"
-                fill="#f8f2e2"
-                viewBox="0 0 16 16"
-              >
-                <path id="battery-value" d="M2 6h8v4H2V6z" fill="#f2c94d" />
-                <path
-                  d="M2 4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2H2zm10 1a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h10zm4 3a1.5 1.5 0 0 1-1.5 1.5v-3A1.5 1.5 0 0 1 16 8z"
-                />
-              </svg>
-            </div>
-          </div>
           <div class="task-bar-icons">
             <div id="time-of-day-icon"></div>
           </div>
