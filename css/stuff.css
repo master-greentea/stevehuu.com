@@ -260,7 +260,7 @@ button {
   margin: 0;
   padding: 0;
   background-color: #242429;
-  /* border: 1px solid #f8f2e2; */
+  border: 1px solid #575550; /* WINDOW BORDER UPPER */
   border-bottom: 0px;
   border-radius: 6px 6px 0px 0px;
   height: 30px; /* keep consitent */
@@ -309,7 +309,7 @@ button {
   top: 0px;
   left: 0px;
   background-color: #0e0e10;
-  /* border: 1px solid #f8f2e2; */
+  border: 1px solid #575550; /* WINDOW BORDER LOWER */
   border-radius: 0px 0px 6px 6px;
   margin: 0px;
   color: #0e0e10;
@@ -331,8 +331,8 @@ button {
 
 /* apps */
 #apps-column {
-  padding-left: 60px;
-  padding-top: 40px;
+  padding-left: 2vw;
+  padding-top: 4vh;
   height: 100%;
   width: fit-content;
 }
@@ -341,9 +341,9 @@ button {
   color: #f8f2e2;
   margin: 0;
   padding: 0;
-  width: 70px;
-  height: 70px;
-  margin-bottom: 20px;
+  width: 65px;
+  height: fit-content;
+  margin-bottom: 25px;
 }
 .apps:hover img,
 .apps:focus img,
@@ -393,8 +393,8 @@ button {
 .folder-item img {
   padding: 0;
   margin-top: 13px;
-  width: 50px; /* img width is folder-item - padding */
-  height: 50px;
+  width: 45px; /* img width is folder-item - padding */
+  height: 45px;
   object-fit: cover;
 }
 .folder-item button {
@@ -433,25 +433,20 @@ button {
 }
 
 /* viewers */
-#audio-viewer,
-#video-viewer,
-#image-viewer {
-  display: none;
-}
-#video-viewer {
-  width: 700px;
+.video-viewer {
+  width: 45vw;
   height: auto;
 }
 video::-webkit-media-controls-fullscreen-button {
   display: none !important;
 }
-#image-clip {
+video {
+  width: 100%;
+}
+.image-clip {
   height: 66vh;
   margin: 2px;
   padding: 0;
-}
-video {
-  width: 100%;
 }
 audio {
   padding: 0;

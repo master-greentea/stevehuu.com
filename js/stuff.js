@@ -3,15 +3,14 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  var vNo = "0.8.12";
+  var vNo = "0.8.21";
   $(".sm-version-no").html(vNo);
-
   $("#sm-loading-date").html(
     new Date(Date.now()).getFullYear() +
       "" +
-      (new Date(Date.now()).getMonth() + 1) +
+      ("0" + (new Date(Date.now()).getMonth() + 1)).slice(-2) +
       "" +
-      new Date(Date.now()).getDate()
+      ("0" + new Date(Date.now()).getDate()).slice(-2)
   );
 
   // initialize
@@ -113,14 +112,10 @@ $(function () {
       .find(".window-close-button")
       .click(function () {
         $(this).closest(".window").hide();
-        if (fullscreened) {
-          unFullscreen(this);
-        }
         $(this).closest(".window").find("iframe").attr("src", "");
-        $(this).closest(".window").find("audio").attr("src", "");
-        $(this).closest(".window").find("video").attr("src", "");
       });
   });
+
   // ==========================================FULLSCREENING=========================
   // save position before fullscreening
   var saveTempT;
@@ -311,11 +306,11 @@ $(function () {
   // >>>> task bar time
   var taskBarTime = setInterval(() => {
     $("#tb-time").html(
-      new Date(Date.now()).getHours() +
+      ("0" + new Date(Date.now()).getHours()).slice(-2) +
         ":" +
-        new Date(Date.now()).getMinutes() +
+        ("0" + new Date(Date.now()).getMinutes()).slice(-2) +
         ":" +
-        new Date(Date.now()).getSeconds()
+        ("0" + new Date(Date.now()).getSeconds()).slice(-2)
     );
     if (
       new Date(Date.now()).getHours() < 5 ||
@@ -347,10 +342,6 @@ $(function () {
 
   // [[[[[[[[[[[[[[[[[TASK BAR ICONS]]]]]]]]]]]]]]]]]
   $("#desktop-fullscreen-button").click(function () {
-    siteFullscreen();
-  });
-
-  function siteFullscreen() {
     if (
       (document.fullScreenElement && document.fullScreenElement !== null) ||
       (!document.mozFullScreen && !document.webkitIsFullScreen)
@@ -373,7 +364,7 @@ $(function () {
         document.webkitCancelFullScreen();
       }
     }
-  }
+  });
 
   var randomBattery = Math.round(Math.random() * 5) + 5;
   $("#battery-value").attr("d", "M2 6h" + randomBattery + "v4H2V6z");
@@ -411,7 +402,9 @@ $(function () {
 
     selectWindow(windowId);
 
-    $(windowId).find(".window-header-text").html(clickedApp.find("p").text());
+    $(windowId)
+      .find(".window-header-text")
+      .html(clickedApp.find("p").text().replace(/\s/g, ""));
 
     setTimeout(function () {
       $(windowId).attr(
@@ -443,19 +436,31 @@ $(function () {
             visualFolderActivate();
           }
 
-          $(this).append("<script>" + selectWindow + mediaOpen + "</script>");
+          $(windowId)
+            .find(".window-content-folder")
+            .append("<script>" + selectWindow + mediaOpen + "</script>");
         });
     }
   }
   // >>>>
   // media open
-  function mediaOpen(type, clipToPlay) {
-    $("#audio-viewer").hide();
-    $("#video-viewer").hide();
-    $("#image-viewer").hide();
-    $("#audio-clip").attr("src", "");
-    $("#video-clip").attr("src", "");
-    $("#media-viewer").fadeIn(100);
+  function mediaOpen(type, clipToPlay, volumeDefault) {
+    var part = clipToPlay.split("/").pop();
+    var newID = part.substring(0, part.indexOf("."));
+    var newIDSelector = "#" + newID;
+    $("#media-viewer-holder").append(
+      "<div class='window media-viewer' id='" +
+        newID +
+        "'> <div class='window-controls no-fs d-flex justify-content-end'> <p class='window-header-text'>" +
+        "</p> <button class='window-close-button d-flex align-items-center justify-content-center' > <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#f8f2e2' viewBox='0 0 16 16' > <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z' /> </svg> </button> </div>" +
+        "<div class='window-content-fixed viewer-content'></div> </div>"
+    );
+    $(newIDSelector)
+      .find(".window-close-button")
+      .click(function () {
+        $(this).closest(".media-viewer").remove();
+      });
+    $(newIDSelector).fadeIn(100);
     var randomLeft = Math.random() * $(window).width();
     var randomTop = Math.random() * $(window).height();
     if (
@@ -465,23 +470,32 @@ $(function () {
       randomLeft /= 3;
       randomTop /= 3;
     }
-    $("#media-viewer").css({ left: randomLeft, top: randomTop });
-    $("#media-viewer")
+    $(newIDSelector).css({ left: randomLeft, top: randomTop });
+    $(newIDSelector)
       .find(".window-header-text")
       .html(clipToPlay.split("/").pop());
-    selectWindow("#media-viewer");
+    selectWindow(newIDSelector);
 
     if (type == "audio") {
-      $("#audio-viewer").show();
-      $("#audio-clip").attr("src", clipToPlay);
+      $(newIDSelector)
+        .find(".viewer-content")
+        .load("/stuff_machine/viewers/audio_viewer.html", function () {
+          $(this).find("audio").attr("src", clipToPlay);
+        });
     }
     if (type == "video") {
-      $("#video-viewer").show();
-      $("#video-clip").attr("src", clipToPlay);
+      $(newIDSelector)
+        .find(".viewer-content")
+        .load("/stuff_machine/viewers/video_viewer.html", function () {
+          $(this).find("video").attr("src", clipToPlay);
+        });
     }
     if (type == "image") {
-      $("#image-viewer").show();
-      $("#image-clip").attr("src", clipToPlay);
+      $(newIDSelector)
+        .find(".viewer-content")
+        .load("/stuff_machine/viewers/image_viewer.html", function () {
+          $(this).find(".image-clip").attr("src", clipToPlay);
+        });
     }
   }
   // >>>>
@@ -620,7 +634,7 @@ $(function () {
       "",
       $(this)
     );
-    $("#photo-window").find("iframe").attr("src", "/stuff_machine/photos.html");
+    $("#photo-window").find("iframe").attr("src", "/photos.html");
   });
   $("#app-audio").dblclick(function () {
     appOpen(
