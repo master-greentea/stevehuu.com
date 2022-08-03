@@ -93,7 +93,7 @@
   </head>
 
   <body onload="loading()">
-    <div id="photo-loader"></div>
+    <div class="loader"><div class="loader-sub"></div></div>
 
     <div class="container-fluid all-content" style="display: none">
       <div class="row">
@@ -185,7 +185,7 @@
         setTimeout(showPage, 2000);
       }
       function showPage() {
-        $("#photo-loader").css("display", "none");
+        $(".loader").css("display", "none");
         $(".all-content").css("display", "block");
       }
     </script>

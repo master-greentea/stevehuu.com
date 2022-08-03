@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Unity WebGL Player | Titanpoint</title>
     <script src="Build/UnityLoader.js"></script>
     <script>
       UnityLoader.instantiate("unityContainer", "Build/u_titanpoint.json");
     </script>
+    <style>
+      * {
+        cursor: url("/images/stuff/sm_cursor.png"), default;
+      }
+    </style>
   </head>
   <body>
-    <div id="unityContainer" style="aspect-ratio: 4/3; width: 100%; margin: auto"></div>
+    <div
+      id="unityContainer"
+      style="aspect-ratio: 4/3; width: 100%; margin: auto"
+    ></div>
   </body>
 </html>
