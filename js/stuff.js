@@ -3,7 +3,7 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  var vNo = "0.8.23";
+  var vNo = "0.8.24";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(
     new Date(Date.now()).getFullYear() +
@@ -233,6 +233,9 @@ $(function () {
     } else {
       startMenuOpen();
     }
+  });
+  $(window).resize(function () {
+    startMenuClose();
   });
 
   // >>>>start menu buttons
