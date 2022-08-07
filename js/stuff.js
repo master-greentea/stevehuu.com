@@ -3,7 +3,7 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  var vNo = "0.8.24";
+  var vNo = "0.8.25";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(
     new Date(Date.now()).getFullYear() +
@@ -52,7 +52,7 @@ $(function () {
       onStartMenu = false;
     }
 
-    // check if document fullscreen
+    // check if document fullscreen, color fullscreen button
     if (
       (document.fullScreenElement && document.fullScreenElement !== null) ||
       (!document.mozFullScreen && !document.webkitIsFullScreen)
@@ -60,6 +60,16 @@ $(function () {
       $("#desktop-fullscreen-button path").css("fill", "#f8f2e2");
     } else {
       $("#desktop-fullscreen-button path").css("fill", "#f23e3e");
+    }
+
+    // venera pdf show
+    if ($("#venera-window").width() > $(window).width() * 0.9) {
+      $("#venerapdf").fadeIn();
+      $("#venera-words").fadeOut(300);
+      showVenera();
+    } else {
+      $("#venerapdf").fadeOut();
+      $("#venera-words").fadeIn(300);
     }
   }, 10);
 
@@ -122,10 +132,10 @@ $(function () {
   var saveTempL;
   var saveTempW;
   var saveTempH;
-  var fullScreenAnimSpeed = 450;
   // toggle fullscreen
   function toggleFullscreen(thing) {
     if (!fullscreened) {
+      $(thing).closest(".window").addClass("active-fullscreen");
       saveTempT = $(thing).closest(".window").css("top");
       saveTempL = $(thing).closest(".window").css("left");
       saveTempW = $(thing).closest(".window").css("width");
@@ -168,6 +178,7 @@ $(function () {
         .attr("disabled", true);
       fullscreened = true;
     } else {
+      $(thing).closest(".window").removeClass("active-fullscreen");
       $(thing).closest(".window").css({
         position: "absolute",
       });
@@ -196,7 +207,7 @@ $(function () {
                 "width: max-content"
               )
           );
-      }, fullScreenAnimSpeed + 5);
+      }, 1);
 
       // set icon to square
       $(thing)
@@ -235,7 +246,10 @@ $(function () {
     }
   });
   $(window).resize(function () {
-    startMenuClose();
+    // startMenuClose();
+    if (fullscreened) {
+      toggleFullscreen($(".active-fullscreen").find(".window-toggle-button"));
+    }
   });
 
   // >>>>start menu buttons

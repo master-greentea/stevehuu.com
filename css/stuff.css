@@ -69,6 +69,7 @@ button {
 }
 #start-menu-div {
   height: 100%;
+  width: fit-content;
 }
 #task-bar-right {
   position: absolute;
@@ -530,4 +531,20 @@ input[type="text"]:focus {
 }
 #bug-submit-btn:hover {
   background-color: #f23e3e;
+}
+
+/* venera reader */
+#venera-reader {
+  text-align: center;
+}
+#venerapdf {
+  display: none;
+}
+#venerapdf iframe {
+  height: calc(40vw * 1.382 * 10);
+  width: 40%;
+  display: none;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0);
 }

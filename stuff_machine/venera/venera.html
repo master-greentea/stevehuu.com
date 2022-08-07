@@ -1,9 +1,42 @@
-<p class="white-p">
-  The year is 2099, in a world where interplanetary travel has become the norm.
-  Having just come out of a war between the richer planets of the Outer-Sol,
-  humanity enjoys a new era of peace and posperity.
+<p class="content-text-title white-p" style="text-decoration: underline">
+  VENERA
 </p>
-<br />
-<p class="white-p">
-  VENERA is a fictional crime drama, made in this world, for its theatres.
-</p>
+<img src="/images/index/venus.png" />
+<div id="venera-words">
+  <p class="white-p">
+    The year is 2099, in a world where interplanetary travel has become the
+    norm. Having just come out of a war between the richer planets of the
+    Outer-Sol, humanity enjoys a new era of peace and posperity.
+    <br /><br />
+    VENERA is a fictional crime drama, made in this world, for its theatres.
+  </p>
+  <br />
+  <p class="white-p">
+    <strong class="content-text-title"
+      >Fullscreen this window to read the first 10 pages.</strong
+    >
+  </p>
+</div>
+<div id="venera-reader">
+  <br />
+  <p class="white-p">
+    <strong class="content-text-title"
+      >Draft date: <span style="color: #f23e3e">July 9th, 2022</span>.</strong
+    >
+  </p>
+  <div id="venerapdf">
+    <div class="loader"><div class="loader-sub"></div></div>
+    <br />
+    <iframe src="/Venera 0709-pages-1-11.pdf#zoom=100&view=FitH&toolbar=0">
+    </iframe>
+  </div>
+</div>
+
+<script>
+  function showVenera() {
+    setTimeout(function () {
+      $(".loader").css("display", "none");
+      $("#venerapdf iframe").css("display", "block");
+    }, 2000);
+  }
+</script>
