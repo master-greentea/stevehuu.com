@@ -3,7 +3,9 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  var vNo = "0.8.25";
+  var vNo = "0.8.26";
+  var vDate = "8.11.22";
+  var vMsg = "fixed venera window bug<br />added notes<br />some other stuff";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(
     new Date(Date.now()).getFullYear() +
@@ -63,7 +65,10 @@ $(function () {
     }
 
     // venera pdf show
-    if ($("#venera-window").width() > $(window).width() * 0.9) {
+    if (
+      $("#venera-window").length != 0 &&
+      $("#venera-window").width() > $(window).width() * 0.9
+    ) {
       $("#venerapdf").fadeIn();
       $("#venera-words").fadeOut(300);
       showVenera();
@@ -409,7 +414,8 @@ $(function () {
     windowWidth,
     windowHeight,
     windowContent,
-    clickedApp
+    clickedApp,
+    windowName
   ) {
     $(windowId).fadeIn(100);
 
@@ -422,9 +428,13 @@ $(function () {
 
     selectWindow(windowId);
 
-    $(windowId)
-      .find(".window-header-text")
-      .html(clickedApp.find("p").text().replace(/\s/g, ""));
+    if (windowName == null) {
+      $(windowId)
+        .find(".window-header-text")
+        .html(clickedApp.find("p").text().replace(/\s/g, ""));
+    } else {
+      $(windowId).find(".window-header-text").html(windowName);
+    }
 
     setTimeout(function () {
       $(windowId).attr(
@@ -442,6 +452,8 @@ $(function () {
         .find(".window-content-text")
         .load(windowContent, function () {
           $(".sm-version-no").html(vNo);
+          $(".sm-update-date").html(vDate);
+          $(".sm-update-message").html(vMsg);
         });
     }
     // window type: FOLDER
@@ -619,6 +631,16 @@ $(function () {
     }
   }
 
+  //
+  var disFromCenterX = 0,
+    disFromCenterY = 0;
+  window.onmousemove = function (e) {
+    disFromCenterX = Math.abs(window.innerWidth / 2 - e.pageX);
+    $("#notes-background").css({
+      filter: " hue-rotate(" + disFromCenterX * 0.15 + "deg)",
+    });
+  };
+
   // apps individual
   $("#app-about").click(function () {
     appOpen(
@@ -627,7 +649,8 @@ $(function () {
       minResizeW,
       minResizeH,
       "/stuff_machine/start_menu_windows/about_window.html",
-      $(this)
+      $(this),
+      "About Stuff Machine"
     );
     startMenuClose();
   });
@@ -638,7 +661,8 @@ $(function () {
       minResizeW,
       minResizeH,
       "/stuff_machine/start_menu_windows/legal_window.html",
-      $(this)
+      $(this),
+      "Terms & Conditions"
     );
     startMenuClose();
   });
@@ -649,7 +673,8 @@ $(function () {
       minResizeW,
       minResizeH,
       "/stuff_machine/start_menu_windows/bug_window.html",
-      $(this)
+      $(this),
+      "Report a Bug..."
     );
     startMenuClose();
   });
@@ -664,6 +689,12 @@ $(function () {
       $(this)
     );
   });
+  function showVenera() {
+    setTimeout(function () {
+      $("#venerapdf .loader").css("display", "none");
+      $("#venerapdf iframe").css("display", "block");
+    }, 2000);
+  }
   $("#app-photo").dblclick(function () {
     appOpen(
       "",
@@ -700,6 +731,18 @@ $(function () {
     $("#titanpoint-window")
       .find("iframe")
       .attr("src", "https://stevehuu.com/webgl/u_titanpoint/index.html");
+  });
+
+  $("#app-notes").dblclick(function () {
+    appOpen(
+      ".window-content-text",
+      "#notes-window",
+      minResizeW,
+      minResizeH,
+      "/stuff_machine/notes_window.html",
+      $(this),
+      "notes"
+    );
   });
 
   var audioFolderActivate = function () {
@@ -820,4 +863,17 @@ $(function () {
       );
     });
   };
+
+  // startup open
+  setTimeout(() => {
+    appOpen(
+      ".window-content-text",
+      "#about-window",
+      minResizeW,
+      minResizeH,
+      "/stuff_machine/start_menu_windows/about_window.html",
+      $("#app-about"),
+      "About Stuff Machine"
+    );
+  }, 500);
 });
