@@ -685,7 +685,7 @@ $(function () {
       "#venera-window",
       minResizeW,
       minResizeH,
-      "/stuff_machine/venera/venera.html",
+      "/stuff_machine/venera/venera_window.html",
       $(this)
     );
   });
