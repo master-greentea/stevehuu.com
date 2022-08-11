@@ -3,9 +3,9 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  var vNo = "0.8.26";
+  var vNo = "0.9.1";
   var vDate = "8.11.22";
-  var vMsg = "fixed venera window bug<br />added notes<br />some other stuff";
+  var vMsg = "fixed venera window bug<br />added notes";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(
     new Date(Date.now()).getFullYear() +

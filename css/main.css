@@ -50,7 +50,7 @@ p {
   transition: text-shadow 0.5s ease-out;
   text-shadow: none;
 }
-p:hover {
+.fun-p:hover {
   transition: text-shadow 3.5s ease-out;
   text-shadow: 4px 2px #f23e3e;
 }
