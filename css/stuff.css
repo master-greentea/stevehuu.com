@@ -396,9 +396,6 @@ button {
   left: calc(98vw - 65px);
   top: 4vh;
 }
-#notes-window .window-controls {
-  background-color: #575550;
-}
 #notes-window .window-content-fixed {
   background-color: transparent;
   padding: 0px;
@@ -411,13 +408,15 @@ button {
   height: calc(40vh - 2px);
   border-radius: 0 0 5px 5px;
   background-color: #555044db;
-  z-index: -1;
+  z-index: 0;
 }
 #notes-list {
+  position: relative;
   color: #f8f2e2;
   font-family: "Courier New", Courier, monospace;
   padding-left: 15px;
   list-style-image: url(/images/stuff/i_list.png);
+  z-index: 1;
 }
 
 /* folder */

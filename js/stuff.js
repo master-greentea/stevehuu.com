@@ -3,17 +3,11 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  var vNo = "0.9.1";
-  var vDate = "8.11.22";
+  var vNo = "0.9.2";
+  var vDate = "08.11.22";
   var vMsg = "fixed venera window bug<br />added notes";
   $(".sm-version-no").html(vNo);
-  $("#sm-loading-date").html(
-    new Date(Date.now()).getFullYear() +
-      "" +
-      ("0" + (new Date(Date.now()).getMonth() + 1)).slice(-2) +
-      "" +
-      ("0" + new Date(Date.now()).getDate()).slice(-2)
-  );
+  $("#sm-loading-date").html(vDate);
 
   // initialize
   let fullscreened = false;
@@ -685,7 +679,7 @@ $(function () {
       "#venera-window",
       minResizeW,
       minResizeH,
-      "/stuff_machine/venera/venera_window.html",
+      "/stuff_machine/venera_window.html",
       $(this)
     );
   });
