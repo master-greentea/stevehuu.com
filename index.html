@@ -24,7 +24,6 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="css/main.css" />
-    <link rel="stylesheet" href="css/index.css" />
 
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
@@ -39,24 +38,6 @@
         $("._header").load("master_htmls/header.html", function () {
           $("#morse").html(
             "<img src='images/index/venus.png' style='height: 40px' />"
-          );
-        });
-        $("#stuff-maker").mouseover(function () {
-          $(".index-stuff").animate(
-            {
-              height: $(window).height() * 0.4,
-            },
-            900,
-            "easeOutQuad"
-          );
-        });
-        $("#stuff-maker").mouseout(function () {
-          $(".index-stuff").animate(
-            {
-              height: 0,
-            },
-            900,
-            "easeOutQuad"
           );
         });
       });
@@ -75,9 +56,14 @@
         <main class="col-10 col-xxl-10 flex-fill">
           <h1>stevehuu.com</h1>
           <h2 style="font-size: 28px">
-            Game designer |
-            <inline id="stuff-maker" style="font-size: 23px"
-              >Stuff maker</inline
+            <a style="text-decoration: none; color: #f8f2e2" href="/games.html"
+              >Game designer</a
+            >
+            |
+            <a
+              style="font-size: 23px; text-decoration: none; color: #f8f2e2"
+              href="/stuff.html"
+              ><span id="stuff-maker">Stuff maker</span></a
             >
           </h2>
 
@@ -118,9 +104,6 @@
               </li>
             </ul>
           </div>
-
-          <div class="index-game"></div>
-          <div class="index-stuff"></div>
         </main>
 
         <div class="d-none d-xxl-block col-1"></div>
