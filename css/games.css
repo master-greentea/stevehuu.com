@@ -85,6 +85,10 @@ a:hover h2 {
   height: 50px;
 }
 
+.back-button path {
+  transition: fill 0.1s ease-out;
+}
+
 .back-button:hover path {
   fill: #f2c94d;
   transition: fill 0.3s ease-out;

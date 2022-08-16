@@ -1,7 +1,11 @@
 #about-content {
-  height: 50vh;
+  width: 100%;
 }
 
 #about-content img {
-  height: 50%;
+  height: 256px;
+}
+
+#about-text {
+  margin: 10px;
 }
