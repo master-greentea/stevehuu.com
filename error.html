@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>? | stevehuu</title>
+    <title>stevehuu.com | !</title>
     <link rel="icon" href="/images/icons/favicon.ico" />
 
     <link
@@ -24,14 +24,7 @@
     <script>
       $(function () {
         $("._header").load("/master_htmls/header.html", function () {
-          $("#morse").html("?");
-        });
-
-        $("#cat").mouseover(function () {
-          $("#cat").attr("src", "/images/404cat.gif");
-        });
-        $("#cat").mouseout(function () {
-          $("#cat").attr("src", "/images/404cat.jpg");
+          $("#morse").html("!");
         });
       });
     </script>
@@ -39,11 +32,20 @@
 
   <body>
     <div class="_header"></div>
-
     <div class="container-fluid">
-      <h2>Page not found, cat found</h2>
-      <img id="cat" src="/images/404cat.jpg" style="height: 460px" />
-      <p style="font-family: Courier New">error code: 404</p>
+      <div class="row">
+        <!-- left space -->
+        <div class="d-none d-xxl-block col-1"></div>
+
+        <main class="col-10 col-xxl-10 flex-fill">
+          <h2>ERROR</h2>
+          <img id="cat" src="/images/404cat.gif" style="height: 460px" />
+          <p>></p>
+        </main>
+
+        <!-- right space -->
+        <div class="d-none d-xxl-block col-1"></div>
+      </div>
     </div>
   </body>
 </html>
