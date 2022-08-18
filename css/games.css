@@ -1,9 +1,9 @@
 a {
-  color: #f8f2e2;
+  color: var(--color-w);
   text-decoration: none;
 }
 a:hover {
-  color: #f8f2e2;
+  color: var(--color-w);
   text-decoration: none;
 }
 a h2 {
@@ -14,12 +14,12 @@ a:hover h2 {
 }
 
 .game-tab {
-  border: 1px solid #f8f2e2;
+  border: 1px solid var(--color-w);
   box-shadow: none;
   transition: box-shadow 0.3s ease-out, border 0.3s ease-out;
 }
 .game-tab:hover {
-  box-shadow: 0px 0px 8px #f8f2e2;
+  box-shadow: 0px 0px 8px var(--color-w);
   transition: box-shadow 0.1s ease-out;
 }
 .on-itch:hover {
@@ -28,13 +28,11 @@ a:hover h2 {
   transition: box-shadow 0.1s ease-out, border 0.1s ease-out;
 }
 .playable:hover {
-  box-shadow: 0px 0px 8px #f2c94d;
-  /* border: 1px solid #f2c94d; */
+  box-shadow: 0px 0px 8px var(--color-y);
   transition: box-shadow 0.1s ease-out, border 0.1s ease-out;
 }
 .on-steam:hover {
   box-shadow: 0px 0px 8px #66c0f4;
-  /* border: 1px solid #66c0f4; */
   transition: box-shadow 0.1s ease-out, border 0.1s ease-out;
 }
 
@@ -52,7 +50,7 @@ a:hover h2 {
 
 /* game sepcific h1 */
 .game-h1 {
-  color: #f8f2e2;
+  color: var(--color-w);
 }
 #ritual-h1:hover {
   text-shadow: 5px 2px 10px #48bf84;
@@ -90,6 +88,6 @@ a:hover h2 {
 }
 
 .back-button:hover path {
-  fill: #f2c94d;
+  fill: var(--color-y);
   transition: fill 0.3s ease-out;
 }

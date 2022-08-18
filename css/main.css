@@ -7,11 +7,16 @@
 
 html {
   overflow-y: scroll;
+  /* color vars */
+  --color-b: #0e0e10;
+  --color-w: #f8f2e2;
+  --color-r: #f23e3e;
+  --color-y: #f2c94d;
 }
 
 body {
-  background-color: #0e0e10;
-  color: #f8f2e2;
+  background-color: var(--color-b);
+  color: var(--color-w);
 }
 
 header {
@@ -20,8 +25,8 @@ header {
   top: 0;
   width: 100%;
   height: 80px;
-  background-color: #0e0e10;
-  border-bottom: 1px solid #f8f2e2;
+  background-color: var(--color-b);
+  border-bottom: 1px solid var(--color-w);
 }
 
 footer {
@@ -35,12 +40,12 @@ footer {
 h1 {
   font-family: "K2D Light Regular";
   font-size: 50px;
-  color: #f2c94d;
+  color: var(--color-y);
   text-shadow: none;
   transition: text-shadow 0.5s ease-out;
 }
 h1:hover {
-  text-shadow: 5px 2px 10px #f23e3e;
+  text-shadow: 5px 2px 10px var(--color-r);
 }
 
 h2 {
@@ -52,17 +57,17 @@ p {
 }
 .fun-p:hover {
   transition: text-shadow 3.5s ease-out;
-  text-shadow: 4px 2px #f23e3e;
+  text-shadow: 4px 2px var(--color-r);
 }
 a {
-  color: #f2c94d;
+  color: var(--color-y);
   transition: text-shadow 0.25s ease-out;
   text-decoration: underline;
   text-shadow: none;
 }
 a:hover {
-  text-shadow: 1px 1px 16px #f2c94d;
-  color: #f2c94d;
+  text-shadow: 1px 1px 16px var(--color-y);
+  color: var(--color-y);
 }
 
 img {
@@ -79,12 +84,12 @@ img {
   background-color: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #f8f2e2;
+  background-color: var(--color-w);
   border-radius: 5px;
-  border-right: 3px solid #0e0e10;
+  border-right: 3px solid var(--color-b);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #f2c94d;
+  background-color: var(--color-y);
 }
 ::-webkit-scrollbar-corner {
   background-color: transparent;
@@ -117,11 +122,11 @@ img {
   cursor: pointer !important;
 }
 .navbar-toggler path {
-  fill: #f8f2e2;
+  fill: var(--color-w);
   transition: fill 0.15s;
 }
 .navbar-toggler:hover path {
-  fill: #f2c94d;
+  fill: var(--color-y);
   transition: fill 0.15s;
 }
 .navbar.bg-dark {
@@ -181,17 +186,17 @@ button {
   font-family: "K2D Light Regular";
   font-weight: normal;
   font-size: 40px;
-  color: #f8f2e2;
+  color: var(--color-w);
   transition: color 0.15s;
 }
 .nav-link:hover,
 .nav-link:focus {
   transition: color 0.15s;
-  color: #f2c94d;
+  color: var(--color-y);
   text-shadow: none;
 }
 .current-page {
-  color: #f23e3e;
+  color: var(--color-r);
 }
 /* END offcanvas */
 
@@ -225,7 +230,7 @@ button {
   background-color: #333e45;
   border-color: #333e45;
   color: #fbaf40;
-  text-shadow: 2px 1px 2px #f23e3e;
+  text-shadow: 2px 1px 2px var(--color-r);
 }
 #outfoxtext {
   color: #e9f1f7;
@@ -233,7 +238,7 @@ button {
 }
 #outfoxtext:hover > #outfoxtext-highlight {
   transition: color 1s ease-out;
-  color: #f23e3e;
+  color: var(--color-r);
 }
 /* END ad */
 
@@ -249,7 +254,7 @@ button {
   border-radius: 8px;
   -webkit-animation: spin 1.4s ease-in-out infinite;
   animation: spin 1.4s ease-in-out infinite;
-  box-shadow: 0px 0px 0px #f23e3e inset;
+  box-shadow: 0px 0px 0px var(--color-r) inset;
 }
 .loader .loader-sub {
   position: relative;
@@ -260,26 +265,26 @@ button {
   margin: 6px 0 0 6px;
   border: none;
   border-radius: 100%;
-  background-color: #f2c94d;
-  box-shadow: 0px 0px 5px #f2c94d;
+  background-color: var(--color-y);
+  box-shadow: 0px 0px 5px var(--color-y);
 }
 @keyframes spin {
   0% {
     transform: rotate(0deg);
-    box-shadow: 0px 0px 0px #f23e3e inset;
+    box-shadow: 0px 0px 0px var(--color-r) inset;
   }
   15% {
-    box-shadow: 0px 0px 0px #f23e3e inset;
+    box-shadow: 0px 0px 0px var(--color-r) inset;
   }
   50% {
-    box-shadow: 0px 0px 40px #f23e3e inset;
+    box-shadow: 0px 0px 40px var(--color-r) inset;
   }
   85% {
-    box-shadow: 0px 0px 0px #f23e3e inset;
+    box-shadow: 0px 0px 0px var(--color-r) inset;
   }
   100% {
     transform: rotate(360deg);
-    box-shadow: 0px 0px 0px #f23e3e inset;
+    box-shadow: 0px 0px 0px var(--color-r) inset;
   }
 }
 
@@ -355,7 +360,7 @@ h2 a:hover {
 
 #stuff-maker:before,
 #stuff-maker:after {
-  text-shadow: 3px 0px 0px #f23e3e;
+  text-shadow: 3px 0px 0px var(--color-r);
   font-family: "K2D Light Regular";
   width: max-content;
   height: fit-content;
