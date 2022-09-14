@@ -338,6 +338,7 @@ button {
   margin: 0px;
   color: var(--color-b);
   text-align: center;
+  box-shadow: 0px 3px 3px black;
 }
 .overflow-auto {
   width: 100%;
