@@ -3,9 +3,9 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  var vNo = "0.9.2";
-  var vDate = "08.11.22";
-  var vMsg = "fixed venera window bug<br />added notes";
+  var vNo = "0.9.4";
+  var vDate = "09.17.22";
+  var vMsg = "added notes<br />fixed window header transition";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(vDate);
 
@@ -74,7 +74,10 @@ $(function () {
 
   $("body").mousedown(function (event) {
     // WINDOW SELECTION
-    if ($(event.target).closest(".window").hasClass("window")) {
+    if (
+      $(event.target).closest(".window").hasClass("window") &&
+      $(event.target).attr("class") != "window-close-button"
+    ) {
       selectWindow($(event.target).closest(".window"));
     } else {
       deselectWindow();
@@ -388,9 +391,11 @@ $(function () {
   function selectWindow(windowToSelect) {
     $(windowToSelect).addClass("active-window");
     $(".window").not(windowToSelect).removeClass("active-window");
-    $(windowToSelect)
-      .find(".window-controls")
-      .css("box-shadow", "0px 5px 30px #f2c94d inset");
+    setTimeout(function () {
+      $(windowToSelect)
+        .find(".window-controls")
+        .css("box-shadow", "0px 5px 30px #f2c94d inset");
+    }, 50);
     $(".window")
       .not(windowToSelect)
       .find(".window-controls")

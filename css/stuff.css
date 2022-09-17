@@ -288,7 +288,7 @@ button {
   border-bottom: 0px;
   border-radius: 6px 6px 0px 0px;
   height: 30px; /* keep consitent */
-  transition: box-shadow 0.25s ease-out;
+  transition: box-shadow 0.25s ease-in-out;
 }
 .window-header-text {
   color: var(--color-w);
@@ -313,9 +313,10 @@ button {
   width: 30px; /* keep consitent */
   margin: 0;
   padding: 6px;
+  transition: background-color 0.3s ease-out;
 }
 .window-close-button {
-  border-radius: 0px 4px 0px 0px;
+  border-radius: 0px 4px 0px 0px; /* 0px 4px 0px 0px */
 }
 .window-toggle-button:hover,
 .window-close-button:hover {
@@ -324,6 +325,7 @@ button {
 .window-toggle-button:hover path,
 .window-close-button:hover path {
   fill: var(--color-y);
+  transition: fill 0.3s ease-out;
 }
 
 .window-content,
