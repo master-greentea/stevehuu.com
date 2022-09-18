@@ -33,7 +33,7 @@ button {
   border: none;
 }
 #sm-desktop p {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Space Mono";
   margin: 0;
 }
 .white-p {
@@ -138,7 +138,7 @@ button {
   --bs-tooltip-bg: var(--color-task-bar-black); /* 242429ef */
   --bs-tooltip-border-radius: 4px;
   --bs-tooltip-arrow-height: 10px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Space Mono";
 }
 .tooltip-arrow {
   display: none !important;
@@ -207,7 +207,7 @@ button {
   color: var(--color-w);
   top: 120px;
   left: 65px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Space Mono";
   font-weight: bolder;
 }
 #stuff-machine-loader p {
@@ -421,7 +421,7 @@ button {
 #notes-list {
   position: relative;
   color: var(--color-w);
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Space Mono";
   padding-left: 15px;
   list-style-image: url(/images/stuff/i_list.png);
   z-index: 1;
@@ -534,7 +534,7 @@ audio {
 
 /* bug */
 #bug-form {
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Space Mono";
   color: var(--color-w);
 }
 #bug-form > textarea,
