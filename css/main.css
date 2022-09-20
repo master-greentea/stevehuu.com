@@ -429,3 +429,11 @@ h2 a:hover {
     transform: translate(-22px, 8px) skew(21deg);
   }
 }
+
+/* tooltip */
+.tooltip-arrow {
+  display: none !important;
+}
+.tooltip-inner {
+  margin-bottom: 3px;
+}

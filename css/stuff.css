@@ -140,12 +140,6 @@ button {
   --bs-tooltip-arrow-height: 10px;
   font-family: "Space Mono";
 }
-.tooltip-arrow {
-  display: none !important;
-}
-.tooltip-inner {
-  margin-bottom: 3px;
-}
 
 /* start menu */
 #start-menu {
