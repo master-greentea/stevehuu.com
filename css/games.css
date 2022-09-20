@@ -19,7 +19,8 @@ a:hover h2 {
   transition: box-shadow 0.3s ease-out, border 0.3s ease-out;
 }
 .unfinished {
-  opacity: 30%;
+  opacity: 40%;
+  cursor: default;
 }
 .unfinished-tooltip {
   --bs-tooltip-bg: var(--color-b);
