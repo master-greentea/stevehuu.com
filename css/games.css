@@ -18,7 +18,7 @@ video {
 }
 
 .game-tab {
-  border-radius: 4px;
+  border-radius: 6px;
   box-shadow: none;
   transition: box-shadow 0.3s ease-out, border 0.3s ease-out;
 }
