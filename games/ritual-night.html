@@ -21,22 +21,15 @@
     <link rel="stylesheet" href="/css/games.css" />
 
     <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
-
-    <script>
-      $(function () {
-        $("._header").load("/master_htmls/header.html", function () {
-          $("#morse").html(
-            "<img src='/images/games/ritual_night/icon.png' style='height: 40px'/>"
-          );
-          $("#nav-link-games").attr("class", "nav-link current-page");
-        });
-        $("._footer").load("/master_htmls/footer.html");
-      });
-    </script>
+    <script type="text/javascript" src="/js/index.js"></script>
   </head>
 
   <body>
-    <div class="_header"></div>
+    <div class="_header">
+      <script>
+        PageSetup("<img src='/images/games/ritual_night/icon.png'/>", "#nav-link-games");
+      </script>
+    </div>
 
     <div class="container-fluid">
       <div class="row">

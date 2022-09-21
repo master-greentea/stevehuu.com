@@ -77,19 +77,6 @@
         margin: 0;
       }
     </style>
-    <script>
-      $(function () {
-        $(".photo").click(function (e) {
-          $photoSrc = $(e.target).find("img").attr("src");
-          $("#photo-large").attr("src", $photoSrc);
-          $("#photo-viewer").fadeIn(150);
-
-          $("#photo-viewer").click(function () {
-            $("#photo-viewer").fadeOut(150);
-          });
-        });
-      });
-    </script>
   </head>
 
   <body onload="loading()">
@@ -188,6 +175,18 @@
         $(".loader").css("display", "none");
         $(".all-content").css("display", "block");
       }
+
+      $(function () {
+        $(".photo").click(function (e) {
+          $photoSrc = $(e.target).find("img").attr("src");
+          $("#photo-large").attr("src", $photoSrc);
+          $("#photo-viewer").fadeIn(150);
+
+          $("#photo-viewer").click(function () {
+            $("#photo-viewer").fadeOut(150);
+          });
+        });
+      });
     </script>
   </body>
 </html>

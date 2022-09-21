@@ -22,40 +22,23 @@
 
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2"></script>
-
-    <script>
-      $(function () {
-        $("._header").load("master_htmls/header.html", function () {
-          $("#morse").html("");
-          $("#nav-link-games").attr("class", "nav-link current-page");
-        });
-        $("._footer").load("/master_htmls/footer.html");
-        const tooltipTriggerList = document.querySelectorAll(
-          '[data-bs-toggle="tooltip"]'
-        );
-        const tooltipList = [...tooltipTriggerList].map(
-          (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-        );
-
-        // $(".playable").mouseover(function () {
-        //   $("#morse").html("Playable!");
-        // });
-        // $(".playable").mouseout(function () {
-        //   $("#morse").html("");
-        // });
-
-        // $(".on-steam").mouseover(function () {
-        //   $("#morse").html("On Steam!");
-        // });
-        // $(".on-steam").mouseout(function () {
-        //   $("#morse").html("");
-        // });
-      });
-    </script>
+    <script type="text/javascript" src="js/index.js"></script>
   </head>
 
   <body>
-    <div class="_header"></div>
+    <div class="_header">
+      <script>
+        PageSetup("", "#nav-link-games");
+        $(function () {
+          const tooltipTriggerList = document.querySelectorAll(
+            '[data-bs-toggle="tooltip"]'
+          );
+          const tooltipList = [...tooltipTriggerList].map(
+            (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+          );
+        });
+      </script>
+    </div>
 
     <div class="container-fluid">
       <div class="row">

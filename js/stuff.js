@@ -3,22 +3,22 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  var vNo = "0.9.4";
-  var vDate = "09.17.22";
-  var vMsg = "added notes<br />fixed window header transition";
+  const vNo = "0.9.4";
+  const vDate = "09.17.22";
+  const vMsg = "added notes<br />fixed window header transition";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(vDate);
 
   // initialize
   let fullscreened = false;
 
-  var minResizeW = $(window).width() / 4;
-  var minResizeH = $(window).height() / 3;
+  const minResizeW = $(window).width() / 4;
+  const minResizeH = $(window).height() / 3;
 
-  var onStartMenu = false;
+  let onStartMenu = false;
 
   // !!!!!!![[[[[[[[[UPDATE]]]]]]]]!!!!!!!
-  var update = setInterval(() => {
+  let update = setInterval(() => {
     // full screen check
     if (!fullscreened) {
       $(".window").draggable({
