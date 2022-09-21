@@ -48,6 +48,7 @@ a:hover h2 {
 
 .game-tab img {
   width: 100%;
+  height: auto;
   border-radius: 6px;
 }
 

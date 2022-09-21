@@ -3,6 +3,7 @@
   font-style: normal;
   font-weight: normal;
   src: local("K2D Light Regular"), url("/fonts/K2D-Light.woff") format("woff");
+  font-display: swap;
 }
 
 @font-face {
@@ -11,6 +12,7 @@
   font-weight: normal;
   src: local("SpaceMono"),
     url("/fonts/SpaceMono-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -19,6 +21,7 @@
   font-weight: normal;
   src: local("JetBrainsMono"),
     url("/fonts/JetBrainsMono-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 html {
@@ -144,45 +147,23 @@ img {
 }
 .navbar-toggler path {
   fill: var(--color-w);
-  transition: fill 0.15s;
+  transition: fill 0.2s;
 }
 .navbar-toggler:hover path {
   fill: var(--color-y);
-  transition: fill 0.15s;
+  transition: fill 0.2s;
 }
 .navbar.bg-dark {
   background-color: #0d0d0f00 !important;
 }
 /* socials */
-#git {
-  content: url("/images/icons/github_w.svg");
+.social-svg {
+  fill: var(--color-w);
+  transition: fill 0.2s;
 }
-#tw {
-  content: url("/images/icons/twitter.svg");
-}
-#ins {
-  content: url("/images/icons/instagram.svg");
-}
-#lin {
-  content: url("/images/icons/linkedin.svg");
-}
-#itch {
-  content: url("/images/icons/itch_w.svg");
-}
-#git:hover {
-  content: url("/images/icons/github_y.svg");
-}
-#tw:hover {
-  content: url("/images/icons/tw_y.svg");
-}
-#ins:hover {
-  content: url("/images/icons/ins_y.svg");
-}
-#lin:hover {
-  content: url("/images/icons/lin_y.svg");
-}
-#itch:hover {
-  content: url("/images/icons/itch_y.svg");
+.social-svg:hover {
+  fill: var(--color-y);
+  transition: fill 0.2s;
 }
 
 button {
