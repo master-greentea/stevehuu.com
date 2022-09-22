@@ -25,21 +25,20 @@
   </head>
 
   <body>
-    <div class="_header">
-      <script>
-        PageSetup("<img src='/images/games/ritual_night/icon.png'/>", "#nav-link-games");
-      </script>
-    </div>
+    <div class="_header"></div>
 
-    <div class="container-fluid">
+    <main class="container-fluid">
       <div class="row">
         <!-- left space -->
         <div class="d-none d-xxl-block col-1">
-          <button class="back-button" onClick="location.href='../games.html'">
+        </div>
+
+        <div class="col-6 col-xxl-10 flex-fill">
+          <h2 class="back-button"><a href="/games.html">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="30px"
-              height="30px"
+              width="26px"
+              height="26px"
               fill="#f8f2e2"
               class="bi bi-chevron-left"
               viewBox="0 0 16 16"
@@ -49,10 +48,8 @@
                 d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
               />
             </svg>
-          </button>
-        </div>
-
-        <main class="col-6 col-xxl-10 flex-fill">
+            Games</a>/
+          </h2>
           <h1 id="ritual-h1" class="game-h1">Ritual Night</h1>
           <div class="row">
             <div class="col-12 col-md-8">
@@ -125,13 +122,17 @@
                 /></a>
             </div>
           </div>
-        </main>
+        </div>
 
         <!-- right space -->
         <div class="d-none d-xxl-block col-1"></div>
       </div>
-    </div>
+    </main>
 
     <div class="_footer"></div>
+
+    <script>
+      PageSetup("<img src='/images/games/ritual_night/icon.png'/>", "#nav-link-games");
+    </script>
   </body>
 </html>

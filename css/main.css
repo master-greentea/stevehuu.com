@@ -123,6 +123,13 @@ button {
   padding-right: 50px;
   margin: auto;
 }
+@media screen and (max-width: 768px) {
+  .container-fluid,
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
 
 /* header navbar */
 .navbar-toggler,
@@ -149,6 +156,7 @@ button {
 .social-svg {
   fill: var(--color-w);
   transition: fill 0.2s;
+  transform: translate(0, 40%);
 }
 .social-svg:hover {
   fill: var(--color-y);
@@ -406,4 +414,12 @@ h2 a:hover {
 }
 .tooltip-inner {
   margin-bottom: 3px;
+}
+
+.transition-fade {
+  opacity: 1;
+  transition: 500ms;
+}
+html.is-animating .transition-fade {
+  opacity: 0;
 }

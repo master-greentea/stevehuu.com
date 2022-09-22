@@ -26,26 +26,14 @@
   </head>
 
   <body>
-    <div class="_header">
-      <script>
-        PageSetup("", "#nav-link-games");
-        $(function () {
-          const tooltipTriggerList = document.querySelectorAll(
-            '[data-bs-toggle="tooltip"]'
-          );
-          const tooltipList = [...tooltipTriggerList].map(
-            (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
-          );
-        });
-      </script>
-    </div>
+    <div class="_header"></div>
 
-    <div class="container-fluid">
+    <main class="container-fluid">
       <div class="row">
         <!-- left space -->
         <div class="d-none d-xxl-block col-1"></div>
 
-        <main class="col-10 col-xxl-10 flex-fill">
+        <div class="col-10 col-xxl-10 flex-fill">
           <h1>Games</h1>
           <div
             id="games-main"
@@ -208,13 +196,25 @@
               </div>
             </a> -->
           </div>
-        </main>
+        </div>
 
         <!-- right space -->
         <div class="d-none d-xxl-block col-1"></div>
       </div>
-    </div>
+    </main>
 
     <div class="_footer"></div>
+
+    <script>
+      PageSetup("", "#nav-link-games");
+      $(function () {
+        const tooltipTriggerList = document.querySelectorAll(
+          '[data-bs-toggle="tooltip"]'
+        );
+        const tooltipList = [...tooltipTriggerList].map(
+          (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+        );
+      });
+    </script>
   </body>
 </html>

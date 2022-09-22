@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="/css/main.css" />
 
     <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
   </head>
 
   <body>
@@ -41,11 +42,7 @@
     </div>
 
     <script>
-      $(function () {
-        $("._header").load("/master_htmls/header.html", function () {
-          $("#morse").html("!");
-        });
-      });
+      PageSetup("!", "");
     </script>
   </body>
 </html>

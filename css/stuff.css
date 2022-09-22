@@ -203,6 +203,10 @@ button {
   left: 65px;
   font-family: "Space Mono";
   font-weight: bolder;
+  width: 90%;
+}
+#stuff-machine-logo {
+  width: 95%;
 }
 #stuff-machine-loader p {
   font-size: 25px;
