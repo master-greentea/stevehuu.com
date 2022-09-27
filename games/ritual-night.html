@@ -30,25 +30,26 @@
     <main class="container-fluid">
       <div class="row">
         <!-- left space -->
-        <div class="d-none d-xxl-block col-1">
-        </div>
+        <div class="d-none d-xxl-block col-1"></div>
 
         <div class="col-6 col-xxl-10 flex-fill">
-          <h2 class="back-button"><a href="/games.html">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="26px"
-              height="26px"
-              fill="#f8f2e2"
-              class="bi bi-chevron-left"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-              />
-            </svg>
-            Games</a>/
+          <h2 class="back-button">
+            <a href="/games.html">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="26px"
+                height="26px"
+                fill="#f8f2e2"
+                class="bi bi-chevron-left"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+                />
+              </svg>
+              Games</a
+            >/
           </h2>
           <h1 id="ritual-h1" class="game-h1">Ritual Night</h1>
           <div class="row">
@@ -62,7 +63,7 @@
                 muted
                 loop
                 src="/images/games/ritual_night/dodgeball.mp4"
-                style="width: 100%;"
+                style="width: 100%"
               ></video>
             </div>
 
@@ -115,11 +116,15 @@
                 </div>
               </div>
               <div class="d-none d-xxl-block">
-                <a href="https://www.gamesweekberlin.com/dev-booster/" target="_blank">
+                <a
+                  href="https://www.gamesweekberlin.com/dev-booster/"
+                  target="_blank"
+                >
                   <img
                     src="/images/games/ritual_night/devbooster.png"
                     style="width: 30%"
                 /></a>
+              </div>
             </div>
           </div>
         </div>
@@ -132,7 +137,10 @@
     <div class="_footer"></div>
 
     <script>
-      PageSetup("<img src='/images/games/ritual_night/icon.png'/>", "#nav-link-games");
+      PageSetup(
+        "<img src='/images/games/ritual_night/icon.png'/>",
+        "#nav-link-games"
+      );
     </script>
   </body>
 </html>
