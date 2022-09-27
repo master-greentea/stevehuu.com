@@ -17,9 +17,9 @@ function LoadGameTabs() {
   var doLoad = setTimeout(() => {
     $.each(gameTabs, function (i, tab) {
       setTimeout(() => {
-        $(tab).fadeIn(300);
+        $(tab).fadeIn(250);
       }, time);
-      time += 250;
+      time += 150;
     });
-  }, 500);
+  }, 1);
 }
