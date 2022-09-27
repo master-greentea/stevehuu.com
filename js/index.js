@@ -5,3 +5,21 @@ function PageSetup(morseMsg, currentPageNavLink) {
   });
   $("._footer").load("/master_htmls/footer.html");
 }
+
+function LoadGameTabs() {
+  const gameTabs = $("#games-main a").toArray();
+  // hide game tabs
+  $.each(gameTabs, function (i, tab) {
+    $(tab).hide();
+  });
+
+  let time = 0;
+  var doLoad = setTimeout(() => {
+    $.each(gameTabs, function (i, tab) {
+      setTimeout(() => {
+        $(tab).fadeIn(300);
+      }, time);
+      time += 250;
+    });
+  }, 500);
+}
