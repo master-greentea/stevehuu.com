@@ -703,7 +703,9 @@ $(function () {
       "",
       $(this)
     );
-    $("#photo-window").find("iframe").attr("src", "/photos.html");
+    $("#photo-window")
+      .find("iframe")
+      .attr("src", "../stuff_machine/photos.html");
   });
   $("#app-audio").dblclick(function () {
     appOpen(
