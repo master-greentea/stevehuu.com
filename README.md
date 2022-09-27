@@ -9,7 +9,7 @@ An excuse to learn web development.
 - all `.html`, `.css`, `.js` source files
 - all fonts used
 - `.htaccess` settings file
-- one GNU General Public License
+- one [GNU General Public License](/LICENSE)
 
 ### Not Included
 
