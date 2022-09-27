@@ -3,9 +3,9 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  const vNo = "0.9.4";
-  const vDate = "09.17.22";
-  const vMsg = "added notes<br />fixed window header transition";
+  const vNo = "0.9.5";
+  const vDate = "09.27.22";
+  const vMsg = "webgl re-organized<br />fixed window header transition";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(vDate);
 
@@ -731,7 +731,10 @@ $(function () {
     appOpen("", "#titanpoint-window", minResizeW, minResizeH, "", $(this));
     $("#titanpoint-window")
       .find("iframe")
-      .attr("src", "https://stevehuu.com/webgl/u_titanpoint/index.html");
+      .attr(
+        "src",
+        "https://stevehuu.com/stuff_machine/webgl/u_titanpoint/index.html"
+      );
   });
 
   $("#app-notes").dblclick(function () {
