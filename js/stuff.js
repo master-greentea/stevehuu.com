@@ -3,9 +3,9 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  const vNo = "0.9.5";
-  const vDate = "09.27.22";
-  const vMsg = "webgl re-organized<br />fixed window header transition";
+  const vNo = "0.9.8";
+  const vDate = "10.04.22";
+  const vMsg = "added notes<br />fixed window header transition";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(vDate);
 
