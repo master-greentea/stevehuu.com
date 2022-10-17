@@ -85,17 +85,53 @@
                       9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
                 />
               </svg> </a
-            >.
+            >.<br/>
+            dev logging...
           </p>
-          <p class="game-details">dev logging...</p>
-
-          <video
-            autoplay
-            muted
-            loop
-            src="/images/games/project_e/#"
-            style="width: 100%"
-          ></video>
+          <p class="game-details">
+            <div class="row">
+              <div class="col-12 col-md-6 col-xxl-4">
+                <video
+                autoplay
+                muted
+                controls
+                loop
+                src="/images/games/project_e/101422.mp4"
+                style="width: 100%"
+                ></video>
+              </div>
+              <div class="col-12 col-md-6 col-xxl-4">
+                <h3>10/14</h3>
+                worked on track state<br />
+                now once player exits the active detection from enemy, system starts
+                noting down player position based on a set interval<br />
+                worked on patrol state<br />
+                enemy roams randomly and take rests in between<br />
+                during rests enemy should look around to search for player<br />
+              </div>
+            </div>
+            <br />
+            <h3>10/13</h3>
+            started making a simple statemachine<br />
+            following this tutorial<br />
+            <br />
+            planned states:<br />
+            idle<br />
+            -where enemy just sits still<br />
+            chase<br />
+            -where enemy is actively chasing player<br />
+            track<br />
+            -an advance state where enemy attempts to find the player based on
+            various info<br />
+            patrol<br />
+            -a state before idle where enemy patrols randomly<br />
+            intercept<br />
+            -an advance state where enemy takes short cut to stop player<br />
+            <br />
+            statemachine completed!<br />
+            implemented navmesh simple chase & idle state transition<br />
+            enemy vision implemented<br />
+          </p>
         </div>
 
         <!-- right space -->
