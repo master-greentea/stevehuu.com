@@ -119,6 +119,6 @@ video {
   margin-top: 30px;
 }
 .page-links {
-  color: #f2c94d;
+  color: var(--color-y);
   text-decoration: underline;
 }

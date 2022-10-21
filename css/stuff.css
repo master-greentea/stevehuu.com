@@ -3,10 +3,14 @@ html {
   overflow-x: hidden;
   cursor: url("/images/stuff/sm_cursor.png"), default !important;
   /* color vars */
-  --shadow-bronze-glow: 5px 5px 45px var(--color-y) inset;
-  --color-bronze-transparent: #f2c94d5b;
+  --shadow-bronze-glow: 5px 5px 45px var(--color-y-sm) inset;
+  --color-b-smronze-transparent: #f2c94d5b;
   --color-task-bar-black: #242429;
   --border-window: 1px solid #575550;
+  --color-b-sm: #0e0e10;
+  --color-w-sm: #f8f2e2;
+  --color-r-sm: #f23e3e;
+  --color-y-sm: #f2c94d;
 }
 body {
   cursor: url("/images/stuff/sm_cursor.png"), default !important;
@@ -19,11 +23,11 @@ body {
 }
 input::-moz-selection,
 textarea::-moz-selection {
-  background-color: var(--color-bronze-transparent);
+  background-color: var(--color-b-smronze-transparent);
 }
 input::selection,
 textarea::selection {
-  background-color: var(--color-bronze-transparent);
+  background-color: var(--color-b-smronze-transparent);
 }
 .active-window {
   z-index: 100 !important;
@@ -37,10 +41,10 @@ button {
   margin: 0;
 }
 .white-p {
-  color: var(--color-w);
+  color: var(--color-w-sm);
 }
 .stealth-p {
-  color: var(--color-b);
+  color: var(--color-b-sm);
 }
 .content-text-title {
   font-size: larger;
@@ -60,7 +64,7 @@ button {
   cursor: pointer !important;
 }
 #header-pullout:hover path {
-  fill: var(--color-y);
+  fill: var(--color-y-sm);
 }
 
 /* task bar */
@@ -104,7 +108,7 @@ button {
   height: 30px;
 }
 .task-bar-icons.clickable:hover {
-  background-color: var(--color-bronze-transparent);
+  background-color: var(--color-b-smronze-transparent);
   border: 0px;
   border-radius: 3px;
   transition: background-color 0.5s ease-out;
@@ -128,7 +132,7 @@ button {
   z-index: 99;
 }
 #start-menu-button:hover img {
-  background-color: var(--color-bronze-transparent);
+  background-color: var(--color-b-smronze-transparent);
   border: 0px;
   border-radius: 3px;
   transition: background-color 0.5s ease-out;
@@ -161,7 +165,7 @@ button {
   height: 100%;
   width: 35px;
   padding: 0;
-  background-color: var(--color-r);
+  background-color: var(--color-r-sm);
   border-right: 0px;
   border-radius: 6px 0px 0px 6px;
 }
@@ -192,13 +196,13 @@ button {
   box-shadow: var(--shadow-bronze-glow);
 }
 .start-menu-divider {
-  border-top: 1px solid var(--color-w);
+  border-top: 1px solid var(--color-w-sm);
 }
 
 /* loader */
 #stuff-machine-loader {
   position: absolute;
-  color: var(--color-w);
+  color: var(--color-w-sm);
   top: 120px;
   left: 65px;
   font-family: "Space Mono";
@@ -225,7 +229,7 @@ button {
   width: 85%;
 }
 #acsii-art {
-  text-shadow: 0px 0px 10px var(--color-y);
+  text-shadow: 0px 0px 10px var(--color-y-sm);
   transition: text-shadow 0.5s ease-out;
 }
 
@@ -289,7 +293,7 @@ button {
   transition: box-shadow 0.25s ease-in-out;
 }
 .window-header-text {
-  color: var(--color-w);
+  color: var(--color-w-sm);
   margin: 0;
   padding: 0;
   padding-left: 15px;
@@ -322,7 +326,7 @@ button {
 }
 .window-toggle-button:hover path,
 .window-close-button:hover path {
-  fill: var(--color-y);
+  fill: var(--color-y-sm);
   transition: fill 0.3s ease-out;
 }
 
@@ -332,11 +336,11 @@ button {
   width: 100%;
   top: 0px;
   left: 0px;
-  background-color: var(--color-b);
+  background-color: var(--color-b-sm);
   border: var(--border-window); /* WINDOW BORDER LOWER */
   border-radius: 0px 0px 6px 6px;
   margin: 0px;
-  color: var(--color-b);
+  color: var(--color-b-sm);
   text-align: center;
   box-shadow: 0px 3px 3px black;
 }
@@ -363,7 +367,7 @@ button {
 }
 .apps {
   border: none;
-  color: var(--color-w);
+  color: var(--color-w-sm);
   margin: 0;
   padding: 0;
   width: 65px;
@@ -374,8 +378,8 @@ button {
 .apps:focus img,
 .folder-item button:hover img,
 .folder-item button:focus img {
-  background-color: var(--color-bronze-transparent);
-  border: 1px dotted var(--color-w);
+  background-color: var(--color-b-smronze-transparent);
+  border: 1px dotted var(--color-w-sm);
   transition: background-color 0.35s ease-out;
 }
 .apps img {
@@ -418,7 +422,7 @@ button {
 }
 #notes-list {
   position: relative;
-  color: var(--color-w);
+  color: var(--color-w-sm);
   font-family: "Space Mono";
   padding-left: 15px;
   list-style-image: url(/images/stuff/i_list.png);
@@ -455,7 +459,7 @@ button {
   width: 100%;
 }
 .folder-item div {
-  color: var(--color-w);
+  color: var(--color-w-sm);
   position: relative;
   left: 50%;
   transform: translate(-50%);
@@ -463,8 +467,8 @@ button {
 }
 /* folder levels */
 .folder-path {
-  color: var(--color-w);
-  background-color: var(--color-b);
+  color: var(--color-w-sm);
+  background-color: var(--color-b-sm);
   position: absolute;
   left: 0;
   top: 0px;
@@ -477,8 +481,8 @@ button {
 }
 .folder-back-button:hover,
 .folder-back-button-lvl2:hover {
-  color: var(--color-y);
-  fill: var(--color-y);
+  color: var(--color-y-sm);
+  fill: var(--color-y-sm);
 }
 .folder-lvl-2,
 .folder-lvl-3 {
@@ -533,7 +537,7 @@ audio {
 /* bug */
 #bug-form {
   font-family: "Space Mono";
-  color: var(--color-w);
+  color: var(--color-w-sm);
 }
 #bug-form > textarea,
 input[type="text"] {
@@ -541,14 +545,14 @@ input[type="text"] {
   border: 0px;
   border-radius: 4px;
   transition: box-shadow 0.25s ease-out;
-  color: var(--color-w);
+  color: var(--color-w-sm);
   padding: 8px;
   padding-left: 15px;
   margin-top: 5px;
 }
 #bug-form > textarea:focus,
 input[type="text"]:focus {
-  box-shadow: 0px 0px 8px var(--color-y);
+  box-shadow: 0px 0px 8px var(--color-y-sm);
   border: none;
   outline: none;
 }
@@ -560,11 +564,11 @@ input[type="text"]:focus {
   height: 170px;
 }
 #bug-submit-btn {
-  background-color: var(--color-y);
+  background-color: var(--color-y-sm);
   border-radius: 4px;
 }
 #bug-submit-btn:hover {
-  background-color: var(--color-r);
+  background-color: var(--color-r-sm);
 }
 
 /* venera reader */

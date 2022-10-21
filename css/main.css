@@ -28,6 +28,7 @@ html {
   --color-w: #f8f2e2;
   --color-r: #f23e3e;
   --color-y: #f2c94d;
+  --color-navbar-bg: #0f0f11; /* 0f0f11 */
 }
 
 body {
@@ -97,7 +98,7 @@ button {
 
 /* scroll bar */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 13px;
   height: 10px;
 }
 ::-webkit-scrollbar-track {
@@ -105,8 +106,8 @@ button {
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--color-w);
-  border-radius: 5px;
-  border-right: 3px solid var(--color-b);
+  border-radius: 15px;
+  border: 3px solid var(--color-b);
 }
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-y);
@@ -170,7 +171,7 @@ header #morse img {
 
 /* offcanvas */
 .offcanvas {
-  background-color: #0f0f11;
+  background-color: var(--color-navbar-bg);
   margin-top: 80px;
   --bs-offcanvas-width: 350px;
 }
@@ -239,6 +240,22 @@ header #morse img {
   transition: color 1s ease-out;
   color: var(--color-r);
 }
+/* scroll bar */
+#ad::-webkit-scrollbar {
+  width: 8px;
+  height: 10px;
+}
+#ad::-webkit-scrollbar-track {
+  background-color: #333e45;
+}
+#ad::-webkit-scrollbar-thumb {
+  background-color: #eedadf;
+  border: none;
+}
+#ad::-webkit-scrollbar-thumb:hover {
+  background-color: #1d1d1d;
+}
+/* END scroll bar */
 /* END ad */
 
 /* loader */
