@@ -89,6 +89,16 @@
             dev logging...
           </p>
           <p class="game-details">
+            <h3>10/21</h3>
+            <p>- changed wander destinations from world to area around player<br />
+            <br />
+            intercept state concepting:<br />
+            thinking whether or not I should be using the current enemy overlap sphere as a detection range;<br />
+            OR! sound source, sound level detection range? check wall between?<br /><br />
+            <strong>state transition</strong>: from track - once enemy at 2nd to last mapped tracking waypoint, check if player is within range<br />
+            - if player in intercept range, set destination to player forward + velocity (predicted path)
+            </p>
+            <br />
             <div class="row">
               <div class="col-12 col-md-6 col-xxl-4">
                 <video
@@ -102,35 +112,37 @@
               </div>
               <div class="col-12 col-md-6 col-xxl-4">
                 <h3>10/14</h3>
-                worked on track state<br />
+                <p>worked on track state<br />
                 now once player exits the active detection from enemy, system starts
                 noting down player position based on a set interval<br />
                 worked on patrol state<br />
                 enemy roams randomly and take rests in between<br />
                 during rests enemy should look around to search for player<br />
-              </div>
+              </p></div>
             </div>
             <br />
             <h3>10/13</h3>
-            started making a simple statemachine<br />
-            following this tutorial<br />
-            <br />
-            planned states:<br />
-            idle<br />
-            -where enemy just sits still<br />
-            chase<br />
-            -where enemy is actively chasing player<br />
-            track<br />
-            -an advance state where enemy attempts to find the player based on
-            various info<br />
-            patrol<br />
-            -a state before idle where enemy patrols randomly<br />
-            intercept<br />
-            -an advance state where enemy takes short cut to stop player<br />
-            <br />
-            statemachine completed!<br />
-            implemented navmesh simple chase & idle state transition<br />
-            enemy vision implemented<br />
+            <p>
+              started making a simple statemachine<br />
+              following this tutorial<br />
+              <br />
+              planned states:<br />
+              IDLE<br />
+              - where enemy just sits still<br />
+              CHASE<br />
+              - where enemy is actively chasing player<br />
+              TRACK<br />
+              - an advance state where enemy attempts to find the player based on
+              various info<br />
+              PATROL<br />
+              - a state before idle where enemy patrols randomly<br />
+              INTERCEPT<br />
+              - an advance state where enemy takes short cut to stop player<br />
+              <br />
+              statemachine completed!<br />
+              implemented navmesh simple chase & idle state transition<br />
+              enemy vision implemented<br />
+            </p>
           </p>
         </div>
 
