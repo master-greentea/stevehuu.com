@@ -23,3 +23,32 @@ function LoadGameTabs() {
     });
   }, 1);
 }
+
+// themes
+// defaults
+// --color-b: #0e0e10;
+// --color-w: #f8f2e2;
+// --color-r: #f23e3e;
+// --color-y: #f2c94d;
+// --color-navbar-bg: #0f0f11;
+function InitializeTheme() {
+  const currentTheme = localStorage.getItem("theme") || "default";
+
+  function ChangeTheme(themeName) {
+    $("#theme-stylesheet").attr("href", `/css/themes/${themeName}.css`);
+    $(`select option[value="${themeName}"]`).attr("selected", true);
+  }
+
+  $("#theme-select").change(() => {
+    ChangeTheme($("#theme-select").val());
+    localStorage.setItem("theme", $("#theme-select").val());
+  });
+
+  ChangeTheme(currentTheme);
+}
+
+$(() => {
+  $("body").hide();
+  $("body").fadeIn(700);
+  InitializeTheme();
+});

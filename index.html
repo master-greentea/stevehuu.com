@@ -33,6 +33,11 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="css/main.css" />
+    <link
+      rel="stylesheet"
+      id="theme-stylesheet"
+      href="css/themes/default.css"
+    />
 
     <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
@@ -64,6 +69,12 @@
               ><span id="stuff-maker">Stuff maker</span></a
             >
           </h2>
+          <select id="theme-select">
+            <option value="default">Classic</option>
+            <option value="cherry">Cherry</option>
+            <option value="dim">Dimmed</option>
+            <option value="light">Light</option>
+          </select>
 
           <!-- social bar (mobile) -->
           <div class="col d-flex d-md-none justify-content-start">
@@ -160,7 +171,7 @@
 
     <script>
       PageSetup(
-        "<img alt='stevehuu_venus' src='images/index/venus_index.png' />",
+        "<img alt='stevehuu_venus' src='images/index/venus_index.png' style='border-radius: 6px' />",
         ""
       );
     </script>
