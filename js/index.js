@@ -25,12 +25,6 @@ function LoadGameTabs() {
 }
 
 // themes
-// defaults
-// --color-b: #0e0e10;
-// --color-w: #f8f2e2;
-// --color-r: #f23e3e;
-// --color-y: #f2c94d;
-// --color-navbar-bg: #0f0f11;
 function InitializeTheme() {
   const currentTheme = localStorage.getItem("theme") || "default";
 
