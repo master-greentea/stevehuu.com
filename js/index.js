@@ -1,3 +1,7 @@
+$(() => {
+  InitializeTheme();
+});
+
 function PageSetup(morseMsg, currentPageNavLink) {
   $("._header").load("/master_htmls/header.html", function () {
     $("#morse").html(morseMsg);
@@ -9,9 +13,9 @@ function PageSetup(morseMsg, currentPageNavLink) {
 function LoadGameTabs() {
   const gameTabs = $("#games-main a").toArray();
   // hide game tabs
-  $.each(gameTabs, function (i, tab) {
-    $(tab).hide();
-  });
+  // $.each(gameTabs, function (i, tab) {
+  //   $(tab).hide();
+  // });
 
   let time = 0;
   var doLoad = setTimeout(() => {
@@ -21,17 +25,12 @@ function LoadGameTabs() {
       }, time);
       time += 150;
     });
-  }, 1);
+  }, 50);
 }
 
 // themes
 function InitializeTheme() {
   const currentTheme = localStorage.getItem("theme") || "default";
-
-  function ChangeTheme(themeName) {
-    $("#theme-stylesheet").attr("href", `/css/themes/${themeName}.css`);
-    $(`select option[value="${themeName}"]`).attr("selected", true);
-  }
 
   $("#theme-select").change(() => {
     ChangeTheme($("#theme-select").val());
@@ -40,9 +39,7 @@ function InitializeTheme() {
 
   ChangeTheme(currentTheme);
 }
-
-$(() => {
-  $("body").hide();
-  $("body").fadeIn(700);
-  InitializeTheme();
-});
+function ChangeTheme(themeName) {
+  $("#theme-stylesheet").attr("href", `/css/themes/${themeName}.css`);
+  $(`select option[value="${themeName}"]`).attr("selected", true);
+}

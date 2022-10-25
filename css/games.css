@@ -19,11 +19,27 @@ video {
 }
 
 .game-tab {
-  border-radius: 6px;
+  border-radius: 10px;
   box-shadow: none;
   transition: box-shadow 0.3s ease-out, border 0.3s ease-out;
   padding: 0px !important;
   padding-bottom: 4px !important;
+  position: relative;
+}
+.game-tab:before {
+  content: "";
+  position: absolute;
+  border-radius: 11px;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(to right, var(--color-b) 15%, var(--color-y));
+}
+.game-tab:hover:before {
+  transition: width 500ms ease;
+  width: 100%;
 }
 .unfinished {
   opacity: 40%;
@@ -56,13 +72,16 @@ video {
 .game-tab img {
   width: 100%;
   height: auto;
-  border-radius: 6px;
+  border-radius: 8px 8px 0px 0px;
   margin-top: 0px !important;
   padding: 0px !important;
 }
 
 #games-main {
   padding-top: 10px;
+}
+#games-main a {
+  display: none;
 }
 
 .pyramids-html {
