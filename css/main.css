@@ -57,9 +57,6 @@ h1 {
   text-shadow: none;
   transition: text-shadow 0.5s ease-out, color 0.2s ease-out;
 }
-h1:hover {
-  text-shadow: 5px 2px 10px var(--color-r);
-}
 h2,
 h5 {
   font-family: "K2D Light Regular";
