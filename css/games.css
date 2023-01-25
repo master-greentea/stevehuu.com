@@ -26,21 +26,6 @@ video {
   padding-bottom: 4px !important;
   position: relative;
 }
-.game-tab:before {
-  content: "";
-  position: absolute;
-  border-radius: 11px;
-  z-index: -1;
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(to right, var(--color-b) 15%, var(--color-y));
-}
-.game-tab:hover:before {
-  transition: width 500ms ease;
-  width: 100%;
-}
 .unfinished {
   opacity: 40%;
   cursor: default;
