@@ -358,10 +358,10 @@ h2 a:hover {
 }
 #light-mode:hover,
 #dark-mode:hover,
-#learn-more:hover {
+.index-expansion-buttons:hover {
   cursor: pointer;
 }
-#learn-more {
+.index-expansion-buttons {
   text-decoration: underline;
 }
 

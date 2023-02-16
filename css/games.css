@@ -1,16 +1,16 @@
-a {
+a:has(.game-tab) {
   color: var(--color-w);
   text-decoration: none;
 }
-a:hover {
+a:has(.game-tab):hover {
   color: var(--color-w);
   text-decoration: none;
 }
-a h2 {
+a:has(.game-tab) h2 {
   text-shadow: none;
   padding-left: 4px;
 }
-a:hover h2 {
+a:has(.game-tab):hover h2 {
   text-shadow: none;
 }
 
