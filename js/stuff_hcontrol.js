@@ -30,7 +30,7 @@ $(function () {
 
   // load header
   PageSetup(
-    "<img src='/images/stuff/stuffmachine_logo_icon.png' />",
+    "",
     "#nav-link-stuff"
   );
   // run if not on mobile

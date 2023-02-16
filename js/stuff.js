@@ -3,9 +3,9 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  const vNo = "0.9.8";
-  const vDate = "10.04.22";
-  const vMsg = "added notes<br />fixed window header transition";
+  const vNo = "0.9.11";
+  const vDate = "02.15.22";
+  const vMsg = "minor bug fixes";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(vDate);
 
@@ -301,10 +301,10 @@ $(function () {
   var taskBarTime = setInterval(() => {
     $("#tb-time").html(
       ("0" + new Date(Date.now()).getHours()).slice(-2) +
-        ":" +
-        ("0" + new Date(Date.now()).getMinutes()).slice(-2) +
-        ":" +
-        ("0" + new Date(Date.now()).getSeconds()).slice(-2)
+      ":" +
+      ("0" + new Date(Date.now()).getMinutes()).slice(-2) +
+      ":" +
+      ("0" + new Date(Date.now()).getSeconds()).slice(-2)
     );
     if (
       new Date(Date.now()).getHours() < 5 ||
@@ -471,10 +471,10 @@ $(function () {
             .find(".window-content-folder")
             .append(
               "<script>" +
-                selectWindow +
-                mediaOpen +
-                randomWindowLocation +
-                "</script>"
+              selectWindow +
+              mediaOpen +
+              randomWindowLocation +
+              "</script>"
             );
         });
     }
@@ -492,11 +492,11 @@ $(function () {
     } else {
       $("#media-viewer-holder").append(
         "<div class='window media-viewer' id='" +
-          newID +
-          "'>" +
-          "<div class='window-controls no-fs d-flex justify-content-end'> <p class='window-header-text'>" +
-          "</p> <button class='window-close-button d-flex align-items-center justify-content-center' > <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#f8f2e2' viewBox='0 0 16 16' > <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z' /> </svg> </button> </div>" +
-          "<div class='window-content-fixed'> <div class='viewer-loader'><div class='loader'><div class='loader-sub'></div></div></div> <div class='viewer-content'></div> </div></div>"
+        newID +
+        "'>" +
+        "<div class='window-controls no-fs d-flex justify-content-end'> <p class='window-header-text'>" +
+        "</p> <button class='window-close-button d-flex align-items-center justify-content-center' > <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#f8f2e2' viewBox='0 0 16 16' > <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z' /> </svg> </button> </div>" +
+        "<div class='window-content-fixed'> <div class='viewer-loader'><div class='loader'><div class='loader-sub'></div></div></div> <div class='viewer-content'></div> </div></div>"
       );
 
       $(newIDSelector)
@@ -573,10 +573,10 @@ $(function () {
         .find(".folder-path")
         .html(
           "<inline class='folder-back-button'>" +
-            backSvg +
-            lastLvlName +
-            "</inline>/" +
-            nextLvlName
+          backSvg +
+          lastLvlName +
+          "</inline>/" +
+          nextLvlName
         );
     } else {
       $(nextLvlId)
@@ -584,13 +584,13 @@ $(function () {
         .find(".folder-path")
         .html(
           "<inline class='folder-back-button'>" +
-            backSvg +
-            parentName +
-            "</inline>/" +
-            "<inline class='folder-back-button-lvl2'>" +
-            lastLvlName +
-            "</inline>/" +
-            nextLvlName
+          backSvg +
+          parentName +
+          "</inline>/" +
+          "<inline class='folder-back-button-lvl2'>" +
+          lastLvlName +
+          "</inline>/" +
+          nextLvlName
         );
 
       $(".folder-back-button-lvl2").click(function () {

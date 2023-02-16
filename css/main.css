@@ -56,13 +56,16 @@ h1 {
   color: var(--color-y);
   text-shadow: none;
   transition: text-shadow 0.5s ease-out, color 0.2s ease-out;
+  cursor: default;
 }
 h2,
 h5 {
   font-family: "K2D Light Regular";
+  cursor: default;
 }
 h4 {
   font-family: "JetBrains Mono";
+  cursor: default;
 }
 p {
   font-family: "JetBrains Mono";
@@ -149,6 +152,10 @@ button {
   background-color: #0d0d0f00 !important;
 }
 /* socials */
+.social-bar ul {
+  width: fit-content;
+  height: 64px;
+}
 .social-svg {
   fill: var(--color-w);
   transition: fill 0.2s;
@@ -349,75 +356,13 @@ header #morse img {
 h2 a:hover {
   text-shadow: none;
 }
-
-#stuff-maker {
-  position: relative;
-  animation: glitch 1s linear infinite;
+#light-mode:hover,
+#dark-mode:hover,
+#learn-more:hover {
+  cursor: pointer;
 }
-
-@keyframes glitch {
-  2%,
-  64% {
-    transform: translate(2px, 0px) skew(0deg);
-  }
-  4%,
-  60% {
-    transform: translate(-2px, 0px) skew(0deg);
-  }
-  62% {
-    transform: translate(0, 0px) skew(5deg);
-  }
-}
-
-#stuff-maker:before,
-#stuff-maker:after {
-  text-shadow: 3px 0px 0px var(--color-r);
-  font-family: "K2D Light Regular";
-  width: max-content;
-  height: fit-content;
-  content: "Stuff maker";
-  position: absolute;
-  left: 0;
-}
-
-#stuff-maker:before {
-  animation: glitchTop 0.01s linear infinite;
-  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
-}
-
-@keyframes glitchTop {
-  2%,
-  64% {
-    transform: translate(0px, 4px);
-  }
-  4%,
-  60% {
-    transform: translate(0px, 4px);
-  }
-  62% {
-    transform: translate(13px, -1px) skew(-13deg);
-  }
-}
-
-#stuff-maker:after {
-  animation: glitchBotom 0.1s linear infinite;
-  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
-}
-
-@keyframes glitchBotom {
-  2%,
-  64% {
-    transform: translate(-1px, 5px);
-  }
-  4%,
-  60% {
-    transform: translate(-1px, 5px);
-  }
-  62% {
-    transform: translate(-22px, 8px) skew(21deg);
-  }
+#learn-more {
+  text-decoration: underline;
 }
 
 /* tooltip */

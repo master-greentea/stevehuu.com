@@ -39,7 +39,27 @@ function InitializeTheme() {
 
   ChangeTheme(currentTheme);
 }
+function ToLight() {
+  ChangeTheme("light");
+  $("#light-mode").hide();
+  $("#dark-mode").show();
+  localStorage.setItem("theme", "light");
+}
+function ToDark() {
+  ChangeTheme("default");
+  $("#dark-mode").hide();
+  $("#light-mode").show();
+  localStorage.setItem("theme", "default");
+}
 function ChangeTheme(themeName) {
   $("#theme-stylesheet").attr("href", `/css/themes/${themeName}.css`);
   $(`select option[value="${themeName}"]`).attr("selected", true);
+  if (localStorage.getItem("theme") == "default") {
+    $("#dark-mode").hide();
+    $("#light-mode").show();
+  }
+  else if (localStorage.getItem("theme") == "light") {
+    $("#light-mode").hide();
+    $("#dark-mode").show();
+  }
 }
