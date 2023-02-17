@@ -212,12 +212,26 @@ button {
   background-color: #0c4653;
   border: double mediumspringgreen 5px;
   overflow-y: scroll;
+  overflow-x: hidden;
   font-family: georgia;
   padding: 15px;
   max-height: 45vh;
   min-height: fit-content;
   margin: 20px;
   margin-top: 50px;
+}
+#ad-close {
+  position: fixed;
+  padding: 0px;
+  background-color: #0c4653;
+  border: double mediumspringgreen 5px;
+  color: #d12a54;
+  margin-right: 20px;
+  margin-left: 20px;
+  border-radius: 3px;
+  left: 2%;
+  top: 95px;
+  z-index: 99999;
 }
 #ad a#outfoxlink {
   color: #d12a54;
@@ -314,10 +328,12 @@ h2 a:hover {
 #dark-mode:hover,
 .index-expansion-buttons:hover {
   cursor: pointer;
+  text-shadow: 1px 1px 16px var(--color-y);
 }
 .index-expansion-buttons {
   text-decoration: underline;
   color: var(--color-y);
+  transition: text-shadow 0.25s ease-out;
 }
 @keyframes wiggle {
   0% {
@@ -336,7 +352,7 @@ h2 a:hover {
     transform: rotate(0deg);
   }
 }
-@keyframes to-left {
+@keyframes to-stuff {
   0% {
     opacity: 1;
   }
@@ -349,7 +365,7 @@ h2 a:hover {
 }
 #header-cat {
   display: inline-block;
-  animation: wiggle 2.5s infinite ease-in-out;
+  animation: wiggle 3s infinite ease-in-out;
   position: absolute;
   opacity: 1;
 }
@@ -362,17 +378,16 @@ h2 a:hover {
   opacity: 0;
 }
 #header-switch:hover > #header-cat {
-  animation: to-left 0.5s;
+  animation: to-stuff 0.5s;
   opacity: 0;
 }
-#header-switch:hover > #header-stuff,
-#header-switch:hover > #header-stuff-text {
+#header-switch:hover > #header-stuff {
   opacity: 1;
 }
 #header-stuff-text {
   position: relative;
   transition: opacity 0.5s;
-  opacity: 0;
+  /* opacity: 0; */
   left: 60px;
   top: 15px;
   padding: none;

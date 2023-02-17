@@ -3,9 +3,9 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  const vNo = "0.9.11";
-  const vDate = "02.15.22";
-  const vMsg = "minor bug fixes";
+  const vNo = "0.9.12";
+  const vDate = "02.17.22";
+  const vMsg = "minor bug fixes<br/>updated venera status<br/>added background";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(vDate);
 
@@ -394,7 +394,7 @@ $(function () {
     setTimeout(function () {
       $(windowToSelect)
         .find(".window-controls")
-        .css("box-shadow", "0px 5px 30px #f2c94d inset");
+        .css("box-shadow", "0px 5px 30px var(--color-y-sm) inset");
     }, 50);
     $(".window")
       .not(windowToSelect)

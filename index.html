@@ -50,18 +50,13 @@
       <header class="container-fluid d-flex">
         <div
           id="header-switch"
-          style="
-            position: relative;
-            left: 50%;
-            transform: translate(-25px, 0);
-            width: 100%;
-          "
+          style="position: relative; left: 50%; transform: translate(-25px, 0)"
         >
           <div id="header-cat">
-            <a href="/test.html" style="margin: 0"
+            <a href="/stuff.html" style="margin: 0"
               ><img
                 alt="stevehuu_logo"
-                src="/images/cat_logo.png"
+                src="/images/stuff/stuffmachine_logo_icon_pic.png"
                 class="d-block img-fluid"
                 style="width: 50px; height: 50px; margin: 0"
             /></a>
@@ -75,7 +70,9 @@
                 style="width: 50px; height: 50px; margin: 0"
             /></a>
           </div>
-          <p id="header-stuff-text">&#60; Stuff Machine</p>
+          <p id="header-stuff-text">
+            &#60; <a href="/stuff.html">Stuff Machine</a>&copy;
+          </p>
         </div>
       </header>
 
@@ -498,20 +495,33 @@
       id="ad"
       style="
         display: none;
-        width: 365px;
+        width: 320px;
         position: fixed;
-        left: 20px;
+        left: 2%;
         top: 60px;
         z-index: 9999;
       "
     >
+      <button id="ad-close" onclick="CloseAd()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="22"
+          height="22"
+          fill="currentColor"
+          class="bi bi-x-square-fill"
+          viewBox="0 0 16 16"
+        >
+          <path
+            d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708z"
+          />
+        </svg>
+      </button>
       <script>
         setInterval(() => {
           $("#flash").fadeIn(200);
           $("#flash").fadeOut(200);
         }, 200);
       </script>
-
       <h4
         id="flash"
         style="
@@ -569,16 +579,24 @@
         LoadGameTabs();
       });
       // ad
+      var adViewed = false;
       window.onscroll = function () {
         if (
-          document.body.scrollTop > 150 ||
-          document.documentElement.scrollTop > 150
+          (document.body.scrollTop > 100 ||
+            document.documentElement.scrollTop > 100) &&
+          !adViewed
         ) {
           $("#ad").fadeIn(300);
-        } else {
-          $("#ad").fadeOut(300);
         }
       };
+
+      function CloseAd() {
+        var onMobile = window.matchMedia("(max-width: 1319px)").matches;
+        if (onMobile) {
+          adViewed = true;
+        }
+        $("#ad").fadeOut(300);
+      }
     </script>
   </body>
 </html>
