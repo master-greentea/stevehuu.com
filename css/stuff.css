@@ -1,10 +1,18 @@
 html {
   overflow-y: hidden;
   overflow-x: hidden;
+}
+html.default-theme {
   cursor: url("/images/stuff/sm_cursor.png"), default !important;
 }
-body {
+body.default-theme {
   cursor: url("/images/stuff/sm_cursor.png"), default !important;
+}
+html.light-theme {
+  cursor: url("/images/stuff/sm_cursor_b.png"), default !important;
+}
+body.light-theme {
+  cursor: url("/images/stuff/sm_cursor_b.png"), default !important;
 }
 a {
   color: var(--color-y-sm);
@@ -37,8 +45,13 @@ textarea::selection {
   z-index: 100 !important;
 }
 button {
-  cursor: url("/images/stuff/sm_cursor.png"), default !important;
   border: none;
+}
+button.default-theme {
+  cursor: url("/images/stuff/sm_cursor.png"), default !important;
+}
+button.light-theme {
+  cursor: url("/images/stuff/sm_cursor_b.png"), default !important;
 }
 #sm-desktop p {
   font-family: "Space Mono";
@@ -214,8 +227,43 @@ button {
   font-weight: bolder;
   width: 90%;
 }
+#stuff-machine-logo-bg {
+  position: absolute;
+  background-color: var(--color-b-sm);
+  padding-left: 20px;
+  border-radius: 8px;
+  width: 270px;
+  height: 120px;
+  top: -20px;
+  z-index: -1;
+}
 #stuff-machine-logo {
-  width: 95%;
+  width: 270px;
+  position: absolute;
+  top: -30px;
+  padding-left: 20px;
+}
+#stuff-machine-logo-square {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-color: var(--color-r-sm);
+  border-radius: 6px;
+  left: 65px;
+  top: 0px;
+  animation: logo-spin 2.5s infinite;
+  z-index: -1;
+}
+@keyframes logo-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 #stuff-machine-loader p {
   font-size: 25px;
@@ -247,7 +295,7 @@ button {
   height: 100vh;
 }
 #stuff-space {
-  background-color: #13131800; /* 131318 */
+  background-color: var(--color-desktop-sm-transparent); /* 131318 */
   position: absolute;
   top: 0;
   left: 0;
@@ -423,7 +471,7 @@ button {
   width: calc(15vw - 2px);
   height: calc(40vh - 2px);
   border-radius: 0 0 5px 5px;
-  background-color: #555044db;
+  background-color: #8f8878db;
   z-index: 0;
 }
 #notes-list {

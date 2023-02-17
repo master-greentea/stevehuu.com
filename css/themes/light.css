@@ -8,10 +8,12 @@
   /* color vars */
   --shadow-bronze-glow: 5px 5px 45px var(--color-y) inset;
   --color-b-smronze-transparent: #1c4b645b;
-  --color-task-bar-black: #ebe8e1;
+  --color-task-bar-black: #c8c2b0;
   --border-window: 1px solid #575550;
-  --color-b-sm: #f8f2e2;
+  --color-b-sm: #bab7af;
   --color-w-sm: #0e0e10;
   --color-r-sm: #f23e3e;
   --color-y-sm: #1c4b64;
+  --color-desktop-sm: #e4e1d9;
+  --color-desktop-sm-transparent: #e4e1d900;
 }

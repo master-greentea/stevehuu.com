@@ -329,11 +329,16 @@ h2 a:hover {
 .index-expansion-buttons:hover {
   cursor: pointer;
   text-shadow: 1px 1px 16px var(--color-y);
+  fill: var(--color-y);
 }
 .index-expansion-buttons {
   text-decoration: underline;
   color: var(--color-y);
   transition: text-shadow 0.25s ease-out;
+}
+#light-mode,
+#dark-mode {
+  transition: fill 0.2s;
 }
 @keyframes wiggle {
   0% {
@@ -381,13 +386,14 @@ h2 a:hover {
   animation: to-stuff 0.5s;
   opacity: 0;
 }
-#header-switch:hover > #header-stuff {
+#header-switch:hover > #header-stuff,
+#header-switch:hover > #header-stuff-text {
   opacity: 1;
 }
 #header-stuff-text {
   position: relative;
   transition: opacity 0.5s;
-  /* opacity: 0; */
+  opacity: 0;
   left: 60px;
   top: 15px;
   padding: none;

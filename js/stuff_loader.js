@@ -96,6 +96,19 @@ function booting() {
   }, 600);
 
   checklistAnim();
+
+  // change cursor
+  if (localStorage.getItem("theme") == "default") {
+    $("body").addClass("default-theme");
+    $("html").addClass("default-theme");
+    $("button").addClass("default-theme");
+    console.log("b");
+  }
+  else if (localStorage.getItem("theme") == "light") {
+    $("body").addClass("light-theme");
+    $("html").addClass("light-theme");
+    $("button").addClass("light-theme");
+  }
 }
 
 function showStuff() {

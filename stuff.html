@@ -52,7 +52,7 @@
 
   <body
     onload="booting()"
-    style="background-color: var(--color-b-sm); color: var(--color-w-sm)"
+    style="background-color: var(--color-desktop-sm); color: var(--color-w-sm)"
   >
     <header class="container-fluid d-flex">
       <div
@@ -161,14 +161,16 @@
     <!-- loader -->
     <div id="sm-load">
       <div id="stuff-machine-loader">
-        <div class="row">
+        <div class="row" style="height: 120px">
           <div class="col-6 col-xxl-2">
+            <div id="stuff-machine-logo-bg"></div>
             <img
               id="stuff-machine-logo"
-              src="/images/stuff/stuffmachine_small.gif"
+              src="/images/stuff/stuffmachine_logo_t.png"
             />
+            <div id="stuff-machine-logo-square"></div>
           </div>
-          <div class="col-6 col-xxl-10 d-flex align-items-center">
+          <div class="col-6 col-xxl-10 d-none d-sm-flex align-items-center">
             <p>
               <span style="color: var(--color-y-sm)">V</span
               ><span class="sm-version-no"></span><br /><span
@@ -420,7 +422,7 @@
         <svg
           xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMidYMin slice"
-          viewBox="24 105 156 95"
+          viewBox="-64 105 156 125"
           style="
             position: absolute;
             left: 0;
@@ -459,31 +461,39 @@
               }
             </style>
           </defs>
-          <rect x="0" y="0" width="300" height="300" fill="var(--color-b)" />
+          <rect
+            x="0"
+            y="0"
+            width="300"
+            height="300"
+            fill="var(--color-desktop-sm)"
+          />
           <path
             class="top-outer"
-            fill="var(--color-b)"
-            stroke="var(--color-y)"
+            fill="var(--color-desktop-sm)"
+            stroke="var(--color-y-sm)"
+            stroke-width=".5"
             d="M68 1c23,0 67,17 69,39 4,38 5,52 -5,69 -20,36 -68,46 -120,-9 -27,-28 -7,-101 56,-99z"
           />
           <path
             class="top-inner"
-            fill="var(--color-b)"
-            stroke="var(--color-w)"
+            fill="var(--color-desktop-sm)"
+            stroke="var(--color-r-sm)"
+            stroke-width=".5"
             d="M69 22c33,-7 52,21 54,37 3,26 -1,28 -8,40 -15,25 -48,25 -85,-14 -19,-20 -4,-53 39,-63z"
           />
-          <path
+          <!-- <path
             class="bottom-outer"
             fill="var(--color-b)"
-            stroke="var(--color-w)"
+            stroke="var(--color-r)"
             d="M158 158c30,13 56,50 44,75 -9,18 -22,46 -42,55 -20,10 -48,2 -73,-19 -29,-25 -27,-55 -9,-79 17,-22 43,-48 80,-32z"
-          />
-          <path
+          /> -->
+          <!-- <path
             class="bottom-inner"
             fill="var(--color-b)"
             stroke="var(--color-r)"
             d="M136 180c32,-9 45,13 46,29 3,27 8,29 0,42 -14,25 -52,24 -79,0 -21,-18 -2,-61 33,-71z"
-          />
+          /> -->
         </svg>
       </div>
 

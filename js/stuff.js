@@ -3,9 +3,9 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  const vNo = "0.9.12";
+  const vNo = "0.9.13";
   const vDate = "02.17.22";
-  const vMsg = "minor bug fixes<br/>updated venera status<br/>added background";
+  const vMsg = "minor bug fixes<br/>updated venera status<br/>added background<br/>added light theme";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(vDate);
 
@@ -172,7 +172,7 @@ $(function () {
         .closest(".window")
         .find(".window-toggle-button")
         .html(
-          "<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='#f8f2e2' viewBox='0 0 16 16'><path d='M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z' /></svg>"
+          "<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='var(--color-w-sm)' viewBox='0 0 16 16'><path d='M0 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-2H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2z' /></svg>"
         );
       // other window's buttons disable
       $(".window-toggle-button")
@@ -216,7 +216,7 @@ $(function () {
         .closest(".window")
         .find(".window-toggle-button")
         .html(
-          "<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='#f8f2e2' viewBox='0 0 16 16'><path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/></svg>"
+          "<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='var(--color-w-sm)' viewBox='0 0 16 16'><path d='M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z'/></svg>"
         );
       // button enable
       $(".window-toggle-button")
@@ -495,7 +495,7 @@ $(function () {
         newID +
         "'>" +
         "<div class='window-controls no-fs d-flex justify-content-end'> <p class='window-header-text'>" +
-        "</p> <button class='window-close-button d-flex align-items-center justify-content-center' > <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#f8f2e2' viewBox='0 0 16 16' > <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z' /> </svg> </button> </div>" +
+        "</p> <button class='window-close-button d-flex align-items-center justify-content-center' > <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='var(--color-w-sm)' viewBox='0 0 16 16' > <path d='M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z' /> </svg> </button> </div>" +
         "<div class='window-content-fixed'> <div class='viewer-loader'><div class='loader'><div class='loader-sub'></div></div></div> <div class='viewer-content'></div> </div></div>"
       );
 
@@ -551,7 +551,7 @@ $(function () {
   // >>>>
   // folder open
   var backSvg =
-    "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='#f8f2e2' viewBox='0 0 16 16'><path d='M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z'/></svg>";
+    "<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='var(--color-w-sm)' viewBox='0 0 16 16'><path d='M4.854 1.146a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L4 2.707V12.5A2.5 2.5 0 0 0 6.5 15h8a.5.5 0 0 0 0-1h-8A1.5 1.5 0 0 1 5 12.5V2.707l3.146 3.147a.5.5 0 1 0 .708-.708l-4-4z'/></svg>";
   // depth 2
   function folderOpenL2(
     thisId,
