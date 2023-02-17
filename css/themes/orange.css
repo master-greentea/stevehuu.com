@@ -1,0 +1,19 @@
+:root {
+  /* color vars */
+  --color-b: #dbb693;
+  --color-w: #2c2d3b;
+  --color-r: #db8737;
+  --color-y: #ee7423;
+  --color-navbar-bg: #d9c9b7; /* 0f0f11 */
+  /* color vars */
+  --shadow-bronze-glow: 5px 5px 45px var(--color-y-sm) inset;
+  --color-b-smronze-transparent: #f2c94d5b;
+  --color-task-bar-black: #bba68e;
+  --border-window: 1px solid #575550;
+  --color-b-sm: #dbb693;
+  --color-w-sm: #2c2d3b;
+  --color-r-sm: #f23e3e;
+  --color-y-sm: #ee7423;
+  --color-desktop-sm: #e0c4a0;
+  --color-desktop-sm-transparent: #e0c4a000;
+}

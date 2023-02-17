@@ -107,25 +107,6 @@ video {
   text-shadow: 5px 2px 10px #f9fb87;
 }
 
-.back-button {
-  padding: 0px;
-}
-.back-button svg {
-  transform: translate(0, -10%);
-}
-.back-button a {
-  color: var(--color-y);
-}
-
-.back-button path {
-  transition: fill 0.1s ease-out;
-}
-
-.back-button:hover path {
-  fill: var(--color-y);
-  transition: fill 0.3s ease-out;
-}
-
 .game-details {
   margin-top: 30px;
 }

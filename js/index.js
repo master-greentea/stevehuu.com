@@ -1,10 +1,29 @@
 $(() => {
   InitializeTheme();
+  var cheatCode = "";
+  $('html').keydown(function (event) {
+    var keycode = event.key;
+    cheatCode += keycode
+
+    if (cheatCode.length > 6) {
+      cheatCode = cheatCode.slice(-6);
+    }
+
+    switch (cheatCode) {
+      case "cherry":
+        ChangeTheme("cherry");
+        localStorage.setItem("theme", "cherry");
+        break;
+      case "orange":
+        ChangeTheme("orange");
+        localStorage.setItem("theme", "orange");
+        break;
+    }
+  });
 });
 
 function PageSetup(morseMsg, currentPageNavLink) {
   $("._header").load("/master_htmls/header.html", function () {
-    $("#morse").html(morseMsg);
     $(currentPageNavLink).attr("class", "nav-link current-page");
   });
   $("._footer").load("/master_htmls/footer.html");
@@ -30,7 +49,17 @@ function LoadGameTabs() {
 
 // themes
 function InitializeTheme() {
-  const currentTheme = localStorage.getItem("theme") || "default";
+  var themeFound = false;
+
+  var activeThemes = ["default", "light", "orange", "cherry"];
+  for (var i = 0; i < activeThemes.length; i++) {
+    if (localStorage.getItem("theme") == activeThemes[i]) {
+      themeFound = true;
+      break;
+    }
+  }
+
+  const currentTheme = themeFound ? localStorage.getItem("theme") : "default";
 
   $("#theme-select").change(() => {
     ChangeTheme($("#theme-select").val());
@@ -53,13 +82,22 @@ function ToDark() {
 }
 function ChangeTheme(themeName) {
   $("#theme-stylesheet").attr("href", `/css/themes/${themeName}.css`);
-  $(`select option[value="${themeName}"]`).attr("selected", true);
-  if (localStorage.getItem("theme") == "default") {
-    $("#dark-mode").hide();
-    $("#light-mode").show();
-  }
-  else if (localStorage.getItem("theme") == "light") {
-    $("#light-mode").hide();
-    $("#dark-mode").show();
+  switch (themeName) {
+    case "default":
+      $("#dark-mode").hide();
+      $("#light-mode").show();
+      break;
+    case "light":
+      $("#light-mode").hide();
+      $("#dark-mode").show();
+      break;
+    case "cherry":
+      $("#dark-mode").hide();
+      $("#light-mode").show();
+      break;
+    case "orange":
+      $("#light-mode").hide();
+      $("#dark-mode").show();
+      break;
   }
 }

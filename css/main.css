@@ -100,7 +100,7 @@ button {
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+  background-color: var(--color-b);
 }
 ::-webkit-scrollbar-thumb {
   background-color: var(--color-w);
@@ -164,10 +164,6 @@ button {
 .social-svg:hover {
   fill: var(--color-y);
   transition: fill 0.2s;
-}
-#morse img {
-  width: auto;
-  height: 40px;
 }
 /* END header navbar */
 
@@ -414,15 +410,4 @@ h2 a:hover {
 }
 html.is-animating .transition-fade {
   opacity: 0;
-}
-
-/* select theme */
-#theme-select {
-  background-color: var(--color-w);
-  color: var(--color-b);
-  font-family: "JetBrains Mono";
-  padding: 3px;
-  padding-right: 6px;
-  border-radius: 4px;
-  border: none;
 }

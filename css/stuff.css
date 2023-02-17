@@ -178,6 +178,7 @@ button.light-theme {
 #start-menu .row {
   margin: 0;
   height: 100%;
+  cursor: pointer;
 }
 #start-menu-banner {
   height: 100%;
@@ -198,6 +199,7 @@ button.light-theme {
 }
 #sm-logo {
   box-shadow: none !important;
+  cursor: default;
 }
 #start-menu-column p {
   padding-bottom: 8px;
@@ -537,6 +539,7 @@ button.light-theme {
 .folder-back-button-lvl2:hover {
   color: var(--color-y-sm);
   fill: var(--color-y-sm);
+  cursor: pointer;
 }
 .folder-lvl-2,
 .folder-lvl-3 {

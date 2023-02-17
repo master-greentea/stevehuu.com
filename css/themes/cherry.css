@@ -7,11 +7,13 @@
   --color-navbar-bg: #0f0f11; /* 0f0f11 */
   /* color vars */
   --shadow-bronze-glow: 5px 5px 45px var(--color-y-sm) inset;
-  --color-b-smronze-transparent: #f2c94d5b;
+  --color-b-smronze-transparent: #f24d815b;
   --color-task-bar-black: #242429;
   --border-window: 1px solid #575550;
   --color-b-sm: #0e0e10;
   --color-w-sm: #f8f2e2;
   --color-r-sm: #f23e3e;
-  --color-y-sm: #f2c94d;
+  --color-y-sm: #f24d6b;
+  --color-desktop-sm: #131318;
+  --color-desktop-sm-transparent: #13131800;
 }
