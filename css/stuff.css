@@ -144,6 +144,7 @@ button {
 /* tooltip */
 .sm-tooltip {
   --bs-tooltip-bg: var(--color-task-bar-black); /* 242429ef */
+  --bs-tooltip-color: var(--color-w-sm);
   --bs-tooltip-border-radius: 4px;
   --bs-tooltip-arrow-height: 10px;
   font-family: "Space Mono";

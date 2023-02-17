@@ -53,9 +53,9 @@ $(function () {
       (document.fullScreenElement && document.fullScreenElement !== null) ||
       (!document.mozFullScreen && !document.webkitIsFullScreen)
     ) {
-      $("#desktop-fullscreen-button path").css("fill", "#f8f2e2");
+      $("#desktop-fullscreen-button path").css("fill", "var(--color-w-sm)");
     } else {
-      $("#desktop-fullscreen-button path").css("fill", "#f23e3e");
+      $("#desktop-fullscreen-button path").css("fill", "var(--color-y-sm)");
     }
 
     // venera pdf show
