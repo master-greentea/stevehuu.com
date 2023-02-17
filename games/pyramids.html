@@ -32,198 +32,192 @@
   <body>
     <div class="_header"></div>
 
-    <main class="container-fluid">
-      <div class="row">
-        <!-- left space -->
-        <div class="d-none d-xxl-block col-1"></div>
-
-        <div class="col-6 col-xxl-10 flex-fill">
-          <h2 class="back-button">
-            <a href="/games">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="26px"
-                height="26px"
-                fill="var(--color-w)"
-                class="bi bi-chevron-left"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                />
-              </svg>
-              Games</a
-            >/
-          </h2>
-          <h1 id="pyramids-h1" class="game-h1">PYRAMIDS</h1>
-          <div class="row">
-            <div class="col-12 col-md-8">
-              <!-- begin carousel -->
-              <div
-                id="pyramids-carousel"
-                class="carousel slide"
-                data-bs-ride="true"
-              >
-                <div class="carousel-indicators">
-                  <button
-                    type="button"
-                    data-bs-target="#pyramids-carousel"
-                    data-bs-slide-to="0"
-                    class="active"
-                    aria-current="true"
-                    aria-label="Slide 1"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#pyramids-carousel"
-                    data-bs-slide-to="1"
-                    aria-label="Slide 2"
-                  ></button>
-                  <button
-                    type="button"
-                    data-bs-target="#pyramids-carousel"
-                    data-bs-slide-to="2"
-                    aria-label="Slide 3"
-                  ></button>
-                </div>
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <video
-                      autoplay
-                      muted
-                      loop
-                      src="/images/games/pyramids/screenshot3.mp4"
-                      style="width: 100%; margin-top: 10px"
-                      class="w-100"
-                    ></video>
-                  </div>
-                  <div class="carousel-item">
-                    <video
-                      autoplay
-                      muted
-                      loop
-                      src="/images/games/pyramids/screenshot1.mp4"
-                      style="width: 100%; margin-top: 10px"
-                      class="w-100"
-                    ></video>
-                  </div>
-                  <div class="carousel-item">
-                    <video
-                      autoplay
-                      muted
-                      loop
-                      src="/images/games/pyramids/screenshot2.mp4"
-                      style="width: 100%; margin-top: 10px"
-                      class="w-100"
-                    ></video>
-                  </div>
-                </div>
+    <main class="container">
+      <div class="col-12 flex-fill">
+        <div class="d-flex justify-content-between">
+          <h4 class="game-page-buttons">
+            &#60; <a href="../games/live-from-the-cube.html">Next Game</a>
+          </h4>
+          <h4 class="game-page-buttons">
+            <a href="../games/anamnesis.html">Previous Game</a> >
+          </h4>
+        </div>
+        <h2 class="back-button">
+          &#60;
+          <a href="/">Back</a>
+        </h2>
+        <h1 id="pyramids-h1" class="game-h1">PYRAMIDS</h1>
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <!-- begin carousel -->
+            <div
+              id="pyramids-carousel"
+              class="carousel slide"
+              data-bs-ride="true"
+            >
+              <div class="carousel-indicators">
                 <button
-                  class="carousel-control-prev"
                   type="button"
                   data-bs-target="#pyramids-carousel"
-                  data-bs-slide="prev"
-                >
-                  <span
-                    class="carousel-control-prev-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Previous</span>
-                </button>
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
                 <button
-                  class="carousel-control-next"
                   type="button"
                   data-bs-target="#pyramids-carousel"
-                  data-bs-slide="next"
-                >
-                  <span
-                    class="carousel-control-next-icon"
-                    aria-hidden="true"
-                  ></span>
-                  <span class="visually-hidden">Next</span>
-                </button>
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#pyramids-carousel"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
               </div>
-              <!-- end carousel -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <video
+                    autoplay
+                    muted
+                    loop
+                    src="/images/games/pyramids/screenshot3.mp4"
+                    style="width: 100%; margin-top: 10px"
+                    class="w-100"
+                  ></video>
+                </div>
+                <div class="carousel-item">
+                  <video
+                    autoplay
+                    muted
+                    loop
+                    src="/images/games/pyramids/screenshot1.mp4"
+                    style="width: 100%; margin-top: 10px"
+                    class="w-100"
+                  ></video>
+                </div>
+                <div class="carousel-item">
+                  <video
+                    autoplay
+                    muted
+                    loop
+                    src="/images/games/pyramids/screenshot2.mp4"
+                    style="width: 100%; margin-top: 10px"
+                    class="w-100"
+                  ></video>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#pyramids-carousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#pyramids-carousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            <!-- end carousel -->
 
-              <div class="row">
-                <div class="col-6">
-                  <img
-                    src="/images/games/pyramids/screenshot5.png"
-                    style="width: 100%"
-                  />
-                </div>
-                <div class="col-6">
-                  <img
-                    src="/images/games/pyramids/screenshot6.png"
-                    style="width: 100%"
-                  />
-                </div>
-                <div class="col-6">
-                  <img
-                    src="/images/games/pyramids/screenshot7.png"
-                    style="width: 100%"
-                  />
-                </div>
-                <div class="col-6">
-                  <img
-                    src="/images/games/pyramids/screenshot8.png"
-                    style="width: 100%"
-                  />
-                </div>
+            <div class="row">
+              <div class="col-6">
+                <img
+                  src="/images/games/pyramids/screenshot5.png"
+                  style="width: 100%"
+                />
+              </div>
+              <div class="col-6">
+                <img
+                  src="/images/games/pyramids/screenshot6.png"
+                  style="width: 100%"
+                />
+              </div>
+              <div class="col-6">
+                <img
+                  src="/images/games/pyramids/screenshot7.png"
+                  style="width: 100%"
+                />
+              </div>
+              <div class="col-6">
+                <img
+                  src="/images/games/pyramids/screenshot8.png"
+                  style="width: 100%"
+                />
               </div>
             </div>
+          </div>
 
-            <div class="col-12 col-md-4">
-              <h4>UE4</h4>
-              <h5>at: NYU Game Center (Fall 2021)</h5>
-              <h5>role: everything</h5>
-              <p class="game-details">
-                Pyramids is a third-person adventure
-                <em>prototype</em> set in a bizarre post-apocalypse world.<br /><br />The
-                protagonist wakes up to find themselves in a colorless world
-                where they need to find fragments of the past to piece together
-                what the hell happened.<br /><br />This project is created
-                during NYU Game Center's 3D Studio class. The players will be
-                able to fully explore the broken world and find numerous
-                narrative pieces that may or may not lead them closer to the
-                truth.<br /><br />Play Windows build
-                <a
-                  href="https://masterhuhu.itch.io/pyramids"
-                  target="_blank"
-                  class="page-links"
-                  style="color: var(--color-y); text-decoration: underline"
-                  >here
-                  <span
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      fill="var(--color-w)"
-                      class="bi bi-box-arrow-up-right"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 
+          <div class="col-12 col-md-4">
+            <h4>UE4</h4>
+            <h5>at: NYU Game Center (Fall 2021)</h5>
+            <h5>role: everything</h5>
+            <p class="game-details">
+              Pyramids is a third-person adventure
+              <em>prototype</em> set in a bizarre post-apocalypse world.<br /><br />The
+              protagonist wakes up to find themselves in a colorless world where
+              they need to find fragments of the past to piece together what the
+              hell happened.<br /><br />This project is created during NYU Game
+              Center's 3D Studio class. The players will be able to fully
+              explore the broken world and find numerous narrative pieces that
+              may or may not lead them closer to the truth.<br /><br />Play
+              Windows build
+              <a
+                href="https://masterhuhu.itch.io/pyramids"
+                target="_blank"
+                class="page-links"
+                style="color: var(--color-y); text-decoration: underline"
+                >here
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="var(--color-w)"
+                    class="bi bi-box-arrow-up-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 
                       4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5
                       0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 
                       0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 
                       9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                      />
-                    </svg> </span></a
-                >.
-              </p>
-            </div>
+                    />
+                  </svg> </span></a
+              >.
+            </p>
           </div>
         </div>
-
-        <!-- right space -->
-        <div class="d-none d-xxl-block col-1"></div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <h4 class="game-page-buttons">
+          &#60; <a href="../games/live-from-the-cube.html">Next Game</a>
+        </h4>
+        <h4 class="game-page-buttons">
+          <a href="../games/anamnesis.html">Previous Game</a> >
+        </h4>
       </div>
     </main>
 

@@ -133,3 +133,8 @@ video {
   color: var(--color-y);
   text-decoration: underline;
 }
+
+/* page buttons */
+.game-page-buttons {
+  font-family: "K2D Light Regular";
+}

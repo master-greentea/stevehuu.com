@@ -32,169 +32,163 @@
   <body>
     <div class="_header"></div>
 
-    <main class="container-fluid">
-      <div class="row">
-        <!-- left space -->
-        <div class="d-none d-xxl-block col-1"></div>
+    <main class="container">
+      <div class="col-12 flex-fill">
+        <div class="d-flex justify-content-between">
+          <h4 class="game-page-buttons">
+            &#60; <a href="../games/foghorn.html">Next Game</a>
+          </h4>
+          <h4 class="game-page-buttons">
+            <a href="../games/pyramids.html">Previous Game</a> >
+          </h4>
+        </div>
+        <h2 class="back-button">
+          &#60;
+          <a href="/">Back</a>
+        </h2>
+        <h1 id="live-cube-h1" class="game-h1">Live from the Cube</h1>
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <video
+              width="100%"
+              controls
+              autoplay
+              muted
+              style="margin-top: 10px"
+            >
+              <source src="/videos/live_cube.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
 
-        <div class="col-6 col-xxl-10 flex-fill">
-          <h2 class="back-button">
-            <a href="/games">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="26px"
-                height="26px"
-                fill="var(--color-w)"
-                class="bi bi-chevron-left"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
+            <div class="row">
+              <div class="col-6">
+                <img
+                  src="/images/games/live_cube/screenshot1.gif"
+                  class="w-100"
                 />
-              </svg>
-              Games</a
-            >/
-          </h2>
-          <h1 id="live-cube-h1" class="game-h1">Live from the Cube</h1>
-          <div class="row">
-            <div class="col-12 col-md-8">
-              <video
-                width="100%"
-                controls
-                autoplay
-                muted
-                style="margin-top: 10px"
-              >
-                <source src="/videos/live_cube.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-
-              <div class="row">
-                <div class="col-6">
-                  <img
-                    src="/images/games/live_cube/screenshot1.gif"
-                    class="w-100"
-                  />
-                </div>
-                <div class="col-6">
-                  <img
-                    src="/images/games/live_cube/screenshot2.gif"
-                    class="w-100"
-                  />
-                </div>
               </div>
-              <div class="row">
-                <div class="col-6">
-                  <img
-                    src="/images/games/live_cube/screenshot3.gif"
-                    class="w-100"
-                  />
-                </div>
-                <div class="col-6">
-                  <img
-                    src="/images/games/live_cube/screenshot4.gif"
-                    class="w-100"
-                  />
-                </div>
+              <div class="col-6">
+                <img
+                  src="/images/games/live_cube/screenshot2.gif"
+                  class="w-100"
+                />
               </div>
-
-              <div class="row">
-                <div class="col-10">
-                  <img
-                    src="/images/games/live_cube/screenshot5.jpg"
-                    class="w-100"
-                  />
-                </div>
-                <div class="col-2">
-                  <img
-                    src="/images/games/live_cube/character.gif"
-                    class="w-100"
-                  />
-                </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <img
+                  src="/images/games/live_cube/screenshot3.gif"
+                  class="w-100"
+                />
+              </div>
+              <div class="col-6">
+                <img
+                  src="/images/games/live_cube/screenshot4.gif"
+                  class="w-100"
+                />
               </div>
             </div>
 
-            <div class="col-12 col-md-4">
-              <h4>Unity 3D</h4>
-              <h5>
-                at: NYU Game Center (Spring 2022)
-                <inline style="font-size: smaller">(team of 6)</inline>
-              </h5>
-              <h5>
-                role: design lead | audio lead | programming | tech art |
-                animations
-              </h5>
-              <p class="game-details">
-                Live from the Cube is a 5-month project at NYU Game Center. It's
-                a game about juggling between tasks. <br /><br />
-                You play as Jerry, an average 9-5 office worker who is trying to
-                balance a rhythm game streaming career with his work life.
-                <br /><br />
-                The game features a procedurally generated narrative through
-                emails, stat managing based on how well he performs in streaming
-                and the times he was caught by the boss.<br /><br />Play Windows
-                & macOS build
-                <a
-                  href="https://kerby.itch.io/live-from-the-cube"
-                  target="_blank"
-                  style="color: var(--color-y); text-decoration: underline"
-                  >here<span></span>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      fill="var(--color-w)"
-                      class="bi bi-box-arrow-up-right"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 
-                      4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5
-                      0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 
-                      0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 
-                      9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                      /></svg></span></a
-                >. (thanks kerbs!)<br />
-                Repo on
-                <a
-                  href="https://github.com/master-greentea/LiveFromTheCube"
-                  target="_blank"
-                  style="color: var(--color-y); text-decoration: underline"
-                  >github<span> 
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      fill="var(--color-w)"
-                      class="bi bi-box-arrow-up-right"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 
-                      4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5
-                      0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 
-                      0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 
-                      9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                      /></svg></span></a
-                >.
-              </p>
+            <div class="row">
+              <div class="col-10">
+                <img
+                  src="/images/games/live_cube/screenshot5.jpg"
+                  class="w-100"
+                />
+              </div>
+              <div class="col-2">
+                <img
+                  src="/images/games/live_cube/character.gif"
+                  class="w-100"
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- right space -->
-        <div class="d-none d-xxl-block col-1"></div>
+          <div class="col-12 col-md-4">
+            <h4>Unity 3D</h4>
+            <h5>
+              at: NYU Game Center (Spring 2022)
+              <inline style="font-size: smaller">(team of 6)</inline>
+            </h5>
+            <h5>
+              role: design lead | audio lead | programming | tech art |
+              animations
+            </h5>
+            <p class="game-details">
+              Live from the Cube is a 5-month project at NYU Game Center. It's
+              a game about juggling between tasks. <br /><br />
+              You play as Jerry, an average 9-5 office worker who is trying to
+              balance a rhythm game streaming career with his work life.
+              <br /><br />
+              The game features a procedurally generated narrative through
+              emails, stat managing based on how well he performs in streaming
+              and the times he was caught by the boss.<br /><br />Play Windows
+              & macOS build
+              <a
+                href="https://kerby.itch.io/live-from-the-cube"
+                target="_blank"
+                style="color: var(--color-y); text-decoration: underline"
+                >here<span></span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="var(--color-w)"
+                    class="bi bi-box-arrow-up-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 
+                    4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5
+                    0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 
+                    0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 
+                    9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                    /></svg></span></a
+              >. (thanks kerbs!)<br />
+              Repo on
+              <a
+                href="https://github.com/master-greentea/LiveFromTheCube"
+                target="_blank"
+                style="color: var(--color-y); text-decoration: underline"
+                >github<span> 
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="var(--color-w)"
+                    class="bi bi-box-arrow-up-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 
+                    4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5
+                    0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 
+                    0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 
+                    9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                    /></svg></span></a
+              >.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <h4 class="game-page-buttons">
+          &#60; <a href="../games/foghorn.html">Next Game</a>
+        </h4>
+        <h4 class="game-page-buttons">
+          <a href="../games/pyramids.html">Previous Game</a> >
+        </h4>
       </div>
     </main>
 

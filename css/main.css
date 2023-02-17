@@ -165,7 +165,7 @@ button {
   fill: var(--color-y);
   transition: fill 0.2s;
 }
-header #morse img {
+#morse img {
   width: auto;
   height: 40px;
 }
@@ -306,52 +306,6 @@ header #morse img {
   }
 }
 
-/* .loader {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  z-index: 1;
-  transform: translate(-50%, -44px);
-  height: 8px;
-  width: 200px;
-  border: 1px solid #575550;
-  border-radius: 3px;
-  margin-top: 40px;
-  margin-bottom: 40px;
-}
-.loader .loader-sub {
-  position: relative;
-  top: 0;
-  left: 1;
-  background-color: #242429;
-  width: 0px;
-  height: 100%;
-  border-radius: 1px;
-  animation: bar 2.1s infinite linear;
-  box-shadow: 0px 0px 0px #f2c94d inset;
-}
-@keyframes bar {
-  0% {
-    width: 0%;
-  }
-  25% {
-    width: 25%;
-    box-shadow: 0px 0px 4px #f2c94d inset;
-  }
-  50% {
-    width: 50%;
-    box-shadow: 0px 0px 8px #f2c94d inset;
-  }
-  75% {
-    width: 75%;
-    box-shadow: 0px 0px 10px #f2c94d inset;
-  }
-  100% {
-    width: 100%;
-    box-shadow: 0px 0px 15px #f2c94d inset;
-  }
-} */
-
 /* INDEX */
 h2 a:hover {
   text-shadow: none;
@@ -365,17 +319,51 @@ h2 a:hover {
   text-decoration: underline;
   color: var(--color-y);
 }
+@keyframes wiggle {
+  0% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(0deg);
+  }
+  85% {
+    transform: rotate(25deg);
+  }
+  95% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes to-left {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+#header-cat {
+  display: inline-block;
+  animation: wiggle 2.5s infinite ease-in-out;
+  position: absolute;
+  opacity: 1;
+}
 #header-cat,
 #header-stuff {
-  transition: transform 0.5s;
   position: absolute;
+  transition: opacity 0.5s;
 }
 #header-stuff {
   opacity: 0;
-  transition: opacity 0.5s;
 }
 #header-switch:hover > #header-cat {
-  transform: translate(-50px, 0px);
+  animation: to-left 0.5s;
+  opacity: 0;
 }
 #header-switch:hover > #header-stuff,
 #header-switch:hover > #header-stuff-text {
@@ -385,7 +373,7 @@ h2 a:hover {
   position: relative;
   transition: opacity 0.5s;
   opacity: 0;
-  left: 100px;
+  left: 60px;
   top: 15px;
   padding: none;
   margin: none;

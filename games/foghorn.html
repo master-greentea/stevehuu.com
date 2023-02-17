@@ -32,179 +32,173 @@
   <body>
     <div class="_header"></div>
 
-    <main class="container-fluid">
-      <div class="row">
-        <!-- left space -->
-        <div class="d-none d-xxl-block col-1"></div>
+    <main class="container">
+      <div class="col-12 flex-fill">
+        <div class="d-flex justify-content-between">
+          <h4 class="game-page-buttons">
+            &#60; <a href="../games/ritual-night.html">Next Game</a>
+          </h4>
+          <h4 class="game-page-buttons">
+            <a href="../games/live-from-the-cube.html">Previous Game</a> >
+          </h4>
+        </div>
+        <h2 class="back-button">
+          &#60;
+          <a href="/">Back</a>
+        </h2>
+        <h1 id="foghorn-h1" class="game-h1">Foghorn</h1>
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <video
+              autoplay
+              muted
+              loop
+              src="/images/games/foghorn/foghorn_gif_4.mp4"
+              style="width: 100%"
+            ></video>
 
-        <div class="col-6 col-xxl-10 flex-fill">
-          <h2 class="back-button">
-            <a href="/games">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="26px"
-                height="26px"
-                fill="var(--color-w)"
-                class="bi bi-chevron-left"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                />
-              </svg>
-              Games</a
-            >/
-          </h2>
-          <h1 id="foghorn-h1" class="game-h1">Foghorn</h1>
-          <div class="row">
-            <div class="col-12 col-md-8">
-              <video
-                autoplay
-                muted
-                loop
-                src="/images/games/foghorn/foghorn_gif_4.mp4"
-                style="width: 100%"
-              ></video>
-
-              <div class="row">
-                <div class="col-8">
-                  <!-- begin carousel -->
-                  <div
-                    id="foghorn-carousel"
-                    class="carousel slide"
-                    data-bs-ride="true"
-                  >
-                    <div class="carousel-indicators">
-                      <button
-                        type="button"
-                        data-bs-target="#foghorn-carousel"
-                        data-bs-slide-to="0"
-                        class="active"
-                        aria-current="true"
-                        aria-label="Slide 1"
-                      ></button>
-                      <button
-                        type="button"
-                        data-bs-target="#foghorn-carousel"
-                        data-bs-slide-to="1"
-                        aria-label="Slide 2"
-                      ></button>
-                      <button
-                        type="button"
-                        data-bs-target="#foghorn-carousel"
-                        data-bs-slide-to="2"
-                        aria-label="Slide 3"
-                      ></button>
-                    </div>
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img
-                          src="/images/games/foghorn/screenshot1.gif"
-                          class="d-block w-100"
-                        />
-                      </div>
-                      <div class="carousel-item">
-                        <img
-                          src="/images/games/foghorn/screenshot2.gif"
-                          class="d-block w-100"
-                        />
-                      </div>
-                      <div class="carousel-item">
-                        <img
-                          src="/images/games/foghorn/screenshot3.gif"
-                          class="d-block w-100"
-                        />
-                      </div>
-                    </div>
+            <div class="row">
+              <div class="col-8">
+                <!-- begin carousel -->
+                <div
+                  id="foghorn-carousel"
+                  class="carousel slide"
+                  data-bs-ride="true"
+                >
+                  <div class="carousel-indicators">
                     <button
-                      class="carousel-control-prev"
                       type="button"
                       data-bs-target="#foghorn-carousel"
-                      data-bs-slide="prev"
-                    >
-                      <span
-                        class="carousel-control-prev-icon"
-                        aria-hidden="true"
-                      ></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
+                      data-bs-slide-to="0"
+                      class="active"
+                      aria-current="true"
+                      aria-label="Slide 1"
+                    ></button>
                     <button
-                      class="carousel-control-next"
                       type="button"
                       data-bs-target="#foghorn-carousel"
-                      data-bs-slide="next"
-                    >
-                      <span
-                        class="carousel-control-next-icon"
-                        aria-hidden="true"
-                      ></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
+                      data-bs-slide-to="1"
+                      aria-label="Slide 2"
+                    ></button>
+                    <button
+                      type="button"
+                      data-bs-target="#foghorn-carousel"
+                      data-bs-slide-to="2"
+                      aria-label="Slide 3"
+                    ></button>
                   </div>
-                  <!-- end carousel -->
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="/images/games/foghorn/screenshot1.gif"
+                        class="d-block w-100"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="/images/games/foghorn/screenshot2.gif"
+                        class="d-block w-100"
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="/images/games/foghorn/screenshot3.gif"
+                        class="d-block w-100"
+                      />
+                    </div>
+                  </div>
+                  <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#foghorn-carousel"
+                    data-bs-slide="prev"
+                  >
+                    <span
+                      class="carousel-control-prev-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#foghorn-carousel"
+                    data-bs-slide="next"
+                  >
+                    <span
+                      class="carousel-control-next-icon"
+                      aria-hidden="true"
+                    ></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
                 </div>
-                <div class="col-4">
-                  <img
-                    src="/images/games/foghorn/screenshot5.jpg"
-                    class="w-100"
-                  />
-                  <img
-                    src="/images/games/foghorn/screenshot6.jpg"
-                    class="w-100"
-                  />
-                </div>
+                <!-- end carousel -->
+              </div>
+              <div class="col-4">
+                <img
+                  src="/images/games/foghorn/screenshot5.jpg"
+                  class="w-100"
+                />
+                <img
+                  src="/images/games/foghorn/screenshot6.jpg"
+                  class="w-100"
+                />
               </div>
             </div>
+          </div>
 
-            <div class="col-12 col-md-4">
-              <h4>Unity 3D</h4>
-              <h5>at: NYU Game Center (Spring 2022)</h5>
-              <h5>role: everything</h5>
-              <p class="game-details">
-                Foghorn is the <em>prototype</em> of a multiplayer horror game
-                concept.<br /><br />It is about a group of survivors shipwrecked
-                on a mysterious island engulfed by fog, and a haunting humanoid
-                figure tracking them down...<br /><br />This project is
-                developed throughout NYU Game Center's 3D Studio class. Main
-                features include a rough enemy AI that scans for the player. To
-                lose them, break line of sight with the enemy for a short period
-                of time.<br /><br />Play Windows & macOS build
-                <a
-                  href="https://masterhuhu.itch.io/foghorn"
-                  target="_blank"
-                  style="color: var(--color-y); text-decoration: underline"
-                  >here
-                  <span
-                    ><svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="18"
-                      height="18"
-                      fill="var(--color-w)"
-                      class="bi bi-box-arrow-up-right"
-                      viewBox="0 0 16 16"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 
+          <div class="col-12 col-md-4">
+            <h4>Unity 3D</h4>
+            <h5>at: NYU Game Center (Spring 2022)</h5>
+            <h5>role: everything</h5>
+            <p class="game-details">
+              Foghorn is the <em>prototype</em> of a multiplayer horror game
+              concept.<br /><br />It is about a group of survivors shipwrecked
+              on a mysterious island engulfed by fog, and a haunting humanoid
+              figure tracking them down...<br /><br />This project is developed
+              throughout NYU Game Center's 3D Studio class. Main features
+              include a rough enemy AI that scans for the player. To lose them,
+              break line of sight with the enemy for a short period of time.<br /><br />Play
+              Windows & macOS build
+              <a
+                href="https://masterhuhu.itch.io/foghorn"
+                target="_blank"
+                style="color: var(--color-y); text-decoration: underline"
+                >here
+                <span
+                  ><svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    fill="var(--color-w)"
+                    class="bi bi-box-arrow-up-right"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 
                       4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5
                       0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 
                       0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                      />
-                      <path
-                        fill-rule="evenodd"
-                        d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 
+                    />
+                    <path
+                      fill-rule="evenodd"
+                      d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 
                       9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                      />
-                    </svg> </span></a
-                >.
-              </p>
-            </div>
+                    />
+                  </svg> </span></a
+              >.
+            </p>
           </div>
         </div>
-
-        <!-- right space -->
-        <div class="d-none d-xxl-block col-1"></div>
+      </div>
+      <div class="d-flex justify-content-between">
+        <h4 class="game-page-buttons">
+          &#60; <a href="../games/ritual-night.html">Next Game</a>
+        </h4>
+        <h4 class="game-page-buttons">
+          <a href="../games/live-from-the-cube.html">Previous Game</a> >
+        </h4>
       </div>
     </main>
 

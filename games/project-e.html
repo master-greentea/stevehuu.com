@@ -32,127 +32,112 @@
   <body>
     <div class="_header"></div>
 
-    <main class="container-fluid">
-      <div class="row">
-        <!-- left space -->
-        <div class="d-none d-xxl-block col-1"></div>
-
-        <div class="col-6 col-xxl-10 flex-fill">
-          <h2 class="back-button">
-            <a href="/games">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="26px"
-                height="26px"
-                fill="var(--color-w)"
-                class="bi bi-chevron-left"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"
-                />
-              </svg>
-              Games</a
-            >/
-          </h2>
-          <h1 id="project-e-h1" class="game-h1">Project E</h1>
-          <h2 style="color: var(--color-r)">Under Development</h2>
-          <h4>Unity 3D</h4>
-          <h5>just me</h5>
-          <h5>role: everything</h5>
-          <p class="game-details">
-            Repo on
-            <a
-              href="https://github.com/master-greentea/Project_Elysium"
-              target="_blank"
-              style="color: var(--color-y); text-decoration: underline"
-              >github
-              <span> </span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="18"
-                height="18"
-                fill="var(--color-w)"
-                class="bi bi-box-arrow-up-right"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 
-                      4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5
-                      0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 
-                      0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                />
-                <path
-                  fill-rule="evenodd"
-                  d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 
-                      9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                />
-              </svg> </a
-            >.<br/>
-            dev logging...
-          </p>
-          <p class="game-details">
-            <h3>10/21</h3>
-            <p>- changed wander destinations from world to area around player<br />
-            <br />
-            intercept state concepting:<br />
-            thinking whether or not I should be using the current enemy overlap sphere as a detection range;<br />
-            OR! sound source, sound level detection range? check wall between?<br /><br />
-            <strong>state transition</strong>: from track - once enemy at 2nd to last mapped tracking waypoint, check if player is within range<br />
-            - if player in intercept range, set destination to player forward + velocity (predicted path)
-            </p>
-            <br />
-            <div class="row">
-              <div class="col-12 col-md-6 col-xxl-4">
-                <video
-                autoplay
-                muted
-                controls
-                loop
-                src="/images/games/project_e/101422.mp4"
-                style="width: 100%"
-                ></video>
-              </div>
-              <div class="col-12 col-md-6 col-xxl-4">
-                <h3>10/14</h3>
-                <p>worked on track state<br />
-                now once player exits the active detection from enemy, system starts
-                noting down player position based on a set interval<br />
-                worked on patrol state<br />
-                enemy roams randomly and take rests in between<br />
-                during rests enemy should look around to search for player<br />
-              </p></div>
-            </div>
-            <br />
-            <h3>10/13</h3>
-            <p>
-              started making a simple statemachine<br />
-              following this tutorial<br />
-              <br />
-              planned states:<br />
-              IDLE<br />
-              - where enemy just sits still<br />
-              CHASE<br />
-              - where enemy is actively chasing player<br />
-              TRACK<br />
-              - an advance state where enemy attempts to find the player based on
-              various info<br />
-              PATROL<br />
-              - a state before idle where enemy patrols randomly<br />
-              INTERCEPT<br />
-              - an advance state where enemy takes short cut to stop player<br />
-              <br />
-              statemachine completed!<br />
-              implemented navmesh simple chase & idle state transition<br />
-              enemy vision implemented<br />
-            </p>
-          </p>
+    <main class="container">
+      <div class="col-12 flex-fill">
+        <div class="d-flex justify-content-end">
+          <h4 class="game-page-buttons"><a href="../games/ritual-night.html">Previous Game</a> ></h4>
         </div>
+        <h2 class="back-button">
+          &#60;
+          <a href="/">Back</a>
+        </h2>
+        <h1 id="project-e-h1" class="game-h1">Project E</h1>
+        <h2 style="color: var(--color-r)">Under Development</h2>
+        <h4>Unity 3D</h4>
+        <h5>just me</h5>
+        <h5>role: everything</h5>
+        <p class="game-details">
+          Repo on
+          <a
+            href="https://github.com/master-greentea/Project_Elysium"
+            target="_blank"
+            style="color: var(--color-y); text-decoration: underline"
+            >github
+            <span> </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              fill="var(--color-w)"
+              class="bi bi-box-arrow-up-right"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 
+                    4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5
+                    0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 
+                    0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+              />
+              <path
+                fill-rule="evenodd"
+                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 
+                    9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+              />
+            </svg> </a
+          >.<br/>
+          dev logging...
+        </p>
+        <p class="game-details">
+          <h3>10/21</h3>
+          <p>- changed wander destinations from world to area around player<br />
+          <br />
+          intercept state concepting:<br />
+          thinking whether or not I should be using the current enemy overlap sphere as a detection range;<br />
+          OR! sound source, sound level detection range? check wall between?<br /><br />
+          <strong>state transition</strong>: from track - once enemy at 2nd to last mapped tracking waypoint, check if player is within range<br />
+          - if player in intercept range, set destination to player forward + velocity (predicted path)
+          </p>
+          <br />
+          <div class="row">
+            <div class="col-12 col-md-6 col-xxl-4">
+              <video
+              autoplay
+              muted
+              controls
+              loop
+              src="/images/games/project_e/101422.mp4"
+              style="width: 100%"
+              ></video>
+            </div>
+            <div class="col-12 col-md-6 col-xxl-4">
+              <h3>10/14</h3>
+              <p>worked on track state<br />
+              now once player exits the active detection from enemy, system starts
+              noting down player position based on a set interval<br />
+              worked on patrol state<br />
+              enemy roams randomly and take rests in between<br />
+              during rests enemy should look around to search for player<br />
+            </p></div>
+          </div>
+          <br />
+          <h3>10/13</h3>
+          <p>
+            started making a simple statemachine<br />
+            following this tutorial<br />
+            <br />
+            planned states:<br />
+            IDLE<br />
+            - where enemy just sits still<br />
+            CHASE<br />
+            - where enemy is actively chasing player<br />
+            TRACK<br />
+            - an advance state where enemy attempts to find the player based on
+            various info<br />
+            PATROL<br />
+            - a state before idle where enemy patrols randomly<br />
+            INTERCEPT<br />
+            - an advance state where enemy takes short cut to stop player<br />
+            <br />
+            statemachine completed!<br />
+            implemented navmesh simple chase & idle state transition<br />
+            enemy vision implemented<br />
+          </p>
+        </p>
+      </div>
 
-        <!-- right space -->
-        <div class="d-none d-xxl-block col-1"></div>
+      <div class="d-flex justify-content-end">
+        <h4 class="game-page-buttons"><a href="../games/ritual-night.html">Previous Game</a> ></h4>
       </div>
     </main>
 
