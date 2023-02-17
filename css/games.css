@@ -1,3 +1,7 @@
+#gamea {
+  margin-bottom: 80px;
+}
+
 a:has(.game-tab) {
   color: var(--color-w);
   text-decoration: none;
@@ -20,7 +24,6 @@ video {
 
 .game-tab {
   border-radius: 10px;
-  border: 2px #393938 solid;
   box-shadow: none;
   transition: box-shadow 0.3s ease-out, border 0.3s ease-out;
   padding: 0px !important;
@@ -64,8 +67,6 @@ video {
   border-radius: 8px 8px 0px 0px;
   margin-top: 0px !important;
   padding: 0px !important;
-  filter: blur(1.5px);
-  transition: filter 0.25s ease-out;
 }
 
 #games-main {

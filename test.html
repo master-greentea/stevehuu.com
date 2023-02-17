@@ -46,8 +46,34 @@
   </head>
 
   <body id="index-body">
-    <div id="frame"></div>
-    <div class="_header"></div>
+    <div class="test-header">
+      <header class="container-fluid d-flex">
+        <div id="header-switch" class="col d-flex justify-content-center">
+          <div id="header-cat">
+            <a href="/test.html" style="margin: 0"
+              ><img
+                alt="stevehuu_logo"
+                src="/images/cat_logo.png"
+                class="d-block img-fluid"
+                style="width: 50px; height: 50px; margin: 0"
+            /></a>
+          </div>
+          <div id="header-stuff">
+            <a href="/stuff.html" style="margin: 0"
+              ><img
+                alt="stuffmachine_logo"
+                src="/images/stuff/stuffmachine_logo_icon_pic.png"
+                class="d-block img-fluid"
+                style="width: 50px; height: 50px; margin: 0"
+            /></a>
+          </div>
+          <p id="header-stuff-text">&#60; Stuff Machine</p>
+        </div>
+      </header>
+
+      <!-- extra space below -->
+      <div class="header-prop"></div>
+    </div>
 
     <main class="container-fluid">
       <div class="row">
@@ -55,7 +81,7 @@
 
         <div class="col-10 col-xxl-10 flex-fill">
           <h1>
-            stevehuu
+            steve.huu
             <span id="lightswitch">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -89,12 +115,6 @@
             </span>
           </h1>
           <h2 style="font-size: 28px">Game designer</h2>
-          <!-- <select id="theme-select">
-            <option value="default">Classic</option>
-            <option value="cherry">Cherry</option>
-            <option value="dim">Dimmed</option>
-            <option value="light">Light</option>
-          </select> -->
 
           <!-- social bar -->
           <div class="social-bar">
@@ -193,18 +213,8 @@
               id="learn-more"
               class="index-expansion-buttons"
               onclick="$('#aboot').fadeIn(500); $('#learn-more').hide()"
+              >About me</span
             >
-              About me</span
-            >
-            |
-            <span
-              id="see-games"
-              class="index-expansion-buttons"
-              onclick="$('#gamea').fadeIn(500); $('#see-games').hide(); 
-            LoadGameTabs();"
-            >
-              See games
-            </span>
           </p>
 
           <!-- About -->
@@ -254,21 +264,23 @@
                     </svg>
                   </a>
                   <br />
+                  Email me &#60;<a href="mailto:steve.huu21@gmail.com"
+                    >steve.huu21@gmail.com</a
+                  >&#62;
+                  <br />
                   <a
                     target="_blank"
                     href="https://www.stevehuu.com/documents/resume-2022-v4.pdf"
                     >Resume</a
                   >
                   (2022v3)
-                  <br />
-                  <a href="mailto:steve.huu21@gmail.com">Email</a> me something
                 </p>
               </div>
             </div>
           </div>
 
           <!-- Game -->
-          <div id="gamea" style="display: none">
+          <div id="gamea">
             <div
               id="games-main"
               class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-3 g-lg-4"
@@ -281,8 +293,8 @@
                       $("#blink").fadeOut(500);
                     }, 500);
                   </script>
-                  <h1>
-                    <inline id="blink" style="color: var(--color-w)">|</inline>
+                  <h1 style="color: var(--color-w)">
+                    > <inline id="blink">|</inline>
                   </h1>
                 </div>
               </div>
@@ -466,9 +478,6 @@
               </div>
             </a> -->
             </div>
-
-            <br />
-            <div class="_footer"></div>
           </div>
         </div>
 
@@ -476,10 +485,72 @@
       </div>
     </main>
 
+    <!-- AD -->
+    <div
+      id="ad"
+      style="
+        display: none;
+        width: 365px;
+        position: fixed;
+        left: 20px;
+        top: 60px;
+        z-index: 9999;
+      "
+    >
+      <script>
+        setInterval(() => {
+          $("#flash").fadeIn(200);
+          $("#flash").fadeOut(200);
+        }, 200);
+      </script>
+
+      <h4
+        id="flash"
+        style="
+          background-color: #8dc63f;
+          color: magenta;
+          width: 100%;
+          margin: 0;
+          text-align: center;
+          text-shadow: 2px 2px 15px #e9f1f7;
+          font-family: 'K2D Light Regular';
+        "
+      >
+        You might also want to check out:
+      </h4>
+      <img
+        src="/images/index/ad2.gif"
+        style="
+          width: 90%;
+          position: relative;
+          top: -30px;
+          margin: 0px;
+          margin-bottom: 15px;
+        "
+      />
+      <a
+        id="outfoxlink"
+        href="https://www.outfoxgames.net/"
+        target="_blank"
+        style="font-family: 'JetBrains Mono'"
+        >FIND OUT MORE</a
+      >
+      <p id="outfoxtext" class="fun-p">
+        You are invited to an exclusive monsters-only party to complete a ritual
+        to summon <inline id="outfoxtext-highlight">Cthulhu</inline>. Cooperate
+        with each other to gather the needed ingredients and cast your magic
+        spells to deduce the icky humans that have snuck in to crash the party
+        and sabotage the ritual. Disguising as
+        <inline id="outfoxtext-highlight">NPC</inline>s and casting magic
+        spells, the humans cause chaos and sow doubt. Each day, the game evolves
+        with both sides gaining abilities and tools to deduce or deceive each
+        other as <inline id="outfoxtext-highlight">Cthulhu</inline> watches!
+      </p>
+    </div>
+
     <script>
       PageSetup("", "");
-    </script>
-    <script>
+      // show game tabs
       $(function () {
         const tooltipTriggerList = document.querySelectorAll(
           '[data-bs-toggle="tooltip"]'
@@ -487,8 +558,19 @@
         const tooltipList = [...tooltipTriggerList].map(
           (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
         );
+        LoadGameTabs();
       });
+      // ad
+      window.onscroll = function () {
+        if (
+          document.body.scrollTop > 150 ||
+          document.documentElement.scrollTop > 150
+        ) {
+          $("#ad").fadeIn(300);
+        } else {
+          $("#ad").fadeOut(300);
+        }
+      };
     </script>
-    <script type="text/javascript" src="js/tiles.js"></script>
   </body>
 </html>

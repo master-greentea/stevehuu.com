@@ -363,6 +363,32 @@ h2 a:hover {
 }
 .index-expansion-buttons {
   text-decoration: underline;
+  color: var(--color-y);
+}
+#header-cat,
+#header-stuff {
+  transition: transform 0.5s;
+  position: absolute;
+}
+#header-stuff {
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+#header-switch:hover > #header-cat {
+  transform: translate(-50px, 0px);
+}
+#header-switch:hover > #header-stuff,
+#header-switch:hover > #header-stuff-text {
+  opacity: 1;
+}
+#header-stuff-text {
+  position: relative;
+  transition: opacity 0.5s;
+  opacity: 0;
+  left: 100px;
+  top: 15px;
+  padding: none;
+  margin: none;
 }
 
 /* tooltip */
