@@ -473,7 +473,7 @@ button.light-theme {
   width: calc(15vw - 2px);
   height: calc(40vh - 2px);
   border-radius: 0 0 5px 5px;
-  background-color: #8f8878db;
+  background-color: #8f887830;
   z-index: 0;
 }
 #notes-list {

@@ -3,9 +3,9 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  const vNo = "0.9.13";
+  const vNo = "0.9.14";
   const vDate = "02.17.22";
-  const vMsg = "minor bug fixes<br/>updated venera status<br/>added background<br/>added light theme";
+  const vMsg = "minor bug fixes<br/>added background<br/>added light theme<br />added cheat codes";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(vDate);
 
