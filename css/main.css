@@ -3,6 +3,7 @@
   font-style: normal;
   font-weight: normal;
   src: local("K2D Light Regular"), url("/fonts/K2D-Light.woff") format("woff");
+  font-display: swap;
 }
 
 @font-face {
@@ -11,6 +12,7 @@
   font-weight: normal;
   src: local("SpaceMono"),
     url("/fonts/SpaceMono-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 @font-face {
@@ -19,6 +21,7 @@
   font-weight: normal;
   src: local("JetBrainsMono"),
     url("/fonts/JetBrainsMono-Regular.ttf") format("truetype");
+  font-display: swap;
 }
 
 html {
