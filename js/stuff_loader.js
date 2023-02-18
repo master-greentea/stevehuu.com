@@ -96,7 +96,7 @@ function booting() {
   }, 600);
 
   checklistAnim();
-  ChangeStuffMachineCursor();
+  ChangeStuffMachineCursor(localStorage.getItem("theme"));
 }
 
 function showStuff() {
@@ -108,14 +108,19 @@ function showStuff() {
   }, 1100);
 }
 
-function ChangeStuffMachineCursor() {
-  if (localStorage.getItem("theme") == "default") {
-    $("body").addClass("default-theme");
-    $("html").addClass("default-theme");
-    console.log("b");
-  }
-  else if (localStorage.getItem("theme") == "light") {
-    $("body").addClass("light-theme");
-    $("html").addClass("light-theme");
+function ChangeStuffMachineCursor(changeTo) {
+  switch (changeTo) {
+    case "default":
+      $("body").addClass("default-theme");
+      $("html").addClass("default-theme");
+      $("body").removeClass("light-theme");
+      $("html").removeClass("light-theme");
+      break;
+    case "light":
+      $("body").addClass("light-theme");
+      $("html").addClass("light-theme");
+      $("body").removeClass("default-theme");
+      $("html").removeClass("default-theme");
+      break;
   }
 }

@@ -635,11 +635,13 @@
         switch (cheatCode) {
           case "cherry":
             ChangeTheme("cherry");
-            localStorage.setItem("theme", "cherry");
+            localStorage.setItem("theme", "default");
+            ChangeStuffMachineCursor("default");
             break;
           case "orange":
             ChangeTheme("orange");
-            localStorage.setItem("theme", "orange");
+            localStorage.setItem("theme", "default");
+            ChangeStuffMachineCursor("light");
             break;
         }
       });
