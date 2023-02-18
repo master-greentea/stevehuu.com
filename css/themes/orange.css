@@ -1,9 +1,9 @@
 :root {
   /* color vars */
-  --color-b: #dbb693;
+  --color-b: #e0c4a0;
   --color-w: #2c2d3b;
   --color-r: #db8737;
-  --color-y: #ee7423;
+  --color-y: #ef4c11;
   --color-navbar-bg: #d9c9b7; /* 0f0f11 */
   /* color vars */
   --shadow-bronze-glow: 5px 5px 45px var(--color-y-sm) inset;

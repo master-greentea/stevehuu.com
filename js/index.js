@@ -1,25 +1,5 @@
 $(() => {
   InitializeTheme();
-  var cheatCode = "";
-  $('html').keydown(function (event) {
-    var keycode = event.key;
-    cheatCode += keycode
-
-    if (cheatCode.length > 6) {
-      cheatCode = cheatCode.slice(-6);
-    }
-
-    switch (cheatCode) {
-      case "cherry":
-        ChangeTheme("cherry");
-        localStorage.setItem("theme", "cherry");
-        break;
-      case "orange":
-        ChangeTheme("orange");
-        localStorage.setItem("theme", "orange");
-        break;
-    }
-  });
 });
 
 function PageSetup(morseMsg, currentPageNavLink) {
@@ -51,7 +31,7 @@ function LoadGameTabs() {
 function InitializeTheme() {
   var themeFound = false;
 
-  var activeThemes = ["default", "light", "orange", "cherry"];
+  var activeThemes = ["default", "light"];
   for (var i = 0; i < activeThemes.length; i++) {
     if (localStorage.getItem("theme") == activeThemes[i]) {
       themeFound = true;

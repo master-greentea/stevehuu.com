@@ -622,5 +622,27 @@
     </div>
 
     <script type="text/javascript" src="js/stuff.js"></script>
+    <script>
+      var cheatCode = "";
+      $("html").keydown(function (event) {
+        var keycode = event.key;
+        cheatCode += keycode;
+
+        if (cheatCode.length > 6) {
+          cheatCode = cheatCode.slice(-6);
+        }
+
+        switch (cheatCode) {
+          case "cherry":
+            ChangeTheme("cherry");
+            localStorage.setItem("theme", "cherry");
+            break;
+          case "orange":
+            ChangeTheme("orange");
+            localStorage.setItem("theme", "orange");
+            break;
+        }
+      });
+    </script>
   </body>
 </html>
