@@ -46,39 +46,37 @@
   </head>
 
   <body id="index-body">
-    <div class="test-header">
-      <header class="container-fluid d-flex">
-        <div
-          id="header-switch"
-          style="position: relative; left: 50%; transform: translate(-25px, 0)"
-        >
-          <div id="header-cat">
-            <a href="/stuff.html" style="margin: 0"
-              ><img
-                alt="stevehuu_logo"
-                src="/images/stuff/stuffmachine_logo_icon_pic.png"
-                class="d-block img-fluid"
-                style="width: 50px; height: 50px; margin: 0"
-            /></a>
-          </div>
-          <div id="header-stuff">
-            <a href="/stuff.html" style="margin: 0"
-              ><img
-                alt="stuffmachine_logo"
-                src="/images/stuff/stuffmachine_logo_icon_pic.png"
-                class="d-block img-fluid"
-                style="width: 50px; height: 50px; margin: 0"
-            /></a>
-          </div>
-          <p id="header-stuff-text">
-            &#60; <a href="/stuff.html">Stuff Machine</a>&copy;
-          </p>
+    <header class="container-fluid d-flex">
+      <div
+        id="header-switch"
+        style="position: relative; left: 50%; transform: translate(-25px, 0)"
+      >
+        <div id="header-cat">
+          <a href="/stuff.html" style="margin: 0"
+            ><img
+              alt="stevehuu_logo"
+              src="/images/stuff/stuffmachine_logo_icon_pic.png"
+              class="d-block img-fluid"
+              style="width: 50px; height: 50px; margin: 0"
+          /></a>
         </div>
-      </header>
+        <div id="header-stuff">
+          <a href="/stuff.html" style="margin: 0"
+            ><img
+              alt="stuffmachine_logo"
+              src="/images/stuff/stuffmachine_logo_icon_pic.png"
+              class="d-block img-fluid"
+              style="width: 50px; height: 50px; margin: 0"
+          /></a>
+        </div>
+        <p id="header-stuff-text">
+          &#60; <a href="/stuff.html">Stuff Machine</a>&copy;
+        </p>
+      </div>
+    </header>
 
-      <!-- extra space below -->
-      <div class="header-prop"></div>
-    </div>
+    <!-- extra space below -->
+    <div class="header-prop"></div>
 
     <main class="container-fluid">
       <div class="row">
@@ -217,13 +215,13 @@
             <span
               id="learn-more"
               class="index-expansion-buttons"
-              onclick="$('#aboot').fadeIn(500); $('#learn-more').hide()"
+              onclick="$('#index-about').fadeIn(500); $('#learn-more').hide()"
               >About me</span
             >
           </p>
 
           <!-- About -->
-          <div id="aboot" style="display: none">
+          <div id="index-about" style="display: none">
             <div id="about-content" class="d-flex flex-wrap">
               <div>
                 <img src="/images/cat_logo.png" style="margin-right: 40px" />
@@ -288,7 +286,7 @@
           </div>
 
           <!-- Game -->
-          <div id="gamea">
+          <div id="index-game">
             <div
               id="games-main"
               class="row row-cols-1 row-cols-md-2 row-cols-xxl-3 g-3 g-lg-4"
@@ -598,7 +596,7 @@
         if (onMobile) {
           adViewed = true;
         }
-        $("#ad").fadeOut(300);
+        $("#ad").fadeOut(100);
       }
     </script>
   </body>

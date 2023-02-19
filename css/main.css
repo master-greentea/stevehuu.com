@@ -232,6 +232,12 @@ button {
   top: 95px;
   z-index: 99999;
 }
+#ad-close svg {
+  transition: fill 0.1s;
+}
+#ad-close:hover svg {
+  fill: #ad2144;
+}
 #ad a#outfoxlink {
   color: #d12a54;
   font-size: larger;

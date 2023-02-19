@@ -71,13 +71,5 @@ function ChangeTheme(themeName) {
       $("#light-mode").hide();
       $("#dark-mode").show();
       break;
-    case "cherry":
-      $("#dark-mode").hide();
-      $("#light-mode").show();
-      break;
-    case "orange":
-      $("#light-mode").hide();
-      $("#dark-mode").show();
-      break;
   }
 }

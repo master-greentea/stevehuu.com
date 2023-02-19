@@ -1,5 +1,5 @@
-#gamea {
-  margin-bottom: 80px;
+#index-game {
+  margin-bottom: 60px;
 }
 
 a:has(.game-tab) {
@@ -25,10 +25,16 @@ video {
 .game-tab {
   border-radius: 10px;
   box-shadow: none;
-  transition: box-shadow 0.3s ease-out, border 0.3s ease-out;
+  transition: box-shadow 0.2s ease-out, border 0.2s ease-out;
   padding: 0px !important;
   padding-bottom: 4px !important;
   position: relative;
+  border: 2px solid var(--color-g);
+}
+.game-tab h2 {
+  /* display: none; */
+  /* opacity: 0; */
+  margin-left: 4px;
 }
 .unfinished {
   opacity: 40%;
@@ -43,22 +49,16 @@ video {
 }
 .game-tab:hover {
   box-shadow: 0px 0px 8px var(--color-w);
-  transition: box-shadow 0.1s ease-out;
-}
-.game-tab:hover img {
-  filter: none;
 }
 .on-itch:hover {
   box-shadow: 0px 0px 8px #fa5c5c;
-  transition: box-shadow 0.1s ease-out, border 0.1s ease-out;
 }
 .playable:hover {
-  box-shadow: 0px 0px 8px var(--color-y);
-  transition: box-shadow 0.1s ease-out, border 0.1s ease-out;
+  /* box-shadow: 0px 0px 8px var(--color-y); */
 }
 .on-steam:hover {
-  box-shadow: 0px 0px 8px #66c0f4;
-  transition: box-shadow 0.1s ease-out, border 0.1s ease-out;
+  /* box-shadow: 0px 0px 8px #66c0f4; */
+  box-shadow: 0px 0px 8px var(--color-y);
 }
 
 .game-tab img {
@@ -66,6 +66,7 @@ video {
   height: auto;
   border-radius: 8px 8px 0px 0px;
   margin-top: 0px !important;
+  /* margin-bottom: 0; */
   padding: 0px !important;
 }
 
