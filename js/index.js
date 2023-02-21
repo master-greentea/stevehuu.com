@@ -2,9 +2,25 @@ $(() => {
   InitializeTheme();
 });
 
-function PageSetup(morseMsg, currentPageNavLink) {
+function PageSetup(showHamburger, currentPageNavLink, isCat) {
   $("._header").load("/master_htmls/header.html", function () {
     $(currentPageNavLink).attr("class", "nav-link current-page");
+    $("#header-hamburger").addClass(showHamburger ? "d-flex" : "d-none");
+    $("#header-social").addClass(showHamburger ? "" : "d-md-none");
+    $("#header-cat").addClass(isCat ? "" : "d-none");
+    $("#header-stuff").addClass(isCat ? "d-none" : "");
+
+    $("#header-stuff").mouseenter(function () {
+      $("#header-stuff img").animate({
+        width: "+=10",
+        height: "+=10"
+      }, 100,)
+    }).mouseleave(function () {
+      $("#header-stuff img").animate({
+        width: "-=10",
+        height: "-=10"
+      }, 100,)
+    })
   });
   $("._footer").load("/master_htmls/footer.html");
 }

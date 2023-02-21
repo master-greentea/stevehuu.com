@@ -46,34 +46,7 @@
   </head>
 
   <body id="index-body">
-    <header class="container-fluid d-flex">
-      <div
-        id="header-switch"
-        style="position: relative; left: 50%; transform: translate(-25px, 0)"
-      >
-        <div id="header-cat">
-          <a href="/stuff.html" style="margin: 0"
-            ><img
-              alt="stevehuu_logo"
-              src="/images/stuff/stuffmachine_logo_icon_pic.png"
-              class="d-block img-fluid"
-              style="width: 50px; height: 50px; margin: 0"
-          /></a>
-        </div>
-        <div id="header-stuff">
-          <a href="/stuff.html" style="margin: 0"
-            ><img
-              alt="stuffmachine_logo"
-              src="/images/stuff/stuffmachine_logo_icon_pic.png"
-              class="d-block img-fluid"
-              style="width: 50px; height: 50px; margin: 0"
-          /></a>
-        </div>
-        <p id="header-stuff-text">
-          &#60; <a href="/stuff.html">Stuff Machine</a>&copy;
-        </p>
-      </div>
-    </header>
+    <div class="_header"></div>
 
     <!-- extra space below -->
     <div class="header-prop"></div>
@@ -568,7 +541,7 @@
     </div>
 
     <script>
-      PageSetup("", "");
+      PageSetup(false, "", false);
       // show game tabs
       $(function () {
         const tooltipTriggerList = document.querySelectorAll(

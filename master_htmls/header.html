@@ -1,6 +1,6 @@
-<header class="container-fluid d-flex">
+<header class="container-fluid d-flex justify-content-between">
   <!-- hamburger button -->
-  <div class="col d-flex justify-content-start">
+  <div id="header-hamburger" class="col justify-content-start">
     <button
       class="navbar-toggler"
       type="button"
@@ -23,18 +23,30 @@
   </div>
 
   <!-- middle icon -->
-  <div class="col d-none d-md-flex justify-content-center">
-    <a href="/" style="margin: 0"
-      ><img
-        alt="stevehuu_logo"
-        src="/images/cat_logo.png"
-        class="d-block img-fluid"
-        style="width: 50px; height: 50px; margin: 0"
-    /></a>
+  <div id="header-icon" class="col justify-content-center d-none d-md-flex">
+    <div id="header-cat">
+      <a href="/" style="margin: 0"
+        ><img
+          alt="stevehuu_logo"
+          src="/images/cat_logo.png"
+          class="d-block img-fluid"
+          style="width: 50px; height: 50px; margin: 0"
+      /></a>
+    </div>
+    <div id="header-stuff">
+      <a href="/stuff.html" style="margin: 0"
+        ><img
+          alt="stuffmachine_logo"
+          src="/images/stuff/stuffmachine_logo_icon_pic.png"
+          class="d-block img-fluid"
+          style="width: 50px; height: 50px; margin: 0"
+      /></a>
+    </div>
+    <p id="header-stuff-text">&#60; Stuff Machine&#169;</p>
   </div>
 
   <!-- social bar -->
-  <div class="col d-none d-md-flex justify-content-end">
+  <div id="header-social" class="col d-none d-md-flex justify-content-end">
     <ul class="list-group list-group-horizontal">
       <li>
         <a href="https://github.com/master-greentea" target="_blank">
@@ -131,6 +143,15 @@
             <a id="nav-link-games" class="nav-link" aria-current="page" href="/"
               >Games</a
             >
+            <ul id="games-nav">
+              <li>Project E</li>
+              <li>Ritual Night</li>
+              <li>Foghorn</li>
+              <li>Live from the Cube</li>
+              <li>PYRAMIDS</li>
+              <li>ANAMNESIS</li>
+              <li>Project Starlight</li>
+            </ul>
           </li>
           <li class="nav-item">
             <a

@@ -30,8 +30,8 @@ $(function () {
 
   // load header
   PageSetup(
-    "",
-    "#nav-link-stuff"
+    false,
+    "#nav-link-stuff", true
   );
   // run if not on mobile
   if (!onMobile) {

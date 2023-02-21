@@ -1,3 +1,9 @@
+/* header */
+#games-nav {
+  list-style: none;
+  font-family: "JetBrains Mono";
+}
+
 #index-game {
   margin-bottom: 60px;
 }
@@ -32,8 +38,6 @@ video {
   border: 2px solid var(--color-g);
 }
 .game-tab h2 {
-  /* display: none; */
-  /* opacity: 0; */
   margin-left: 4px;
 }
 .unfinished {
@@ -108,9 +112,6 @@ video {
   text-shadow: 5px 2px 10px #f9fb87;
 }
 
-.game-details {
-  margin-top: 30px;
-}
 .page-links {
   color: var(--color-y);
   text-decoration: underline;
@@ -119,4 +120,54 @@ video {
 /* page buttons */
 .game-page-buttons {
   font-family: "K2D Light Regular";
+}
+
+/* game info */
+#game-info-card {
+  width: 300px;
+  height: fit-content;
+  padding: none;
+  padding-left: 15px;
+  padding-bottom: 15px;
+  margin-right: 30px;
+  margin-top: 20px;
+  border-left: 1px solid var(--color-w);
+}
+#game-info-card h1 {
+  font-size: clamp(32px, 48px, 2vmax);
+}
+#game-info-card h2 {
+  color: var(--color-r);
+  font-size: clamp(20px, 24px, 1vmax);
+}
+#game-info-card h4 {
+  font-size: clamp(16px, 18px, 1vmax);
+}
+#game-info-card h5 {
+  font-size: clamp(16px, 18px, 1vmax);
+}
+#game-info-card h5 ul {
+  list-style: none;
+  padding-left: 45px;
+}
+#game-content {
+  width: 95%;
+  margin-top: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#game-buttons {
+  width: 100%;
+}
+.game-details {
+  margin-top: 15px;
+}
+.game-play-link {
+  text-decoration: none;
+}
+.game-play-link svg {
+  transition: fill 0.2s;
+}
+.game-play-link:hover svg {
+  fill: var(--color-r);
 }

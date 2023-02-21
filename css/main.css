@@ -46,6 +46,11 @@ header {
   background-color: var(--color-b);
   border-bottom: 1px solid var(--color-w);
 }
+#header-icon {
+  transform: translate(-50%, 0);
+  position: absolute;
+  left: 50%;
+}
 footer {
   background-color: transparent;
 }
@@ -214,7 +219,7 @@ button {
   overflow-x: hidden;
   font-family: georgia;
   padding: 15px;
-  max-height: 45vh;
+  max-height: 40vh;
   min-height: fit-content;
   margin: 20px;
   margin-top: 50px;
@@ -362,47 +367,24 @@ h2 a:hover {
     transform: rotate(0deg);
   }
 }
-@keyframes to-stuff {
-  0% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-#header-cat {
-  display: inline-block;
+#header-stuff {
   animation: wiggle 3s infinite ease-in-out;
-  position: absolute;
-  opacity: 1;
 }
-#header-cat,
-#header-stuff {
-  position: absolute;
-  transition: opacity 0.5s;
+#header-stuff:hover {
+  animation: none;
 }
-#header-stuff {
-  opacity: 0;
-}
-#header-switch:hover > #header-cat {
-  animation: to-stuff 0.5s;
-  opacity: 0;
-}
-#header-switch:hover > #header-stuff,
-#header-switch:hover > #header-stuff-text {
+#header-stuff:hover + #header-stuff-text {
   opacity: 1;
 }
 #header-stuff-text {
-  position: relative;
-  transition: opacity 0.5s;
-  opacity: 0;
-  left: 60px;
-  top: 15px;
+  position: absolute;
+  top: 16px;
+  left: 70px;
+  width: max-content;
   padding: none;
   margin: none;
+  opacity: 0;
+  transition: opacity 0.1s;
 }
 
 /* tooltip */

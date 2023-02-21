@@ -32,9 +32,38 @@
   <body>
     <div class="_header"></div>
 
-    <main class="container">
-      <div class="col-12 flex-fill">
+    <main class="container-md d-flex flex-wrap flex-md-nowrap">
+      <div id="game-info-card">
         <h1 id="pyramids-h1" class="game-h1">PYRAMIDS</h1>
+        <h2 style="color: var(--color-y)">
+          Play:
+          <a
+            href="https://masterhuhu.itch.io/pyramids"
+            target="_blank"
+            class="game-play-link"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-windows"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M6.555 1.375 0 2.237v5.45h6.555V1.375zM0 13.795l6.555.933V8.313H0v5.482zm7.278-5.4.026 6.378L16 16V8.395H7.278zM16 0 7.33 1.244v6.414H16V0z"
+              />
+            </svg>
+          </a>
+        </h2>
+        <h4>UE4</h4>
+        <h5>
+          NYU Game Center<br />
+          <inline style="font-size: smaller">(Fall 2021)</inline>
+        </h5>
+        <h5><u>role</u>: everything</h5>
+      </div>
+
+      <div id="game-content">
         <div class="row">
           <div class="col-12 col-md-8">
             <!-- begin carousel -->
@@ -153,66 +182,39 @@
           </div>
 
           <div class="col-12 col-md-4">
-            <h4>UE4</h4>
-            <h5>at: NYU Game Center (Fall 2021)</h5>
-            <h5>role: everything</h5>
-            <p class="game-details">
+            <p>
               Pyramids is a third-person adventure
-              <em>prototype</em> set in a bizarre post-apocalypse world.<br /><br />The
-              protagonist wakes up to find themselves in a colorless world where
-              they need to find fragments of the past to piece together what the
-              hell happened.<br /><br />This project is created during NYU Game
-              Center's 3D Studio class. The players will be able to fully
-              explore the broken world and find numerous narrative pieces that
-              may or may not lead them closer to the truth.<br /><br />Play
-              Windows build
-              <a
-                href="https://masterhuhu.itch.io/pyramids"
-                target="_blank"
-                class="page-links"
-                style="color: var(--color-y); text-decoration: underline"
-                >here
-                <span
-                  ><svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="18"
-                    height="18"
-                    fill="var(--color-w)"
-                    class="bi bi-box-arrow-up-right"
-                    viewBox="0 0 16 16"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 
-                      4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5
-                      0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 
-                      0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                    />
-                    <path
-                      fill-rule="evenodd"
-                      d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 
-                      9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                    />
-                  </svg> </span></a
-              >.
+              <em>prototype</em> set in a bizarre post-apocalypse world.
+            </p>
+            <p>
+              The protagonist wakes up to find themselves in a colorless world
+              where they need to find fragments of the past to piece together
+              what the hell happened.
+            </p>
+            <p>
+              This project is created during NYU Game Center's 3D Studio class.
+              The players will be able to fully explore the broken world and
+              find numerous narrative pieces that may or may not lead them
+              closer to the truth.
             </p>
           </div>
         </div>
       </div>
-      <div class="d-flex justify-content-between">
-        <h4 class="game-page-buttons">
-          &#60; <a href="../games/live-from-the-cube.html">Next Game</a>
-        </h4>
-        <h4 class="game-page-buttons">
-          <a href="../games/anamnesis.html">Previous Game</a> >
-        </h4>
-      </div>
     </main>
+
+    <div class="container-md d-flex justify-content-between">
+      <h4 class="game-page-buttons">
+        &#60; <a href="../games/live-from-the-cube.html">Next Game</a>
+      </h4>
+      <h4 class="game-page-buttons">
+        <a href="../games/anamnesis.html">Previous Game</a> >
+      </h4>
+    </div>
 
     <div class="_footer"></div>
 
     <script>
-      PageSetup("", "");
+      PageSetup(true, "", true);
     </script>
   </body>
 </html>

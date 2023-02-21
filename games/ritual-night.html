@@ -32,11 +32,20 @@
   <body>
     <div class="_header"></div>
 
-    <main class="container">
-      <div class="col-12 flex-fill">
-        <h1 id="ritual-h1" class="game-h1">Ritual Night</h1>
+    <main class="container-md d-flex flex-wrap flex-md-nowrap">
+      <div id="game-info-card">
+        <h1 id="ritual-e-h1" class="game-h1">Ritual Night</h1>
+        <h2>Under Development</h2>
+        <h4>Unity 2D</h4>
+        <h5><u>team</u>: Outfox Games</h5>
+        <h5>
+          <u>role</u>: design, programming, audio, website, tech art, media
+        </h5>
+      </div>
+
+      <div id="game-content">
         <div class="row">
-          <div class="col-12 col-md-8">
+          <div class="col-12 col-xxl-8">
             <img
               src="/images/games/ritual_night/logo.jpg"
               class="d-block w-100 img-fluid"
@@ -50,37 +59,29 @@
             ></video>
           </div>
 
-          <div class="col-12 col-md-4">
-            <h2 style="color: var(--color-r)">Under Development</h2>
-            <h4>Unity 2D</h4>
-            <h5>
-              at: Outfox Games
-              <inline style="font-size: smaller">(team of 5)</inline>
-            </h5>
-            <h5>
-              role: design co-lead | audio lead | programming | website | tech
-              art | media
-            </h5>
-            <p class="game-details">
+          <div class="col-12 col-xxl-4">
+            <p>
               Ritual Night is a multi-player social-deduction party game with
-              stealth elements.<br /><br />The players play as a group of
-              thrill-seeking monsters trying to have a good time at a party
-              while completing few rituals to summon the mighty Cthulhu. But
-              watch out! There are humans in disguise among you, and their goal
-              is to sabotage...<br /><br />Ritual Night is set to release in
-              Early Access in Winter 2022.<br /><br />For more info check out
-              the links below!
+              stealth elements.
             </p>
-
+            <p>
+              The players play as a group of thrill-seeking monsters trying to
+              have a good time at a party while completing few rituals to summon
+              the mighty Cthulhu. But watch out! There are humans in disguise
+              among you, and their goal is to sabotage...
+            </p>
+            <p>Ritual Night is set to launch in October 2023.</p>
+            <hr />
+            <p>For more info check out the links below!</p>
             <div class="row">
-              <div class="col-6 col-xxl-4">
+              <div class="col-6 col-sm-4">
                 <a href="https://outfoxgames.net" target="_blank">
                   <img
                     src="/images/games/ritual_night/outfox_logo.png"
                     style="width: 100%"
                 /></a>
               </div>
-              <div class="col-6 col-xxl-4">
+              <div class="col-6 col-sm-4">
                 <a
                   href="https://store.steampowered.com/app/1834980/Ritual_Night/"
                   target="_blank"
@@ -90,41 +91,67 @@
                     style="width: 100%"
                 /></a>
               </div>
-              <div class="col-6 col-xxl-4">
+              <div class="col-6 col-sm-4">
                 <a href="https://discord.gg/pdGkdJEkHR" target="_blank">
                   <img
                     src="/images/games/ritual_night/discord.png"
                     style="width: 100%"
                 /></a>
               </div>
-            </div>
-            <div class="d-none d-xxl-block">
-              <a
-                href="https://www.gamesweekberlin.com/dev-booster/"
-                target="_blank"
-              >
+              <div class="col-6 col-sm-4">
+                <a
+                  href="https://www.gamesweekberlin.com/dev-booster/"
+                  target="_blank"
+                >
+                  <img
+                    src="/images/games/ritual_night/devbooster.png"
+                    style="width: 100%"
+                /></a>
+              </div>
+              <div class="col-6 col-sm-4">
                 <img
-                  src="/images/games/ritual_night/devbooster.png"
-                  style="width: 30%"
-              /></a>
+                  src="/images/games/ritual_night/GDoC_White.png"
+                  style="width: 100%"
+                />
+              </div>
+              <div class="col-6 col-sm-4">
+                <img
+                  src="/images/games/ritual_night/TinyTeams_OfficialSelection.png"
+                  style="width: 100%"
+                />
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="d-flex justify-content-between">
-        <h4 class="game-page-buttons">
-          &#60; <a href="../games/project-e.html">Next Game</a>
-        </h4>
-        <h4 class="game-page-buttons">
-          <a href="../games/foghorn.html">Previous Game</a> >
-        </h4>
+
+        <hr />
+        <h3>Design breakdown</h3>
+        <p>
+          Yes yes will eventually write it. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+          labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+          exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est
+          laborum.
+        </p>
       </div>
     </main>
+
+    <div class="container-md d-flex justify-content-between">
+      <h4 class="game-page-buttons">
+        &#60; <a href="../games/project-e.html">Next Game</a>
+      </h4>
+      <h4 class="game-page-buttons">
+        <a href="../games/foghorn.html">Previous Game</a> >
+      </h4>
+    </div>
 
     <div class="_footer"></div>
 
     <script>
-      PageSetup("", "");
+      PageSetup(true, "", true);
     </script>
   </body>
 </html>

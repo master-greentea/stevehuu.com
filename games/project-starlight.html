@@ -32,11 +32,18 @@
   <body>
     <div class="_header"></div>
 
-    <main class="container">
-      <div class="col-12 flex-fill">
-        <h1 id="starlight-h1" class="game-h1">Project Starlight</h1>
+    <main class="container-md d-flex flex-wrap flex-md-nowrap">
+      <div id="game-info-card">
+        <h1 id="starlight-h1" class="game-h1">
+          <inline style="font-size: smaller">Project</inline> Starlight
+        </h1>
+        <h4>Unity 2D</h4>
+        <h5><u>team</u>: just me</h5>
+        <h5><u>role</u>: everything</h5>
+      </div>
+      <div id="game-content">
         <div class="row">
-          <div class="col-12 col-md-8">
+          <div class="col-12 col-xxl-12">
             <video
               width="100%"
               controls
@@ -49,32 +56,27 @@
             </video>
           </div>
 
-          <div class="col-12 col-md-4">
-            <h4>Unity 2D</h4>
-            <h5>role: everything</h5>
-            <p class="game-details">
+          <div class="col-12 col-xxl-4">
+            <p>
               Project Starlight is an experimental game about looking at the
               night sky through an old television. It features a procedural star
               generation system with multiple custom shaders.
-              <br />
-              <br />
-              This project is a gift dedicated to someone speical.
             </p>
           </div>
         </div>
       </div>
-
-      <div class="d-flex justify-content-between">
-        <h4 class="game-page-buttons">
-          &#60; <a href="../games/anamnesis.html">Next Game</a>
-        </h4>
-      </div>
     </main>
+
+    <div class="container-md d-flex justify-content-between">
+      <h4 class="game-page-buttons">
+        &#60; <a href="../games/anamnesis.html">Next Game</a>
+      </h4>
+    </div>
 
     <div class="_footer"></div>
 
     <script>
-      PageSetup("", "");
+      PageSetup(true, "", true);
     </script>
   </body>
 </html>

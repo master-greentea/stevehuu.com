@@ -32,21 +32,23 @@
   <body>
     <div class="_header"></div>
 
-    <main class="container">
-      <div class="col-12 flex-fill">
+    <main class="container-md d-flex flex-wrap flex-md-nowrap">
+      <div id="game-info-card">
         <h1 id="anamnesis-h1" class="game-h1">ANAMNESIS</h1>
+        <h4>UE4</h4>
+        <h5>
+          NYU Game Center<br />
+          <inline style="font-size: smaller">(Fall 2021, team of 4)</inline>
+        </h5>
+        <h5><u>role</u>: design, programming, audio, narrative</h5>
+      </div>
+      <div id="game-content">
+        <video width="100%" controls autoplay muted style="margin-top: 10px">
+          <source src="/videos/anamnesis.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div class="row">
-          <div class="col-12 col-md-8">
-            <video
-              width="100%"
-              controls
-              autoplay
-              muted
-              style="margin-top: 10px"
-            >
-              <source src="/videos/anamnesis.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
+          <div class="col-12 col-xxl-8">
             <div class="row">
               <div class="col-6">
                 <img
@@ -67,44 +69,64 @@
             />
           </div>
 
-          <div class="col-12 col-md-4">
-            <h4>UE4</h4>
-            <h5>
-              at: NYU Game Center (Fall 2021)
-              <small>(team of 4)</small>
-            </h5>
-            <h5>role: audio lead | design | programming | narrative</h5>
-            <p class="game-details">
+          <div class="col-12 col-xxl-4">
+            <p>
               ANAMNESIS is a first-person action-adventure
               <em>prototype</em> created based on John Eblahan's
               <a
                 href="https://warrrlock.itch.io/brutalist"
                 target="_blank"
                 class="page-links"
-                >Brutalist</a
-              >.<br /><br />
+                >Brutalist
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  fill="var(--color-w)"
+                  class="bi bi-box-arrow-up-right"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 
+                  4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5
+                  0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 
+                  0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 
+                  9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
+                  /></svg></a
+              >.
+            </p>
+            <p>
               The player plays as a serial killer who had lost all his memories,
               yet still haunted by guilt, and is trying to find some sort of
-              closure for his victims.<br /><br />This project is developed over
-              4 weeks as a proof of concept at NYU Game Center.
+              closure for his victims.
+            </p>
+            <p>
+              This project is developed over 4 weeks as a proof of concept at
+              NYU Game Center.
             </p>
           </div>
         </div>
       </div>
-      <div class="d-flex justify-content-between">
-        <h4 class="game-page-buttons">
-          &#60; <a href="../games/pyramids.html">Next Game</a>
-        </h4>
-        <h4 class="game-page-buttons">
-          <a href="../games/project-starlight.html">Previous Game</a> >
-        </h4>
-      </div>
     </main>
+
+    <div class="container-md d-flex justify-content-between">
+      <h4 class="game-page-buttons">
+        &#60; <a href="../games/pyramids.html">Next Game</a>
+      </h4>
+      <h4 class="game-page-buttons">
+        <a href="../games/project-starlight.html">Previous Game</a> >
+      </h4>
+    </div>
 
     <div class="_footer"></div>
 
     <script>
-      PageSetup("", "");
+      PageSetup(true, "", true);
     </script>
   </body>
 </html>
