@@ -14,12 +14,12 @@ $(() => {
 
 function PageSetup(showHamburger, currentPageNavLink, isCat) {
   $("._header").load("/master_htmls/header.html", function () {
-    $(currentPageNavLink).attr("class", "nav-game current-page");
-    $("#header-hamburger").addClass(showHamburger ? "d-flex" : "d-none");
+    $(currentPageNavLink).attr("class", showHamburger ? "nav-game current-page" : "nav-link current-page");
+    $("#header-hamburger").removeClass(showHamburger ? "d-md-none" : "");
     $("#header-social").addClass(showHamburger ? "" : "d-md-none");
     $("#header-cat").addClass(isCat ? "" : "d-none");
     $("#header-stuff").addClass(isCat ? "d-none" : "");
-
+    // stuff logo animation
     $("#header-stuff").mouseenter(function () {
       $("#header-stuff img").animate({
         width: "+=10",

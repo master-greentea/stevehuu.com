@@ -392,7 +392,7 @@ h2 a:hover {
   animation: none;
 }
 #header-stuff:hover + #header-stuff-text {
-  opacity: 1;
+  opacity: 1 !important;
 }
 #header-stuff-text {
   position: absolute;
@@ -419,4 +419,43 @@ h2 a:hover {
 }
 html.is-animating .transition-fade {
   opacity: 0;
+}
+
+/* TRANSITIONS */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+.m-scene .scene_element {
+  animation-duration: 1.25s;
+  transition-timing-function: ease-in;
+  animation-fill-mode: both;
+  background-color: #cdbcbc;
+}
+
+.scene_element--fadein {
+  animation-name: fadeIn;
+}
+
+.scene_element--fadeinup {
+  animation-name: fadeInUp;
+}
+
+/** Reverse "exit" animations */
+.m-scene.is-exiting .scene_element {
+  animation-direction: alternate-reverse;
 }

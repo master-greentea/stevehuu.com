@@ -15,7 +15,7 @@
     <meta property="og:image:height" content="630" />
     <meta
       name="description"
-      content="Steve Huu's portfolio website. | Game Designer, Stuff Maker | Games | Stuff Machine | About"
+      content="Steve Huu's portfolio website. | Game Designer | Games | Stuff Machine"
     />
 
     <title>stevehuu.commmm</title>
@@ -47,9 +47,6 @@
 
   <body id="index-body">
     <div class="_header"></div>
-
-    <!-- extra space below -->
-    <div class="header-prop"></div>
 
     <main class="container-fluid">
       <div class="row">
@@ -557,7 +554,7 @@
     </div>
 
     <script>
-      PageSetup(false, "", false);
+      PageSetup(false, "#nav-link-games", false);
       // show game tabs
       $(function () {
         const tooltipTriggerList = document.querySelectorAll(
@@ -579,7 +576,6 @@
           $("#ad").fadeIn(300);
         }
       };
-
       function CloseAd() {
         var onMobile = window.matchMedia("(max-width: 1319px)").matches;
         if (onMobile) {
