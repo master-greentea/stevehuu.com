@@ -25,7 +25,7 @@
     />
     <link rel="stylesheet" href="/css/games.css" />
 
-    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
   </head>
 
@@ -84,7 +84,9 @@
           >
         </h5>
         <h5><u>role</u>: design, programming, audio, tech art, animations</h5>
+        <div class="_page-buttons"></div>
       </div>
+
       <div id="game-content">
         <div class="row">
           <div class="col-12 col-xxl-8">
@@ -203,19 +205,12 @@
         </p>
       </div>
     </main>
-    <div class="container-md d-flex justify-content-between">
-      <h4 class="game-page-buttons">
-        &#60; <a href="../games/foghorn.html">Next Game</a>
-      </h4>
-      <h4 class="game-page-buttons">
-        <a href="../games/pyramids.html">Previous Game</a> >
-      </h4>
-    </div>
 
     <div class="_footer"></div>
 
     <script>
-      PageSetup(true, "", true);
+      PageSetup(true, "#nav-link-live-from-the-cube", true);
+      GamePageSetup("../games/foghorn.html", "../games/pyramids.html");
     </script>
   </body>
 </html>

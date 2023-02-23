@@ -25,7 +25,7 @@
     />
     <link rel="stylesheet" href="/css/games.css" />
 
-    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
   </head>
 
@@ -40,7 +40,9 @@
         <h4>Unity 2D</h4>
         <h5><u>team</u>: just me</h5>
         <h5><u>role</u>: everything</h5>
+        <div class="_page-buttons"></div>
       </div>
+
       <div id="game-content">
         <div class="row">
           <div class="col-12 col-xxl-12">
@@ -67,16 +69,11 @@
       </div>
     </main>
 
-    <div class="container-md d-flex justify-content-between">
-      <h4 class="game-page-buttons">
-        &#60; <a href="../games/anamnesis.html">Next Game</a>
-      </h4>
-    </div>
-
     <div class="_footer"></div>
 
     <script>
-      PageSetup(true, "", true);
+      PageSetup(true, "#nav-link-project-starlight", true);
+      GamePageSetup("../games/anamnesis.html", "none");
     </script>
   </body>
 </html>

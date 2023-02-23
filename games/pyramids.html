@@ -25,7 +25,7 @@
     />
     <link rel="stylesheet" href="/css/games.css" />
 
-    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
   </head>
 
@@ -61,6 +61,7 @@
           <inline style="font-size: smaller">(Fall 2021)</inline>
         </h5>
         <h5><u>role</u>: everything</h5>
+        <div class="_page-buttons"></div>
       </div>
 
       <div id="game-content">
@@ -126,30 +127,6 @@
                   ></video>
                 </div>
               </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#pyramids-carousel"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#pyramids-carousel"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
             </div>
             <!-- end carousel -->
 
@@ -202,19 +179,14 @@
       </div>
     </main>
 
-    <div class="container-md d-flex justify-content-between">
-      <h4 class="game-page-buttons">
-        &#60; <a href="../games/live-from-the-cube.html">Next Game</a>
-      </h4>
-      <h4 class="game-page-buttons">
-        <a href="../games/anamnesis.html">Previous Game</a> >
-      </h4>
-    </div>
-
     <div class="_footer"></div>
 
     <script>
-      PageSetup(true, "", true);
+      PageSetup(true, "#nav-link-pyramids", true);
+      GamePageSetup(
+        "../games/live-from-the-cube.html",
+        "../games/anamnesis.html"
+      );
     </script>
   </body>
 </html>

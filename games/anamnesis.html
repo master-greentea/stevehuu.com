@@ -25,7 +25,7 @@
     />
     <link rel="stylesheet" href="/css/games.css" />
 
-    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
   </head>
 
@@ -41,7 +41,9 @@
           <inline style="font-size: smaller">(Fall 2021, team of 4)</inline>
         </h5>
         <h5><u>role</u>: design, programming, audio, narrative</h5>
+        <div class="_page-buttons"></div>
       </div>
+
       <div id="game-content">
         <video width="100%" controls autoplay muted style="margin-top: 10px">
           <source src="/videos/anamnesis.mp4" type="video/mp4" />
@@ -114,19 +116,16 @@
       </div>
     </main>
 
-    <div class="container-md d-flex justify-content-between">
-      <h4 class="game-page-buttons">
-        &#60; <a href="../games/pyramids.html">Next Game</a>
-      </h4>
-      <h4 class="game-page-buttons">
-        <a href="../games/project-starlight.html">Previous Game</a> >
-      </h4>
-    </div>
+    <div class="back-to-top"></div>
 
     <div class="_footer"></div>
 
     <script>
-      PageSetup(true, "", true);
+      PageSetup(true, "#nav-link-anamnesis", true);
+      GamePageSetup(
+        "../games/pyramids.html",
+        "../games/project-starlight.html"
+      );
     </script>
   </body>
 </html>

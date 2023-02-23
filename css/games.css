@@ -1,41 +1,33 @@
-/* header */
-#games-nav {
-  list-style: none;
-  font-family: "JetBrains Mono";
-}
-
 #index-game {
   margin-bottom: 60px;
 }
 
-a:has(.game-tab) {
+.game-tab a {
   color: var(--color-w);
   text-decoration: none;
 }
-a:has(.game-tab):hover {
+.game-tab a:hover {
   color: var(--color-w);
   text-decoration: none;
 }
-a:has(.game-tab) h2 {
+.game-tab a:not(.unfinished) h2 {
   text-shadow: none;
   padding-left: 4px;
-}
-a:has(.game-tab):hover h2 {
-  text-shadow: none;
+  cursor: pointer;
 }
 
 video {
   margin-bottom: 10px;
 }
 
-.game-tab {
+.game-tab a div {
   border-radius: 10px;
   box-shadow: none;
   transition: box-shadow 0.2s ease-out, border 0.2s ease-out;
   padding: 0px !important;
   padding-bottom: 4px !important;
-  position: relative;
   border: 2px solid var(--color-g);
+  color: var(--color-w);
 }
 .game-tab h2 {
   margin-left: 4px;
@@ -51,16 +43,16 @@ video {
   --bs-tooltip-arrow-height: 10px;
   font-family: "JetBrains Mono";
 }
-.game-tab:hover {
+.game-tab a:hover div {
   box-shadow: 0px 0px 8px var(--color-w);
 }
-.on-itch:hover {
+.on-itch a:hover div {
   box-shadow: 0px 0px 8px #fa5c5c;
 }
-.playable:hover {
+.playable a:hover div {
   /* box-shadow: 0px 0px 8px var(--color-y); */
 }
-.on-steam:hover {
+.on-steam a:hover div {
   /* box-shadow: 0px 0px 8px #66c0f4; */
   box-shadow: 0px 0px 8px var(--color-y);
 }
@@ -72,13 +64,6 @@ video {
   margin-top: 0px !important;
   /* margin-bottom: 0; */
   padding: 0px !important;
-}
-
-#games-main {
-  padding-top: 10px;
-}
-#games-main a {
-  display: none;
 }
 
 .pyramids-html {
@@ -118,8 +103,28 @@ video {
 }
 
 /* page buttons */
-.game-page-buttons {
-  font-family: "K2D Light Regular";
+#game-page-buttons {
+  transform: translate(0, 20px);
+}
+.page-buttons {
+  border: 1px solid var(--color-w);
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 6px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  color: var(--color-y);
+}
+.page-buttons:not(.disabled):hover {
+  background-color: var(--color-y);
+  color: var(--color-b);
+  border: 1px solid var(--color-y);
+}
+.page-buttons.disabled {
+  opacity: 0.3;
 }
 
 /* game info */
@@ -156,9 +161,6 @@ video {
   padding-left: 5px;
   padding-right: 5px;
 }
-#game-buttons {
-  width: 100%;
-}
 .game-details {
   margin-top: 15px;
 }
@@ -170,4 +172,42 @@ video {
 }
 .game-play-link:hover svg {
   fill: var(--color-r);
+}
+
+/* carousel */
+.carousel-indicators button {
+  background-color: var(--color-y) !important;
+  width: 4px !important;
+  height: 4px !important;
+  border-radius: 100%;
+  opacity: 1 !important;
+}
+.carousel-indicators .active {
+  width: 6px !important;
+  height: 6px !important;
+}
+
+/* back to top */
+.back-to-top {
+  position: fixed;
+  right: 50px;
+  bottom: 30px;
+  border: 1px solid var(--color-w);
+  border-radius: 4px;
+  padding: 3px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 4px;
+  font-size: 16px;
+  transition: background-color 0.2s;
+  color: var(--color-y);
+  background-color: var(--color-b);
+  display: none;
+  cursor: pointer;
+}
+
+.back-to-top:hover {
+  background-color: var(--color-y);
+  color: var(--color-b);
+  border: 1px solid var(--color-y);
 }

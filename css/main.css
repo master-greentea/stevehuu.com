@@ -51,9 +51,6 @@ header {
   position: absolute;
   left: 50%;
 }
-footer {
-  background-color: transparent;
-}
 .header-prop {
   margin-top: 80px;
 }
@@ -79,6 +76,9 @@ p {
   font-family: "JetBrains Mono";
   transition: text-shadow 0.5s ease-out;
   text-shadow: none;
+}
+li {
+  font-family: "JetBrains Mono";
 }
 .fun-p:hover {
   transition: text-shadow 3.5s ease-out;
@@ -194,12 +194,30 @@ button {
   font-size: 40px;
   color: var(--color-w);
   transition: color 0.15s;
+  width: fit-content;
 }
 .nav-link:hover,
 .nav-link:focus {
-  transition: color 0.15s;
   color: var(--color-y);
   text-shadow: none;
+}
+.nav-game {
+  font-weight: normal;
+  color: var(--color-w);
+  transition: color 0.15s;
+  text-decoration: none;
+}
+.nav-game:hover,
+.nav-game:focus {
+  color: var(--color-y);
+  text-shadow: none;
+}
+#games-nav {
+  list-style: none;
+  font-family: "JetBrains Mono";
+}
+#games-nav li {
+  margin-bottom: 5px;
 }
 .current-page {
   color: var(--color-r);

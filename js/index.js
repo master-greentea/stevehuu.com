@@ -1,10 +1,20 @@
 $(() => {
   InitializeTheme();
+  window.onscroll = function () {
+    if (
+      document.body.scrollTop > 150 ||
+      document.documentElement.scrollTop > 150
+    ) {
+      $(".back-to-top").fadeIn(100);
+    } else {
+      $(".back-to-top").fadeOut(100);
+    }
+  };
 });
 
 function PageSetup(showHamburger, currentPageNavLink, isCat) {
   $("._header").load("/master_htmls/header.html", function () {
-    $(currentPageNavLink).attr("class", "nav-link current-page");
+    $(currentPageNavLink).attr("class", "nav-game current-page");
     $("#header-hamburger").addClass(showHamburger ? "d-flex" : "d-none");
     $("#header-social").addClass(showHamburger ? "" : "d-md-none");
     $("#header-cat").addClass(isCat ? "" : "d-none");
@@ -22,8 +32,21 @@ function PageSetup(showHamburger, currentPageNavLink, isCat) {
       }, 100,)
     })
   });
-  $("._footer").load("/master_htmls/footer.html");
-}
+  $("._footer").load("/master_htmls/footer.html", function () {
+    $(".back-to-top").load("/master_htmls/back-to-top.html").click(function () {
+      $("html, body").animate({ scrollTop: 0 }, 100);
+    });
+  });
+};
+
+function GamePageSetup(left, right) {
+  $("._page-buttons").load("/master_htmls/page-buttons.html", function () {
+    $(".pb-left").attr("href", left == "none" ? "#" : left);
+    $(".pb-right").attr("href", right == "none" ? "#" : right);
+    if (left == "none") { $(".pb-left").removeAttr('href').addClass("disabled") };
+    if (right == "none") { $(".pb-right").removeAttr('href').addClass("disabled") };
+  });
+};
 
 function LoadGameTabs() {
   const gameTabs = $("#games-main a").toArray();
@@ -56,11 +79,6 @@ function InitializeTheme() {
   }
 
   const currentTheme = themeFound ? localStorage.getItem("theme") : "default";
-
-  $("#theme-select").change(() => {
-    ChangeTheme($("#theme-select").val());
-    localStorage.setItem("theme", $("#theme-select").val());
-  });
 
   ChangeTheme(currentTheme);
 }

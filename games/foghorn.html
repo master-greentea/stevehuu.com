@@ -25,7 +25,7 @@
     />
     <link rel="stylesheet" href="/css/games.css" />
 
-    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
   </head>
 
@@ -82,6 +82,7 @@
           >
         </h5>
         <h5><u>role</u>: everything</h5>
+        <div class="_page-buttons"></div>
       </div>
 
       <div id="game-content">
@@ -94,7 +95,8 @@
               src="/images/games/foghorn/foghorn_gif_4.mp4"
               style="width: 100%"
             ></video>
-
+          </div>
+          <div class="col-12 col-xxl-8">
             <!-- begin carousel -->
             <div
               id="foghorn-carousel"
@@ -143,34 +145,10 @@
                   />
                 </div>
               </div>
-              <button
-                class="carousel-control-prev"
-                type="button"
-                data-bs-target="#foghorn-carousel"
-                data-bs-slide="prev"
-              >
-                <span
-                  class="carousel-control-prev-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button
-                class="carousel-control-next"
-                type="button"
-                data-bs-target="#foghorn-carousel"
-                data-bs-slide="next"
-              >
-                <span
-                  class="carousel-control-next-icon"
-                  aria-hidden="true"
-                ></span>
-                <span class="visually-hidden">Next</span>
-              </button>
             </div>
             <!-- end carousel -->
           </div>
-          <div class="col-12 col-xxl-12">
+          <div class="col-12 col-xxl-4">
             <p class="game-details">
               Foghorn is the <em>prototype</em> of a multiplayer horror game
               concept.
@@ -189,19 +167,108 @@
           </div>
 
           <hr />
-          <h3>Design breakdown</h3>
+          <h3>A game of rays</h3>
           <p>
-            Yes yes will eventually write it. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
+            <em>Foghorn</em> plays with <em>raycasting</em>. Rays are used to
+            mimic lines of sight for both the player and the enemy. The game
+            fails if the player stays in the enemy's line of sight for too long.
+            The core gameplay is about
+            <inline style="color: var(--color-r)"
+              >maintaining / breaking line of sight</inline
+            >.
           </p>
+          <h5>Enemy</h5>
+          <p>
+            To play into the theme of lighthouses and line of sights, the enemy
+            has a unique design for its face. Its face light changes based on
+            its state. The enemy has two states:
+            <strong>scanning</strong> & <strong>following</strong>.
+          </p>
+          <h5>- Scanning (Yellow light)</h5>
+          <div class="col-12 col-xxl-8">
+            <video width="100%" controls muted style="margin-top: 10px">
+              <source src="/videos/fh_scanning.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="col-12 col-xxl-4">
+            <p>
+              While scanning, the enmey casts a ray from its eye-level. It will
+              turn its head back and forth in a scanning motion, until the
+              either 1.) player is found by ray; 2.) player's sight ray detects
+              enemy.
+            </p>
+          </div>
+          <h5>- Following (White - Red light)</h5>
+          <div class="col-12 col-xxl-8">
+            <video width="100%" controls muted style="margin-top: 10px">
+              <source src="/videos/fh_following.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="col-12 col-xxl-4">
+            <p>
+              While following, the enmey always focuses its ray on the player
+              while tracking the player's position. Its face light changes to
+              white and slowly lerps to red as it gets closer to the player.
+            </p>
+          </div>
 
-          <div class="col-4">
+          <hr />
+          <h3>Environment, visuals, shaders</h3>
+          <div class="col-12 col-xxl-6">
+            <img
+              src="/images/games/foghorn/fh_environment.png"
+              style="width: 100%"
+            />
+            <p>
+              The level features a few distinctive areas (most are only
+              blockouts). The starting area situates the player in a way that
+              guides them through the use of elavation and landmarks. The
+              extensive use of trees also provide safety.
+            </p>
+          </div>
+          <div class="col-12 col-xxl-6">
+            <img
+              src="/images/games/foghorn/fh_textures.jpg"
+              style="width: 100%"
+            />
+            <p>
+              The horror effects are achieved through extensive use of custom
+              textures, shaders, and custom blit passes.
+            </p>
+          </div>
+          <div class="col-12 col-xxl-6">
+            <img src="/images/games/foghorn/fh_fog.png" style="width: 100%" />
+            <p>
+              Lighting in the scene is set up in a way that compliments the
+              custom fog effect (created in engine) anywhere you look. The name
+              is <em>Fog</em>horn after all.
+            </p>
+          </div>
+
+          <hr />
+          <h3>Lighthouse</h3>
+          <div class="col-12 col-xxl-8">
+            <p>
+              To ensure I have more in depth control of the behavior of the
+              lighthouse, I've decided to create my own lighthouse model in
+              Blender.
+            </p>
+            <p>I wanted it to serve a few main purposes:</p>
+            <ul>
+              <li>landmark, player guidance</li>
+              <li>provide a sense of mystery</li>
+              <li>
+                behave unexpectedly at scripted moments to surprise the player
+              </li>
+            </ul>
+            <p>
+              The lighthouse would give a false sense of safety if I play my
+              cards right.
+            </p>
+          </div>
+          <div class="col-12 col-xxl-4">
             <img src="/images/games/foghorn/screenshot5.jpg" class="w-100" />
             <img src="/images/games/foghorn/screenshot6.jpg" class="w-100" />
           </div>
@@ -209,19 +276,14 @@
       </div>
     </main>
 
-    <div class="container-md d-flex justify-content-between">
-      <h4 class="game-page-buttons">
-        &#60; <a href="../games/ritual-night.html">Next Game</a>
-      </h4>
-      <h4 class="game-page-buttons">
-        <a href="../games/live-from-the-cube.html">Previous Game</a> >
-      </h4>
-    </div>
-
     <div class="_footer"></div>
 
     <script>
-      PageSetup(true, "", true);
+      PageSetup(true, "#nav-link-foghorn", true);
+      GamePageSetup(
+        "../games/ritual-night.html",
+        "../games/live-from-the-cube.html"
+      );
     </script>
   </body>
 </html>

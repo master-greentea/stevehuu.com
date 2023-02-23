@@ -25,7 +25,7 @@
     />
     <link rel="stylesheet" href="/css/games.css" />
 
-    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
   </head>
 
@@ -39,6 +39,7 @@
         <h4>Unity 3D</h4>
         <h5><u>team</u>: just me</h5>
         <h5><u>role</u>: everything</h5>
+        <div class="_page-buttons"></div>
       </div>
 
       <div id="game-content">
@@ -141,16 +142,11 @@
       </div>
     </main>
 
-    <div class="container-md d-flex justify-content-end">
-      <h4 class="game-page-buttons">
-        <a href="../games/ritual-night.html">Previous Game</a> >
-      </h4>
-    </div>
-
     <div class="_footer"></div>
 
     <script>
-      PageSetup(true, "", true);
+      PageSetup(true, "#nav-link-project-e", true);
+      GamePageSetup("none", "../games/ritual-night.html");
     </script>
   </body>
 </html>

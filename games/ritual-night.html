@@ -25,7 +25,7 @@
     />
     <link rel="stylesheet" href="/css/games.css" />
 
-    <script type="text/javascript" src="/js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
   </head>
 
@@ -41,6 +41,7 @@
         <h5>
           <u>role</u>: design, programming, audio, website, tech art, media
         </h5>
+        <div class="_page-buttons"></div>
       </div>
 
       <div id="game-content">
@@ -73,7 +74,10 @@
             <p>Ritual Night is set to launch in October 2023.</p>
             <hr />
             <p>For more info check out the links below!</p>
-            <div class="row">
+            <div
+              class="row"
+              style="background-color: #0e0e10; border-radius: 6px"
+            >
               <div class="col-6 col-sm-4">
                 <a href="https://outfoxgames.net" target="_blank">
                   <img
@@ -139,19 +143,11 @@
       </div>
     </main>
 
-    <div class="container-md d-flex justify-content-between">
-      <h4 class="game-page-buttons">
-        &#60; <a href="../games/project-e.html">Next Game</a>
-      </h4>
-      <h4 class="game-page-buttons">
-        <a href="../games/foghorn.html">Previous Game</a> >
-      </h4>
-    </div>
-
     <div class="_footer"></div>
 
     <script>
-      PageSetup(true, "", true);
+      PageSetup(true, "#nav-link-ritual-night", true);
+      GamePageSetup("../games/project-e.html", "../games/foghorn.html");
     </script>
   </body>
 </html>
