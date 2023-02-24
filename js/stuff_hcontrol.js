@@ -29,14 +29,11 @@ $(function () {
   var onMobile = window.matchMedia("(max-width: 1319px)").matches;
 
   // load header
-  PageSetup(
-    false,
-    "#nav-link-stuff", true
-  );
+  PageSetup(false, "#nav-link-stuff", true);
   // run if not on mobile
   if (!onMobile) {
     setTimeout(function () {
-      undHeader(750);
+      undHeader(500);
     }, 500);
 
     var pullOutTimer = 0;

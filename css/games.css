@@ -7,31 +7,93 @@
   text-decoration: none;
 }
 .game-tab a:hover {
-  color: var(--color-w);
-  text-decoration: none;
+  text-shadow: none;
 }
 .game-tab a:not(.unfinished) h2 {
-  text-shadow: none;
-  padding-left: 4px;
   cursor: pointer;
+}
+.game-tab a h2 {
+  padding-left: 4px;
+  margin-left: 4px;
 }
 
 video {
   margin-bottom: 10px;
 }
 
+/* hover animations */
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+@keyframes card-spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+.game-tab a div::before {
+  content: "";
+  border-radius: 12px;
+  background-image: linear-gradient(
+    var(--rotate),
+    var(--color-w),
+    var(--color-y) 43%,
+    var(--color-o)
+  );
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  transition: width 0.12s ease-out, height 0.12s ease-out, top 0.12s ease-out,
+    left 0.12s ease-out;
+  animation: none;
+}
 .game-tab a div {
   border-radius: 10px;
   box-shadow: none;
   transition: box-shadow 0.2s ease-out, border 0.2s ease-out;
-  padding: 0px !important;
-  padding-bottom: 4px !important;
   border: 2px solid var(--color-g);
   color: var(--color-w);
+  background-color: var(--color-b);
+  padding-bottom: 4px !important;
+  position: relative;
 }
-.game-tab h2 {
-  margin-left: 4px;
+.game-tab a div::after {
+  position: absolute;
+  content: "";
+  top: 5%;
+  left: 5%;
+  z-index: -1;
+  height: 90%;
+  width: 90%;
+  filter: blur(90px);
+  background-image: linear-gradient(
+    var(--rotate),
+    var(--color-w),
+    var(--color-y) 43%,
+    var(--color-o)
+  );
+  opacity: 0;
+  transition: opacity 0.5s;
+  animation: card-spin 2.5s linear infinite;
 }
+.game-tab a:not(.unfinished):hover div::before {
+  animation: card-spin 2.5s linear infinite;
+  top: -4px;
+  left: -4px;
+  width: calc(100% + 8px);
+  height: calc(100% + 8px);
+}
+.game-tab a:not(.unfinished):hover div::after {
+  opacity: 0.5;
+}
+/* end hover animations */
 .unfinished {
   opacity: 40%;
   cursor: default;
@@ -43,18 +105,11 @@ video {
   --bs-tooltip-arrow-height: 10px;
   font-family: "JetBrains Mono";
 }
-.game-tab a:hover div {
-  box-shadow: 0px 0px 8px var(--color-w);
-}
 .on-itch a:hover div {
-  box-shadow: 0px 0px 8px #fa5c5c;
 }
 .playable a:hover div {
-  /* box-shadow: 0px 0px 8px var(--color-y); */
 }
 .on-steam a:hover div {
-  /* box-shadow: 0px 0px 8px #66c0f4; */
-  box-shadow: 0px 0px 8px var(--color-y);
 }
 
 .game-tab img {
@@ -62,7 +117,6 @@ video {
   height: auto;
   border-radius: 8px 8px 0px 0px;
   margin-top: 0px !important;
-  /* margin-bottom: 0; */
   padding: 0px !important;
 }
 
@@ -95,11 +149,6 @@ video {
 }
 #project-e-h1:hover {
   text-shadow: 5px 2px 10px #f9fb87;
-}
-
-.page-links {
-  color: var(--color-y);
-  text-decoration: underline;
 }
 
 /* page buttons */
@@ -171,7 +220,7 @@ video {
   transition: fill 0.2s;
 }
 .game-play-link:hover svg {
-  fill: var(--color-r);
+  fill: var(--color-o);
 }
 
 /* carousel */

@@ -86,13 +86,12 @@ li {
 }
 a {
   color: var(--color-y);
-  transition: text-shadow 0.25s ease-out;
+  transition: color 0.25s ease-out;
   text-decoration: underline;
   text-shadow: none;
 }
 a:hover {
-  text-shadow: 1px 1px 16px var(--color-y);
-  color: var(--color-y);
+  color: var(--color-o);
 }
 img {
   margin-top: 10px;
@@ -356,13 +355,13 @@ h2 a:hover {
 #dark-mode:hover,
 .index-expansion-buttons:hover {
   cursor: pointer;
-  text-shadow: 1px 1px 16px var(--color-y);
+  color: var(--color-o);
   fill: var(--color-y);
 }
 .index-expansion-buttons {
   text-decoration: underline;
   color: var(--color-y);
-  transition: text-shadow 0.25s ease-out;
+  transition: color 0.25s ease-out;
 }
 #light-mode,
 #dark-mode {
@@ -422,40 +421,27 @@ html.is-animating .transition-fade {
 }
 
 /* TRANSITIONS */
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.page-transitions:not(._header) {
+  pointer-events: none;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: #1d1d1d;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: 0.5s ease-out;
 }
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translate3d(0, 100%, 0);
-  }
-  100% {
-    opacity: 1;
-    transform: none;
-  }
-}
-.m-scene .scene_element {
-  animation-duration: 1.25s;
-  transition-timing-function: ease-in;
-  animation-fill-mode: both;
-  background-color: #cdbcbc;
+.page-transitions:not(._header).is-active {
+  pointer-events: all;
+  opacity: 1;
 }
 
-.scene_element--fadein {
-  animation-name: fadeIn;
+.page-transitions._header header {
+  transition: 0.5s ease-out;
 }
-
-.scene_element--fadeinup {
-  animation-name: fadeInUp;
-}
-
-/** Reverse "exit" animations */
-.m-scene.is-exiting .scene_element {
-  animation-direction: alternate-reverse;
+.page-transitions._header.is-active header {
+  transform: translate(0, -80px);
+  background-color: #1d1d1d;
 }

@@ -1,20 +1,21 @@
 :root {
   /* color vars */
-  --color-b: #0e0e10;
+  --color-b: #121111;
   --color-w: #f8f2e2;
-  --color-g: #2a2a2d;
+  --color-g: #333337;
   --color-r: #f23e3e;
   --color-y: #f2c94d;
+  --color-o: #f07d44;
   --color-navbar-bg: #0f0f11; /* 0f0f11 */
   /* color vars */
   --shadow-bronze-glow: 5px 5px 45px var(--color-y-sm) inset;
   --color-b-smronze-transparent: #f2c94d5b;
-  --color-task-bar-black: #242429;
+  --color-task-bar-black: #282726;
   --border-window: 1px solid #575550;
-  --color-b-sm: #0e0e10;
+  --color-b-sm: #272626;
   --color-w-sm: #f8f2e2;
   --color-r-sm: #f23e3e;
   --color-y-sm: #f2c94d;
-  --color-desktop-sm: #131318;
-  --color-desktop-sm-transparent: #13131800;
+  --color-desktop-sm: #1d1d1d;
+  --color-desktop-sm-transparent: #1d1d1d00;
 }

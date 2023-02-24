@@ -107,3 +107,30 @@ function ChangeTheme(themeName) {
       break;
   }
 }
+
+// page transition
+window.onload = () => {
+  const transtionsElements = $(".page-transitions")
+  setTimeout(() => {
+    transtionsElements.removeClass('is-active');
+  }, 500);
+
+  const anchors = document.querySelectorAll('a')
+
+  for (let i = 0; i < anchors.length; i++) {
+    const anchor = anchors[i];
+    if (anchor.target != '_blank') {
+      console.log(anchor.href)
+      anchor.addEventListener('click', e => {
+        e.preventDefault();
+        let target = anchor.href;
+        $(".tooltip").fadeOut(1)
+        transtionsElements.addClass('is-active')
+
+        setTimeout(() => {
+          window.location.href = target;
+        }, 500)
+      })
+    }
+  }
+}
