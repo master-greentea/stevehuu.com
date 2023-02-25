@@ -9,14 +9,22 @@ $(() => {
     } else {
       $(".back-to-top").fadeOut(100);
     }
+    // ad
+    if (
+      (document.body.scrollTop > 100 ||
+        document.documentElement.scrollTop > 100) &&
+      !adViewed
+    ) {
+      $("#index-ad").fadeIn(300);
+    }
   };
 });
 
-function PageSetup(showHamburger, currentPageNavLink, isCat) {
+function PageSetup(showSocial, currentPageNavLink, isCat) {
   $("._header").load("/master_htmls/header.html", function () {
-    $(currentPageNavLink).attr("class", showHamburger ? "nav-game current-page" : "nav-link current-page");
-    $("#header-hamburger").removeClass(showHamburger ? "d-md-none" : "");
-    $("#header-social").addClass(showHamburger ? "" : "d-md-none");
+    $(currentPageNavLink).attr("class", showSocial ? "nav-game current-page" : "nav-link current-page");
+    $("header .ad").css({ 'display': showSocial ? 'block' : 'none' })
+    $("#header-social").addClass(showSocial ? "" : "d-md-none");
     $("#header-cat").addClass(isCat ? "" : "d-none");
     $("#header-stuff").addClass(isCat ? "d-none" : "");
     // stuff logo animation
@@ -66,6 +74,16 @@ function LoadGameTabs() {
   }, 50);
 }
 
+// ad
+var adViewed = false;
+function CloseAd() {
+  var onMobile = window.matchMedia("(max-width: 1319px)").matches;
+  if (onMobile) {
+    adViewed = true;
+  }
+  $("#index-ad").fadeOut(100);
+}
+
 // themes
 function InitializeTheme() {
   var themeFound = false;
@@ -113,14 +131,14 @@ window.onload = () => {
   const transtionsElements = $(".page-transitions")
   setTimeout(() => {
     transtionsElements.removeClass('is-active');
-  }, 500);
+    document.documentElement.scrollTop = 0;
+  }, 300);
 
   const anchors = document.querySelectorAll('a:not(.back-to-top)')
 
   for (let i = 0; i < anchors.length; i++) {
     const anchor = anchors[i];
     if (anchor.target != '_blank') {
-      console.log(anchor.href)
       anchor.addEventListener('click', e => {
         e.preventDefault();
         let target = anchor.href;
@@ -129,7 +147,7 @@ window.onload = () => {
 
         setTimeout(() => {
           window.location.href = target;
-        }, 500)
+        }, 300)
       })
     }
   }

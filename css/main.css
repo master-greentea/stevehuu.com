@@ -41,6 +41,8 @@ header {
   z-index: 9999;
   position: fixed;
   top: 0;
+  right: 0;
+  left: 0;
   width: 100%;
   height: 80px;
   background-color: var(--color-b);
@@ -229,7 +231,7 @@ button {
 }
 
 /* ad */
-#ad {
+.ad {
   background-color: #0c4653;
   border: double mediumspringgreen 5px;
   overflow-y: scroll;
@@ -241,7 +243,7 @@ button {
   margin: 20px;
   margin-top: 50px;
 }
-#ad-close {
+.ad-close {
   position: fixed;
   padding: 0px;
   background-color: #0c4653;
@@ -254,13 +256,13 @@ button {
   top: 95px;
   z-index: 99999;
 }
-#ad-close svg {
+.ad-close svg {
   transition: fill 0.1s;
 }
-#ad-close:hover svg {
+.ad-close:hover svg {
   fill: #ad2144;
 }
-#ad a#outfoxlink {
+.ad a#outfoxlink {
   color: #d12a54;
   font-size: larger;
   border: dotted 2px rgb(0, 255, 0);
@@ -269,7 +271,7 @@ button {
   position: relative;
   top: -20px;
 }
-#ad a#outfoxlink:hover {
+.ad a#outfoxlink:hover {
   background-color: #333e45;
   border-color: #333e45;
   color: #fbaf40;
@@ -284,18 +286,18 @@ button {
   color: var(--color-r);
 }
 /* scroll bar */
-#ad::-webkit-scrollbar {
+.ad::-webkit-scrollbar {
   width: 8px;
   height: 10px;
 }
-#ad::-webkit-scrollbar-track {
+.ad::-webkit-scrollbar-track {
   background-color: #333e45;
 }
-#ad::-webkit-scrollbar-thumb {
+.ad::-webkit-scrollbar-thumb {
   background-color: #eedadf;
   border: none;
 }
-#ad::-webkit-scrollbar-thumb:hover {
+.ad::-webkit-scrollbar-thumb:hover {
   background-color: #1d1d1d;
 }
 /* END scroll bar */
@@ -431,7 +433,7 @@ html.is-animating .transition-fade {
   top: 0;
   left: 0;
   opacity: 0;
-  transition: 0.5s ease-out;
+  transition: 0.3s ease-out;
 }
 .page-transitions:not(._header).is-active {
   pointer-events: all;
@@ -439,7 +441,7 @@ html.is-animating .transition-fade {
 }
 
 .page-transitions._header header {
-  transition: 0.5s ease-out;
+  transition: 0.3s ease-out;
 }
 .page-transitions._header.is-active header {
   transform: translate(0, -80px);

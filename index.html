@@ -488,7 +488,8 @@
 
     <!-- AD -->
     <div
-      id="ad"
+      id="index-ad"
+      class="ad"
       style="
         display: none;
         width: 320px;
@@ -498,7 +499,7 @@
         z-index: 9999;
       "
     >
-      <button id="ad-close" onclick="CloseAd()">
+      <button class="ad-close" onclick="CloseAd()">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="22"
@@ -575,24 +576,6 @@
         );
         LoadGameTabs();
       });
-      // ad
-      var adViewed = false;
-      window.onscroll = function () {
-        if (
-          (document.body.scrollTop > 100 ||
-            document.documentElement.scrollTop > 100) &&
-          !adViewed
-        ) {
-          $("#ad").fadeIn(300);
-        }
-      };
-      function CloseAd() {
-        var onMobile = window.matchMedia("(max-width: 1319px)").matches;
-        if (onMobile) {
-          adViewed = true;
-        }
-        $("#ad").fadeOut(100);
-      }
     </script>
   </body>
 </html>

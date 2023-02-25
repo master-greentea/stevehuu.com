@@ -14,6 +14,10 @@ html.light-theme {
 body.light-theme {
   cursor: url("/images/stuff/sm_cursor_b.png"), default !important;
 }
+body {
+  background-color: var(--color-desktop-sm);
+  color: var(--color-w-sm);
+}
 a {
   color: var(--color-y-sm);
 }
