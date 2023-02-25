@@ -115,7 +115,7 @@ window.onload = () => {
     transtionsElements.removeClass('is-active');
   }, 500);
 
-  const anchors = document.querySelectorAll('a')
+  const anchors = document.querySelectorAll('a:not(.back-to-top)')
 
   for (let i = 0; i < anchors.length; i++) {
     const anchor = anchors[i];
