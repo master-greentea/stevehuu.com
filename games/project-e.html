@@ -143,7 +143,31 @@
 
     <div class="_footer"></div>
 
-    <div class="page-transitions is-active"></div>
+    <div class="page-transitions is-active">
+      <div class="page-loading">
+        <pre>
+STEVEHUU.COM (C) EVETSON, Inc.
+BIOS Date: 09212000 Ver: 0.8
+CPU: Evets(neon) 42 @ 4.2 GHz
+  SPEED: 4.0 GHz
+Memory Test: 3200MB OK
+                                                
+          #              #                           
+      ## ### ### # # ### ### # # # #     ### ### ### 
+      #   #  ##  # # ##  # # # # # #     #   # # ### 
+     ##   ## ###  #  ### # # ### ###     ### ### # # 
+                                      #              </pre
+        >
+        <p class="blink">>loading...</p>
+      </div>
+      <script>
+        setInterval(() => {
+          $(".blink").fadeIn(250);
+          $(".blink").fadeOut(250);
+        }, 250);
+      </script>
+    </div>
+
     <script>
       PageSetup(true, "#nav-link-project-e", true);
       GamePageSetup("none", "../games/ritual-night.html");

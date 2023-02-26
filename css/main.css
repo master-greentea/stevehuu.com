@@ -447,3 +447,16 @@ html.is-animating .transition-fade {
   transform: translate(0, -80px);
   background-color: #1d1d1d;
 }
+
+/* page transition styling */
+.page-loading {
+  padding: 30px;
+}
+
+.page-loading pre {
+  font-family: "JetBrains Mono";
+}
+
+.page-loading .blink {
+  color: #f2c94d;
+}

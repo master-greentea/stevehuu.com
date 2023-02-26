@@ -130,7 +130,7 @@ function ChangeTheme(themeName) {
 window.onload = () => {
   const transtionsElements = $(".page-transitions")
   setTimeout(() => {
-    // transtionsElements.removeClass('is-active');
+    transtionsElements.removeClass('is-active');
     document.documentElement.scrollTop = 0;
   }, 300);
 
@@ -143,6 +143,7 @@ window.onload = () => {
         e.preventDefault();
         let target = anchor.href;
         $(".tooltip").fadeOut(1)
+        $(".ad").fadeOut(100)
         transtionsElements.addClass('is-active')
 
         setTimeout(() => {
