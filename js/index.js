@@ -130,15 +130,15 @@ function ChangeTheme(themeName) {
 window.onload = () => {
   const transtionsElements = $(".page-transitions")
   setTimeout(() => {
-    transtionsElements.removeClass('is-active');
+    // transtionsElements.removeClass('is-active');
     document.documentElement.scrollTop = 0;
   }, 300);
 
-  const anchors = document.querySelectorAll('a:not(.back-to-top)')
+  const anchors = document.querySelectorAll('a')
 
   for (let i = 0; i < anchors.length; i++) {
     const anchor = anchors[i];
-    if (anchor.target != '_blank') {
+    if (anchor.target != '_blank' && !anchor.classList.contains('back-to-top-a')) {
       anchor.addEventListener('click', e => {
         e.preventDefault();
         let target = anchor.href;
