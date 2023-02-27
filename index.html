@@ -185,11 +185,13 @@
             </div>
           </div>
 
-          <p>
+          <p style="height: 5px">
             <span
               id="learn-more"
               class="index-expansion-buttons"
-              onclick="$('#index-about').fadeIn(500); $('#learn-more').hide()"
+              onclick="$('#index-about').animate({
+                height: 'toggle'
+              }, 500); $('#learn-more').html('')"
               >About me</span
             >
           </p>

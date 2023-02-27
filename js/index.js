@@ -39,11 +39,6 @@ function PageSetup(showSocial, currentPageNavLink, isCat) {
       }, 100,)
     })
   });
-  $("._footer").load("/master_htmls/footer.html", function () {
-    $(".back-to-top").load("/master_htmls/back-to-top.html").click(function () {
-      $("html, body").animate({ scrollTop: 0 }, 100);
-    });
-  });
 };
 
 function GamePageSetup(left, right) {
@@ -52,6 +47,11 @@ function GamePageSetup(left, right) {
     $(".pb-right").attr("href", right == "none" ? "#" : right);
     if (left == "none") { $(".pb-left").removeAttr('href').addClass("disabled") };
     if (right == "none") { $(".pb-right").removeAttr('href').addClass("disabled") };
+  });
+  $("._footer").load("/master_htmls/footer.html", function () {
+    $(".back-to-top").load("/master_htmls/back-to-top.html").click(function () {
+      $("html, body").animate({ scrollTop: 0 }, 100);
+    });
   });
 };
 
