@@ -2,6 +2,9 @@
   margin-bottom: 60px;
 }
 
+.game-tab {
+  display: none;
+}
 .game-tab a {
   color: var(--color-w);
   text-decoration: none;

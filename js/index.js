@@ -56,7 +56,8 @@ function GamePageSetup(left, right) {
 };
 
 function LoadGameTabs() {
-  const gameTabs = $("#games-main a").toArray();
+  const gameTabs = $(".game-tab").toArray();
+  console.log(gameTabs)
 
   let time = 0;
   var doLoad = setTimeout(() => {
