@@ -1,5 +1,4 @@
 $(() => {
-  InitializeTheme();
   window.onscroll = function () {
     if (
       document.body.scrollTop > 150 ||
@@ -58,10 +57,6 @@ function GamePageSetup(left, right) {
 
 function LoadGameTabs() {
   const gameTabs = $("#games-main a").toArray();
-  // hide game tabs
-  // $.each(gameTabs, function (i, tab) {
-  //   $(tab).hide();
-  // });
 
   let time = 0;
   var doLoad = setTimeout(() => {
@@ -85,71 +80,17 @@ function CloseAd() {
 }
 
 // themes
-function InitializeTheme() {
-  var themeFound = false;
-
-  var activeThemes = ["default", "light"];
-  for (var i = 0; i < activeThemes.length; i++) {
-    if (localStorage.getItem("theme") == activeThemes[i]) {
-      themeFound = true;
-      break;
-    }
-  }
-
-  const currentTheme = themeFound ? localStorage.getItem("theme") : "default";
-
-  ChangeTheme(currentTheme);
-}
 function ToLight() {
   ChangeTheme("light");
   $("#light-mode").hide();
   $("#dark-mode").show();
-  localStorage.setItem("theme", "light");
 }
 function ToDark() {
   ChangeTheme("default");
   $("#dark-mode").hide();
   $("#light-mode").show();
-  localStorage.setItem("theme", "default");
 }
 function ChangeTheme(themeName) {
   $("#theme-stylesheet").attr("href", `/css/themes/${themeName}.css`);
-  switch (themeName) {
-    case "default":
-      $("#dark-mode").hide();
-      $("#light-mode").show();
-      break;
-    case "light":
-      $("#light-mode").hide();
-      $("#dark-mode").show();
-      break;
-  }
-}
-
-// page transition
-window.onload = () => {
-  const transtionsElements = $(".page-transitions")
-  setTimeout(() => {
-    transtionsElements.removeClass('is-active');
-    document.documentElement.scrollTop = 0;
-  }, 300);
-
-  const anchors = document.querySelectorAll('a')
-
-  for (let i = 0; i < anchors.length; i++) {
-    const anchor = anchors[i];
-    if (anchor.target != '_blank' && !anchor.classList.contains('back-to-top-a')) {
-      anchor.addEventListener('click', e => {
-        e.preventDefault();
-        let target = anchor.href;
-        $(".tooltip").fadeOut(1)
-        $(".ad").fadeOut(100)
-        transtionsElements.addClass('is-active')
-
-        setTimeout(() => {
-          window.location.href = target;
-        }, 300)
-      })
-    }
-  }
+  localStorage.setItem("theme", themeName);
 }

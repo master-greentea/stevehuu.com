@@ -1,0 +1,1 @@
+$("#theme-stylesheet").attr("href", `/css/themes/${localStorage.getItem("theme")}.css`);

@@ -257,6 +257,11 @@ video {
 
 .back-to-top:hover {
   background-color: var(--color-y);
-  color: var(--color-b);
   border: 1px solid var(--color-y);
+}
+.back-to-top-a {
+  color: var(--color-y) !important;
+}
+.back-to-top:hover .back-to-top-a {
+  color: var(--color-b) !important;
 }

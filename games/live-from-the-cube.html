@@ -26,11 +26,15 @@
     <link rel="stylesheet" href="/css/games.css" />
 
     <script type="text/javascript" src="/js/jquery-3.6.3.min.js"></script>
+    <script type="text/javascript" src="/js/theme_select.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
   </head>
 
   <body>
-    <div class="_header page-transitions is-active"></div>
+    <div class="_header"></div>
+    <script>
+      PageSetup(true, "#nav-link-live-from-the-cube", true);
+    </script>
 
     <main class="container-md d-flex flex-wrap flex-md-nowrap">
       <div id="game-info-card">
@@ -207,33 +211,7 @@
 
     <div class="_footer"></div>
 
-    <div class="page-transitions is-active">
-      <div class="page-loading">
-        <pre>
-STEVEHUU.COM (C) EVETSON, Inc.
-BIOS Date: 09212000 Ver: 0.8
-CPU: Evets(neon) 42 @ 4.2 GHz
-  SPEED: 4.0 GHz
-Memory Test: 3200MB OK
-                                                
-          #              #                           
-      ## ### ### # # ### ### # # # #     ### ### ### 
-      #   #  ##  # # ##  # # # # # #     #   # # ### 
-     ##   ## ###  #  ### # # ### ###     ### ### # # 
-                                      #              </pre
-        >
-        <p class="blink">>loading...</p>
-      </div>
-      <script>
-        setInterval(() => {
-          $(".blink").fadeIn(250);
-          $(".blink").fadeOut(250);
-        }, 250);
-      </script>
-    </div>
-
     <script>
-      PageSetup(true, "#nav-link-live-from-the-cube", true);
       GamePageSetup("../games/foghorn.html", "../games/pyramids.html");
     </script>
   </body>
