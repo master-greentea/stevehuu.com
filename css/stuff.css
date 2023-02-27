@@ -288,7 +288,7 @@ button.light-theme {
   width: 85%;
 }
 #acsii-art {
-  text-shadow: 0px 0px 10px var(--color-y-sm);
+  text-shadow: 0px 0px 10px var(--color-w-sm);
   transition: text-shadow 0.5s ease-out;
 }
 
