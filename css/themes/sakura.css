@@ -9,12 +9,12 @@
   /* color vars */
   --shadow-bronze-glow: 5px 5px 45px var(--color-y-sm) inset;
   --color-b-smronze-transparent: #eb58585b;
-  --color-task-bar-black: #da91b9;
+  --color-task-bar-black: #dea6c3;
   --border-window: 1px solid #555057;
   --color-b-sm: #eddae5;
   --color-w-sm: #413d3f;
   --color-r-sm: #f23e3e;
-  --color-y-sm: #86b2b5;
+  --color-y-sm: #e5e9e9;
   --color-desktop-sm: #eaccdf;
   --color-desktop-sm-transparent: #eaccdf00;
 }
