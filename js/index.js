@@ -93,5 +93,7 @@ function ToDark() {
 }
 function ChangeTheme(themeName) {
   $("#theme-stylesheet").attr("href", `/css/themes/${themeName}.css`);
-  localStorage.setItem("theme", themeName);
+  if (themeName == "default" || themeName == "light") {
+    localStorage.setItem("theme", themeName);
+  }
 }
