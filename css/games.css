@@ -98,7 +98,7 @@ video {
 }
 /* end hover animations */
 .unfinished {
-  opacity: 40%;
+  opacity: 50%;
   cursor: default;
 }
 .unfinished-tooltip {
@@ -116,11 +116,25 @@ video {
 }
 
 .game-tab img {
+  position: relative;
   width: 100%;
   height: auto;
   border-radius: 8px 8px 0px 0px;
   margin-top: 0px !important;
   padding: 0px !important;
+}
+.game-tab img.front {
+  position: absolute;
+  width: 100.5%;
+  height: auto;
+  transform: scaleY(0);
+  transition: transform 0.2s ease-out;
+  left: 0;
+  top: 0;
+}
+
+.unfinished:hover img.front {
+  transform: scaleY(1);
 }
 
 .pyramids-html {
