@@ -125,7 +125,7 @@ video {
 }
 .game-tab img.front {
   position: absolute;
-  width: 100.5%;
+  width: 100%;
   height: auto;
   transform: scaleY(0);
   transition: transform 0.2s ease-out;
@@ -281,4 +281,11 @@ video {
 }
 .back-to-top:hover .back-to-top-a {
   color: var(--color-b) !important;
+}
+
+iframe {
+  aspect-ratio: 16/9;
+  width: 100%;
+  height: auto;
+  padding: 10px;
 }
