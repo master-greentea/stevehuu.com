@@ -3,9 +3,9 @@
 
 $(function () {
   // ✨VERSION NUMBER
-  const vNo = "0.9.14";
-  const vDate = "02.17.22";
-  const vMsg = "minor bug fixes<br/>added background<br/>added light theme<br />added cheat codes";
+  const vNo = "0.9.15";
+  const vDate = "07.03.23";
+  const vMsg = "minor bug fixes<br/>added hyperstars audio folder";
   $(".sm-version-no").html(vNo);
   $("#sm-loading-date").html(vDate);
 
@@ -786,6 +786,17 @@ $(function () {
       );
     });
     // level 2 - games
+    $("#games-hyper").dblclick(function () {
+      folderOpenL2(
+        this,
+        "#audio-parent",
+        "#audio-games-content",
+        "#games-hyper-content",
+        "audio",
+        "from-games",
+        "hyperstars"
+      );
+    });
     $("#games-ritual").dblclick(function () {
       folderOpenL2(
         this,
@@ -795,17 +806,6 @@ $(function () {
         "audio",
         "from-games",
         "ritual-night"
-      );
-    });
-    $("#games-live").dblclick(function () {
-      folderOpenL2(
-        this,
-        "#audio-parent",
-        "#audio-games-content",
-        "#games-live-content",
-        "audio",
-        "from-games",
-        "live-cube"
       );
     });
     $("#games-anamnesis").dblclick(function () {
