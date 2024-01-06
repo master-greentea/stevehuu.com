@@ -39,9 +39,14 @@
     <main class="container-md d-flex flex-wrap flex-md-nowrap">
       <div id="game-info-card">
         <h1 id="project-e-h1" class="game-h1">Untitled CRT Game</h1>
-        <h2>Under Development</h2>
+        <h2>Forever Under Development</h2>
         <h4>Unity 3D</h4>
         <div class="_page-buttons"></div>
+        <br /><br />
+        <h5>
+          one of these days i will finish this game. but that day is not
+          today.<br /><br />enjoy this definitely outdated devlog tho.
+        </h5>
       </div>
 
       <div id="game-content">
@@ -73,31 +78,272 @@
               />
             </svg>
           </a>
+          <br />
+          honestly this layout is shit, makes it hard to read, but fuck it (for
+          now)
         </p>
         <p>
           <span
-            id="close-more"
+            id="close-archive-3"
+            class="index-expansion-buttons"
+            onclick="$('#crt-archived-post-3').animate({
+            height: 'toggle'
+          }, 500); 
+            $('#learn-archive-3').html('Archived logs #3: Visual Rework & New Directions');
+            $('#close-archive-3').html('')"
+          ></span>
+          <span
+            id="learn-archive-3"
+            class="index-expansion-buttons"
+            onclick="$('#crt-archived-post-3').animate({
+              height: 'toggle'
+            }, 500); 
+              $('#learn-archive-3').html('');
+              $('#close-archive-3').html('close')"
+            >Archived logs #3: Visual Rework & New Directions</span
+          >
+        </p>
+
+        <div id="crt-archived-post-3" style="display: none">
+          <h3>BRO I PLAYED ALAN WAKE 2 AND ITS SO FUCKING GOOD</h3>
+          <p>
+            So kinda wanna make this more of a contained narrative thing now.
+          </p>
+        </div>
+
+        <hr />
+        <p>
+          <span
+            id="close-archive-2"
+            class="index-expansion-buttons"
+            onclick="$('#crt-archived-post-2').animate({
+            height: 'toggle'
+          }, 500); 
+            $('#learn-archive-2').html('Archived logs #2: ChatGPT & Time Manipulation');
+            $('#close-archive-2').html('')"
+          ></span>
+          <span
+            id="learn-archive-2"
+            class="index-expansion-buttons"
+            onclick="$('#crt-archived-post-2').animate({
+              height: 'toggle'
+            }, 500); 
+              $('#learn-archive-2').html('');
+              $('#close-archive-2').html('close')"
+            >Archived logs #2: ChatGPT & Time Manipulation</span
+          >
+        </p>
+
+        <div id="crt-archived-post-2" style="display: none">
+          <h3>Console: Powered by ChaptGPT</h3>
+          <img src="/images/games/project_e/console.jpg" style="width: 100%" />
+          <p>Made a console powered by ChatGPT.</p>
+          <p>
+            Was able to achieve this by using
+            <a
+              href="https://gamecenter.nyu.edu/faculty/21776-2/"
+              target="_blank"
+              >Eddy's</a
+            >
+            ChatGPT plugin that makes API calls to ChatGPT when provided with a
+            token. Pretty straightforward and kinda brutforce. For more info on
+            Eddy's plugin check out his game
+            <a
+              href="https://helixngc7293.itch.io/yandere-ai-girlfriend-simulator"
+              target="_blank"
+              >Yandere AI Girlfriend</a
+            >.
+          </p>
+          <br />
+          <h4>How it works</h4>
+          <p>
+            Short answer is: its basically black magic.<br />I made a custom
+            scriptable that takes in a bunch of pre-written information to
+            prompt it. These information includes:
+          </p>
+          <li>how should the console behave</li>
+          <li>what languages to use</li>
+          <li>what concepts (slangs / terms made up for the game) there are</li>
+          <li>what <em>can</em> the player know at this stage</li>
+          <br />
+          <p>
+            Concepts are separated into
+            <span style="text-decoration: underline">Databases</span> which are
+            just list of strings with the name of the concept and the prompt
+            itself. The idea is based on the progress of the player, they will
+            unlock more concepts so the console can tell them more stuff.
+          </p>
+          <div class="row">
+            <div class="col-12 col-xl-6">
+              <img
+                style="width: 100%"
+                src="/images/games/project_e/consolesettings.png"
+              />
+              <p>console settings (initial prompt)</p>
+            </div>
+            <div class="col-12 col-xl-6">
+              <img
+                style="width: 100%"
+                src="/images/games/project_e/consoledatabase.png"
+              />
+              <p>prompts database (unlockable lore)</p>
+            </div>
+          </div>
+          <br />
+          <h4>Purpose?</h4>
+          <p>
+            Honestly, I personally believe the best way to utilize language
+            model is video game is for it to
+          </p>
+          <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+              <p>
+                <strong
+                  >serve as an addition on top of the core experience</strong
+                >
+                instead of putting it front and center as the core experience
+                itself. (sorry eddy)
+              </p>
+            </div>
+            <div class="col-4"></div>
+          </div>
+          <p>
+            BUT! I really want someone to prove me wrong though, because playing
+            a AI powered game is sick.
+          </p>
+          <p>
+            At least at the stage of this game's development, the language
+            models are simply too difficult to control from a designer's
+            standpoint. It's impossible to predict how it will behave once its
+            in players' hands. That can become very annoying very quickly.<br />This
+            is also why I opt for the Console to be a sort of assistant that
+            fills in more lore of the game whenever it can, but not to directly
+            affect gameplay.
+          </p>
+
+          <hr />
+          <h3>Time Manipulation Goodness</h3>
+          <p>
+            Got bored, tried to experiment with some cool
+            <a
+              href="https://www.youtube.com/watch?v=NFZrIAw1MzA"
+              target="_blank"
+              >Jojo</a
+            >
+            type shit. Since the theme is centered around watching old VHS on a
+            CRT, pausing makes sense, but what if you can REWIND and FAST
+            FROWARD too?
+          </p>
+          <br />
+          <div class="row">
+            <div class="col-12 col-xl-6">
+              <h4>Rewind</h4>
+              <video width="100%" controls muted style="margin-top: 10px">
+                <source
+                  src="/images/games/project_e/rewind.mp4"
+                  type="video/mp4"
+                  alt="untitled crt game rewind"
+                />
+                Your browser does not support the video tag.
+              </video>
+              <p>Basically taking:</p>
+              <li>player position</li>
+              <li>player camera direction</li>
+              <li>enemy position</li>
+              <li>enemy state</li>
+              <br />
+              <p>
+                each second and storing them in a list. The list is expandable
+                based on how many seconds are <em>allowed</em> to be rewinded.
+                <br />
+                Storing these info per second not per frame is due to
+                performance concerns.
+              </p>
+              <p>
+                There is a cooldown to pervent spamming and also to avoid bugs
+                if player time skips to <em>before</em> the game starts etc.
+              </p>
+            </div>
+            <div class="col-12 col-xl-6">
+              <h4>
+                <span style="text-decoration: line-through">Fast Forward</span>
+                Skip
+              </h4>
+              <p>
+                How the fuck am I gonna make fast forward fun? Fuck it we do
+                time-skip instead.
+              </p>
+              <video width="100%" controls muted style="margin-top: 10px">
+                <source
+                  src="/images/games/project_e/timeskip.mp4"
+                  type="video/mp4"
+                  alt="untitled crt game skip time"
+                />
+                Your browser does not support the video tag.
+              </video>
+              <p>
+                Enemy now has a collider ball attached to its front, but
+                offsetted. When that collider gets detected by player raycast,
+                it triggers a time skip.
+              </p>
+              <p>
+                <em>Basically:</em><br />if (enemy is about to enter player
+                view) {<br />skips time and teleports into player view<br />}
+              </p>
+              <p>
+                Coupled with changing the clock, it creates a nice illusion of
+                the
+                <a
+                  href="https://www.youtube.com/watch?v=DpCPlnUlSaI"
+                  target="_blank"
+                  >King Crimson</a
+                >
+                effect.
+              </p>
+              <p>
+                The player's momentum is perserved and basically dashes forward
+                btw.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <hr />
+        <p>
+          <span
+            id="close-archive-1"
             class="index-expansion-buttons"
             onclick="$('#crt-archived-post-1').animate({
             height: 'toggle'
           }, 500); 
-            $('#learn-more').html('Archived logs #1');
-            $('#close-more').html('')"
+            $('#learn-archive-1').html('Archived logs #1: Early Development');
+            $('#close-archive-1').html('')"
           ></span>
           <span
-            id="learn-more"
+            id="learn-archive-1"
             class="index-expansion-buttons"
             onclick="$('#crt-archived-post-1').animate({
               height: 'toggle'
             }, 500); 
-              $('#learn-more').html('');
-              $('#close-more').html('close')"
-            >Archived logs #1</span
+              $('#learn-archive-1').html('');
+              $('#close-archive-1').html('close')"
+            >Archived logs #1: Early Development</span
           >
         </p>
 
-        <hr />
         <div id="crt-archived-post-1" style="display: none">
+          <h3>UI & Retro Feelzz</h3>
+          <p>
+            I forgot to mention the UI is a completely custom system where it
+            works perfectly with only keyboard controls.<br />In fact
+            <strong
+              >the entire game is designed to be playable for keyboard only for
+              that maximum retro feel.</strong
+            >
+          </p>
+          <hr />
+
           <h3>Wander & interception?</h3>
           <p>
             - changed wander destinations from world to area around player<br />
