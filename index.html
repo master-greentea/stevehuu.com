@@ -590,10 +590,12 @@
         case "default":
           $("#dark-mode").hide();
           $("#light-mode").show();
+          ChangeTheme("default");
           break;
         case "light":
           $("#light-mode").hide();
           $("#dark-mode").show();
+          ChangeTheme("light");
           break;
       }
     </script>
